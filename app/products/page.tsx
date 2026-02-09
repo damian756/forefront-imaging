@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { 
   Search, 
   Filter, Grid, List, CheckCircle,
@@ -16,9 +17,13 @@ import Footer from '@/components/layout/Footer';
 import { products } from '@/lib/products'; 
 
 export default function CatalogPage() {
+  // Read category from URL query parameter
+  const searchParams = useSearchParams();
+  const categoryFromUrl = searchParams.get('category') || 'All';
+  
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl);
   const [sortBy, setSortBy] = useState<'name' | 'category'>('name');
 
   // Generate unique categories from your actual data
