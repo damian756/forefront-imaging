@@ -130,10 +130,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Products</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/products" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />USB Capture</Link></li>
-              <li><Link href="/products" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />PCIe Capture</Link></li>
-              <li><Link href="/products" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Encoders</Link></li>
-              <li><Link href="/products" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Converters</Link></li>
+              <li><Link href="/products?category=USB+Capture" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />USB Capture</Link></li>
+              <li><Link href="/products?category=PCIe+Capture" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />PCIe Capture</Link></li>
+              <li><Link href="/products?category=Encoders" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Encoders</Link></li>
+              <li><Link href="/products?category=NDI" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Converters</Link></li>
             </ul>
           </div>
 

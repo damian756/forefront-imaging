@@ -8,7 +8,14 @@ import {
 } from 'lucide-react';
 
 // IMPORT YOUR FUNCTIONS
-import { getProductBySlug } from '@/lib/products'; 
+import { getProductBySlug, products } from '@/lib/products'; 
+
+// Generate static paths for all products
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
+}
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

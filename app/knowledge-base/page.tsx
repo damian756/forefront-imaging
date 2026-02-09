@@ -44,37 +44,31 @@ export default function KnowledgeBasePage() {
     {
       title: "How to Install USB Capture Drivers on Windows 11",
       category: "Getting Started",
-      views: "12.5k",
       icon: Zap
     },
     {
       title: "Resolving 'No Signal' Issues with HDMI Capture",
       category: "Troubleshooting",
-      views: "9.8k",
       icon: Wrench
     },
     {
       title: "Optimizing Capture Quality for 4K60 Workflows",
       category: "Advanced Features",
-      views: "7.2k",
       icon: TrendingUp
     },
     {
       title: "Understanding Magewell Product Warranty Coverage",
       category: "Warranty & Returns",
-      views: "6.4k",
       icon: Shield
     },
     {
       title: "Configuring Multi-Camera Capture Systems",
       category: "Advanced Features",
-      views: "5.9k",
       icon: TrendingUp
     },
     {
       title: "USB Capture vs Pro Capture: Which is Right for You?",
       category: "Getting Started",
-      views: "5.1k",
       icon: Zap
     }
   ];
@@ -197,8 +191,6 @@ export default function KnowledgeBasePage() {
                         </h3>
                         <div className="flex items-center gap-3 text-sm text-slate-400">
                           <span>{article.category}</span>
-                          <span>•</span>
-                          <span>{article.views} views</span>
                         </div>
                       </div>
                       <div className="text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
