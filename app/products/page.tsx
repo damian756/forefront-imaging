@@ -4,11 +4,13 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  ShieldCheck, FileText, Search, 
+  Search, 
   Filter, Grid, List, CheckCircle,
   ArrowUpDown, Package, AlertCircle
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 // IMPORT YOUR EXISTING DATA
 import { products } from '@/lib/products'; 
@@ -45,26 +47,10 @@ export default function CatalogPage() {
   }, [searchQuery, selectedCategory, sortBy]);
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-slate-950 text-slate-200 selection:bg-blue-500/30">
-      
-      {/* Navbar - Typo Fixed Here (class -> className) */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-950/95 backdrop-blur-md border-b border-blue-900/30 py-3">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="p-2 rounded bg-blue-600 text-white"><ShieldCheck className="w-6 h-6" /></div>
-            <div className="flex flex-col">
-                <span className="text-xl font-extrabold text-white tracking-tight uppercase">ForeFront</span>
-                <span className="text-[10px] font-mono text-blue-400 uppercase">Magewell UK Distributor</span>
-            </div>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/" className="text-sm font-medium text-slate-400 hover:text-white">Home</Link>
-            <Link href="/contact" className="flex items-center gap-2 px-4 py-2 rounded-sm font-bold text-sm bg-white text-slate-950 hover:bg-blue-50"><FileText className="w-4 h-4" /><span>Get Quote</span></Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Header - Enhanced */}
+    <>
+      <Navbar />
+      <div className="flex flex-col min-h-screen font-sans bg-slate-950 text-slate-200 selection:bg-blue-500/30">
+        {/* Header - Enhanced */}
       <div className="pt-32 pb-12 border-b border-slate-800 bg-gradient-to-b from-slate-900/80 to-slate-950 relative overflow-hidden">
         {/* Animated Background */}
         <motion.div 
@@ -354,6 +340,8 @@ export default function CatalogPage() {
           </AnimatePresence>
         </main>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }

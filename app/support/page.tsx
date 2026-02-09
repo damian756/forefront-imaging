@@ -1,198 +1,225 @@
-'use client';
+import Link from "next/link";
+import { Headphones, FileText, Video, Download, MessageCircle, Clock, CheckCircle2, AlertCircle } from "lucide-react";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
-import React from 'react';
-import Link from 'next/link';
-import { 
-  ShieldCheck, Phone, Mail, FileText, Download, 
-  Search, Wrench, AlertCircle, ChevronRight, Cpu 
-} from 'lucide-react';
+export const metadata = {
+  title: "Support - Forefront Imaging",
+  description: "Technical support, resources, and documentation for Magewell products.",
+};
 
 export default function SupportPage() {
-  
-  const drivers = [
-    { name: "USB Capture Gen 2 Driver", version: "v3.2.1", os: "Windows 10/11", date: "Jan 2026", size: "14MB" },
-    { name: "USB Capture Plus Utility", version: "v1.5.0", os: "macOS 15+", date: "Dec 2025", size: "8MB" },
-    { name: "Magewell Bridge for NDI", version: "v4.0.0", os: "Linux Ubuntu", date: "Feb 2026", size: "45MB" },
+  const supportOptions = [
+    {
+      icon: Headphones,
+      title: "Technical Support",
+      description: "Direct access to our technical team for product support, troubleshooting, and installation guidance.",
+      action: "Contact Support",
+      href: "/contact",
+      color: "blue"
+    },
+    {
+      icon: Download,
+      title: "Downloads",
+      description: "Latest drivers, firmware updates, software utilities, and product documentation.",
+      action: "View Downloads",
+      href: "/downloads",
+      color: "green"
+    },
+    {
+      icon: FileText,
+      title: "Knowledge Base",
+      description: "Comprehensive guides, FAQs, and technical articles to help you get the most from your products.",
+      action: "Browse Articles",
+      href: "/knowledge-base",
+      color: "purple"
+    },
+    {
+      icon: Video,
+      title: "Video Tutorials",
+      description: "Step-by-step video guides covering installation, configuration, and advanced features.",
+      action: "Watch Tutorials",
+      href: "/tutorials",
+      color: "orange"
+    }
   ];
 
   const faqs = [
-    { q: "My device is not detected in Zoom.", a: "Ensure you are using the USB 3.0 cable provided. Check Privacy Settings in Windows to allow camera access." },
-    { q: "What is the warranty period?", a: "All Magewell hardware purchased through Forefront Imaging carries a standard 3-year manufacturer warranty." },
-    { q: "Do I need drivers for Mac?", a: "No. Magewell USB Capture devices are UVC standard and driver-free on macOS." },
+    {
+      question: "What warranty coverage is included?",
+      answer: "All Magewell products include full manufacturer warranty with direct support. Warranty terms vary by product - typically 2-3 years from date of purchase."
+    },
+    {
+      question: "How do I handle returns or RMAs?",
+      answer: "Contact our support team with your order details and issue description. We'll guide you through the RMA process and arrange replacement or repair as appropriate."
+    },
+    {
+      question: "Are drivers compatible with my operating system?",
+      answer: "Magewell products support Windows, macOS, and Linux. Visit our Downloads page for the latest drivers and compatibility information."
+    },
+    {
+      question: "Can I get technical training for my team?",
+      answer: "Yes! We offer comprehensive training for resellers and integrators, including product overviews, installation best practices, and troubleshooting."
+    },
+    {
+      question: "What are your support hours?",
+      answer: "Our support team is available Monday-Friday, 9AM-5PM GMT. Emergency support for critical issues can be arranged for registered partners."
+    },
+    {
+      question: "Do you offer pre-sales technical consultation?",
+      answer: "Absolutely. Contact us to discuss your project requirements and we'll help you select the right products for your specific application."
+    }
   ];
 
+  const colorClasses = {
+    blue: "bg-blue-600/10 text-blue-500 border-blue-500/20",
+    green: "bg-green-600/10 text-green-500 border-green-500/20",
+    purple: "bg-purple-600/10 text-purple-500 border-purple-500/20",
+    orange: "bg-orange-600/10 text-orange-500 border-orange-500/20"
+  };
+
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-slate-950 text-slate-200 selection:bg-blue-500/30">
-      
-      {/* Navbar (Reused) */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-950/95 backdrop-blur-md border-b border-blue-900/30 py-3">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="p-2 rounded bg-blue-600 text-white">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-extrabold text-white tracking-tight uppercase">
-                ForeFront
-              </span>
-              <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest -mt-1">
-                Magewell UK Distributor
-              </span>
-            </div>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Back to Catalog</Link>
-            <Link href="/contact" className="flex items-center gap-2 px-4 py-2 rounded-sm font-bold text-sm bg-white text-slate-950 hover:bg-blue-50 transition-colors">
-              <FileText className="w-4 h-4" />
-              <span>Get Quote</span>
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 border-b border-slate-800 bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-900/20 border border-blue-500/30 text-blue-400 text-xs font-mono mb-6">
-            <Wrench className="w-3 h-3" /> TECHNICAL SUPPORT PORTAL
-          </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Drivers, Manuals & <br /><span className="text-blue-500">Technical Resources</span>
-          </h1>
-          <div className="max-w-xl mx-auto relative">
-            <input 
-              type="text" 
-              placeholder="Search by Model Number (e.g. 32060)..." 
-              className="w-full bg-slate-950 border border-slate-700 rounded-sm py-4 pl-12 pr-4 text-white focus:outline-none focus:border-blue-500 transition-colors"
-            />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-5 h-5" />
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Actions Grid */}
-      <section className="py-16 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 -mt-24 relative z-10">
-            {/* Card 1 */}
-            <div className="bg-slate-900 border border-slate-800 p-8 rounded-sm hover:border-blue-500 transition-colors group">
-                <div className="w-12 h-12 bg-slate-800 rounded-sm flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                    <Download className="w-6 h-6 text-blue-400 group-hover:text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Software & Drivers</h3>
-                <p className="text-slate-400 text-sm mb-6">Download the latest utility software and firmware for your device.</p>
-                <a href="#downloads" className="text-blue-500 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Go to Downloads <ChevronRight className="w-4 h-4" /></a>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-slate-900 border border-slate-800 p-8 rounded-sm hover:border-blue-500 transition-colors group">
-                <div className="w-12 h-12 bg-slate-800 rounded-sm flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                    <AlertCircle className="w-6 h-6 text-blue-400 group-hover:text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">RMA Request</h3>
-                <p className="text-slate-400 text-sm mb-6">Start a warranty claim or repair request for purchased hardware.</p>
-                <Link href="/contact" className="text-blue-500 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Start Ticket <ChevronRight className="w-4 h-4" /></Link>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-slate-900 border border-slate-800 p-8 rounded-sm hover:border-blue-500 transition-colors group">
-                <div className="w-12 h-12 bg-slate-800 rounded-sm flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                    <FileText className="w-6 h-6 text-blue-400 group-hover:text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Documentation</h3>
-                <p className="text-slate-400 text-sm mb-6">Access PDF datasheets, user manuals, and API SDK references.</p>
-                <Link href="/" className="text-blue-500 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Browse Docs <ChevronRight className="w-4 h-4" /></Link>
-            </div>
-        </div>
-      </section>
-
-      {/* Driver Download Table */}
-      <section id="downloads" className="py-16 bg-slate-950 border-t border-slate-900">
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-                <Cpu className="w-6 h-6 text-blue-500" /> Latest Downloads
-            </h2>
-            <div className="bg-slate-900 border border-slate-800 rounded-sm overflow-hidden">
-                <table className="w-full text-left text-sm">
-                    <thead className="bg-slate-800 text-slate-400 uppercase font-bold text-xs">
-                        <tr>
-                            <th className="px-6 py-4">Software Name</th>
-                            <th className="px-6 py-4">Version</th>
-                            <th className="px-6 py-4">OS Support</th>
-                            <th className="px-6 py-4">Release Date</th>
-                            <th className="px-6 py-4 text-right">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-800">
-                        {drivers.map((driver, i) => (
-                            <tr key={i} className="hover:bg-slate-800/50 transition-colors">
-                                <td className="px-6 py-4 font-bold text-white">{driver.name}</td>
-                                <td className="px-6 py-4 text-blue-300 font-mono">{driver.version}</td>
-                                <td className="px-6 py-4 text-slate-400">{driver.os}</td>
-                                <td className="px-6 py-4 text-slate-500">{driver.date}</td>
-                                <td className="px-6 py-4 text-right">
-                                    <button className="inline-flex items-center gap-2 bg-slate-800 hover:bg-blue-600 hover:text-white text-blue-400 px-3 py-1.5 rounded-sm transition-colors text-xs font-bold uppercase border border-slate-700 hover:border-blue-500">
-                                        <Download className="w-3 h-3" /> {driver.size}
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-slate-900 border-y border-slate-800">
-        <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-                {faqs.map((faq, i) => (
-                    <div key={i} className="border border-slate-800 rounded-sm p-6 bg-slate-950">
-                        <h4 className="text-white font-bold mb-2 flex items-start gap-3">
-                            <span className="text-blue-500">Q.</span> {faq.q}
-                        </h4>
-                        <p className="text-slate-400 text-sm ml-7">{faq.a}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-      </section>
-
-      {/* Footer (Reused) */}
-      <footer className="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <ShieldCheck className="w-6 h-6 text-blue-500" />
-              <span className="text-xl font-bold text-white uppercase">
-                ForeFront<span className="text-blue-500">Imaging</span>
-              </span>
-            </Link>
-            <p className="max-w-md mb-6 leading-relaxed text-sm text-slate-500">
-              Forefront Imaging is the authorized UK distributor for Magewell.
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+              Support & Resources
+            </h1>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              Everything you need to succeed with Magewell products. Technical support, 
+              documentation, and training resources for resellers and end users.
             </p>
           </div>
-          <div>
-            <h4 className="text-white font-bold mb-6 text-sm uppercase">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/" className="hover:text-white transition-colors">Catalog</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">RMA Request</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-6 text-sm uppercase">Contact</h4>
-            <ul className="space-y-3 text-sm font-mono">
-              <li className="flex items-center gap-3"><Phone className="w-4 h-4" /> <span>+44 (0) 1234 567890</span></li>
-              <li className="flex items-center gap-3"><Mail className="w-4 h-4" /> <span>sales@forefront-imaging.com</span></li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-slate-800 text-xs text-slate-600">
-          <p>© 2026 FOREFRONT IMAGING. AUTHORIZED UK DISTRIBUTOR.</p>
-        </div>
-      </footer>
 
-    </div>
+          {/* Support Options Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            {supportOptions.map((option) => {
+              const Icon = option.icon;
+              const colorClass = colorClasses[option.color as keyof typeof colorClasses];
+              
+              return (
+                <div 
+                  key={option.title}
+                  className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:border-slate-700 transition-all group"
+                >
+                  <div className={`w-16 h-16 rounded-xl ${colorClass} border flex items-center justify-center mb-6`}>
+                    <Icon className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+                    {option.title}
+                  </h3>
+                  <p className="text-slate-400 mb-6 leading-relaxed">
+                    {option.description}
+                  </p>
+                  <Link 
+                    href={option.href}
+                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+                  >
+                    {option.action}
+                    <span>→</span>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Quick Contact */}
+          <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-3xl p-12 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <Headphones className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-lg font-bold mb-2">Phone Support</h3>
+                <a href="tel:+441162775730" className="text-blue-400 hover:text-blue-300 font-semibold text-lg">
+                  +44 (0)116 277 5730
+                </a>
+                <p className="text-slate-400 text-sm mt-2">Mon-Fri, 9AM-5PM GMT</p>
+              </div>
+              <div>
+                <MessageCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                <h3 className="text-lg font-bold mb-2">Email Support</h3>
+                <Link href="/contact" className="text-green-400 hover:text-green-300 font-semibold text-lg">
+                  Contact Form
+                </Link>
+                <p className="text-slate-400 text-sm mt-2">Response within 24 hours</p>
+              </div>
+              <div>
+                <Clock className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                <h3 className="text-lg font-bold mb-2">Business Hours</h3>
+                <p className="text-purple-400 font-semibold text-lg">9AM - 5PM GMT</p>
+                <p className="text-slate-400 text-sm mt-2">Monday to Friday</p>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {faqs.map((faq) => (
+                <div 
+                  key={faq.question}
+                  className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-all"
+                >
+                  <div className="flex items-start gap-3 mb-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <h3 className="font-bold text-lg">{faq.question}</h3>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed pl-8">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Warranty Info */}
+          <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div>
+                <AlertCircle className="w-12 h-12 text-blue-400 mb-6" />
+                <h2 className="text-3xl font-bold mb-4">Warranty & Returns</h2>
+                <p className="text-slate-400 mb-6 leading-relaxed">
+                  All Magewell products sold through Forefront Imaging include full manufacturer 
+                  warranty coverage. We handle all RMA processing and warranty claims directly.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-300">Full manufacturer warranty included</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-300">Direct RMA processing through our team</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-300">Advanced replacement available for partners</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-300">30-day return policy for resellers</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-xl p-8">
+                <h3 className="text-xl font-bold mb-6">Need Warranty Support?</h3>
+                <p className="text-slate-400 mb-6">
+                  Contact our support team with your order number and product details. 
+                  We&apos;ll help you resolve the issue quickly.
+                </p>
+                <Link 
+                  href="/contact"
+                  className="block w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg text-center transition-all"
+                >
+                  Contact Support Team
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
