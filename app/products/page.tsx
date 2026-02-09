@@ -17,9 +17,9 @@ import Footer from '@/components/layout/Footer';
 import { products } from '@/lib/products'; 
 
 export default function CatalogPage() {
-  // Read category from URL query parameter
+  // Read category from URL query parameter and decode spaces
   const searchParams = useSearchParams();
-  const categoryFromUrl = searchParams.get('category') || 'All';
+  const categoryFromUrl = searchParams.get('category')?.replace(/\+/g, ' ') || 'All';
   
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [searchQuery, setSearchQuery] = useState('');

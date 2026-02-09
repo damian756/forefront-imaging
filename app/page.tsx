@@ -22,7 +22,7 @@ export default function Home() {
   const products = [
     {
       id: 279,
-      slug: "usb-capture-hdmi-gen-2", // SLUG ADDED
+      slug: "magewell-usb-capture-hdmi-gen-2",
       name: "USB Capture HDMI Gen 2",
       specs: ["HDMI 1.4", "1080p60", "USB 3.0"],
       stockStatus: "In Stock - UK Warehouse",
@@ -31,7 +31,7 @@ export default function Home() {
     },
     {
       id: 280,
-      slug: "usb-capture-aio", // SLUG ADDED
+      slug: "magewell-usb-capture-aio",
       name: "USB Capture AIO",
       specs: ["HDMI/SDI/DVI", "1080p60", "Analog I/O"],
       stockStatus: "Low Stock - Order Soon",
@@ -40,7 +40,7 @@ export default function Home() {
     },
     {
       id: 281,
-      slug: "usb-capture-sdi-gen-2", // SLUG ADDED
+      slug: "magewell-usb-capture-sdi-gen-2",
       name: "USB Capture SDI Gen 2",
       specs: ["3G-SDI", "Loop-Through", "Driver-Free"],
       stockStatus: "In Stock - Next Day Delivery",

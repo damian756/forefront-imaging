@@ -3,9 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { 
-  ShieldCheck, FileText, Download, CheckCircle, 
-  Box, Truck, Printer 
+  ShieldCheck, Download, CheckCircle, 
+  Truck, Printer 
 } from 'lucide-react';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 // IMPORT YOUR FUNCTIONS
 import { getProductBySlug, products } from '@/lib/products'; 
@@ -28,26 +30,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-slate-950 text-slate-200 selection:bg-blue-500/30">
-      
-      {/* Navbar - Typo Fixed Here */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-950/95 backdrop-blur-md border-b border-blue-900/30 py-3">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="p-2 rounded bg-blue-600 text-white"><ShieldCheck className="w-6 h-6" /></div>
-            <div className="flex flex-col">
-                <span className="text-xl font-extrabold text-white tracking-tight uppercase">ForeFront</span>
-                <span className="text-[10px] font-mono text-blue-400 uppercase">Magewell UK Distributor</span>
-            </div>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/" className="text-sm font-medium text-slate-400 hover:text-white">Back to Catalog</Link>
-            <Link href="/contact" className="flex items-center gap-2 px-4 py-2 rounded-sm font-bold text-sm bg-white text-slate-950 hover:bg-blue-50"><FileText className="w-4 h-4" /><span>Get Quote</span></Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Breadcrumb & Header */}
+    <>
+      <Navbar />
+      <div className="flex flex-col min-h-screen font-sans bg-slate-950 text-slate-200 selection:bg-blue-500/30">
+        {/* Breadcrumb & Header */}
       <div className="pt-28 pb-8 border-b border-slate-800 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
@@ -110,6 +96,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
