@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -16,7 +16,25 @@ import Footer from '@/components/layout/Footer';
 // IMPORT YOUR EXISTING DATA
 import { products } from '@/lib/products'; 
 
-export default function CatalogPage() {
+// Wrapper component with Suspense boundary
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={
+      <>
+        <Navbar />
+        <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+          <div className="text-white text-xl">Loading products...</div>
+        </div>
+        <Footer />
+      </>
+    }>
+      <CatalogPage />
+    </Suspense>
+  );
+}
+
+// Main catalog component
+function CatalogPage() {
   // Read category from URL query parameter and decode spaces
   const searchParams = useSearchParams();
   const categoryFromUrl = searchParams.get('category')?.replace(/\+/g, ' ') || 'All';
