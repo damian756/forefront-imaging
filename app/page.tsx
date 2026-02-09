@@ -3,7 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone, ArrowRight, Mail, MapPin, ShieldCheck, Box, Truck, BadgeCheck, FileText } from 'lucide-react';
+import { Phone, ArrowRight, Mail, MapPin, ShieldCheck, Box, Truck, BadgeCheck, FileText, Package, Star } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,85 +52,155 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen font-sans bg-slate-950 text-slate-200 selection:bg-blue-500/30">
       
-      {/* Navbar */}
-      <nav 
-        className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
-          isScrolled 
-            ? 'bg-slate-950/95 backdrop-blur-md border-blue-900/30 py-3' 
-            : 'bg-slate-950/50 border-white/5 py-5'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="p-2 rounded bg-blue-600 text-white">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-extrabold text-white tracking-tight uppercase">
-                ForeFront
-              </span>
-              <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest -mt-1">
-                Magewell UK Distributor
-              </span>
-            </div>
-          </Link>
-          
-          <div className="flex items-center gap-8">
-            <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
-              <Link href="/" className="hover:text-white transition-colors">Catalog</Link>
-              <Link href="/products" className="hover:text-white transition-colors">Trade Accounts</Link>
-              <Link href="/support" className="hover:text-white transition-colors">Support</Link>
-            </div>
-            <Link href="/contact" className="flex items-center gap-2 px-5 py-2 rounded-sm font-bold text-sm bg-white text-slate-950 hover:bg-blue-50 transition-colors">
-              <FileText className="w-4 h-4" />
-              <span>Get Quote</span>
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
-      {/* Hero Section */}
+      {/* Hero Section - Enhanced */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b border-slate-800">
+        {/* Animated Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
+        
+        {/* Animated Gradient Orbs */}
+        <motion.div 
+          className="absolute top-20 -left-40 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px]"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute bottom-20 -right-40 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-900/30 border border-blue-700/50 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6">
+            {/* Left Content - Animated */}
+            <motion.div 
+              className="flex-1 text-center md:text-left"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.div 
+                className="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-900/30 border border-blue-700/50 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <BadgeCheck className="w-4 h-4" /> Authorized UK Partner
-              </div>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
-                Official Magewell <br />
-                <span className="text-blue-500">Distribution.</span>
-              </h1>
-              <p className="text-lg text-slate-400 mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed">
-                Supply chain partner for Integrators, Resellers, and Broadcasters. 
-                We hold UK stock of the complete Magewell range with full manufacturer warranty support.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Link href="/products" className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-sm transition-all text-center">
-                  Browse Catalog
-                </Link>
-                <Link href="/contact" className="px-8 py-3 border border-slate-600 hover:border-white text-slate-300 hover:text-white font-bold rounded-sm transition-all text-center">
-                  Open Trade Account
-                </Link>
-              </div>
-            </div>
+              </motion.div>
 
-            <div className="flex-1 relative w-full max-w-md">
-              <div className="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-full"></div>
-              <div className="relative bg-slate-900 border border-slate-700 p-6 rounded-lg shadow-2xl">
+              <motion.h1 
+                className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                Official Magewell <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+                  Distribution.
+                </span>
+              </motion.h1>
+
+              <motion.p 
+                className="text-lg text-slate-400 mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                Main UK, Germany & France distributor serving value-added resellers, 
+                sub-distributors, and systems integrators. Stock holdings across multiple 
+                warehouses with full manufacturer warranty support.
+              </motion.p>
+
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                <Link 
+                  href="/products" 
+                  className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold rounded-sm transition-all text-center shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105"
+                >
+                  <span className="flex items-center justify-center gap-2">
+                    View Product Range
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="px-8 py-4 border-2 border-slate-600 hover:border-blue-500 text-slate-300 hover:text-white font-bold rounded-sm transition-all text-center hover:bg-blue-500/10"
+                >
+                  Become a Reseller
+                </Link>
+              </motion.div>
+
+              {/* Stats Counter - New */}
+              <motion.div 
+                className="grid grid-cols-3 gap-6 max-w-xl mx-auto md:mx-0"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                <div className="text-center md:text-left">
+                  <div className="text-3xl font-bold text-white mb-1">76+</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-wider">Products</div>
+                </div>
+                <div className="text-center md:text-left">
+                  <div className="text-3xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-wider">Support</div>
+                </div>
+                <div className="text-center md:text-left">
+                  <div className="text-3xl font-bold text-white mb-1">UK</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-wider">Stock</div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Content - Featured Product Card */}
+            <motion.div 
+              className="flex-1 relative w-full max-w-md"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <motion.div 
+                className="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-full"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div 
+                className="relative bg-slate-900 border border-slate-700 p-6 rounded-lg shadow-2xl"
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              >
                  <div className="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
                     <span className="text-xs font-mono text-slate-500">FEATURED UNIT</span>
-                    <span className="text-xs font-bold text-green-400 flex items-center gap-1"><div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div> IN STOCK</span>
+                    <span className="text-xs font-bold text-green-400 flex items-center gap-1">
+                      <motion.div 
+                        className="w-2 h-2 bg-green-500 rounded-full"
+                        animate={{ opacity: [1, 0.3, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                      IN STOCK
+                    </span>
                  </div>
-                 <Image
-                    src="https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png"
-                    alt="Magewell Unit"
-                    width={400}
-                    height={300}
-                    className="w-full h-auto object-contain"
-                 />
+                 <motion.div
+                   whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+                 >
+                   <Image
+                      src="https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png"
+                      alt="Magewell Unit"
+                      width={400}
+                      height={300}
+                      className="w-full h-auto object-contain"
+                   />
+                 </motion.div>
                  <div className="mt-4 pt-4 border-t border-slate-800 grid grid-cols-2 gap-4">
                     <div>
                         <span className="block text-[10px] text-slate-500 uppercase">Model</span>
@@ -138,130 +211,172 @@ export default function Home() {
                         <span className="font-mono text-sm text-white">32060</span>
                     </div>
                  </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Distributor Benefits Bar */}
-      <section className="bg-blue-950 border-y border-blue-900/50 py-8">
+      {/* Distributor Benefits Bar - Enhanced */}
+      <section className="bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 border-y border-blue-900/50 py-10">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div className="flex items-center gap-4 justify-center md:justify-start">
-                <div className="p-3 bg-blue-900/50 rounded text-blue-300"><BadgeCheck className="w-6 h-6" /></div>
-                <div>
-                    <h3 className="text-white font-bold">Official Warranty</h3>
-                    <p className="text-sm text-blue-200">Direct manufacturer support & RMAs.</p>
-                </div>
-            </div>
-            <div className="flex items-center gap-4 justify-center md:justify-start">
-                <div className="p-3 bg-blue-900/50 rounded text-blue-300"><Box className="w-6 h-6" /></div>
-                <div>
-                    <h3 className="text-white font-bold">UK Warehouse Stock</h3>
-                    <p className="text-sm text-blue-200">No import duties or long lead times.</p>
-                </div>
-            </div>
-            <div className="flex items-center gap-4 justify-center md:justify-start">
-                <div className="p-3 bg-blue-900/50 rounded text-blue-300"><Truck className="w-6 h-6" /></div>
-                <div>
-                    <h3 className="text-white font-bold">Next Day Delivery</h3>
-                    <p className="text-sm text-blue-200">Order by 4pm for same-day dispatch.</p>
-                </div>
-            </div>
+            {[
+              { icon: BadgeCheck, title: "Official Warranty", desc: "Direct manufacturer support & RMAs." },
+              { icon: Box, title: "UK Warehouse Stock", desc: "No import duties or long lead times." },
+              { icon: Truck, title: "Next Day Delivery", desc: "Order by 4pm for same-day dispatch." }
+            ].map((benefit, index) => (
+              <motion.div 
+                key={index}
+                className="flex items-center gap-4 justify-center md:justify-start"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -3, transition: { duration: 0.2 } }}
+              >
+                  <motion.div 
+                    className="p-3 bg-blue-900/50 rounded-lg text-blue-300 shadow-lg"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <benefit.icon className="w-6 h-6" />
+                  </motion.div>
+                  <div>
+                      <h3 className="text-white font-bold text-lg">{benefit.title}</h3>
+                      <p className="text-sm text-blue-200">{benefit.desc}</p>
+                  </div>
+              </motion.div>
+            ))}
         </div>
       </section>
 
-      {/* Product Catalog Section */}
+      {/* Product Catalog Section - Enhanced */}
       <section className="py-24 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-end mb-12 border-b border-slate-800 pb-4">
+          <motion.div 
+            className="flex justify-between items-end mb-12 border-b border-slate-800 pb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div>
-              <h2 className="text-2xl font-bold text-white uppercase tracking-wide">Core Inventory</h2>
+              <h2 className="text-3xl font-bold text-white uppercase tracking-wide">Core Inventory</h2>
+              <p className="text-slate-500 text-sm mt-2">Professional video capture solutions</p>
             </div>
-            <Link href="/products" className="text-blue-500 hover:text-white flex items-center gap-2 text-sm font-bold uppercase">
-              View All SKUs <ArrowRight className="w-4 h-4" />
+            <Link href="/products" className="text-blue-500 hover:text-white flex items-center gap-2 text-sm font-bold uppercase group">
+              View All 76 SKUs 
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {products.map((product) => (
-              <Link 
-                key={product.id} 
-                // HERE IS THE FIX: Linking to SLUG instead of ID
-                href={`/products/${product.slug}`}
-                className="group block bg-slate-900 border border-slate-800 hover:border-blue-500 transition-all duration-200"
+          <div className="grid gap-8 md:grid-cols-3">
+            {products.map((product, index) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="h-48 relative bg-white p-6 flex items-center justify-center border-b border-slate-800">
-                  <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 uppercase">{product.tag}</div>
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
-                    {product.name}
-                  </h3>
-                  
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className={`w-2 h-2 rounded-full ${product.stockStatus.includes('Low') ? 'bg-amber-500' : 'bg-green-500'}`}></div>
-                    <span className="text-xs text-slate-400 font-mono">{product.stockStatus}</span>
-                  </div>
+                <Link 
+                  href={`/products/${product.slug}`}
+                  className="group block h-full"
+                >
+                  <motion.div
+                    className="h-full bg-slate-900 border border-slate-800 overflow-hidden rounded-lg"
+                    whileHover={{ 
+                      y: -8,
+                      borderColor: 'rgb(59 130 246)',
+                      boxShadow: '0 20px 40px rgba(59, 130, 246, 0.15)',
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    {/* Image Section */}
+                    <div className="h-56 relative bg-gradient-to-br from-slate-800 to-slate-900 p-6 flex items-center justify-center border-b border-slate-800 overflow-hidden">
+                      {/* Premium Badge */}
+                      <motion.div 
+                        className="absolute top-3 right-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider rounded-full shadow-lg flex items-center gap-1"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <Star className="w-3 h-3 fill-current" />
+                        {product.tag}
+                      </motion.div>
 
-                  <ul className="text-xs text-slate-500 space-y-1 font-mono mb-4 border-t border-slate-800 pt-3">
-                    {product.specs.map((spec, i) => (
-                      <li key={i} className="flex justify-between">
-                         <span>Feature {i+1}:</span> <span className="text-slate-300">{spec}</span>
-                      </li>
-                    ))}
-                  </ul>
+                      {/* Image with Hover Effect */}
+                      <motion.div
+                        className="relative w-full h-full"
+                        whileHover={{ scale: 1.08, rotateY: 5 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          className="object-contain drop-shadow-2xl"
+                        />
+                      </motion.div>
 
-                  <button className="w-full py-2 bg-slate-800 hover:bg-white hover:text-slate-900 text-slate-300 text-sm font-bold uppercase transition-colors rounded-sm">
-                    View Pricing
-                  </button>
-                </div>
-              </Link>
+                      {/* Gradient Overlay on Hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                    
+                    {/* Content Section */}
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-3 line-clamp-2">
+                        {product.name}
+                      </h3>
+                      
+                      {/* Stock Status - Enhanced */}
+                      <div className="flex items-center gap-2 mb-4 p-2 bg-slate-800/50 rounded">
+                        <motion.div 
+                          className={`w-2 h-2 rounded-full ${product.stockStatus.includes('Low') ? 'bg-amber-500' : 'bg-green-500'}`}
+                          animate={{ 
+                            scale: [1, 1.2, 1],
+                            opacity: [1, 0.6, 1]
+                          }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        />
+                        <span className="text-xs text-slate-300 font-medium">{product.stockStatus}</span>
+                      </div>
+
+                      {/* Specs List - Enhanced */}
+                      <ul className="text-xs text-slate-500 space-y-2 mb-5 border-t border-slate-800 pt-4">
+                        {product.specs.map((spec, i) => (
+                          <motion.li 
+                            key={i} 
+                            className="flex items-center gap-2"
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 * i }}
+                          >
+                            <div className="w-1 h-1 rounded-full bg-blue-500" />
+                            <span className="text-slate-300 font-medium">{spec}</span>
+                          </motion.li>
+                        ))}
+                      </ul>
+
+                      {/* CTA Button - Enhanced */}
+                      <motion.button 
+                        className="w-full py-3 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-blue-600 hover:to-blue-500 text-slate-300 hover:text-white text-sm font-bold uppercase transition-all rounded-md shadow-md flex items-center justify-center gap-2"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <Package className="w-4 h-4" />
+                        Request Quote
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </motion.button>
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <ShieldCheck className="w-6 h-6 text-blue-500" />
-              <span className="text-xl font-bold text-white uppercase">
-                ForeFront<span className="text-blue-500">Imaging</span>
-              </span>
-            </Link>
-            <p className="max-w-md mb-6 leading-relaxed text-sm text-slate-500">
-              Forefront Imaging is the authorized UK distributor for Magewell.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-6 text-sm uppercase">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/" className="hover:text-white transition-colors">Catalog</Link></li>
-              <li><Link href="/products" className="hover:text-white transition-colors">Reseller Application</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-6 text-sm uppercase">Contact</h4>
-            <ul className="space-y-3 text-sm font-mono">
-              <li className="flex items-center gap-3"><Phone className="w-4 h-4" /> <span>+44 (0) 1234 567890</span></li>
-              <li className="flex items-center gap-3"><Mail className="w-4 h-4" /> <span>sales@forefront-imaging.com</span></li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-slate-800 text-xs text-slate-600">
-          <p>© 2026 FOREFRONT IMAGING. AUTHORIZED UK DISTRIBUTOR.</p>
-        </div>
-      </footer>
+      <Footer />
 
     </div>
   );
