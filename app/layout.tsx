@@ -4,6 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Forefront Imaging | Magewell UK Distributor",
   description: "High-performance Magewell video capture for medical and broadcast.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
