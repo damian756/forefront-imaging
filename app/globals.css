@@ -1,391 +1,447 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&family=Audiowide&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 /* =====================================================
-   FIBER OPTIC SIGNAL PALETTE
+   SIGNAL FLOW / ENGINEERING SCHEMATIC PALETTE
    ===================================================== */
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 5, 5, 16;
+  --background-end-rgb: 8, 10, 12;
   
-  /* Fiber Core Colors */
-  --fiber-blue: #0080ff;
-  --fiber-magenta: #ff00aa;
-  --fiber-cyan: #00ffff;
-  --fiber-purple: #8800ff;
-  --fiber-green: #00ff88;
+  /* Circuit Board Colors */
+  --pcb-green: #00ff88;
+  --pcb-dark: #0a1f1a;
+  --copper-trace: #ff9500;
+  --solder-silver: #c0c0c0;
   
-  /* Optic Backgrounds */
-  --optic-black: #050510;
-  --optic-dark: #0a0a18;
-  --optic-gray: #151520;
+  /* Signal Colors */
+  --signal-active: #00ff00;
+  --signal-idle: #004400;
+  --signal-error: #ff0000;
+  --signal-warning: #ffaa00;
   
-  /* Signal Indicators */
-  --signal-strong: #00ff88;
-  --signal-medium: #00ffff;
-  --signal-weak: #ff00aa;
-  
-  /* Light Speed */
-  --speed-white: #ffffff;
-  --speed-blue: #4da6ff;
-  --speed-cyan: #00e5ff;
+  /* Technical Colors */
+  --grid-line: #1a2a2a;
+  --node-blue: #00aaff;
+  --node-red: #ff4444;
+  --trace-orange: #ff6b00;
+  --voltage-yellow: #ffee00;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--optic-black);
+  background: #080a0c;
   margin: 0;
   padding: 0;
-  font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
   overflow-x: hidden;
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Audiowide', 'Exo 2', sans-serif;
+  font-family: 'Share Tech Mono', 'IBM Plex Mono', monospace;
   font-weight: 400;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 code, pre, .font-mono {
-  font-family: 'Orbitron', 'Courier New', monospace;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
 }
 
 /* =====================================================
-   UTILITY CLASSES - FIBER OPTIC EFFECTS
+   UTILITY CLASSES - SIGNAL FLOW EFFECTS
    ===================================================== */
 
-/* Fiber Glass Effect */
-.fiber-glass {
-  background: rgba(10, 10, 24, 0.7);
-  backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(0, 128, 255, 0.2);
+/* Circuit Board Glass */
+.circuit-glass {
+  background: rgba(10, 31, 26, 0.6);
+  backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(0, 255, 136, 0.2);
 }
 
-/* Light Streak */
-.light-streak {
+/* Technical Grid */
+.tech-grid {
+  background-image: 
+    linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Signal Path Line */
+.signal-path {
   background: linear-gradient(90deg, 
     transparent 0%,
-    rgba(0, 128, 255, 0.8) 30%,
-    rgba(0, 255, 255, 1) 50%,
-    rgba(255, 0, 170, 0.8) 70%,
+    var(--signal-active) 50%,
     transparent 100%
   );
-  animation: light-travel 3s linear infinite;
+  animation: signal-flow 2s linear infinite;
 }
 
-@keyframes light-travel {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(300%); }
-}
-
-/* Fiber Glow */
-.fiber-glow {
-  box-shadow: 
-    0 0 20px rgba(0, 128, 255, 0.4),
-    0 0 40px rgba(0, 255, 255, 0.3),
-    0 0 60px rgba(255, 0, 170, 0.2);
-  transition: box-shadow 0.3s ease;
-}
-
-.fiber-glow:hover {
-  box-shadow: 
-    0 0 30px rgba(0, 128, 255, 0.6),
-    0 0 60px rgba(0, 255, 255, 0.5),
-    0 0 90px rgba(255, 0, 170, 0.4);
-}
-
-/* Prismatic Text */
-.prismatic-text {
-  background: linear-gradient(90deg, 
-    var(--fiber-blue) 0%,
-    var(--fiber-cyan) 25%,
-    var(--fiber-green) 50%,
-    var(--fiber-magenta) 75%,
-    var(--fiber-purple) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 100%;
-  animation: prismatic-shift 5s linear infinite;
-}
-
-@keyframes prismatic-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* Pulse Wave */
-.pulse-wave {
-  animation: pulse-wave 2s ease-in-out infinite;
-}
-
-@keyframes pulse-wave {
-  0%, 100% { 
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% { 
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-/* Light Beam */
-.light-beam {
-  background: linear-gradient(180deg, 
-    rgba(0, 128, 255, 0) 0%,
-    rgba(0, 128, 255, 0.3) 50%,
-    rgba(0, 255, 255, 0.6) 100%
-  );
-  animation: beam-scan 3s ease-in-out infinite;
-}
-
-@keyframes beam-scan {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
-}
-
-/* Refraction Border */
-.refraction-border {
-  border: 2px solid transparent;
-  background: linear-gradient(var(--optic-dark), var(--optic-dark)) padding-box,
-              linear-gradient(135deg, 
-                var(--fiber-blue) 0%,
-                var(--fiber-cyan) 25%,
-                var(--fiber-magenta) 50%,
-                var(--fiber-purple) 75%,
-                var(--fiber-blue) 100%
-              ) border-box;
-  animation: refraction-rotate 8s linear infinite;
-  background-size: 200% 200%;
-}
-
-@keyframes refraction-rotate {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* Signal Pulse */
-.signal-pulse {
-  animation: signal-pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes signal-pulse {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(0, 255, 255, 1),
-                0 0 50px rgba(0, 128, 255, 0.8);
-  }
-}
-
-/* Data Transfer Animation */
-.data-transfer {
-  animation: data-transfer 2s ease-in-out infinite;
-}
-
-@keyframes data-transfer {
-  0% {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(50px) scale(1.2);
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateX(100px) scale(1);
-    opacity: 0;
-  }
-}
-
-/* Bandwidth Bar */
-.bandwidth-bar {
-  background: linear-gradient(90deg, 
-    var(--fiber-blue) 0%,
-    var(--fiber-cyan) 50%,
-    var(--fiber-green) 100%
-  );
-  box-shadow: 0 0 15px rgba(0, 128, 255, 0.6);
-  animation: bandwidth-flow 2s linear infinite;
-}
-
-@keyframes bandwidth-flow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-/* Latency Indicator */
-.latency-low {
-  color: var(--fiber-green);
-  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
-}
-
-.latency-medium {
-  color: var(--fiber-cyan);
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-}
-
-.latency-high {
-  color: var(--fiber-magenta);
-  text-shadow: 0 0 10px rgba(255, 0, 170, 0.8);
-}
-
-/* Core Gradient */
-.fiber-core {
-  background: radial-gradient(circle, 
-    rgba(0, 255, 255, 0.3) 0%,
-    rgba(0, 128, 255, 0.2) 30%,
-    rgba(136, 0, 255, 0.1) 60%,
-    transparent 100%
-  );
-}
-
-/* Light Particle */
-.light-particle {
-  animation: light-particle 3s ease-in-out infinite;
-}
-
-@keyframes light-particle {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(100vw, -50px) scale(0.5);
-    opacity: 0;
-  }
-}
-
-/* Speed Badge */
-.speed-badge {
-  background: linear-gradient(135deg, 
-    rgba(0, 128, 255, 0.9),
-    rgba(0, 255, 255, 0.9)
-  );
-  box-shadow: 
-    0 0 20px rgba(0, 255, 255, 0.6),
-    inset 0 0 20px rgba(255, 255, 255, 0.2);
-}
-
-/* Glass Frosted */
-.glass-frosted {
-  background: rgba(15, 15, 30, 0.6);
-  backdrop-filter: blur(30px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Transmission Line */
-.transmission-line {
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(0, 255, 255, 0.1) 45%,
-    rgba(0, 255, 255, 0.8) 50%,
-    rgba(0, 255, 255, 0.1) 55%,
-    transparent 100%
-  );
-  animation: transmission-flow 2s linear infinite;
-}
-
-@keyframes transmission-flow {
+@keyframes signal-flow {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(200%); }
 }
 
-/* Fiber Fade In */
-.fiber-fade-in {
-  animation: fiber-fade-in 1s ease-out;
-}
-
-@keyframes fiber-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0px);
-  }
-}
-
 /* Connection Node */
-.connection-node {
-  background: radial-gradient(circle,
-    rgba(0, 255, 255, 1) 0%,
-    rgba(0, 128, 255, 0.8) 30%,
-    rgba(136, 0, 255, 0.4) 60%,
-    transparent 100%
-  );
+.connection-node-large {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #00ff88 0%, #00aa55 50%, transparent 100%);
+  box-shadow: 
+    0 0 10px rgba(0, 255, 136, 0.8),
+    0 0 20px rgba(0, 255, 136, 0.4),
+    inset 0 0 5px rgba(255, 255, 255, 0.5);
   animation: node-pulse 2s ease-in-out infinite;
 }
 
 @keyframes node-pulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.8;
+    opacity: 1;
   }
   50% {
     transform: scale(1.3);
+    opacity: 0.8;
+  }
+}
+
+/* Trace Border (Circuit Traces) */
+.trace-border {
+  border: 2px solid transparent;
+  background: linear-gradient(#0a1215, #0a1215) padding-box,
+              linear-gradient(135deg, var(--copper-trace), var(--pcb-green)) border-box;
+  position: relative;
+}
+
+.trace-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border: 2px solid var(--copper-trace);
+  border-radius: inherit;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Schematic Text */
+.schematic-text {
+  color: var(--pcb-green);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 400;
+}
+
+/* Data Stream Animation */
+.data-stream {
+  animation: data-stream 3s ease-in-out infinite;
+}
+
+@keyframes data-stream {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-30px);
     opacity: 1;
   }
 }
 
-/* Uncompressed Badge */
-.uncompressed-badge {
-  background: linear-gradient(135deg, #00ff88, #00ffff);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
-  animation: quality-shimmer 3s ease-in-out infinite;
-}
-
-@keyframes quality-shimmer {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.3); }
-}
-
-/* Spectrum Lines */
-.spectrum-lines {
-  background-image: 
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 10px,
-      rgba(0, 128, 255, 0.1) 10px,
-      rgba(0, 128, 255, 0.1) 11px
-    );
-}
-
-/* Photonic Effect */
-.photonic {
+/* Technical Glow */
+.tech-glow {
   box-shadow: 
-    0 0 10px rgba(255, 255, 255, 0.5),
-    0 0 20px rgba(0, 255, 255, 0.4),
-    0 0 30px rgba(0, 128, 255, 0.3);
-  animation: photonic-glow 2s ease-in-out infinite;
+    0 0 10px rgba(0, 255, 136, 0.3),
+    0 0 20px rgba(0, 255, 136, 0.1),
+    inset 0 0 10px rgba(0, 255, 136, 0.05);
+  transition: box-shadow 0.3s ease;
 }
 
-@keyframes photonic-glow {
-  0%, 100% {
-    box-shadow: 
-      0 0 10px rgba(255, 255, 255, 0.5),
-      0 0 20px rgba(0, 255, 255, 0.4),
-      0 0 30px rgba(0, 128, 255, 0.3);
+.tech-glow:hover {
+  box-shadow: 
+    0 0 20px rgba(0, 255, 136, 0.5),
+    0 0 40px rgba(0, 255, 136, 0.3),
+    inset 0 0 15px rgba(0, 255, 136, 0.1);
+}
+
+/* Signal Active */
+.signal-active {
+  color: var(--signal-active);
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+}
+
+/* Voltage Indicator */
+.voltage-indicator {
+  background: linear-gradient(180deg, var(--voltage-yellow), transparent);
+  box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
+}
+
+/* Circuit Path */
+.circuit-path {
+  stroke: var(--pcb-green);
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-path 3s ease-out forwards;
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
   }
-  50% {
-    box-shadow: 
-      0 0 20px rgba(255, 255, 255, 0.8),
-      0 0 40px rgba(0, 255, 255, 0.7),
-      0 0 60px rgba(0, 128, 255, 0.6);
+}
+
+/* Solder Point */
+.solder-point {
+  background: radial-gradient(circle, #ffffff 0%, #c0c0c0 40%, transparent 80%);
+  box-shadow: 
+    0 0 8px rgba(192, 192, 192, 0.8),
+    inset 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+/* Component Outline */
+.component-outline {
+  border: 2px solid rgba(0, 255, 136, 0.4);
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), transparent);
+  position: relative;
+}
+
+.component-outline::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  pointer-events: none;
+}
+
+/* Signal Meter */
+.signal-meter {
+  background: linear-gradient(90deg,
+    var(--signal-error) 0%,
+    var(--signal-warning) 50%,
+    var(--signal-active) 100%
+  );
+  height: 4px;
+  position: relative;
+}
+
+.signal-meter::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 2px;
+  height: 8px;
+  background: white;
+  box-shadow: 0 0 5px white;
+  animation: meter-sweep 2s ease-in-out infinite;
+}
+
+@keyframes meter-sweep {
+  0%, 100% { left: 0%; }
+  50% { left: 100%; }
+}
+
+/* Trace Line (for connecting elements) */
+.trace-line {
+  height: 2px;
+  background: var(--copper-trace);
+  box-shadow: 0 0 5px rgba(255, 149, 0, 0.6);
+  position: relative;
+}
+
+.trace-line::before,
+.trace-line::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--solder-silver);
+  box-shadow: 0 0 5px rgba(192, 192, 192, 0.8);
+}
+
+.trace-line::before { left: -3px; top: -2px; }
+.trace-line::after { right: -3px; top: -2px; }
+
+/* Schematic Fade In */
+.schematic-fade-in {
+  animation: schematic-fade-in 0.8s ease-out;
+}
+
+@keyframes schematic-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(5px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Pin Header */
+.pin-header {
+  display: flex;
+  gap: 3px;
+}
+
+.pin-header::before,
+.pin-header::after {
+  content: '';
+  width: 8px;
+  height: 20px;
+  background: linear-gradient(180deg, #333 0%, #666 50%, #333 100%);
+  border: 1px solid #888;
+  border-radius: 1px;
+}
+
+/* LED Indicator */
+.led-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--signal-active), #004400);
+  box-shadow: 
+    0 0 10px var(--signal-active),
+    inset 0 0 5px rgba(255, 255, 255, 0.5);
+  animation: led-blink 1.5s ease-in-out infinite;
+}
+
+@keyframes led-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Resistor Effect */
+.resistor {
+  background: linear-gradient(90deg,
+    #8b7355 0%, #8b7355 20%,
+    #ff6b00 20%, #ff6b00 40%,
+    #8b7355 40%, #8b7355 60%,
+    #ff6b00 60%, #ff6b00 80%,
+    #8b7355 80%, #8b7355 100%
+  );
+  height: 12px;
+  border: 1px solid #666;
+}
+
+/* Capacitor Effect */
+.capacitor {
+  background: linear-gradient(180deg, #ffd700 0%, #ffd700 45%, transparent 45%, transparent 55%, #ffd700 55%, #ffd700 100%);
+  width: 30px;
+  height: 40px;
+  border: 1px solid #888;
+}
+
+/* Ground Symbol */
+.ground-symbol {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+
+.ground-symbol::before,
+.ground-symbol::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--pcb-green);
+  height: 2px;
+}
+
+.ground-symbol::before {
+  width: 100%;
+  bottom: 10px;
+}
+
+.ground-symbol::after {
+  width: 60%;
+  bottom: 0;
+}
+
+/* Technical Label */
+.tech-label {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--pcb-green);
+  padding: 2px 6px;
+  font-size: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--pcb-green);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Oscilloscope Line */
+.oscilloscope-line {
+  stroke: var(--signal-active);
+  stroke-width: 2;
+  fill: none;
+  filter: drop-shadow(0 0 3px var(--signal-active));
+  animation: oscillate 2s ease-in-out infinite;
+}
+
+@keyframes oscillate {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Via Point (circuit board through-hole) */
+.via-point {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #888 0%, #444 70%, #222 100%);
+  border: 1px solid #666;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Silkscreen Text */
+.silkscreen-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #cccccc;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+/* PCB Substrate */
+.pcb-substrate {
+  background: radial-gradient(circle at 50% 50%, #0d1f1a, #0a1612);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Signal Trace Animation */
+.signal-trace {
+  position: relative;
+  overflow: hidden;
+}
+
+.signal-trace::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 255, 136, 0.6) 50%,
+    transparent 100%
+  );
+  animation: trace-pulse 2s ease-in-out infinite;
+}
+
+@keyframes trace-pulse {
+  0% { left: -100%; }
+  100% { left: 200%; }
 }

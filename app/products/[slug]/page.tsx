@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ProductDetailClient from '@/components/ProductDetailClient';
-import FiberOpticBackground from '@/components/FiberOpticBackground';
+import CircuitBackground from '@/components/CircuitBackground';
 import { getProductBySlug, products } from '@/lib/products'; 
 
 export async function generateStaticParams() {
@@ -24,11 +24,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <Navbar />
-      <div className="flex flex-col min-h-screen font-sans text-white selection:bg-cyan-500/30" style={{ background: 'var(--optic-black)' }}>
+      <div className="flex flex-col min-h-screen text-white selection:bg-green-500/30 pcb-substrate">
         
-        {/* Fiber Optic Background */}
-        <FiberOpticBackground />
-        <div className="fixed inset-0 spectrum-lines opacity-20 pointer-events-none z-0" />
+        {/* Circuit Background */}
+        <CircuitBackground />
+        <div className="fixed inset-0 tech-grid opacity-20 pointer-events-none z-0" />
         
         {/* Breadcrumb & Header */}
         <div className="pt-28 pb-8 border-b border-cyan-500/20 relative z-10">

@@ -6,13 +6,12 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { 
   Search, Filter, Grid, List, CheckCircle2, ArrowUpDown, 
-  Package, AlertCircle, ShoppingCart, Zap, Activity, Radio,
-  Signal, Waves
+  Package, AlertCircle, ShoppingCart, Zap, Activity
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import FiberOpticBackground from '@/components/FiberOpticBackground';
+import CircuitBackground from '@/components/CircuitBackground';
 import { useCart } from '@/contexts/CartContext';
 import { getUSBCaptureProducts } from '@/lib/products';
 
@@ -23,10 +22,10 @@ export default function ProductsPage() {
     <Suspense fallback={
       <>
         <Navbar />
-        <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--optic-black)' }}>
+        <div className="min-h-screen flex items-center justify-center pcb-substrate">
           <div className="text-center">
-            <div className="connection-node w-16 h-16 rounded-full mx-auto mb-4" />
-            <div className="text-white text-xl font-mono">Initializing Signal...</div>
+            <div className="connection-node-large mx-auto mb-4" />
+            <div className="text-white text-xl">INITIALIZING SIGNAL...</div>
           </div>
         </div>
         <Footer />
@@ -84,19 +83,15 @@ function CatalogPage() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col min-h-screen font-sans text-white selection:bg-cyan-500/30" style={{ background: 'var(--optic-black)' }}>
+      <div className="flex flex-col min-h-screen text-white selection:bg-green-500/30 pcb-substrate">
         
-        {/* Fiber Optic Background */}
-        <FiberOpticBackground />
-        <div className="fixed inset-0 spectrum-lines opacity-20 pointer-events-none z-0" />
+        {/* Circuit Background */}
+        <CircuitBackground />
+        <div className="fixed inset-0 tech-grid opacity-20 pointer-events-none z-0" />
         
         {/* Hero Header */}
-        <div className="pt-32 pb-12 border-b border-cyan-500/20 relative overflow-hidden">
-          {/* Light beams */}
-          <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[150px] opacity-30" 
-               style={{ background: 'radial-gradient(circle, #00ffff, transparent)' }} />
-          <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full blur-[150px] opacity-20"
-               style={{ background: 'radial-gradient(circle, #0080ff, transparent)' }} />
+        <div className="pt-32 pb-12 border-b border-green-500/20 relative overflow-hidden">
+          <div className="absolute inset-0 tech-grid opacity-30" />
           
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <motion.div
@@ -104,15 +99,15 @@ function CatalogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 glass-frosted rounded-full border border-cyan-500/30 mb-6">
-                <Radio className="w-4 h-4 text-cyan-400" />
-                <span className="text-sm text-gray-400 uppercase tracking-wide font-semibold font-mono">Photonic Catalog</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 component-outline pcb-substrate mb-6">
+                <div className="led-indicator" />
+                <span className="text-sm text-gray-400 uppercase tracking-wide font-semibold">COMPONENT DATABASE</span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-4">
-                <span className="prismatic-text">Signal</span> <span className="text-white">Library</span>
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 uppercase">
+                <span className="schematic-text">SIGNAL</span> <span className="text-white">CATALOG</span>
               </h1>
               <p className="text-gray-400 max-w-2xl text-lg">
-                Browse <strong className="text-cyan-400">{products.length} light-speed capture devices</strong> delivering uncompressed signal transmission
+                Browse <strong className="schematic-text">{products.length} engineering-grade capture modules</strong> for signal processing applications
               </p>
             </motion.div>
           </div>
@@ -120,7 +115,7 @@ function CatalogPage() {
 
         <div className="max-w-7xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8 relative z-10">
           
-          {/* Sidebar Filters - Fiber Optic Style */}
+          {/* Sidebar Filters */}
           <aside className="w-full md:w-72 flex-shrink-0">
             <motion.div 
               className="sticky top-32 space-y-6"
@@ -129,23 +124,23 @@ function CatalogPage() {
               transition={{ duration: 0.6 }}
             >
               {/* Search */}
-              <div className="fiber-glass refraction-border rounded-2xl p-6">
-                <label className="text-white font-bold text-xs uppercase mb-3 block flex items-center gap-2 font-mono">
-                  <Search className="w-4 h-4 text-cyan-400" />
-                  Signal Search
+              <div className="circuit-glass component-outline p-6 pcb-substrate">
+                <label className="text-white font-bold text-xs uppercase mb-3 block flex items-center gap-2">
+                  <Search className="w-4 h-4 schematic-text" />
+                  COMPONENT SEARCH
                 </label>
                 <div className="relative">
                   <input 
                     type="text" 
-                    placeholder="SKU or Device Name..." 
+                    placeholder="SKU OR MODULE NAME..." 
                     value={searchQuery} 
                     onChange={(e) => setSearchQuery(e.target.value)} 
-                    className="w-full glass-frosted border border-cyan-500/30 rounded-xl py-3 px-4 text-sm text-white placeholder:text-gray-500 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all font-mono" 
+                    className="w-full pcb-substrate border border-green-500/30 rounded py-3 px-4 text-sm text-white placeholder:text-gray-600 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none transition-all uppercase" 
                   />
                   {searchQuery && (
                     <button 
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-3 top-3 text-gray-400 hover:text-white"
+                      className="absolute right-3 top-3 text-gray-400 hover:text-white text-lg"
                     >
                       ×
                     </button>
@@ -154,26 +149,26 @@ function CatalogPage() {
               </div>
 
               {/* Sort */}
-              <div className="fiber-glass refraction-border rounded-2xl p-6">
-                <label className="text-white font-bold text-xs uppercase mb-3 block flex items-center gap-2 font-mono">
-                  <ArrowUpDown className="w-4 h-4 text-cyan-400" />
-                  Transmission Order
+              <div className="circuit-glass component-outline p-6 pcb-substrate">
+                <label className="text-white font-bold text-xs uppercase mb-3 block flex items-center gap-2">
+                  <ArrowUpDown className="w-4 h-4 schematic-text" />
+                  SORT ORDER
                 </label>
                 <select 
                   value={sortBy} 
                   onChange={(e) => setSortBy(e.target.value as 'name' | 'category')}
-                  className="w-full glass-frosted border border-cyan-500/30 rounded-xl py-3 px-4 text-sm text-white focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none cursor-pointer font-mono"
+                  className="w-full pcb-substrate border border-green-500/30 rounded py-3 px-4 text-sm text-white focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none cursor-pointer uppercase"
                 >
-                  <option value="name">Name (A-Z)</option>
-                  <option value="category">Category</option>
+                  <option value="name">NAME (A-Z)</option>
+                  <option value="category">CATEGORY</option>
                 </select>
               </div>
 
               {/* Categories */}
-              <div className="fiber-glass refraction-border rounded-2xl p-6">
-                <h3 className="text-white font-bold text-xs uppercase mb-4 flex items-center gap-2 font-mono">
-                  <Filter className="w-4 h-4 text-cyan-400" /> 
-                  Signal Types
+              <div className="circuit-glass component-outline p-6 pcb-substrate">
+                <h3 className="text-white font-bold text-xs uppercase mb-4 flex items-center gap-2">
+                  <Filter className="w-4 h-4 schematic-text" /> 
+                  CATEGORIES
                 </h3>
                 <ul className="space-y-2 text-sm">
                   {categories.map((cat) => (
@@ -184,16 +179,16 @@ function CatalogPage() {
                     >
                       <button
                         onClick={() => setSelectedCategory(cat)} 
-                        className={`flex items-center gap-3 cursor-pointer p-3 rounded-xl transition-all w-full text-left font-mono ${
+                        className={`flex items-center gap-3 cursor-pointer p-3 rounded transition-all w-full text-left uppercase ${
                           selectedCategory === cat 
-                            ? 'refraction-border fiber-glow text-white' 
-                            : 'glass-frosted text-gray-400 hover:text-white border border-cyan-500/20'
+                            ? 'trace-border tech-glow text-white' 
+                            : 'pcb-substrate text-gray-400 hover:text-white border border-green-500/20'
                         }`}
                       >
                         <div className={`w-4 h-4 border-2 rounded flex items-center justify-center flex-shrink-0 ${
-                          selectedCategory === cat ? 'signal-pulse' : 'border-gray-600'
+                          selectedCategory === cat ? 'border-green-500' : 'border-gray-600'
                         }`}>
-                          {selectedCategory === cat && <CheckCircle2 className="w-3 h-3 text-cyan-400" />}
+                          {selectedCategory === cat && <CheckCircle2 className="w-3 h-3 text-green-400" />}
                         </div> 
                         <span className="font-semibold">{cat}</span>
                       </button>
@@ -203,11 +198,12 @@ function CatalogPage() {
               </div>
 
               {/* Results Count */}
-              <div className="fiber-glass refraction-border rounded-2xl p-6 relative overflow-hidden">
-                <div className="absolute inset-0 light-beam opacity-10" />
+              <div className="circuit-glass component-outline p-6 pcb-substrate relative overflow-hidden">
+                <div className="absolute top-2 right-2 via-point" />
+                <div className="absolute bottom-2 left-2 via-point" />
                 <div className="text-center relative z-10">
                   <motion.div 
-                    className="text-4xl font-bold prismatic-text mb-1 font-mono"
+                    className="text-4xl font-bold schematic-text mb-1"
                     key={filteredProducts.length}
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -215,7 +211,8 @@ function CatalogPage() {
                   >
                     {filteredProducts.length}
                   </motion.div>
-                  <div className="text-xs text-cyan-300 uppercase tracking-wider font-bold font-mono">Active Signals</div>
+                  <div className="text-xs text-green-300 uppercase tracking-wider font-bold">MODULES FOUND</div>
+                  <div className="mt-3 signal-meter" />
                 </div>
               </div>
             </motion.div>
@@ -224,27 +221,27 @@ function CatalogPage() {
           {/* Product Grid */}
           <main className="flex-1">
             <motion.div 
-              className="flex justify-between items-center mb-8 pb-4 border-b border-cyan-500/20"
+              className="flex justify-between items-center mb-8 pb-4 border-b border-green-500/20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div>
-                <span className="text-lg font-bold text-white font-mono">
+                <span className="text-lg font-bold text-white">
                   {filteredProducts.length} <span className="text-gray-500 font-normal">of {products.length}</span>
                 </span>
-                <p className="text-xs text-gray-500 mt-1 font-mono">
-                  {searchQuery && `Results for "${searchQuery}"`}
-                  {selectedCategory !== 'All' && ` in ${selectedCategory}`}
+                <p className="text-xs text-gray-500 mt-1 uppercase">
+                  {searchQuery && `SEARCH: "${searchQuery}"`}
+                  {selectedCategory !== 'All' && ` • FILTER: ${selectedCategory}`}
                 </p>
               </div>
               <div className="flex gap-2">
                 <motion.button 
                   onClick={() => setViewMode('grid')} 
-                  className={`p-3 rounded-xl border transition-all ${
+                  className={`p-3 rounded border transition-all ${
                     viewMode === 'grid' 
-                      ? 'refraction-border fiber-glow text-white' 
-                      : 'border-cyan-500/20 text-gray-400 hover:text-white glass-frosted'
+                      ? 'trace-border tech-glow text-white' 
+                      : 'border-green-500/20 text-gray-400 hover:text-white pcb-substrate'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -253,10 +250,10 @@ function CatalogPage() {
                 </motion.button>
                 <motion.button 
                   onClick={() => setViewMode('list')} 
-                  className={`p-3 rounded-xl border transition-all ${
+                  className={`p-3 rounded border transition-all ${
                     viewMode === 'list' 
-                      ? 'refraction-border fiber-glow text-white' 
-                      : 'border-cyan-500/20 text-gray-400 hover:text-white glass-frosted'
+                      ? 'trace-border tech-glow text-white' 
+                      : 'border-green-500/20 text-gray-400 hover:text-white pcb-substrate'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -276,14 +273,14 @@ function CatalogPage() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="inline-flex items-center justify-center w-24 h-24 rounded-full fiber-glass refraction-border mb-6">
-                    <AlertCircle className="w-12 h-12 text-cyan-400" />
+                  <div className="inline-flex items-center justify-center w-24 h-24 rounded-lg component-outline pcb-substrate mb-6">
+                    <AlertCircle className="w-12 h-12 schematic-text" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2 font-mono">NO SIGNAL DETECTED</h3>
-                  <p className="text-gray-400 mb-8 font-mono">Adjust search parameters or filter settings</p>
+                  <h3 className="text-3xl font-bold text-white mb-2 uppercase">NO COMPONENTS FOUND</h3>
+                  <p className="text-gray-400 mb-8 uppercase text-sm">ADJUST SEARCH PARAMETERS</p>
                   <button 
                     onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
-                    className="px-8 py-4 refraction-border fiber-glow text-white font-bold rounded-xl transition-all hover:scale-105 font-mono"
+                    className="px-8 py-4 trace-border tech-glow text-white font-bold rounded-lg transition-all hover:scale-105 uppercase tracking-wider"
                   >
                     RESET FILTERS
                   </button>
@@ -302,14 +299,14 @@ function CatalogPage() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
-                        className="fiber-fade-in"
+                        className="schematic-fade-in"
                       >
                         <Link 
                           href={`/products/${product.slug}`} 
                           className="group block h-full"
                         >
                           <motion.div
-                            className={`h-full fiber-glass refraction-border rounded-2xl overflow-hidden ${
+                            className={`h-full circuit-glass component-outline rounded-lg overflow-hidden relative ${
                               viewMode === 'list' ? 'flex items-center gap-6' : ''
                             }`}
                             whileHover={{ 
@@ -318,27 +315,35 @@ function CatalogPage() {
                               transition: { duration: 0.3 }
                             }}
                           >
+                            {/* Via Points */}
+                            <div className="absolute top-3 left-3 via-point z-20" />
+                            <div className="absolute top-3 right-3 via-point z-20" />
+                            <div className="absolute bottom-3 left-3 via-point z-20" />
+                            <div className="absolute bottom-3 right-3 via-point z-20" />
+
                             {/* Product Image */}
-                            <div className={`relative p-6 flex items-center justify-center border-b border-cyan-500/20 ${
-                              viewMode === 'grid' ? 'h-64' : 'h-48 w-48 flex-shrink-0 border-b-0 border-r'
-                            }`} style={{ background: 'linear-gradient(135deg, #0a0a18 0%, #151520 100%)' }}>
+                            <div className={`relative p-6 flex items-center justify-center border-green-500/20 ${
+                              viewMode === 'grid' ? 'h-64 border-b' : 'h-48 w-48 flex-shrink-0 border-r'
+                            }`} style={{ background: 'linear-gradient(135deg, #0a1612 0%, #0d1f1a 100%)' }}>
                               
                               {/* Stock Badge */}
                               {product.stock && (
                                 <motion.div 
-                                  className={`absolute top-4 right-4 text-black text-[10px] font-bold px-3 py-1.5 uppercase rounded-lg z-10 font-mono ${
-                                    product.stock === 'In Stock' ? 'uncompressed-badge' : 'bg-gradient-to-r from-magenta-500 to-purple-500'
+                                  className={`absolute top-4 right-4 text-black text-[10px] font-bold px-3 py-1.5 uppercase rounded z-10 ${
+                                    product.stock === 'In Stock' ? 'bg-green-400' : 'bg-orange-400'
                                   }`}
+                                  style={{
+                                    boxShadow: product.stock === 'In Stock' ? '0 0 10px #00ff00' : '0 0 10px #ff9500'
+                                  }}
                                   initial={{ scale: 0 }}
                                   animate={{ scale: 1 }}
                                   transition={{ duration: 0.3, delay: 0.2 }}
                                 >
-                                  {product.stock === 'In Stock' ? 'AVAILABLE' : 'LOW STOCK'}
+                                  {product.stock === 'In Stock' ? 'ACTIVE' : 'LOW QTY'}
                                 </motion.div>
                               )}
                               
-                              {/* Fiber core glow */}
-                              <div className="absolute inset-0 fiber-core opacity-60" />
+                              <div className="absolute inset-0 tech-grid opacity-30" />
                               
                               <motion.div
                                 className="relative w-full h-full z-10"
@@ -350,54 +355,55 @@ function CatalogPage() {
                                   alt={product.name} 
                                   fill 
                                   className="object-contain" 
-                                  style={{ filter: 'drop-shadow(0 10px 40px rgba(0, 255, 255, 0.4))' }}
+                                  style={{ filter: 'drop-shadow(0 10px 30px rgba(0, 255, 136, 0.3))' }}
                                 />
                               </motion.div>
 
-                              {/* Light underglow */}
-                              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-t from-cyan-500/20 to-transparent blur-2xl" />
+                              {/* Solder points */}
+                              {[{top: '20px', left: '20px'}, {top: '20px', right: '20px'}, {bottom: '20px', left: '20px'}, {bottom: '20px', right: '20px'}].map((pos, i) => (
+                                <div key={i} className="absolute solder-point" style={{ ...pos, width: '5px', height: '5px' }} />
+                              ))}
                             </div>
                             
                             {/* Product Info */}
                             <div className={`p-6 ${viewMode === 'list' ? 'flex-1 flex justify-between items-center' : ''}`}>
                               <div className="flex-1">
-                                <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest block mb-2 font-bold">
+                                <span className="tech-label mb-2 inline-block">
                                   {product.category}
                                 </span>
-                                <h3 className="text-xl font-bold text-white group-hover:prismatic-text transition-all mb-3 line-clamp-2">
+                                <h3 className="text-xl font-bold text-white group-hover:schematic-text transition-all mb-3 line-clamp-2 uppercase">
                                   {product.name}
                                 </h3>
-                                <p className="text-xs text-gray-500 line-clamp-2 mb-4" dangerouslySetInnerHTML={{ __html: product.shortDescription }}></p>
+                                <p className="text-xs text-gray-500 line-clamp-2 mb-4 uppercase" dangerouslySetInnerHTML={{ __html: product.shortDescription }}></p>
                                 
                                 {viewMode === 'grid' && (
                                   <>
-                                    {/* Technical Specs */}
                                     <div className="flex gap-2 mb-4">
-                                      <div className="glass-frosted px-3 py-1.5 rounded-lg border border-cyan-500/20 flex items-center gap-2">
-                                        <Zap className="w-3 h-3 text-cyan-400" />
-                                        <span className="text-xs text-cyan-300 font-mono font-bold">10 Gbps</span>
+                                      <div className="pcb-substrate px-3 py-1.5 rounded border border-green-500/20 flex items-center gap-2">
+                                        <Zap className="w-3 h-3 schematic-text" />
+                                        <span className="text-xs text-green-300 font-bold">10 Gbps</span>
                                       </div>
-                                      <div className="glass-frosted px-3 py-1.5 rounded-lg border border-cyan-500/20 flex items-center gap-2">
-                                        <Activity className="w-3 h-3 text-green-400" />
-                                        <span className="text-xs text-green-300 font-mono font-bold">{'< 1ms'}</span>
+                                      <div className="pcb-substrate px-3 py-1.5 rounded border border-green-500/20 flex items-center gap-2">
+                                        <Activity className="w-3 h-3 schematic-text" />
+                                        <span className="text-xs text-green-300 font-bold">{'< 1ms'}</span>
                                       </div>
                                     </div>
 
                                     <div className="mb-4">
-                                      <span className="text-3xl font-bold text-green-400 font-mono">£{product.price}</span>
-                                      <span className="text-gray-500 text-sm ml-2 font-mono">GBP</span>
+                                      <span className="text-3xl font-bold text-orange-400">£{product.price}</span>
+                                      <span className="text-gray-500 text-sm ml-2">GBP</span>
                                     </div>
                                     <motion.button 
                                       onClick={(e) => handleAddToCart(product, e)}
-                                      className="w-full py-3 refraction-border text-white text-sm font-bold uppercase transition-all rounded-xl flex items-center justify-center gap-2 fiber-glow font-mono relative overflow-hidden"
+                                      className="w-full py-3 trace-border text-white text-sm font-bold uppercase transition-all rounded-lg flex items-center justify-center gap-2 tech-glow relative overflow-hidden"
                                       whileHover={{ scale: 1.02 }}
                                       whileTap={{ scale: 0.98 }}
                                     >
                                       <span className="relative z-10 flex items-center gap-2">
                                         <ShoppingCart className="w-4 h-4" />
-                                        {addedItemId === product.id ? 'SIGNAL ACQUIRED' : 'ADD TO CART'}
+                                        {addedItemId === product.id ? 'ADDED' : 'ADD TO CART'}
                                       </span>
-                                      <div className="absolute inset-0 light-streak opacity-0 hover:opacity-100" />
+                                      <div className="absolute inset-0 signal-trace" />
                                     </motion.button>
                                   </>
                                 )}
@@ -406,19 +412,19 @@ function CatalogPage() {
                               {viewMode === 'list' && (
                                 <div className="ml-6 flex items-center gap-6">
                                   <div className="flex gap-2">
-                                    <div className="glass-frosted px-3 py-2 rounded-lg border border-cyan-500/20">
-                                      <Zap className="w-4 h-4 text-cyan-400" />
+                                    <div className="pcb-substrate p-2 rounded border border-green-500/20">
+                                      <Zap className="w-4 h-4 schematic-text" />
                                     </div>
-                                    <div className="glass-frosted px-3 py-2 rounded-lg border border-cyan-500/20">
-                                      <Activity className="w-4 h-4 text-green-400" />
+                                    <div className="pcb-substrate p-2 rounded border border-green-500/20">
+                                      <Activity className="w-4 h-4 schematic-text" />
                                     </div>
                                   </div>
                                   <div className="text-right">
-                                    <span className="text-3xl font-bold text-green-400 font-mono">£{product.price}</span>
+                                    <span className="text-3xl font-bold text-orange-400">£{product.price}</span>
                                   </div>
                                   <motion.button 
                                     onClick={(e) => handleAddToCart(product, e)}
-                                    className="px-6 py-3 refraction-border text-white text-sm font-bold uppercase transition-all rounded-xl whitespace-nowrap flex items-center gap-2 fiber-glow font-mono"
+                                    className="px-6 py-3 trace-border text-white text-sm font-bold uppercase transition-all rounded-lg whitespace-nowrap flex items-center gap-2 tech-glow"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                   >

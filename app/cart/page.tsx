@@ -6,7 +6,7 @@ import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Radio, Zap, Shield, Truck
 import { useCart } from '@/contexts/CartContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import FiberOpticBackground from '@/components/FiberOpticBackground';
+import CircuitBackground from '@/components/CircuitBackground';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CartPage() {
@@ -16,9 +16,9 @@ export default function CartPage() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen text-white pt-32 pb-20" style={{ background: 'var(--optic-black)' }}>
-          <FiberOpticBackground />
-          <div className="fixed inset-0 spectrum-lines opacity-20 pointer-events-none z-0" />
+        <div className="min-h-screen text-white pt-32 pb-20 pcb-substrate">
+          <CircuitBackground />
+          <div className="fixed inset-0 tech-grid opacity-20 pointer-events-none z-0" />
           
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="text-center py-20">
@@ -74,9 +74,9 @@ export default function CartPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen text-white pt-32 pb-20" style={{ background: 'var(--optic-black)' }}>
-        <FiberOpticBackground />
-        <div className="fixed inset-0 spectrum-lines opacity-20 pointer-events-none z-0" />
+      <div className="min-h-screen text-white pt-32 pb-20 pcb-substrate">
+        <CircuitBackground />
+        <div className="fixed inset-0 tech-grid opacity-20 pointer-events-none z-0" />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           {/* Header */}
