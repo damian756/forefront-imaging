@@ -85,51 +85,57 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen text-white selection:bg-cyan-500/30 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f0f14 0%, #14141e 100%)' }}>
+    <div className="flex flex-col min-h-screen text-white selection:bg-bronze/20 overflow-hidden" style={{ background: 'var(--metal-gradient)' }}>
       
-      {/* Grid Background */}
-      <div className="fixed inset-0 builder-canvas opacity-40 pointer-events-none" />
+      {/* Subtle Texture Background */}
+      <div className="fixed inset-0 builder-canvas opacity-30 pointer-events-none" />
       
       <Navbar />
 
-      {/* MODULAR BUILDER HERO */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
+      {/* PREMIUM HERO SECTION */}
+      <section className="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+        
+        {/* Dramatic Lighting */}
+        <div className="absolute inset-0 opacity-20" style={{ 
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(160, 130, 109, 0.2), transparent 60%)'
+        }} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-20">
           
-          {/* Title */}
+          {/* Hero Content */}
           <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: -30 }}
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-panel mb-6 border border-cyan-500/30"
-              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-lg glass-panel mb-8 studio-border"
+              whileHover={{ scale: 1.03 }}
             >
               <div className="status-indicator connected" />
-              <span className="text-sm font-bold uppercase tracking-wider">MODULAR SYSTEM BUILDER</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-bronze">Professional Grade Equipment</span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-bold mb-6 leading-tight">
-              <span className="block text-gray-400 text-2xl md:text-4xl mb-4">BUILD YOUR</span>
-              <span className="block text-gradient text-7xl md:text-[10rem]">
-                CAPTURE CHAIN
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-[0.95] tracking-tight">
+              <span className="block text-warm-gray text-2xl md:text-3xl mb-6 font-medium tracking-wide">Premium</span>
+              <span className="block text-gradient text-7xl md:text-[9rem]">
+                CAPTURE
               </span>
-              <span className="block text-gray-500 text-3xl md:text-5xl mt-4">
-                <span className="text-cyan-400">HDMI</span> → <span className="text-purple-400">PROCESS</span> → <span className="text-green-400">USB</span>
+              <span className="block text-warm-gray text-3xl md:text-5xl mt-6 font-medium tracking-wide">
+                Hardware
               </span>
             </h1>
 
             <motion.p 
-              className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-warm-gray mb-12 max-w-3xl mx-auto leading-relaxed font-light"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Drag, connect, and configure your perfect video capture workflow. 
-              See compatibility <span className="text-cyan-400 font-semibold">in real-time</span> as you build.
+              Professional USB video capture devices engineered for broadcast studios, 
+              content creators, and video production professionals. 
+              <span className="text-bronze font-medium"> Uncompromising quality</span> in every signal.
             </motion.p>
 
             <motion.div 
@@ -139,74 +145,63 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <Link 
-                href="#builder" 
-                className="btn-primary text-base px-8 py-4"
+                href="#products" 
+                className="btn-primary text-sm px-10 py-4"
               >
                 <span className="flex items-center justify-center gap-2">
-                  <Play className="w-5 h-5" />
-                  START BUILDING
+                  <Play className="w-4 h-4" />
+                  EXPLORE EQUIPMENT
                 </span>
               </Link>
               <Link 
-                href="/products" 
-                className="btn-secondary text-base px-8 py-4"
+                href="/how-it-works" 
+                className="btn-secondary text-sm px-10 py-4"
               >
-                VIEW ALL MODULES
+                HOW IT WORKS
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Interactive Demo Section */}
+          {/* Feature Highlights */}
           <motion.div 
-            className="mb-20"
+            className="mb-24"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {[
                 {
-                  step: "01",
-                  icon: Monitor,
-                  title: "SELECT SOURCE",
-                  desc: "Choose your HDMI/SDI input device",
-                  color: "#0066ff"
-                },
-                {
-                  step: "02",
-                  icon: Plug,
-                  title: "CONNECT CAPTURE",
-                  desc: "Drop in USB capture module",
-                  color: "#9d4edd"
-                },
-                {
-                  step: "03",
                   icon: Cpu,
-                  title: "CONFIGURE OUTPUT",
-                  desc: "Set your software destination",
-                  color: "#00cc66"
+                  title: "Professional Grade",
+                  desc: "Broadcast-quality signal processing",
+                },
+                {
+                  icon: Zap,
+                  title: "Zero Latency",
+                  desc: "Real-time capture, no compression",
+                },
+                {
+                  icon: HardDrive,
+                  title: "Universal Compatibility",
+                  desc: "Works with all major platforms",
                 }
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  className="port-module p-8 relative"
-                  whileHover={{ y: -5 }}
+                  className="port-module p-8 relative brushed-metal"
+                  whileHover={{ y: -3 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9 + i * 0.1 }}
                 >
-                  <div className="text-6xl font-bold text-gray-800 mb-4">{item.step}</div>
                   <div 
-                    className="w-16 h-16 rounded-xl flex items-center justify-center mb-4"
-                    style={{ 
-                      background: `${item.color}20`,
-                      border: `2px solid ${item.color}`
-                    }}
+                    className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 metal-surface studio-border"
                   >
-                    <item.icon className="w-8 h-8" style={{ color: item.color }} />
+                    <item.icon className="w-7 h-7 text-bronze" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 uppercase" style={{ color: item.color }}>{item.title}</h3>
-                  <p className="text-gray-400 text-sm">{item.desc}</p>
+                  <h3 className="text-xl font-semibold mb-2 uppercase tracking-tight text-soft-white">{item.title}</h3>
+                  <p className="text-warm-gray text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -214,26 +209,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DEVICE MODULES CATALOG */}
-      <section id="builder" className="py-24 relative">
-        <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent)' }} />
+      {/* PREMIUM EQUIPMENT CATALOG */}
+      <section id="products" className="py-28 relative">
+        <div className="absolute inset-0 opacity-10" style={{ 
+          background: 'radial-gradient(circle at 50% 50%, rgba(160, 130, 109, 0.15), transparent)'
+        }} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-20"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-full border border-cyan-500/30">
-              <Plug className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-gray-400 uppercase tracking-wide font-semibold">AVAILABLE MODULES</span>
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-lg studio-border">
+              <Plug className="w-4 h-4 text-bronze" />
+              <span className="text-xs text-warm-gray uppercase tracking-widest font-semibold">Professional Equipment</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase">
-              <span className="text-gradient">CAPTURE DEVICES</span>
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-tight">
+              <span className="text-gradient">Capture Hardware</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Professional USB video capture modules. Connect any HDMI/SDI source to your computer.
+            <p className="text-warm-gray text-lg max-w-2xl mx-auto font-light">
+              Studio-grade USB video capture devices. Engineered for professionals who demand excellence.
             </p>
           </motion.div>
 
@@ -241,7 +238,7 @@ export default function Home() {
             {devices.map((device, index) => (
               <motion.div
                 key={device.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
@@ -253,13 +250,13 @@ export default function Home() {
                 >
                   <motion.div
                     className="h-full device-module isometric-card"
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.01 }}
                   >
-                    {/* Port Indicators */}
+                    {/* Status Badge */}
                     <div className="flex justify-between items-start mb-6">
                       <div className="compat-badge compatible">
                         <div className="status-indicator connected" />
-                        COMPATIBLE
+                        IN STOCK
                       </div>
                       <div className="signal-strength">
                         {[1,2,3,4,5].map((bar) => (
@@ -268,29 +265,31 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Device Image */}
-                    <div className="h-64 relative p-6 flex items-center justify-center mb-6 rounded-xl border border-gray-800">
+                    {/* Product Image with Dramatic Lighting */}
+                    <div className="h-72 relative p-8 flex items-center justify-center mb-6 rounded-lg metal-surface studio-border">
                       <motion.div
                         className="relative w-full h-full"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
+                        whileHover={{ scale: 1.08 }}
+                        transition={{ duration: 0.4 }}
                       >
                         <Image
                           src={device.image}
                           alt={device.name}
                           fill
                           className="object-contain"
-                          style={{ filter: 'drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3))' }}
+                          style={{ 
+                            filter: 'drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 30px rgba(160, 130, 109, 0.2))'
+                          }}
                         />
                       </motion.div>
 
                       {/* Connection Points */}
-                      <div className="connection-point" style={{ top: '50%', left: '-8px', transform: 'translateY(-50%)' }} />
-                      <div className="connection-point" style={{ top: '50%', right: '-8px', transform: 'translateY(-50%)' }} />
+                      <div className="connection-point" style={{ top: '50%', left: '-7px', transform: 'translateY(-50%)' }} />
+                      <div className="connection-point" style={{ top: '50%', right: '-7px', transform: 'translateY(-50%)' }} />
                     </div>
 
                     {/* Port Visualization */}
-                    <div className="flex items-center justify-center gap-4 mb-6 p-4 rounded-xl" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
+                    <div className="flex items-center justify-center gap-4 mb-6 p-4 rounded-lg leather-texture studio-border">
                       <div className="text-center">
                         <div className="hdmi-port mb-6 mx-auto" />
                         <div className="port-label">{device.inputPort}</div>
@@ -303,7 +302,7 @@ export default function Home() {
                             x: ['0%', '100%'],
                           }}
                           transition={{
-                            duration: 2,
+                            duration: 2.5,
                             repeat: Infinity,
                             ease: "linear"
                           }}
@@ -316,26 +315,26 @@ export default function Home() {
                     </div>
 
                     {/* Device Info */}
-                    <h3 className="text-2xl font-bold text-white group-hover:text-gradient transition-all mb-3 uppercase">
+                    <h3 className="text-2xl font-semibold text-soft-white group-hover:text-gradient transition-all mb-4 uppercase tracking-tight">
                       {device.shortName}
                     </h3>
                     
                     {/* Specs Grid */}
-                    <div className="grid grid-cols-2 gap-3 mb-4">
+                    <div className="grid grid-cols-2 gap-3 mb-5">
                       {Object.entries(device.specs).map(([key, value], i) => (
-                        <div key={i} className="glass-panel p-3 rounded-lg border border-gray-700/50">
-                          <div className="text-[9px] text-gray-500 mb-1 uppercase tracking-wider font-mono">{key}</div>
-                          <div className="text-sm font-bold text-cyan-400">{value}</div>
+                        <div key={i} className="glass-panel p-3 rounded-lg studio-border">
+                          <div className="text-[9px] text-warm-gray mb-1 uppercase tracking-wider font-semibold">{key}</div>
+                          <div className="text-sm font-semibold text-bronze">{value}</div>
                         </div>
                       ))}
                     </div>
 
                     {/* Features */}
-                    <div className="flex flex-wrap gap-2 mb-5">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {device.features.map((feature, i) => (
                         <span 
                           key={i} 
-                          className="px-3 py-1.5 glass-panel rounded-lg text-[10px] font-bold uppercase text-gray-300 border border-gray-700/50"
+                          className="px-3 py-1.5 glass-panel rounded-md text-[10px] font-semibold uppercase text-warm-gray studio-border"
                         >
                           {feature}
                         </span>
@@ -343,30 +342,30 @@ export default function Home() {
                     </div>
 
                     {/* Price */}
-                    <div className="mb-4 flex items-center justify-between p-4 glass-panel rounded-xl border border-purple-500/30">
-                      <span className="text-xs text-gray-400 uppercase font-bold tracking-wider">MODULE PRICE</span>
+                    <div className="mb-5 flex items-center justify-between p-5 glass-panel rounded-lg studio-border">
+                      <span className="text-xs text-warm-gray uppercase font-semibold tracking-wider">Price</span>
                       <div>
                         <span className="text-3xl font-bold text-gradient">£{device.price}</span>
-                        <span className="text-gray-500 text-sm ml-2">GBP</span>
+                        <span className="text-warm-gray text-sm ml-2">GBP</span>
                       </div>
                     </div>
                     
                     {/* Add to Cart */}
                     <motion.button 
                       onClick={(e) => handleAddToCart(device, e)}
-                      className="w-full btn-primary py-4 text-base font-bold transition-all flex items-center justify-center gap-3 uppercase tracking-wider"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                      className="w-full btn-primary py-4 text-sm font-semibold transition-all flex items-center justify-center gap-3 uppercase tracking-wide"
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
                     >
                       {addedItemId === device.id ? (
                         <>
                           <CheckCircle2 className="w-5 h-5" />
-                          ADDED TO CHAIN
+                          ADDED TO CART
                         </>
                       ) : (
                         <>
                           <ShoppingCart className="w-5 h-5" />
-                          ADD MODULE
+                          ADD TO CART
                         </>
                       )}
                     </motion.button>
@@ -378,7 +377,7 @@ export default function Home() {
 
           {/* View All CTA */}
           <motion.div 
-            className="text-center mt-16"
+            className="text-center mt-20"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -386,40 +385,40 @@ export default function Home() {
           >
             <Link 
               href="/products"
-              className="inline-flex items-center gap-3 px-10 py-5 btn-primary text-lg font-bold uppercase"
+              className="inline-flex items-center gap-3 px-12 py-5 btn-primary text-base font-semibold uppercase"
             >
-              <span className="text-gradient">VIEW ALL MODULES</span>
-              <ArrowRight className="w-6 h-6" />
+              <span>VIEW ALL EQUIPMENT</span>
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>
       </section>
 
       {/* COMPATIBILITY SHOWCASE */}
-      <section className="py-24 relative border-t border-gray-800">
+      <section className="py-28 relative studio-border border-t">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4 uppercase">
-              <span className="text-gradient">UNIVERSAL COMPATIBILITY</span>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 uppercase tracking-tight">
+              <span className="text-gradient">Universal Compatibility</span>
             </h2>
-            <p className="text-gray-400 text-lg">Connect to any software, platform, or workflow</p>
+            <p className="text-warm-gray text-lg font-light">Seamlessly integrate with industry-standard software</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {["OBS Studio", "vMix", "Zoom", "Microsoft Teams", "Wirecast", "XSplit", "Skype", "Discord"].map((app, i) => (
               <motion.div
                 key={i}
-                className="port-module p-6 text-center"
-                initial={{ opacity: 0, scale: 0.9 }}
+                className="port-module p-6 text-center brushed-metal"
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -3 }}
               >
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle2 className="w-6 h-6 text-cyan-400" />
+                <div className="w-12 h-12 rounded-lg metal-surface studio-border flex items-center justify-center mx-auto mb-3">
+                  <CheckCircle2 className="w-6 h-6 text-bronze" />
                 </div>
-                <div className="text-sm font-semibold text-gray-300">{app}</div>
+                <div className="text-sm font-semibold text-soft-white">{app}</div>
               </motion.div>
             ))}
           </div>

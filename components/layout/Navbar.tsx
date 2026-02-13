@@ -35,62 +35,62 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="fixed top-0 w-full z-50 glass-panel border-b border-gray-700/50 py-2.5 text-xs">
+      {/* Top Bar - Studio Status */}
+      <div className="fixed top-0 w-full z-50 glass-panel studio-border border-b py-2.5 text-xs">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors">
-              <Phone className="w-3 h-3 text-cyan-400" />
+            <div className="flex items-center gap-2 text-warm-gray hover:text-bronze transition-colors">
+              <Phone className="w-3 h-3 text-bronze" />
               <span className="font-semibold">01704 635785</span>
             </div>
-            <div className="hidden md:flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors">
-              <Mail className="w-3 h-3 text-cyan-400" />
+            <div className="hidden md:flex items-center gap-2 text-warm-gray hover:text-bronze transition-colors">
+              <Mail className="w-3 h-3 text-bronze" />
               <span className="font-semibold">hello@churchtownmedia.co.uk</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <div className="status-indicator connected" />
-            <span className="font-bold uppercase tracking-wider text-green-400">SYSTEM READY</span>
+            <span className="font-semibold uppercase tracking-wider text-bronze">READY</span>
           </div>
         </div>
       </div>
       
-      {/* Main Navbar */}
+      {/* Main Navbar - Premium Control Surface */}
       <nav 
-        className={`fixed top-[40px] w-full z-50 transition-all duration-300 ${
+        className={`fixed top-[40px] w-full z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'glass-panel backdrop-blur-2xl border-b border-gray-700 py-3 glow-cyan' 
-            : 'glass-panel border-b border-gray-800 py-4'
+            ? 'glass-panel backdrop-blur-2xl studio-border border-b py-3 glow-bronze' 
+            : 'glass-panel studio-border border-b py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - Studio Brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <motion.div 
-              className="p-2.5 rounded-xl port-module"
+              className="p-2.5 rounded-lg port-module brushed-metal"
               style={{ width: '50px', height: '50px' }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.08, rotate: 3 }}
+              transition={{ duration: 0.4 }}
             >
               <div className="w-full h-full flex items-center justify-center">
-                <Plug className="w-6 h-6 text-cyan-400" />
+                <Plug className="w-6 h-6 text-bronze" />
               </div>
             </motion.div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-white tracking-tight group-hover:text-gradient transition-all uppercase">
+              <span className="text-2xl font-bold text-soft-white tracking-tight group-hover:text-gradient transition-all uppercase">
                 StreamTek
               </span>
-              <span className="text-[10px] text-cyan-400 uppercase tracking-widest font-semibold -mt-1">
-                MODULAR CAPTURE
+              <span className="text-[10px] text-bronze uppercase tracking-widest font-semibold -mt-1">
+                STUDIO HARDWARE
               </span>
             </div>
           </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu - Refined Controls */}
         <div className="hidden lg:flex items-center gap-8">
-          <Link href="/" className="text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all relative group uppercase">
+          <Link href="/" className="text-warm-gray hover:text-bronze font-semibold text-sm transition-all relative group uppercase tracking-wide">
             Home
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300" />
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-bronze group-hover:w-full transition-all duration-300" />
           </Link>
 
           {/* Products Dropdown */}
@@ -99,30 +99,30 @@ export default function Navbar() {
             onMouseEnter={() => setProductsOpen(true)}
             onMouseLeave={() => setProductsOpen(false)}
           >
-            <button className="text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all flex items-center gap-1 relative group uppercase">
+            <button className="text-warm-gray hover:text-bronze font-semibold text-sm transition-all flex items-center gap-1 relative group uppercase tracking-wide">
               Products 
               <motion.div animate={{ rotate: productsOpen ? 180 : 0 }}>
                 <ChevronDown className="w-4 h-4" />
               </motion.div>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-bronze group-hover:w-full transition-all duration-300" />
             </button>
             <AnimatePresence>
               {productsOpen && (
                 <motion.div
-                  className="absolute top-full left-0 mt-2 w-64 port-module shadow-2xl overflow-hidden"
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                  className="absolute top-full left-0 mt-2 w-64 port-module brushed-metal shadow-2xl overflow-hidden"
+                  initial={{ opacity: 0, y: -10, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.96 }}
+                  transition={{ duration: 0.3 }}
                 >
                   {productCategories.map((cat) => (
                     <Link
                       key={cat.name}
                       href={cat.href}
-                      className={`block px-4 py-3 text-sm hover:bg-cyan-500/20 transition-all relative group uppercase ${
+                      className={`block px-4 py-3 text-sm hover:bg-bronze/10 transition-all relative group uppercase tracking-wide ${
                         cat.featured 
-                          ? 'text-cyan-400 border-t border-gray-700 font-bold' 
-                          : 'text-gray-300 hover:text-white font-semibold'
+                          ? 'text-bronze studio-border border-t font-bold' 
+                          : 'text-warm-gray hover:text-soft-white font-semibold'
                       }`}
                     >
                       {cat.name}
@@ -133,9 +133,9 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <Link href="/how-it-works" className="text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all relative group uppercase">
+          <Link href="/how-it-works" className="text-warm-gray hover:text-bronze font-semibold text-sm transition-all relative group uppercase tracking-wide">
             How It Works
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300" />
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-bronze group-hover:w-full transition-all duration-300" />
           </Link>
 
           {/* Resources Dropdown */}
@@ -144,27 +144,27 @@ export default function Navbar() {
             onMouseEnter={() => setResourcesOpen(true)}
             onMouseLeave={() => setResourcesOpen(false)}
           >
-            <button className="text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all flex items-center gap-1 relative group uppercase">
+            <button className="text-warm-gray hover:text-bronze font-semibold text-sm transition-all flex items-center gap-1 relative group uppercase tracking-wide">
               Resources 
               <motion.div animate={{ rotate: resourcesOpen ? 180 : 0 }}>
                 <ChevronDown className="w-4 h-4" />
               </motion.div>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-bronze group-hover:w-full transition-all duration-300" />
             </button>
             <AnimatePresence>
               {resourcesOpen && (
                 <motion.div
-                  className="absolute top-full right-0 mt-2 w-52 port-module shadow-2xl overflow-hidden"
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                  className="absolute top-full right-0 mt-2 w-52 port-module brushed-metal shadow-2xl overflow-hidden"
+                  initial={{ opacity: 0, y: -10, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.96 }}
+                  transition={{ duration: 0.3 }}
                 >
                   {resources.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-cyan-500/20 transition-all font-semibold uppercase"
+                      className="block px-4 py-3 text-sm text-warm-gray hover:text-soft-white hover:bg-bronze/10 transition-all font-semibold uppercase tracking-wide"
                     >
                       {item.name}
                     </Link>
@@ -176,15 +176,18 @@ export default function Navbar() {
 
           <Link 
             href="/cart" 
-            className="relative text-gray-300 hover:text-cyan-400 transition-all group"
+            className="relative text-warm-gray hover:text-bronze transition-all group"
           >
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <ShoppingCart className="w-6 h-6" />
             </motion.div>
             {totalItems > 0 && (
               <motion.span 
-                className="absolute -top-2 -right-2 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #00d4ff, #9d4edd)', boxShadow: '0 0 15px rgba(0, 212, 255, 0.5)' }}
+                className="absolute -top-2 -right-2 text-soft-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center"
+                style={{ 
+                  background: 'linear-gradient(135deg, var(--deep-burgundy), var(--muted-burgundy))', 
+                  boxShadow: '0 0 12px rgba(153, 27, 27, 0.5)' 
+                }}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
@@ -196,7 +199,7 @@ export default function Navbar() {
 
           <Link 
             href="/contact" 
-            className="btn-primary px-6 py-3 text-sm uppercase flex items-center gap-2"
+            className="btn-primary px-6 py-3 text-xs uppercase flex items-center gap-2 tracking-wide"
           >
             <Phone className="w-4 h-4" />
             Contact
@@ -205,7 +208,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button 
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-soft-white p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -217,22 +220,22 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="lg:hidden glass-panel border-t border-gray-700"
+            className="lg:hidden glass-panel studio-border border-t"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
             <div className="px-4 py-6 space-y-4">
-              <Link href="/" className="block text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">Home</Link>
-              <Link href="/products" className="block text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">Products</Link>
-              <Link href="/how-it-works" className="block text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">How It Works</Link>
-              <Link href="/support" className="block text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">Support</Link>
-              <Link href="/cart" className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">
+              <Link href="/" className="block text-warm-gray hover:text-bronze font-semibold text-sm transition-all uppercase tracking-wide">Home</Link>
+              <Link href="/products" className="block text-warm-gray hover:text-bronze font-semibold text-sm transition-all uppercase tracking-wide">Products</Link>
+              <Link href="/how-it-works" className="block text-warm-gray hover:text-bronze font-semibold text-sm transition-all uppercase tracking-wide">How It Works</Link>
+              <Link href="/support" className="block text-warm-gray hover:text-bronze font-semibold text-sm transition-all uppercase tracking-wide">Support</Link>
+              <Link href="/cart" className="flex items-center gap-2 text-warm-gray hover:text-bronze font-semibold text-sm transition-all uppercase tracking-wide">
                 <ShoppingCart className="w-5 h-5" />
                 Cart {totalItems > 0 && `(${totalItems})`}
               </Link>
-              <Link href="/contact" className="block text-white text-center py-4 rounded-xl font-bold uppercase mt-4 btn-primary">
+              <Link href="/contact" className="block text-soft-white text-center py-4 rounded-lg font-bold uppercase mt-4 btn-primary tracking-wide">
                 CONTACT US
               </Link>
             </div>
