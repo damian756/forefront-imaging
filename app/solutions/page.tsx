@@ -4,8 +4,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Solutions - Forefront Imaging",
-  description: "Industry-specific video capture and streaming solutions for broadcast, education, corporate, and more.",
+  title: "Use Cases - Forefront Imaging",
+  description: "Discover how USB Capture devices work for streaming, content creation, video calls, and professional video production.",
 };
 
 export default function SolutionsPage() {
@@ -119,11 +119,11 @@ export default function SolutionsPage() {
           {/* Header */}
           <div className="text-center mb-20">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-              Industry Solutions
+              Perfect For Any Use
             </h1>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              Professional video capture and streaming solutions tailored for your industry. 
-              Trusted by resellers serving diverse markets worldwide.
+              USB Capture devices work brilliantly for streaming, content creation, video calls, 
+              education, and professional production. See how they can work for you.
             </p>
           </div>
 
