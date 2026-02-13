@@ -6,7 +6,7 @@ import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Radio, Zap, Shield, Truck
 import { useCart } from '@/contexts/CartContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import CircuitBackground from '@/components/CircuitBackground';
+import HolographicBackground from '@/components/HolographicBackground';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CartPage() {
@@ -16,27 +16,26 @@ export default function CartPage() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen text-white pt-32 pb-20 pcb-substrate">
-          <CircuitBackground />
-          <div className="fixed inset-0 tech-grid opacity-20 pointer-events-none z-0" />
+        <div className="min-h-screen text-white pt-32 pb-20" style={{ background: '#000000' }}>
+          <HolographicBackground />
           
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="text-center py-20">
               <motion.div
-                className="inline-flex items-center justify-center w-32 h-32 rounded-full fiber-glass refraction-border mb-8"
+                className="inline-flex items-center justify-center w-32 h-32 rounded-full holo-panel holo-border mb-8"
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <ShoppingBag className="w-16 h-16 text-cyan-400" />
+                <ShoppingBag className="w-16 h-16 holo-text" />
               </motion.div>
               <motion.h1 
-                className="text-5xl font-bold mb-4 prismatic-text"
+                className="text-5xl font-bold mb-4 holo-text"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                NO SIGNALS DETECTED
+                CART EMPTY
               </motion.h1>
               <motion.p 
                 className="text-gray-400 mb-12 font-mono text-lg"
@@ -44,7 +43,7 @@ export default function CartPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Your transmission queue is empty. Begin signal acquisition.
+                No devices in transmission queue
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -53,14 +52,13 @@ export default function CartPage() {
               >
                 <Link 
                   href="/products"
-                  className="inline-flex items-center gap-3 px-8 py-4 refraction-border text-white font-bold rounded-xl transition-all fiber-glow font-mono relative overflow-hidden group"
+                  className="inline-flex items-center gap-3 px-8 py-4 holo-button rounded-xl font-bold text-base relative overflow-hidden group uppercase"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <Radio className="w-5 h-5" />
                     BROWSE DEVICES
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </span>
-                  <div className="absolute inset-0 light-streak opacity-0 group-hover:opacity-100" />
                 </Link>
               </motion.div>
             </div>
@@ -74,9 +72,8 @@ export default function CartPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen text-white pt-32 pb-20 pcb-substrate">
-        <CircuitBackground />
-        <div className="fixed inset-0 tech-grid opacity-20 pointer-events-none z-0" />
+      <div className="min-h-screen text-white pt-32 pb-20" style={{ background: '#000000' }}>
+        <HolographicBackground />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           {/* Header */}
