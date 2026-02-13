@@ -1,0 +1,328 @@
+'use client';
+
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { Monitor, Maximize2, Info, CheckCircle2, XCircle } from 'lucide-react';
+
+export default function QualityComparison() {
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+  const [selectedScenario, setSelectedScenario] = useState('gaming');
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const scenarios = [
+    {
+      id: 'gaming',
+      label: '4K Gaming',
+      description: 'Fast-paced action with high frame rates',
+      specs: { fps: 60, res: '3840×2160', latency: '<1ms' }
+    },
+    {
+      id: 'broadcast',
+      label: 'Live Broadcast',
+      description: 'Professional multi-camera production',
+      specs: { fps: 60, res: '1920×1080', latency: '<1ms' }
+    },
+    {
+      id: 'medical',
+      label: 'Medical Imaging',
+      description: 'Surgical video with color accuracy',
+      specs: { fps: 60, res: '3840×2160', latency: '<1ms' }
+    }
+  ];
+
+  const qualityMetrics = {
+    professional: [
+      { label: 'Color Accuracy', value: '10-bit HDR', status: 'excellent' },
+      { label: 'Frame Loss', value: '0 frames', status: 'excellent' },
+      { label: 'Compression', value: 'Uncompressed', status: 'excellent' },
+      { label: 'Bandwidth', value: '10 Gbps', status: 'excellent' },
+      { label: 'Latency', value: '<1ms', status: 'excellent' }
+    ],
+    consumer: [
+      { label: 'Color Accuracy', value: '8-bit SDR', status: 'poor' },
+      { label: 'Frame Loss', value: '15-30%', status: 'poor' },
+      { label: 'Compression', value: 'Heavy MJPEG', status: 'poor' },
+      { label: 'Bandwidth', value: '480 Mbps', status: 'poor' },
+      { label: 'Latency', value: '50-150ms', status: 'poor' }
+    ]
+  };
+
+  const handleMouseDown = () => {
+    setIsDragging(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDragging && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+      setSliderPosition(percentage);
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (containerRef.current && e.touches[0]) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = e.touches[0].clientX - rect.left;
+      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+      setSliderPosition(percentage);
+    }
+  };
+
+  return (
+    <section className="py-32 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 opacity-10" style={{ 
+        background: 'radial-gradient(ellipse at 50% 50%, rgba(192, 132, 252, 0.3), transparent 70%)'
+      }} />
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        
+        {/* Section Header */}
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-lg studio-border">
+            <Monitor className="w-4 h-4 text-fiber-pink" />
+            <span className="text-xs text-cool-gray uppercase tracking-widest font-semibold">Quality Comparison</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-tight">
+            <span className="text-gradient">See The Difference</span>
+          </h2>
+          <p className="text-cool-gray text-lg max-w-2xl mx-auto font-light">
+            Professional hardware delivers uncompromising quality that consumer devices simply can't match
+          </p>
+        </motion.div>
+
+        {/* Scenario Selector */}
+        <motion.div 
+          className="flex flex-wrap gap-3 justify-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          {scenarios.map((scenario) => (
+            <button
+              key={scenario.id}
+              onClick={() => setSelectedScenario(scenario.id)}
+              className={`glass-panel px-6 py-3 rounded-lg studio-border transition-all ${
+                selectedScenario === scenario.id 
+                  ? 'bg-fiber-purple/20 border-fiber-purple' 
+                  : 'hover:bg-fiber-purple/10'
+              }`}
+            >
+              <div className="text-sm font-bold text-soft-white mb-1">{scenario.label}</div>
+              <div className="text-xs text-cool-gray">{scenario.description}</div>
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Comparison Container */}
+        <motion.div
+          className="port-module p-8 md:p-12 brushed-metal relative"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          {/* Split Screen Preview */}
+          <div 
+            ref={containerRef}
+            className="relative h-96 md:h-[500px] rounded-lg overflow-hidden cursor-ew-resize mb-8 metal-surface studio-border"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseUp}
+            onTouchStart={() => setIsDragging(true)}
+            onTouchEnd={() => setIsDragging(false)}
+            onTouchMove={handleTouchMove}
+          >
+            {/* Consumer Side (Left/Full) */}
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
+              <div className="text-center">
+                <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4 opacity-50" />
+                <div className="text-2xl font-bold text-zinc-400 mb-2">Consumer Hardware</div>
+                <div className="text-sm text-zinc-500 mb-4">Compressed • Dropped Frames • High Latency</div>
+                
+                {/* Pixelated/Degraded Visual Effect */}
+                <div className="grid grid-cols-8 gap-1 w-64 h-64 mx-auto opacity-40">
+                  {Array.from({ length: 64 }).map((_, i) => (
+                    <div 
+                      key={i} 
+                      className="bg-zinc-600 rounded-sm"
+                      style={{
+                        opacity: Math.random() * 0.5 + 0.3,
+                        filter: 'blur(2px)'
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Professional Side (Right) - Revealed by slider */}
+            <motion.div 
+              className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-950 to-indigo-950"
+              style={{
+                clipPath: `polygon(${sliderPosition}% 0, 100% 0, 100% 100%, ${sliderPosition}% 100%)`
+              }}
+            >
+              <div className="text-center">
+                <CheckCircle2 className="w-16 h-16 text-fiber-violet mx-auto mb-4" />
+                <div className="text-2xl font-bold text-soft-white mb-2">Professional Hardware</div>
+                <div className="text-sm text-fiber-violet mb-4">Uncompressed • Zero Loss • Sub-ms Latency</div>
+                
+                {/* High Quality Visual Effect */}
+                <div className="relative w-64 h-64 mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-fiber-violet to-fiber-purple rounded-lg opacity-30" />
+                  <div className="absolute inset-0 grid grid-cols-8 gap-[2px]">
+                    {Array.from({ length: 64 }).map((_, i) => (
+                      <motion.div 
+                        key={i} 
+                        className="bg-fiber-violet rounded-sm"
+                        animate={{
+                          opacity: [0.6, 1, 0.6],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: i * 0.02,
+                          ease: "easeInOut"
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Slider Handle */}
+            <motion.div
+              className="absolute top-0 bottom-0 w-1 bg-fiber-violet shadow-[0_0_20px_rgba(167,139,250,0.8)] cursor-ew-resize"
+              style={{ left: `${sliderPosition}%` }}
+              animate={{
+                boxShadow: isDragging 
+                  ? '0 0 30px rgba(167, 139, 250, 1)' 
+                  : '0 0 20px rgba(167, 139, 250, 0.8)'
+              }}
+            >
+              {/* Handle Circle */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <motion.div 
+                  className="w-12 h-12 rounded-full metal-surface studio-border flex items-center justify-center"
+                  animate={{
+                    scale: isDragging ? 1.2 : 1,
+                  }}
+                  style={{
+                    boxShadow: '0 0 20px rgba(167, 139, 250, 0.6)'
+                  }}
+                >
+                  <Maximize2 className="w-5 h-5 text-fiber-violet rotate-90" />
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Labels */}
+            <div className="absolute top-4 left-4 glass-panel px-3 py-2 rounded-lg studio-border">
+              <div className="text-xs text-cool-gray uppercase tracking-wider font-semibold">Consumer</div>
+            </div>
+            <div className="absolute top-4 right-4 glass-panel px-3 py-2 rounded-lg studio-border">
+              <div className="text-xs text-fiber-violet uppercase tracking-wider font-semibold">Professional</div>
+            </div>
+          </div>
+
+          {/* Metrics Comparison */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Consumer Metrics */}
+            <div className="glass-panel p-6 rounded-lg studio-border">
+              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-700">
+                <XCircle className="w-5 h-5 text-red-500" />
+                <h3 className="text-lg font-bold text-zinc-300 uppercase tracking-tight">Consumer Grade</h3>
+              </div>
+              <div className="space-y-3">
+                {qualityMetrics.consumer.map((metric, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center justify-between p-3 bg-zinc-900/50 rounded border border-red-900/30"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <span className="text-xs text-zinc-400 uppercase tracking-wider font-semibold">{metric.label}</span>
+                    <span className="text-sm font-mono text-red-400">{metric.value}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Professional Metrics */}
+            <div className="glass-panel p-6 rounded-lg studio-border">
+              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-fiber-violet/30">
+                <CheckCircle2 className="w-5 h-5 text-fiber-violet" />
+                <h3 className="text-lg font-bold text-soft-white uppercase tracking-tight">Professional Grade</h3>
+              </div>
+              <div className="space-y-3">
+                {qualityMetrics.professional.map((metric, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center justify-between p-3 bg-fiber-purple/10 rounded border border-fiber-violet/30"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <span className="text-xs text-cool-gray uppercase tracking-wider font-semibold">{metric.label}</span>
+                    <span className="text-sm font-mono text-fiber-violet font-bold">{metric.value}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Info Banner */}
+          <motion.div 
+            className="mt-6 glass-panel p-4 rounded-lg studio-border flex items-start gap-3"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Info className="w-5 h-5 text-fiber-violet flex-shrink-0 mt-0.5" />
+            <div>
+              <div className="text-sm font-bold text-soft-white mb-1">Why Professional Hardware Matters</div>
+              <div className="text-xs text-cool-gray leading-relaxed">
+                Consumer capture devices use aggressive compression to reduce bandwidth, resulting in visible artifacts, 
+                dropped frames, and increased latency. Professional hardware like ours processes signals in real-time 
+                with dedicated ASICs, preserving every detail of your original source.
+              </div>
+            </div>
+          </motion.div>
+
+        </motion.div>
+
+        {/* Current Scenario Specs */}
+        <motion.div 
+          className="mt-6 grid grid-cols-3 gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          {Object.entries(scenarios.find(s => s.id === selectedScenario)?.specs || {}).map(([key, value]) => (
+            <div key={key} className="text-center glass-panel p-4 rounded-lg studio-border">
+              <div className="text-xs text-cool-gray uppercase tracking-wider mb-2 font-semibold">{key}</div>
+              <div className="text-lg font-bold text-fiber-pink font-mono">{value}</div>
+            </div>
+          ))}
+        </motion.div>
+
+      </div>
+    </section>
+  );
+}

@@ -782,3 +782,177 @@ code, pre, .font-mono {
     transparent 100%
   );
 }
+
+/* =====================================================
+   SIGNAL FLOW VISUALIZER ANIMATIONS
+   ===================================================== */
+
+/* Pulsing Glow Animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.8);
+    opacity: 0.9;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Data Flow Animation */
+@keyframes data-flow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.data-flow {
+  animation: data-flow 2.5s linear infinite;
+}
+
+/* Signal Wave Animation */
+@keyframes signal-wave {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.signal-wave {
+  animation: signal-wave 1.5s ease-in-out infinite;
+}
+
+/* Rotating Scan Line */
+@keyframes scan-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.scan-rotate {
+  animation: scan-rotate 8s linear infinite;
+}
+
+/* Bandwidth Meter Fill */
+@keyframes bandwidth-fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.bandwidth-fill {
+  animation: bandwidth-fill 1.5s ease-out forwards;
+}
+
+/* Particle Glow Pulse */
+@keyframes particle-glow {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 5px rgba(167, 139, 250, 0.6));
+  }
+  50% {
+    filter: brightness(1.3) drop-shadow(0 0 15px rgba(167, 139, 250, 1));
+  }
+}
+
+.particle-glow {
+  animation: particle-glow 2s ease-in-out infinite;
+}
+
+/* Stage Node Breathing */
+@keyframes node-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.node-breathe {
+  animation: node-breathe 3s ease-in-out infinite;
+}
+
+/* Signal Strength Bar Animation */
+@keyframes strength-bar {
+  0% {
+    height: 20%;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    height: 20%;
+  }
+}
+
+.signal-bar.active {
+  animation: strength-bar 1.5s ease-in-out infinite;
+  animation-delay: calc(var(--bar-index) * 0.1s);
+}
+
+/* Quality Comparison Reveal */
+@keyframes reveal-quality {
+  from {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.reveal-quality {
+  animation: reveal-quality 1.5s ease-out forwards;
+}
+
+/* Metric Counter Animation */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.count-up {
+  animation: count-up 0.6s ease-out forwards;
+}
+
+/* Fiber Optic Line Glow */
+@keyframes fiber-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(167, 139, 250, 0.9));
+  }
+}
+
+.fiber-glow {
+  animation: fiber-glow 2.5s ease-in-out infinite;
+}

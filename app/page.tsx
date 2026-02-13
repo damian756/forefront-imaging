@@ -7,6 +7,8 @@ import { Plug, Play, ShoppingCart, CheckCircle2, Zap, ArrowRight, Cpu, HardDrive
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import SignalFlowVisualizer from '@/components/SignalFlowVisualizer';
+import QualityComparison from '@/components/QualityComparison';
 import { useCart } from '@/contexts/CartContext';
 
 export default function Home() {
@@ -208,6 +210,12 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* SIGNAL FLOW VISUALIZER */}
+      <SignalFlowVisualizer />
+
+      {/* QUALITY COMPARISON */}
+      <QualityComparison />
 
       {/* FIBER EQUIPMENT CATALOG */}
       <section id="products" className="py-28 relative">
