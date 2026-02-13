@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CartProvider } from "@/contexts/CartContext";
 
 export const metadata: Metadata = {
   title: "Forefront Imaging | Magewell UK Distributor",
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased flex flex-col min-h-screen">
-        <div className="flex-grow">
-          {children}
-        </div>
+        <CartProvider>
+          <div className="flex-grow">
+            {children}
+          </div>
+        </CartProvider>
       </body>
     </html>
   );

@@ -7,11 +7,12 @@ import { useSearchParams } from 'next/navigation';
 import { 
   Search, 
   Filter, Grid, List, CheckCircle,
-  ArrowUpDown, Package, AlertCircle
+  ArrowUpDown, Package, AlertCircle, ShoppingCart
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { useCart } from '@/contexts/CartContext';
 
 // IMPORT YOUR EXISTING DATA
 import { products } from '@/lib/products'; 
@@ -35,6 +36,9 @@ export default function ProductsPage() {
 
 // Main catalog component
 function CatalogPage() {
+  const { addItem } = useCart();
+  const [addedItemId, setAddedItemId] = useState<string | null>(null);
+  
   // Read category from URL query parameter and decode spaces
   const searchParams = useSearchParams();
   const categoryFromUrl = searchParams.get('category')?.replace(/\+/g, ' ') || 'All';
@@ -43,6 +47,19 @@ function CatalogPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl);
   const [sortBy, setSortBy] = useState<'name' | 'category'>('name');
+
+  const handleAddToCart = (product: typeof products[0], e: React.MouseEvent) => {
+    e.preventDefault();
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      imageUrl: product.imageUrl,
+      slug: product.slug,
+    });
+    setAddedItemId(product.id);
+    setTimeout(() => setAddedItemId(null), 2000);
+  };
 
   // Generate unique categories from your actual data
   const categories = ['All', ...Array.from(new Set(products.map(p => p.category)))];
@@ -333,24 +350,39 @@ function CatalogPage() {
                               <p className="text-xs text-slate-500 line-clamp-2 mb-4" dangerouslySetInnerHTML={{ __html: product.shortDescription }}></p>
                               
                               {viewMode === 'grid' && (
-                                <motion.button 
-                                  className="w-full py-2.5 bg-slate-800 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-500 text-slate-300 hover:text-white text-xs font-bold uppercase transition-all rounded-md"
-                                  whileHover={{ scale: 1.02 }}
-                                  whileTap={{ scale: 0.98 }}
-                                >
-                                  View Details →
-                                </motion.button>
+                                <>
+                                  <div className="mb-3">
+                                    <span className="text-2xl font-bold text-blue-400">£{product.price}</span>
+                                    <span className="text-slate-500 text-sm ml-2">GBP</span>
+                                  </div>
+                                  <motion.button 
+                                    onClick={(e) => handleAddToCart(product, e)}
+                                    className="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase transition-all rounded-md flex items-center justify-center gap-2"
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                  >
+                                    <ShoppingCart className="w-4 h-4" />
+                                    {addedItemId === product.id ? 'Added!' : 'Add to Cart'}
+                                  </motion.button>
+                                </>
                               )}
                             </div>
                             
                             {viewMode === 'list' && (
-                              <motion.button 
-                                className="ml-4 px-6 py-2.5 bg-slate-800 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-500 text-slate-300 hover:text-white text-xs font-bold uppercase transition-all rounded-md whitespace-nowrap"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                              >
-                                View Details →
-                              </motion.button>
+                              <div className="ml-4 flex items-center gap-4">
+                                <div className="text-right">
+                                  <span className="text-2xl font-bold text-blue-400">£{product.price}</span>
+                                </div>
+                                <motion.button 
+                                  onClick={(e) => handleAddToCart(product, e)}
+                                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase transition-all rounded-md whitespace-nowrap flex items-center gap-2"
+                                  whileHover={{ scale: 1.02 }}
+                                  whileTap={{ scale: 0.98 }}
+                                >
+                                  <ShoppingCart className="w-4 h-4" />
+                                  {addedItemId === product.id ? 'Added!' : 'Add to Cart'}
+                                </motion.button>
+                              </div>
                             )}
                           </div>
                         </motion.div>

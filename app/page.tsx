@@ -3,13 +3,29 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone, ArrowRight, Mail, MapPin, ShieldCheck, Box, Truck, BadgeCheck, FileText, Package, Star } from 'lucide-react';
+import { Phone, ArrowRight, Mail, MapPin, ShieldCheck, Box, Truck, BadgeCheck, FileText, Package, Star, ShoppingCart } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { useCart } from '@/contexts/CartContext';
 
 export default function Home() {
+  const { addItem } = useCart();
+  const [addedItemId, setAddedItemId] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleAddToCart = (product: typeof products[0], e: React.MouseEvent) => {
+    e.preventDefault();
+    addItem({
+      id: product.id.toString(),
+      name: product.name,
+      price: product.price,
+      imageUrl: product.image,
+      slug: product.slug,
+    });
+    setAddedItemId(product.id);
+    setTimeout(() => setAddedItemId(null), 2000);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +43,8 @@ export default function Home() {
       specs: ["HDMI 1.4", "1080p60", "USB 3.0"],
       stockStatus: "In Stock - UK Warehouse",
       image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png",
-      tag: "Best Seller"
+      tag: "Best Seller",
+      price: 100
     },
     {
       id: 280,
@@ -36,7 +53,8 @@ export default function Home() {
       specs: ["HDMI/SDI/DVI", "1080p60", "Analog I/O"],
       stockStatus: "Low Stock - Order Soon",
       image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-aio-1.png",
-      tag: "Universal"
+      tag: "Universal",
+      price: 100
     },
     {
       id: 281,
@@ -45,7 +63,8 @@ export default function Home() {
       specs: ["3G-SDI", "Loop-Through", "Driver-Free"],
       stockStatus: "In Stock - Next Day Delivery",
       image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/sdi-usb.606.png",
-      tag: "Broadcast"
+      tag: "Broadcast",
+      price: 100
     }
   ];
 
@@ -357,15 +376,19 @@ export default function Home() {
                         ))}
                       </ul>
 
-                      {/* CTA Button - Enhanced */}
+                      {/* Price and Add to Cart */}
+                      <div className="mb-3">
+                        <span className="text-3xl font-bold text-blue-400">£{product.price}</span>
+                        <span className="text-slate-500 text-sm ml-2">GBP</span>
+                      </div>
                       <motion.button 
-                        className="w-full py-3 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-blue-600 hover:to-blue-500 text-slate-300 hover:text-white text-sm font-bold uppercase transition-all rounded-md shadow-md flex items-center justify-center gap-2"
+                        onClick={(e) => handleAddToCart(product, e)}
+                        className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold uppercase transition-all rounded-md shadow-md flex items-center justify-center gap-2"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        <Package className="w-4 h-4" />
-                        Request Quote
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ShoppingCart className="w-4 h-4" />
+                        {addedItemId === product.id ? 'Added to Cart!' : 'Add to Cart'}
                       </motion.button>
                     </div>
                   </motion.div>

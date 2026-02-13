@@ -1,10 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Phone, ShieldCheck, ChevronDown, Menu, X } from "lucide-react";
+import { Phone, ShieldCheck, ChevronDown, Menu, X, ShoppingCart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "@/contexts/CartContext";
 
 export default function Navbar() {
+  const { totalItems } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
@@ -139,6 +141,18 @@ export default function Navbar() {
           </Link>
 
           <Link 
+            href="/cart" 
+            className="relative text-slate-300 hover:text-white transition-colors"
+          >
+            <ShoppingCart className="w-6 h-6" />
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </Link>
+
+          <Link 
             href="/contact" 
             className="flex items-center gap-2 bg-white text-slate-950 px-5 py-2.5 rounded-md font-bold text-sm hover:bg-blue-50 transition-all shadow-lg"
           >
@@ -172,6 +186,10 @@ export default function Navbar() {
               <Link href="/solutions" className="block text-slate-300 hover:text-white font-medium">Solutions</Link>
               <Link href="/support" className="block text-slate-300 hover:text-white font-medium">Support</Link>
               <Link href="/resellers" className="block text-slate-300 hover:text-white font-medium">Resellers</Link>
+              <Link href="/cart" className="flex items-center gap-2 text-slate-300 hover:text-white font-medium">
+                <ShoppingCart className="w-5 h-5" />
+                Cart {totalItems > 0 && `(${totalItems})`}
+              </Link>
               <Link href="/contact" className="block bg-blue-600 text-white text-center py-3 rounded-md font-bold mt-4">
                 Contact Us
               </Link>

@@ -8,6 +8,7 @@ export interface Product {
   category: string;
   imageUrl: string;
   features: string[];
+  price: number; // Price in GBP
   // ADD THESE LINES to stop errors
   stock?: string; 
   interface?: string;
@@ -27,6 +28,7 @@ export const products: Product[] = [
     shortDescription: "Professional HDMI to USB 3.0 capture dongle. Ideal for Zoom Rooms, medical imaging, and mobile streaming.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture HDMI Gen 2</strong> is the gold standard for driver-free video ingest. Engineered for mission-critical reliability, it connects professional HDMI sources to any computer via USB 3.0 without the need for manual driver installation.</p><h3>Why Choose the Magewell USB Capture HDMI Gen 2?</h3><p>Unlike consumer dongles, this device features a built-in FPGA to handle video processing (scaling, deinterlacing, color conversion) onboard. This frees up your computer's CPU for other tasks, ensuring smooth performance even on laptops running complex software like vMix or Zoom Rooms.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png",
     features: ["Universal Driver-Free Compatibility", "Hardware Scaling", "Plug-and-Play", "High-Fidelity Audio"]
   },
@@ -38,6 +40,7 @@ export const products: Product[] = [
     shortDescription: "The ultimate flexible capture tool. Supports HDMI, SDI, DVI, VGA, and Component inputs via USB 3.0.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture AIO</strong> (All-In-One) is the swiss-army knife of AV capture. Designed for integrators who encounter unpredictable sources, it accepts HDMI, SDI, DVI, VGA, and Component signals in a single rugged unit.</p><h3>Why Choose the Magewell USB Capture AIO?</h3><p>This single device replaces five different dongles in your toolkit. Whether you need to capture a legacy VGA laptop, a professional SDI camera, or a modern HDMI game console, the AIO handles it all with automatic signal detection and hardware-based processing.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-aio-1.png",
     features: ["Selectable HDMI/SDI/Analog Inputs", "Hardware Scaling", "Active Cooling", "Plug-and-Play"]
   },
@@ -49,6 +52,7 @@ export const products: Product[] = [
     shortDescription: "3G-SDI to USB 3.0 interface with loop-through. Perfect for broadcast field production and live events.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture SDI Gen 2</strong> brings professional broadcast video into the IT world. It captures SD, HD, and 3G-SDI signals with embedded audio and delivers them to your computer as a standard webcam source.</p><h3>Why Choose the Magewell USB Capture SDI Gen 2?</h3><p>Featuring a dedicated SDI loop-through port, this unit allows you to monitor your camera feed locally while capturing it simultaneously. Its robust metal housing and cable equalization ensure reliable operation even with long cable runs in challenging live event environments.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/sdi-usb.606.png",
     features: ["3G-SDI Input + Loop", "Cable Equalization", "Driver-Free", "High-Fidelity Audio"]
   },
@@ -60,6 +64,7 @@ export const products: Product[] = [
     shortDescription: "Essential configuration software for Magewell USB devices. Unlock advanced settings and firmware updates.",
     description: "<div class='product-description'><p class='lead'>The <strong>USB Capture Utility V3</strong> is the companion software that unlocks the full potential of your Magewell USB capture devices. It provides granular control over video processing settings that standard drivers don't expose.</p><h3>Why Choose the USB Capture Utility V3?</h3><p>While Magewell devices are plug-and-play, this utility allows power users to tweak color space conversion, set custom EDIDs, mirror or flip images, and diagnose signal issues. It is an essential tool for troubleshooting and optimizing your capture workflow.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Advanced EDID Management</strong></li><li><strong>Firmware Update Capability</strong></li><li><strong>Signal Status Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/USBCaptureUtilityV3.png",
     features: ["Advanced Configuration", "Firmware Updates", "Status Monitoring"]
   },
@@ -71,6 +76,7 @@ export const products: Product[] = [
     shortDescription: "Enhanced HDMI capture with loop-through and analog audio I/O. The streamer's choice for console gaming and lectures.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture HDMI Plus</strong> takes the standard Gen 2 dongle and adds critical connectivity for live production. It features an HDMI loop-through for zero-latency monitoring and 3.5mm audio jacks for headset integration.</p><h3>Why Choose the Magewell USB Capture HDMI Plus?</h3><p>Perfect for gamers and presenters, the loop-through allows you to see your content on a local screen while capturing. The separate audio I/O lets you embed commentary or monitor the feed directly from the device, simplifying audio routing without external mixers.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-hdmi-plus-banner-card1.png",
     features: ["HDMI Loop-through", "Analog Audio I/O", "1080p60 Capture", "Driver-Free"]
   },
@@ -82,6 +88,7 @@ export const products: Product[] = [
     shortDescription: "Specialized DVI capture with loop-through. Ideal for legacy medical equipment and industrial consoles.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture DVI Plus</strong> is a specialized tool for capturing video from legacy IT and medical sources. Its DVI-I interface supports digital DVI as well as VGA and Component analog signals via included adapters.</p><h3>Why Choose the Magewell USB Capture DVI Plus?</h3><p>Critical for medical imaging and industrial control systems, this device ensures you can ingest feeds from older ultrasound machines or radar consoles. The integrated loop-through provides zero-latency monitoring, essential for safety-critical applications.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Loop-through Output for Monitoring</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li><li><strong>Supports DVI/VGA/HDMI/Component</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-dvi-plus-banner-card.png",
     features: ["DVI/VGA/HDMI Support", "Loop-through", "Analog Audio Input", "Hardware Scaling"]
   },
@@ -93,6 +100,7 @@ export const products: Product[] = [
     shortDescription: "Advanced 3G-SDI capture with loop-through and line-level audio input. Built for professional broadcast environments.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture SDI Plus</strong> is designed for the demanding broadcast engineer. It provides robust 3G-SDI capture with active loop-through and a line-level audio input for embedding external sound feeds.</p><h3>Why Choose the Magewell USB Capture SDI Plus?</h3><p>This device allows you to daisy-chain professional cameras to monitors while ingesting the feed. The external audio input solves a common problem in live events: easily embedding a feed from a soundboard directly into the video stream for webcasting.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-sdi-Plus-e1533651581671.png",
     features: ["3G-SDI Input + Loop", "Line-level Audio Input", "Cable Equalization", "Driver-Free"]
   },
@@ -104,6 +112,7 @@ export const products: Product[] = [
     shortDescription: "4K60 HDMI capture interface. Supports 4K 60fps input with loop-through for high-end gaming and medical ingest.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture HDMI 4K Plus</strong> brings Ultra HD performance to USB capture. It supports HDMI 2.0 inputs, allowing for the capture of fluid 4K video at 60 frames per second.</p><h3>Why Choose the Magewell USB Capture HDMI 4K Plus?</h3><p>Unlike standard capture cards that cap at 30fps for 4K, this unit delivers the full 60fps experience, making it critical for recording high-speed gameplay or detailed medical scans. The zero-latency loop-through ensures your local display remains perfectly responsive.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-hdmi-4k-plus.png",
     features: ["4K60 Capture", "HDMI 2.0 Loop-through", "Mic/Headphone I/O", "High Bandwidth USB 3.0"]
   },
@@ -115,6 +124,7 @@ export const products: Product[] = [
     shortDescription: "6G-SDI 4K capture dongle. Ingests 4K30 SDI signals for broadcast and medical applications.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture SDI 4K Plus</strong> bridges the gap between 4K broadcast infrastructure and computer-based production. It supports 6G-SDI inputs for capturing 4K video at 30fps.</p><h3>Why Choose the Magewell USB Capture SDI 4K Plus?</h3><p>This is the ideal tool for ingesting feeds from 4K broadcast cameras or medical imaging systems that use SDI. It is backward compatible with 3G-SDI and HD-SDI, ensuring you are ready for any signal format in the field.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-SDI-4k-plus-banner-Copy.png",
     features: ["6G-SDI (4K30) Input", "SDI Loop-through", "Backwards Compatible", "FPGA Processing"]
   },
@@ -126,6 +136,7 @@ export const products: Product[] = [
     shortDescription: "All-in-One PCIe capture card. Features selectable HDMI and SDI inputs on a single bracket for maximum versatility.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture AIO</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture AIO?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Pro-capture-AIO.jpg",
     features: ["HDMI + SDI Inputs", "Selectable Input Source", "PCIe x1 Interface", "Low Latency"]
   },
@@ -137,6 +148,7 @@ export const products: Product[] = [
     shortDescription: "Dedicated DVI/VGA PCIe capture card. Essential for legacy IT systems, radar consoles, and medical endoscopy.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture DVI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture DVI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Magewell-Pro-Capture-DVI_front.jpg",
     features: ["DVI-I Input", "Supports VGA/HDMI/Component", "Analog Audio Input", "High Precision ADC"]
   },
@@ -148,6 +160,7 @@ export const products: Product[] = [
     shortDescription: "Dual-channel DVI/VGA PCIe card. Captures two independent legacy or digital feeds simultaneously.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Dual DVI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Dual DVI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureDualDVI_1.png",
     features: ["2x DVI-I Inputs", "Independent Channel Processing", "Simultaneous DVI/VGA Capture", "PCIe x4 Interface"]
   },
@@ -159,6 +172,7 @@ export const products: Product[] = [
     shortDescription: "The standard for HDMI ingest. Single-channel PCIe card delivering ultra-low latency 1080p60 capture.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture HDMI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture HDMI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureHDMI_1.png",
     features: ["1080p60 HDMI Input", "PCIe 2.0 x1", "Multi-Card Support", "FPGA Video Processing"]
   },
@@ -170,6 +184,7 @@ export const products: Product[] = [
     shortDescription: "Two independent HDMI inputs on a single card. Perfect for dual-camera podcasts and lecture capture.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Dual HDMI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Dual HDMI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureDualHDMI_1.png",
     features: ["2x HDMI Inputs", "Independent Processing", "High Density", "Hardware Deinterlacing"]
   },
@@ -181,6 +196,7 @@ export const products: Product[] = [
     shortDescription: "A complete 4-camera studio in one card. Four independent HDMI inputs for high-density vMix/OBS builds.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Quad HDMI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Quad HDMI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureQuadHDMI_1.png",
     features: ["4x HDMI Inputs", "PCIe 2.0 x4", "Active Cooling", "High Throughput"]
   },
@@ -192,6 +208,7 @@ export const products: Product[] = [
     shortDescription: "Reliable 3G-SDI ingest. Single-channel PCIe card with loop-through support for professional broadcast servers.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture SDI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture SDI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureSDI_1.png",
     features: ["3G-SDI Input", "Cable Equalization", "Timecode Capture", "Low Latency"]
   },
@@ -203,6 +220,7 @@ export const products: Product[] = [
     shortDescription: "Dual-channel 3G-SDI capture. Robust connectivity for professional dual-camera interviews and production.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Dual SDI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Dual SDI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureDualSDI_1.png",
     features: ["2x 3G-SDI Inputs", "Independent Channels", "PCIe x4 Interface", "Loop-through option"]
   },
@@ -214,6 +232,7 @@ export const products: Product[] = [
     shortDescription: "The industry standard for vMix Replay. Four independent 3G-SDI inputs on a single high-performance card.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Quad SDI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Quad SDI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureQuadSDI_1.png",
     features: ["4x 3G-SDI Inputs", "High Density Ingest", "Perfect for Replay Systems", "Active Cooling"]
   },
@@ -225,6 +244,7 @@ export const products: Product[] = [
     shortDescription: "Massive analog density. Captures 6 channels of Composite Video (CVBS) and audio for archiving and security.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Hexa CVBS</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Hexa CVBS?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureHexaCVBS_1.png",
     features: ["6x CVBS Inputs", "6x Audio Inputs", "PAL/NTSC Support", "High-Density Breakout"]
   },
@@ -236,6 +256,7 @@ export const products: Product[] = [
     shortDescription: "The easiest way to stream. One-click HDMI encoder for YouTube, Facebook, and Twitch. No computer needed.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Magewell Ultra Stream HDMI</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Magewell Ultra Stream HDMI?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Stream_hdmi.png",
     features: ["Standalone Encoding", "One-Click Streaming", "Mobile App Control", "Recording to USB"]
   },
@@ -247,6 +268,7 @@ export const products: Product[] = [
     shortDescription: "High-density I/O card for developers. 4 HDMI Inputs and 2 Outputs on a single PCIe card for custom solutions.",
     description: "<div class='product-description'><p class='lead'>Enhance your production workflow with the <strong>FLEX I/O HDMI 4I2O</strong>. Designed for professional reliability and seamless integration with Magewell's ecosystem.</p><h3>Why Choose the FLEX I/O HDMI 4I2O?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Accessories",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/flexiohdmi-1.png",
     features: ["4x Inputs + 2x Outputs", "HDMI Connectivity", "Developer SDK", "FPGA Processing"]
   },
@@ -258,6 +280,7 @@ export const products: Product[] = [
     shortDescription: "High-density SDI I/O card. 4 SDI Inputs and 2 Outputs for broadcast appliances and channel-in-a-box servers.",
     description: "<div class='product-description'><p class='lead'>Enhance your production workflow with the <strong>FLEX I/O SDI 4I2O</strong>. Designed for professional reliability and seamless integration with Magewell's ecosystem.</p><h3>Why Choose the FLEX I/O SDI 4I2O?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Accessories",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/FlexIOSDI_1-1.png",
     features: ["4x Inputs + 2x Outputs", "SDI Connectivity", "Developer SDK", "Low Latency DMA"]
   },
@@ -269,6 +292,7 @@ export const products: Product[] = [
     shortDescription: "Compact dual-channel HDMI capture for M.2. Perfect for portable streaming laptops and embedded systems.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell Eco Capture Dual HDMI M.2</strong> brings professional video capture to compact and embedded systems. Using the M.2 interface, it provides a rugged, space-saving solution for portable streaming units, industrial PCs, and autonomous robotics.</p><h3>Why Choose the Magewell Eco Capture Dual HDMI M.2?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "M.2 Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/EcoCaptureDualHDMIM2_1.png",
     features: ["2x HDMI Inputs", "M.2 2280 Interface", "Low Power", "Mobile Production"]
   },
@@ -280,6 +304,7 @@ export const products: Product[] = [
     shortDescription: "Compact dual-channel SDI capture for M.2. Industrial-grade ingest for robotics and portable encoders.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell Eco Capture Dual SDI M.2</strong> brings professional video capture to compact and embedded systems. Using the M.2 interface, it provides a rugged, space-saving solution for portable streaming units, industrial PCs, and autonomous robotics.</p><h3>Why Choose the Magewell Eco Capture Dual SDI M.2?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "M.2 Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/EcoCaptureDualSDIM.2_1.png",
     features: ["2x 3G-SDI Inputs", "M.2 2280 Interface", "Vibration Resistant", "Embedded Ready"]
   },
@@ -291,6 +316,7 @@ export const products: Product[] = [
     shortDescription: "Cost-effective 4K30 HDMI capture for M.2. Optimized for digital signage players and industrial imaging.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell Eco Capture HDMI 4K M.2</strong> brings professional video capture to compact and embedded systems. Using the M.2 interface, it provides a rugged, space-saving solution for portable streaming units, industrial PCs, and autonomous robotics.</p><h3>Why Choose the Magewell Eco Capture HDMI 4K M.2?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "M.2 Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/EcoCaptureHDMI4KM.2_1.png11520.png",
     features: ["4K30 HDMI Input", "M.2 2280 Interface", "Low Thermal Profile", "Cost Effective"]
   },
@@ -302,6 +328,7 @@ export const products: Product[] = [
     shortDescription: "Unprecedented density: 4x SDI inputs on an M.2 card. Build a 4-camera switcher in a handheld PC.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell Eco Capture Quad SDI M.2</strong> brings professional video capture to compact and embedded systems. Using the M.2 interface, it provides a rugged, space-saving solution for portable streaming units, industrial PCs, and autonomous robotics.</p><h3>Why Choose the Magewell Eco Capture Quad SDI M.2?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "M.2 Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/EcoCaptureQuadSDIM.2_1.png",
     features: ["4x 3G-SDI Inputs", "M.2 2280 Interface", "Ultra-High Density", "Ideal for Portable Switchers"]
   },
@@ -313,6 +340,7 @@ export const products: Product[] = [
     shortDescription: "Entry-level 4K30 HDMI capture. Affordable UHD ingest for medical review and digital signage verification.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture HDMI 4K</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture HDMI 4K?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureHDMI4K_1.png",
     features: ["4K30 HDMI Input", "PCIe 2.0 x4", "10-bit Color Support", "Affordable UHD"]
   },
@@ -324,6 +352,7 @@ export const products: Product[] = [
     shortDescription: "Full 4K60 HDMI capture with loop-through. The ultimate card for console gaming and workstation capture.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture HDMI 4K Plus LT</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture HDMI 4K Plus LT?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureHDMI4KPlusLT_1.png",
     features: ["HDMI 2.0 (4K60)", "Zero-Latency Loop", "Active Cooling", "PCIe 2.0 x4"]
   },
@@ -335,6 +364,7 @@ export const products: Product[] = [
     shortDescription: "Dual-channel 4K60 HDMI capture. Massive bandwidth PCIe x8 card for high-end esports and presentation servers.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Dual HDMI 4K Plus LT</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Dual HDMI 4K Plus LT?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureDualHDMI4KPlusLT_1.png",
     features: ["2x HDMI 2.0 Inputs", "Dual 4K60 Capture", "PCIe 2.0 x8", "Extreme Performance"]
   },
@@ -346,6 +376,7 @@ export const products: Product[] = [
     shortDescription: "Universal 4K SDI capture. Supports 12G, 6G, and Quad-Link 3G-SDI for maximum broadcast compatibility.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture SDI 4K Plus</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture SDI 4K Plus?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureSDI4KPlus_1.png",
     features: ["12G/6G/3G-SDI Support", "Multi-Link Support", "4K60 Capture", "Broadcast Grade"]
   },
@@ -357,6 +388,7 @@ export const products: Product[] = [
     shortDescription: "Embedded Mini PCIe HDMI capture. Ruggedized 1080p ingest for industrial PCs and medical devices.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Mini HDMI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Mini HDMI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Mini_hdmi_11110_1.png",
     features: ["Mini PCIe Interface", "1080p60 HDMI", "Embedded Systems", "Cable Breakout"]
   },
@@ -368,6 +400,7 @@ export const products: Product[] = [
     shortDescription: "Dual 12G-SDI capture. Two independent 4K60 channels on one card for high-end replay servers.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Dual SDI 4K Plus</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Dual SDI 4K Plus?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureDualSDI4KPlus_1.png",
     features: ["2x 12G-SDI Inputs", "Dual 4K60 Capture", "PCIe 2.0 x8", "Active Cooling"]
   },
@@ -379,6 +412,7 @@ export const products: Product[] = [
     shortDescription: "Broadcast-grade standalone encoder. 3G-SDI streaming to web platforms without a computer.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Magewell Ultra Stream SDI</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Magewell Ultra Stream SDI?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ultra-stream-sdi-2.png",
     features: ["3G-SDI Input", "One-Click Streaming", "Network/Wi-Fi", "Record to USB"]
   },
@@ -390,6 +424,7 @@ export const products: Product[] = [
     shortDescription: "Flexible 4K capture. Selectable HDMI or SDI inputs for versatile UHD ingest.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Pro Capture AIO 4K</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Pro Capture AIO 4K?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureAIO4K_1.png",
     features: ["HDMI + SDI 4K Inputs", "Selectable Source", "4K30 Capture", "Universal Solution"]
   },
@@ -401,6 +436,7 @@ export const products: Product[] = [
     shortDescription: "Enhanced 4K AIO. HDMI 2.0 or 6G-SDI inputs for 60fps UHD workflows.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture AIO 4K Plus</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture AIO 4K Plus?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureAIO4KPlus_1.png",
     features: ["HDMI 2.0 (4K60)", "6G-SDI (4K30)", "Selectable Input", "High Performance"]
   },
@@ -412,6 +448,7 @@ export const products: Product[] = [
     shortDescription: "Specialized 4K DVI. Supports Dual-Link DVI for high-res cinema and medical capture.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture DVI 4K</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture DVI 4K?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProCaptureDVI4K_1.png",
     features: ["Dual-Link DVI Input", "4K30 Capture", "Custom Resolutions", "Medical/Cinema"]
   },
@@ -423,6 +460,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Ulta Stream designed for high-reliability AV environments.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Magewell Ulta Stream</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Magewell Ulta Stream?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Stream_hdmi.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -434,6 +472,7 @@ export const products: Product[] = [
     shortDescription: "Embedded Mini PCIe SDI. Rugged 3G-SDI capture for robotics and industrial applications.",
     description: "<div class='product-description'><p class='lead'>Built for professional broadcast servers and dedicated streaming PCs, the <strong>Magewell Pro Capture Mini SDI</strong> offers ultra-low latency video ingest via a high-speed PCIe interface. It is the industry standard for vMix, OBS, and Wirecast production environments.</p><h3>Why Choose the Magewell Pro Capture Mini SDI?</h3><p>With its direct-to-memory DMA transfer engine, this card delivers uncompressed video with sub-frame latency. It supports multi-card installations, allowing you to build high-density ingest servers with 4, 8, or even 16 inputs in a single chassis.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Low-profile Bracket Support</strong></li><li><strong>24/7 Continuous Operation</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Live Production:</strong> Multi-camera ingest for vMix and OBS.</li><li><strong>Lecture Capture:</strong> Automated recording in classrooms.</li></ul></div>",
     category: "PCIe Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Mini_sdi_11132_1.png",
     features: ["Mini PCIe Interface", "3G-SDI Input", "Vibration Resistant", "Cable Breakout"]
   },
@@ -445,6 +484,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Capture Express designed for high-reliability AV environments.",
     description: "<div class='product-description'><p class='lead'>Enhance your production workflow with the <strong>Magewell Capture Express</strong>. Designed for professional reliability and seamless integration with Magewell's ecosystem.</p><h3>Why Choose the Magewell Capture Express?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Accessories",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/CaptureExpress_banner@1x.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -456,6 +496,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell SDK designed for high-reliability AV environments.",
     description: "<div class='product-description'><p class='lead'>Enhance your production workflow with the <strong>Magewell SDK</strong>. Designed for professional reliability and seamless integration with Magewell's ecosystem.</p><h3>Why Choose the Magewell SDK?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Accessories",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/SDK-Dev.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -467,6 +508,7 @@ export const products: Product[] = [
     shortDescription: "Compact 4K SDI for M.2. Supports 6G-SDI for UHD ingest in embedded systems.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell Eco Capture SDI 4K Plus M.2</strong> brings professional video capture to compact and embedded systems. Using the M.2 interface, it provides a rugged, space-saving solution for portable streaming units, industrial PCs, and autonomous robotics.</p><h3>Why Choose the Magewell Eco Capture SDI 4K Plus M.2?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "M.2 Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Eco_Capture_SDI_4K_Plus_M2-3.png",
     features: ["6G-SDI Input", "4K30 Capture", "M.2 2280 Form Factor", "Embedded Workflow"]
   },
@@ -478,6 +520,7 @@ export const products: Product[] = [
     shortDescription: "Professional Mini Repeater HDMI 4K designed for high-reliability AV environments.",
     description: "<div class='product-description'><p class='lead'>Enhance your production workflow with the <strong>Mini Repeater HDMI 4K</strong>. Designed for professional reliability and seamless integration with Magewell's ecosystem.</p><h3>Why Choose the Mini Repeater HDMI 4K?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Accessories",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Capture.PNG13.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -489,6 +532,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert for NDI to HDMI for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert for NDI to HDMI</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert for NDI to HDMI?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertforNDItoHDMI_2.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -500,6 +544,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert HDMI 4K Plus for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert HDMI 4K Plus</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert HDMI 4K Plus?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertHDMI4KPlus_1.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -511,6 +556,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert for NDI to HDMI 4K for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert for NDI to HDMI 4K</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert for NDI to HDMI 4K?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/pro-convert-for-ndi-to-hdmi-4k_2.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -522,6 +568,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert for NDI to AIO for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert for NDI to AIO</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert for NDI to AIO?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertAIORX_2.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -533,6 +580,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert H.26x to HDMI for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert H.26x to HDMI</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert H.26x to HDMI?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvert_2.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -544,6 +592,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert H.26x to HDMI 4K for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert H.26x to HDMI 4K</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert H.26x to HDMI 4K?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/pro-convert-h26x-to-hdmi-4k_2.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -555,6 +604,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert HDMI Plus for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert HDMI Plus</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert HDMI Plus?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertHDMI4KPlus_1.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -566,6 +616,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert HDMI TX for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert HDMI TX</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert HDMI TX?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertHDMITX_1.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -577,6 +628,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert SDI 4K Plus for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert SDI 4K Plus</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert SDI 4K Plus?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertSDI4KPlus_1.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -588,6 +640,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert 12G SDI 4K Plus for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert 12G SDI 4K Plus</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert 12G SDI 4K Plus?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvert12GSDIPlus_3.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -599,6 +652,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert for NDI to SDI for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert for NDI to SDI</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert for NDI to SDI?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Pro_Convert_ndi-to-sdi_2.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -610,6 +664,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert H.26x to SDI for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert H.26x to SDI</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert H.26x to SDI?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertH26xtoSDI__2.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -621,6 +676,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Bridge for NDI designed for high-reliability AV environments.",
     description: "<div class='product-description'><p class='lead'>Enhance your production workflow with the <strong>Magewell Bridge for NDI</strong>. Designed for professional reliability and seamless integration with Magewell's ecosystem.</p><h3>Why Choose the Magewell Bridge for NDI?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Accessories",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/15958166995918.jpg",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -632,6 +688,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert SDI TX for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert SDI TX</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert SDI TX?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertHDMITX_1.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -643,6 +700,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert SDI Plus for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert SDI Plus</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert SDI Plus?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ProConvertHDMI4KPlus_1.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -654,6 +712,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Ultra Encode HDMI. High-performance Streaming Encoder solution featuring Standalone Hardware connectivity.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Magewell Ultra Encode HDMI</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Magewell Ultra Encode HDMI?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/encode_hdmi_1@3x-1.png",
     features: ["Phone-Free Streaming"]
   },
@@ -665,6 +724,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Ultra Encode SDI. High-performance Streaming Encoder solution featuring Standalone Hardware connectivity.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Magewell Ultra Encode SDI</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Magewell Ultra Encode SDI?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Ultra_Encode_sdi_1@3x-1.png",
     features: ["Phone-Free Streaming"]
   },
@@ -676,6 +736,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert Audio DX for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert Audio DX</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert Audio DX?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Pro-Convert-Audio-DX_2.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -687,6 +748,7 @@ export const products: Product[] = [
     shortDescription: "Professional Eco Capture AIO. High-performance Eco Capture solution featuring M.2 2280 connectivity.",
     description: "Professional Grade Video Capture & Conversion. The Eco Capture AIO represents the pinnacle of video technology in the Eco Capture category. Designed for AV professionals, system integrators, and live production engineers.",
     category: "Accessories",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/eco_capture_aio_m2_1.png",
     features: ["Ultra-Compact M.2 Form Factor", "Low Power Consumption", "Secure Locking Connectors"]
   },
@@ -698,6 +760,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Eco Capture AIO M.2. High-performance Eco Capture solution featuring M.2 2280 connectivity. Ideal for Portable vMix Go Systems and Drone Ground Stations. Supports resolutions up to .",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell Eco Capture AIO M.2</strong> brings professional video capture to compact and embedded systems. Using the M.2 interface, it provides a rugged, space-saving solution for portable streaming units, industrial PCs, and autonomous robotics.</p><h3>Why Choose the Magewell Eco Capture AIO M.2?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "M.2 Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/eco_capture_aio_m2_1.png",
     features: ["Ultra-Compact M.2 Form Factor", "Low Power Consumption", "Secure Locking Connectors"]
   },
@@ -709,6 +772,7 @@ export const products: Product[] = [
     shortDescription: "Professional Eco Capture HDMI 4K Plus M.2. High-performance Eco Capture solution featuring M.2 2280 connectivity. Ideal for Portable vMix Go Systems and Drone Ground Stations. Supports resolutions up to .",
     description: "<div class='product-description'><p class='lead'>The <strong>Eco Capture HDMI 4K Plus M.2</strong> brings professional video capture to compact and embedded systems. Using the M.2 interface, it provides a rugged, space-saving solution for portable streaming units, industrial PCs, and autonomous robotics.</p><h3>Why Choose the Eco Capture HDMI 4K Plus M.2?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "M.2 Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Eco_4K_HDMI_1.png",
     features: ["Ultra-Compact M.2 Form Factor", "Low Power Consumption", "Secure Locking Connectors"]
   },
@@ -720,6 +784,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Eco Capture 12G SDI 4K Plus M.2. High-performance Eco Capture solution featuring M.2 2280 connectivity. Ideal for Portable vMix Go Systems and Drone Ground Stations. Supports resolutions up to .",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell Eco Capture 12G SDI 4K Plus M.2</strong> brings professional video capture to compact and embedded systems. Using the M.2 interface, it provides a rugged, space-saving solution for portable streaming units, industrial PCs, and autonomous robotics.</p><h3>Why Choose the Magewell Eco Capture 12G SDI 4K Plus M.2?</h3><p>Magewell products are renowned for their stability and 24/7 operational capability in harsh environments. This unit is built to those same exacting standards.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "M.2 Cards",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/SDI_4K_1.png",
     features: ["Ultra-Compact M.2 Form Factor", "Low Power Consumption", "Secure Locking Connectors"]
   },
@@ -731,6 +796,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Ultra Encode HDMI Plus. High-performance Streaming Encoder solution featuring Standalone Hardware connectivity.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Magewell Ultra Encode HDMI Plus</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Magewell Ultra Encode HDMI Plus?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/1.png",
     features: ["Phone-Free Streaming"]
   },
@@ -742,6 +808,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell Ultra Encode SDI Plus. High-performance Streaming Encoder solution featuring Standalone Hardware connectivity.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Magewell Ultra Encode SDI Plus</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Magewell Ultra Encode SDI Plus?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/4_SDI.png",
     features: ["Phone-Free Streaming"]
   },
@@ -753,6 +820,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Magewell Pro Convert AES67 for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Magewell Pro Convert AES67</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Magewell Pro Convert AES67?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/AES67-1.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -764,6 +832,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert for NDI to AIO Module for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert for NDI to AIO Module</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert for NDI to AIO Module?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/ndi-aio-tm.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -775,6 +844,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Magewell Pro Convert for NDI to HDMI Module for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Magewell Pro Convert for NDI to HDMI Module</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Magewell Pro Convert for NDI to HDMI Module?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/1-4.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -786,6 +856,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert HDMI 4K Plus Module for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert HDMI 4K Plus Module</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert HDMI 4K Plus Module?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/2-1-1.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -797,6 +868,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert HDMI Plus Module for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert HDMI Plus Module</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert HDMI Plus Module?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/2-2-3.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -808,6 +880,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell USB Capture HDMI 4K Pro. High-performance USB Capture solution featuring USB 3.0 connectivity. Ideal for Zoom/Teams Conferencing and Medical Imaging. Supports resolutions up to 1080p60.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture HDMI 4K Pro</strong> is a professional-grade video capture device designed for mission-critical reliability. Engineered for Zoom Rooms, medical imaging, and mobile streaming, it converts high-quality video signals into a standard USB webcam feed without requiring drivers.</p><h3>Why Choose the Magewell USB Capture HDMI 4K Pro?</h3><p>Unlike consumer dongles, this device features a built-in FPGA to handle video processing (scaling, deinterlacing, color conversion) onboard. This frees up your computer's CPU for other tasks, ensuring smooth performance even on laptops.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>HDMI Connectivity</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb_capture_hdmi_4k_pro.png",
     features: ["Universal Driver-Free Compatibility", "Hardware Scaling", "Plug-and-Play", "High-Fidelity Audio"]
   },
@@ -819,6 +892,7 @@ export const products: Product[] = [
     shortDescription: "Professional Magewell USB Capture SDI 4K Pro. High-performance USB Capture solution featuring USB 3.0 connectivity. Ideal for Zoom/Teams Conferencing and Medical Imaging. Supports resolutions up to 1080p60.",
     description: "<div class='product-description'><p class='lead'>The <strong>Magewell USB Capture SDI 4K Pro</strong> is a professional-grade video capture device designed for mission-critical reliability. Engineered for Zoom Rooms, medical imaging, and mobile streaming, it converts high-quality video signals into a standard USB webcam feed without requiring drivers.</p><h3>Why Choose the Magewell USB Capture SDI 4K Pro?</h3><p>Unlike consumer dongles, this device features a built-in FPGA to handle video processing (scaling, deinterlacing, color conversion) onboard. This frees up your computer's CPU for other tasks, ensuring smooth performance even on laptops.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Supports 4K UHD Resolution</strong></li><li><strong>Professional SDI Connectivity</strong></li><li><strong>Driver-free UVC Standard</strong></li><li><strong>Windows/Mac/Linux Compatible</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Video Conferencing:</strong> High-quality input for Zoom, Teams, and Skype.</li><li><strong>Medical Imaging:</strong> Capturing ultrasound and endoscopy feeds.</li></ul></div>",
     category: "USB Capture",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/USB_Capture_SDI_4K_Pro.jpg",
     features: ["Universal Driver-Free Compatibility", "Hardware Scaling", "Plug-and-Play", "High-Fidelity Audio"]
   },
@@ -830,6 +904,7 @@ export const products: Product[] = [
     shortDescription: "High-performance Pro Convert IP to USB for bridging traditional video to IP/NDI workflows.",
     description: "<div class='product-description'><p class='lead'>Bridge the gap between traditional video infrastructure and IP networks. The <strong>Pro Convert IP to USB</strong> converts high-quality video signals into NDI streams, enabling flexible, low-latency video transport over standard Ethernet networks.</p><h3>Why Choose the Pro Convert IP to USB?</h3><p>Magewell's Pro Convert family is the gold standard for NDI integration. It supports Power over Ethernet (PoE) for single-cable deployment and features automatic input signal detection, making it a true plug-and-play solution for IP studios.</p><h3>Key Technical Features</h3><ul class='feature-list'></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>IP Production:</strong> Distributing video sources across a facility network.</li><li><strong>Digital Signage:</strong> sending content to displays over IP.</li></ul></div>",
     category: "NDI Converters",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/Pro_Convert_IP_USB.png",
     features: ["Professional Grade", "High Reliability", "Plug & Play"]
   },
@@ -841,6 +916,7 @@ export const products: Product[] = [
     shortDescription: "Professional Ultra Encode SDI Plus Module. High-performance Streaming Encoder solution featuring Standalone Hardware connectivity.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Ultra Encode SDI Plus Module</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Ultra Encode SDI Plus Module?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>Professional SDI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/2-2-3.png",
     features: ["Phone-Free Streaming"]
   },
@@ -852,6 +928,7 @@ export const products: Product[] = [
     shortDescription: "Professional Ultra Encode HDMI Plus Module. High-performance Streaming Encoder solution featuring Standalone Hardware connectivity.",
     description: "<div class='product-description'><p class='lead'>Stream directly to YouTube, Facebook, and Twitch without a computer. The <strong>Ultra Encode HDMI Plus Module</strong> is a standalone hardware encoder designed for stability and ease of use in churches, schools, and corporate events.</p><h3>Why Choose the Ultra Encode HDMI Plus Module?</h3><p>Reliability is paramount in live streaming. This hardware encoder operates independently of an OS, eliminating the risk of Windows updates or software crashes interrupting your broadcast. It supports dual-stream output and local recording simultaneously.</p><h3>Key Technical Features</h3><ul class='feature-list'><li><strong>HDMI Connectivity</strong></li><li><strong>Loop-through Output for Monitoring</strong></li></ul><h3>Ideal Use Case Scenarios</h3><ul><li><strong>Professional AV:</strong> Signal distribution and processing.</li></ul></div>",
     category: "Encoders",
+    price: 100,
     imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/2-2-3.png",
     features: ["Phone-Free Streaming"]
   }
