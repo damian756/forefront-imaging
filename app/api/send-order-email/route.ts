@@ -113,9 +113,9 @@ export async function POST(req: NextRequest) {
 
             <div class="footer">
               <p><strong>Forefront Imaging</strong></p>
-              <p>Electronic Modular Solutions Ltd<br>
-              Unit 3, Towers Business Park, Rugeley, Staffordshire, WS15 1UZ, UK</p>
-              <p>📞 +44 (0)116 277 5730 | 📧 hello@churchtownmedia.co.uk</p>
+              <p>Churchtown Media Ltd (Company No. 16960442)<br>
+              Cambridge Avenue, Southport, PR9 9SA, UK</p>
+              <p>📞 07545 934360 | 📧 hello@churchtownmedia.co.uk</p>
             </div>
           </div>
         </body>

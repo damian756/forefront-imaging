@@ -71,8 +71,8 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-lg font-bold mb-2">Phone</h3>
                 <p className="text-slate-400 text-sm mb-3">Mon-Fri, 9AM-5PM GMT</p>
-                <a href="tel:+441162775730" className="text-blue-400 hover:text-blue-300 font-semibold text-lg">
-                  +44 (0)116 277 5730
+                <a href="tel:+447545934360" className="text-blue-400 hover:text-blue-300 font-semibold text-lg">
+                  07545 934360
                 </a>
               </motion.div>
 
@@ -88,7 +88,9 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-lg font-bold mb-2">Email</h3>
                 <p className="text-slate-400 text-sm mb-3">We respond within 24 hours</p>
-                <p className="text-green-400 font-semibold">Use the form →</p>
+                <a href="mailto:hello@churchtownmedia.co.uk" className="text-green-400 hover:text-green-300 font-semibold text-lg break-all">
+                  hello@churchtownmedia.co.uk
+                </a>
               </motion.div>
 
               {/* Location */}
@@ -102,9 +104,10 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6 text-purple-400" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">Location</h3>
-                <p className="text-slate-400 text-sm mb-3">Main warehouse & offices</p>
+                <p className="text-slate-400 text-sm mb-3">Main office</p>
                 <p className="text-white">
-                  Leicester<br />
+                  Cambridge Avenue<br />
+                  Southport, PR9 9SA<br />
                   United Kingdom
                 </p>
               </motion.div>

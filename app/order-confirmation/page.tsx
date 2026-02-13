@@ -262,11 +262,11 @@ function OrderConfirmationContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+441162775730"
+                href="tel:+447545934360"
                 className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                Call +44 (0)116 277 5730
+                Call 07545 934360
               </a>
               <Link 
                 href="/contact"

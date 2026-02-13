@@ -157,7 +157,7 @@ export default function Footer() {
                   <Phone className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-white font-medium">Customer Service</div>
-                    <a href="tel:+441162775730" className="hover:text-blue-400 transition-colors">+44 (0)116 277 5730</a>
+                    <a href="tel:+447545934360" className="hover:text-blue-400 transition-colors">07545 934360</a>
                   </div>
                 </div>
               </li>
@@ -166,7 +166,7 @@ export default function Footer() {
                   <Mail className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-white font-medium">Email</div>
-                    <a href="/contact" className="hover:text-blue-400 transition-colors break-all">Contact Form</a>
+                    <a href="mailto:hello@churchtownmedia.co.uk" className="hover:text-blue-400 transition-colors break-all">hello@churchtownmedia.co.uk</a>
                   </div>
                 </div>
               </li>
@@ -175,7 +175,7 @@ export default function Footer() {
                   <MapPin className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-white font-medium">Location</div>
-                    <span>Leicester, United Kingdom</span>
+                    <span>Cambridge Avenue<br />Southport, PR9 9SA</span>
                   </div>
                 </div>
               </li>
@@ -187,7 +187,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
             <div>
-              <p>© {currentYear} Electronic Modular Solutions Ltd. (EMS Ltd.) All rights reserved.</p>
+              <p>© {currentYear} Churchtown Media Ltd. Company No. 16960442. All rights reserved.</p>
               <p className="text-xs mt-1">Trading as Forefront Imaging</p>
             </div>
             <div className="flex items-center gap-6">
