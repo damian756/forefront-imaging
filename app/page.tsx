@@ -3,20 +3,18 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Rocket, ShoppingCart, CheckCircle2, Cpu, HardDrive, Radio, Satellite } from 'lucide-react';
+import { Plug, Play, ShoppingCart, CheckCircle2, Zap, ArrowRight, Cpu, HardDrive, Monitor } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import SpaceBackground from '@/components/SpaceBackground';
-import USBSun from '@/components/USBSun';
 import { useCart } from '@/contexts/CartContext';
 
 export default function Home() {
   const { addItem } = useCart();
   const [addedItemId, setAddedItemId] = useState<number | null>(null);
-  const [selectedPlanet, setSelectedPlanet] = useState<number | null>(null);
+  const [selectedDevice, setSelectedDevice] = useState<number | null>(null);
 
-  const handleAddToCart = (product: typeof planets[0], e: React.MouseEvent) => {
+  const handleAddToCart = (product: typeof devices[0], e: React.MouseEvent) => {
     e.preventDefault();
     addItem({
       id: product.id.toString(),
@@ -29,426 +27,349 @@ export default function Home() {
     setTimeout(() => setAddedItemId(null), 2000);
   };
 
-  const planets = [
+  const devices = [
     {
       id: 279,
       slug: "magewell-usb-capture-hdmi-gen-2",
-      name: "PCB-TERRA",
-      fullName: "USB Capture HDMI Gen 2",
-      orbit: 300,
-      size: 120,
-      speed: 20,
+      name: "USB Capture HDMI Gen 2",
+      shortName: "HDMI Gen 2",
+      inputPort: "HDMI 1.4",
+      outputPort: "USB 3.0",
       specs: {
+        resolution: "1080p60",
         bandwidth: "10 Gbps",
         latency: "< 1ms",
-        interface: "USB 3.0",
-        resolution: "1080p60"
+        compatibility: "Universal"
       },
-      components: ["HDMI Receiver IC", "USB Controller", "Power Regulator"],
+      features: ["Hardware Scaling", "Loop-Through", "Driver-Free"],
       image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png",
       price: 100,
-      coordinates: "α-279°N",
-      description: "Main hub planet with HDMI processing continents"
+      compatibility: ["OBS", "vMix", "Zoom", "Teams", "Skype"]
     },
     {
       id: 280,
       slug: "magewell-usb-capture-aio",
-      name: "PCB-MULTI",
-      fullName: "USB Capture AIO",
-      orbit: 450,
-      size: 140,
-      speed: 30,
+      name: "USB Capture AIO",
+      shortName: "AIO Multi",
+      inputPort: "HDMI/SDI/DVI",
+      outputPort: "USB 3.0",
       specs: {
+        resolution: "1080p60",
         bandwidth: "10 Gbps",
         latency: "< 1ms",
-        interface: "Multi-Input",
-        resolution: "1080p60"
+        compatibility: "Multi-Input"
       },
-      components: ["Multi-Input Router", "Signal Processor", "USB Hub IC"],
+      features: ["Triple Input", "Auto-Switch", "Universal Driver"],
       image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-aio-1.png",
       price: 100,
-      coordinates: "β-280°E",
-      description: "Multi-interface planet with diverse terrain"
+      compatibility: ["OBS", "vMix", "Wirecast", "XSplit"]
     },
     {
       id: 281,
       slug: "magewell-usb-capture-sdi-gen-2",
-      name: "PCB-NOVA",
-      fullName: "USB Capture SDI Gen 2",
-      orbit: 600,
-      size: 110,
-      speed: 40,
+      name: "USB Capture SDI Gen 2",
+      shortName: "SDI Gen 2",
+      inputPort: "3G-SDI",
+      outputPort: "USB 3.0",
       specs: {
+        resolution: "1080p60",
         bandwidth: "3 Gbps",
         latency: "< 1ms",
-        interface: "3G-SDI",
-        resolution: "1080p60"
+        compatibility: "Broadcast"
       },
-      components: ["SDI Receiver", "Clock Generator", "Voltage Regulator"],
+      features: ["Professional SDI", "Loop-Through", "Embedded Audio"],
       image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/sdi-usb.606.png",
       price: 100,
-      coordinates: "γ-281°W",
-      description: "Professional broadcast planet with SDI infrastructure"
+      compatibility: ["vMix", "Wirecast", "OBS", "Premiere Pro"]
     }
   ];
 
   return (
-    <div className="flex flex-col min-h-screen text-white selection:bg-green-500/30 overflow-hidden relative" style={{ background: '#000000' }}>
+    <div className="flex flex-col min-h-screen text-white selection:bg-cyan-500/30 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f0f14 0%, #14141e 100%)' }}>
       
-      {/* Space Background with Stars */}
-      <SpaceBackground />
+      {/* Grid Background */}
+      <div className="fixed inset-0 builder-canvas opacity-40 pointer-events-none" />
       
       <Navbar />
 
-      {/* SOLAR SYSTEM HERO */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* MODULAR BUILDER HERO */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
         
-        {/* USB Sun at Center */}
-        <USBSun />
-        
-        <div className="max-w-7xl mx-auto px-4 relative z-20 pt-32">
+        <div className="max-w-7xl mx-auto px-4 relative z-20">
           
           {/* Title */}
           <motion.div 
-            className="text-center mb-20"
-            initial={{ opacity: 0, y: -50 }}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full planet-card mb-6"
-              animate={{
-                boxShadow: [
-                  '0 0 20px rgba(0, 255, 136, 0.3)',
-                  '0 0 30px rgba(0, 255, 136, 0.5)',
-                  '0 0 20px rgba(0, 255, 136, 0.3)'
-                ]
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-panel mb-6 border border-cyan-500/30"
+              whileHover={{ scale: 1.05 }}
             >
-              <Satellite className="w-5 h-5 pcb-text" />
-              <span className="text-sm font-bold uppercase tracking-wider space-text">USB SOLAR SYSTEM</span>
-              <span className="text-sm text-gray-500">•</span>
-              <span className="text-sm text-yellow-400 font-semibold">MAGEWELL SECTOR</span>
+              <div className="status-indicator connected" />
+              <span className="text-sm font-bold uppercase tracking-wider">MODULAR SYSTEM BUILDER</span>
             </motion.div>
 
-            <h1 className="text-6xl md:text-9xl font-bold mb-6 leading-tight uppercase">
-              <span className="block text-gray-500 text-3xl md:text-5xl mb-4">EXPLORE THE</span>
-              <span className="block pcb-text text-7xl md:text-[12rem]">
-                PCB GALAXY
+            <h1 className="text-5xl md:text-8xl font-bold mb-6 leading-tight">
+              <span className="block text-gray-400 text-2xl md:text-4xl mb-4">BUILD YOUR</span>
+              <span className="block text-gradient text-7xl md:text-[10rem]">
+                CAPTURE CHAIN
               </span>
-              <span className="block copper-text text-4xl md:text-6xl mt-4">
-                Circuit Board Planets
+              <span className="block text-gray-500 text-3xl md:text-5xl mt-4">
+                <span className="text-cyan-400">HDMI</span> → <span className="text-purple-400">PROCESS</span> → <span className="text-green-400">USB</span>
               </span>
             </h1>
 
             <motion.p 
-              className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed space-text"
+              className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Navigate through orbiting USB capture worlds. Each planet is a fully functional circuit board 
-              with <span className="pcb-text">copper trace continents</span> and{' '}
-              <span className="copper-text">component cities</span>
+              Drag, connect, and configure your perfect video capture workflow. 
+              See compatibility <span className="text-cyan-400 font-semibold">in real-time</span> as you build.
             </motion.p>
 
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.7 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
               <Link 
-                href="#planets" 
-                className="group px-8 py-5 space-button text-lg"
+                href="#builder" 
+                className="btn-primary text-base px-8 py-4"
               >
                 <span className="flex items-center justify-center gap-2">
-                  <Rocket className="w-5 h-5" />
-                  LAUNCH EXPLORATION
+                  <Play className="w-5 h-5" />
+                  START BUILDING
                 </span>
               </Link>
               <Link 
-                href="/how-it-works" 
-                className="px-8 py-5 planet-card border-2 border-copper-trace hover:border-copper-bright text-gray-200 hover:text-white font-bold rounded-lg transition-all text-center text-lg space-text"
+                href="/products" 
+                className="btn-secondary text-base px-8 py-4"
               >
-                SYSTEM SPECS
+                VIEW ALL MODULES
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Orbital Paths with Planets */}
-          <div className="relative transform-3d" style={{ height: '800px' }}>
-            
-            {planets.map((planet, index) => (
-              <motion.div
-                key={planet.id}
-                className="absolute top-1/2 left-1/2"
-                style={{
-                  width: `${planet.orbit * 2}px`,
-                  height: `${planet.orbit * 2}px`,
-                  marginLeft: `-${planet.orbit}px`,
-                  marginTop: `-${planet.orbit}px`,
-                }}
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: planet.speed,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              >
-                {/* Orbital Path */}
-                <div className="orbital-path" style={{ width: '100%', height: '100%' }} />
-                
-                {/* Planet */}
+          {/* Interactive Demo Section */}
+          <motion.div 
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {[
+                {
+                  step: "01",
+                  icon: Monitor,
+                  title: "SELECT SOURCE",
+                  desc: "Choose your HDMI/SDI input device",
+                  color: "#0066ff"
+                },
+                {
+                  step: "02",
+                  icon: Plug,
+                  title: "CONNECT CAPTURE",
+                  desc: "Drop in USB capture module",
+                  color: "#9d4edd"
+                },
+                {
+                  step: "03",
+                  icon: Cpu,
+                  title: "CONFIGURE OUTPUT",
+                  desc: "Set your software destination",
+                  color: "#00cc66"
+                }
+              ].map((item, i) => (
                 <motion.div
-                  className="absolute top-0 left-1/2 -translate-x-1/2 cursor-pointer"
-                  whileHover={{ scale: 1.2 }}
-                  onClick={() => setSelectedPlanet(planet.id)}
+                  key={i}
+                  className="port-module p-8 relative"
+                  whileHover={{ y: -5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9 + i * 0.1 }}
                 >
-                  <Link href={`/products/${planet.slug}`}>
-                    <motion.div
-                      className="planet-surface planet-glow planet-hover relative"
-                      style={{
-                        width: `${planet.size}px`,
-                        height: `${planet.size}px`,
-                      }}
-                      animate={{
-                        rotate: -360,
-                      }}
-                      transition={{
-                        duration: 60,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                    >
-                      {/* Copper Traces on planet */}
-                      <div className="copper-traces" />
-                      
-                      {/* Product image overlay */}
-                      <div className="absolute inset-4 rounded-full overflow-hidden opacity-70">
-                        <Image
-                          src={planet.image}
-                          alt={planet.name}
-                          fill
-                          className="object-contain p-2"
-                          style={{ filter: 'drop-shadow(0 0 10px rgba(0, 255, 136, 0.6))' }}
-                        />
-                      </div>
-
-                      {/* Solder points around planet */}
-                      {[0, 90, 180, 270].map((angle, i) => (
-                        <div
-                          key={i}
-                          className="solder-point absolute"
-                          style={{
-                            top: '50%',
-                            left: '50%',
-                            transform: `rotate(${angle}deg) translateY(-${planet.size / 2 + 5}px)`,
-                          }}
-                        />
-                      ))}
-                    </motion.div>
-                  </Link>
-
-                  {/* Planet Label */}
-                  <motion.div
-                    className="absolute top-full mt-4 left-1/2 -translate-x-1/2 text-center whitespace-nowrap"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1 + index * 0.3 }}
+                  <div className="text-6xl font-bold text-gray-800 mb-4">{item.step}</div>
+                  <div 
+                    className="w-16 h-16 rounded-xl flex items-center justify-center mb-4"
+                    style={{ 
+                      background: `${item.color}20`,
+                      border: `2px solid ${item.color}`
+                    }}
                   >
-                    <div className="pcb-text text-lg font-bold space-text">{planet.name}</div>
-                    <div className="coordinates">{planet.coordinates}</div>
-                  </motion.div>
+                    <item.icon className="w-8 h-8" style={{ color: item.color }} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 uppercase" style={{ color: item.color }}>{item.title}</h3>
+                  <p className="text-gray-400 text-sm">{item.desc}</p>
                 </motion.div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* PLANET CATALOG SECTION */}
-      <section id="planets" className="py-24 relative">
-        <div className="absolute inset-0 pcb-grid opacity-20" />
+      {/* DEVICE MODULES CATALOG */}
+      <section id="builder" className="py-24 relative">
+        <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent)' }} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div 
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 planet-card">
-              <div className="led-star" />
-              <span className="text-sm text-gray-400 uppercase tracking-wide font-semibold space-text">PLANETARY DATABASE</span>
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-full border border-cyan-500/30">
+              <Plug className="w-4 h-4 text-cyan-400" />
+              <span className="text-sm text-gray-400 uppercase tracking-wide font-semibold">AVAILABLE MODULES</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase">
-              <span className="pcb-text">CIRCUIT BOARD</span> <span className="text-white">WORLDS</span>
+              <span className="text-gradient">CAPTURE DEVICES</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto space-text">
-              Land on any planet to explore its component geography and technical specifications
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Professional USB video capture modules. Connect any HDMI/SDI source to your computer.
             </p>
           </motion.div>
 
-          <div className="grid gap-10 md:grid-cols-3">
-            {planets.map((planet, index) => (
+          <div className="grid gap-8 md:grid-cols-3">
+            {devices.map((device, index) => (
               <motion.div
-                key={planet.id}
+                key={device.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.2 }}
-                className="h-full fade-in-up"
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="fade-in"
               >
                 <Link 
-                  href={`/products/${planet.slug}`}
+                  href={`/products/${device.slug}`}
                   className="group block h-full"
                 >
                   <motion.div
-                    className="h-full planet-card p-6 relative overflow-hidden float-gentle"
-                    whileHover={{ 
-                      y: -15,
-                      scale: 1.03,
-                    }}
-                    style={{ animationDelay: `${index * 0.5}s` }}
+                    className="h-full device-module isometric-card"
+                    whileHover={{ scale: 1.02 }}
                   >
-                    {/* Coordinates Badge */}
-                    <div className="absolute top-6 right-6 z-30">
-                      <motion.div 
-                        className="px-4 py-2 planet-card border border-yellow-500/50 rounded-lg"
-                        animate={{
-                          borderColor: ['rgba(255, 234, 0, 0.5)', 'rgba(255, 234, 0, 1)', 'rgba(255, 234, 0, 0.5)']
-                        }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        <span className="text-[10px] font-bold uppercase tracking-wider coordinates">
-                          {planet.coordinates}
-                        </span>
-                      </motion.div>
-                    </div>
-                    
-                    {/* Planet Visualization */}
-                    <div className="h-80 relative p-8 flex items-center justify-center mb-6 pcb-grid rounded-xl" 
-                         style={{ background: 'linear-gradient(135deg, rgba(0, 77, 42, 0.3) 0%, rgba(0, 51, 32, 0.5) 100%)' }}>
-                      
-                      {/* Orbiting mini planet */}
-                      <motion.div
-                        className="planet-surface planet-glow relative"
-                        style={{ width: '180px', height: '180px' }}
-                        animate={{
-                          rotate: 360,
-                        }}
-                        transition={{
-                          duration: 20,
-                          repeat: Infinity,
-                          ease: "linear"
-                        }}
-                      >
-                        <div className="copper-traces" />
-                        
-                        <div className="absolute inset-6 rounded-full overflow-hidden">
-                          <Image
-                            src={planet.image}
-                            alt={planet.name}
-                            fill
-                            className="object-contain p-2"
-                            style={{ filter: 'drop-shadow(0 0 20px rgba(0, 255, 136, 0.6))' }}
-                          />
-                        </div>
-
-                        {/* Solder points */}
-                        {[0, 90, 180, 270].map((angle, i) => (
-                          <div
-                            key={i}
-                            className="solder-point absolute"
-                            style={{
-                              top: '50%',
-                              left: '50%',
-                              transform: `rotate(${angle}deg) translateY(-95px)`,
-                            }}
-                          />
-                        ))}
-                      </motion.div>
-
-                      {/* Orbital ring */}
-                      <motion.div
-                        className="absolute inset-0 border-2 border-dashed border-green-500/20 rounded-full"
-                        animate={{ rotate: -360 }}
-                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                      />
-                    </div>
-                    
-                    {/* Planet Info */}
-                    <div className="relative z-10">
-                      
-                      <h3 className="text-3xl font-bold pcb-text mb-2 leading-tight uppercase space-text">
-                        {planet.name}
-                      </h3>
-                      <p className="text-lg text-gray-300 mb-4">{planet.fullName}</p>
-                      <p className="text-sm text-gray-500 mb-5 italic">{planet.description}</p>
-                      
-                      {/* Technical Specs */}
-                      <div className="grid grid-cols-2 gap-3 mb-5">
-                        {Object.entries(planet.specs).map(([key, value], i) => (
-                          <div key={i} className="planet-card p-3 rounded border border-green-500/30">
-                            <div className="text-[9px] text-gray-500 mb-1 uppercase tracking-wider">{key}</div>
-                            <div className="text-xs font-bold pcb-text">{value}</div>
-                          </div>
+                    {/* Port Indicators */}
+                    <div className="flex justify-between items-start mb-6">
+                      <div className="compat-badge compatible">
+                        <div className="status-indicator connected" />
+                        COMPATIBLE
+                      </div>
+                      <div className="signal-strength">
+                        {[1,2,3,4,5].map((bar) => (
+                          <div key={bar} className="signal-bar active" />
                         ))}
                       </div>
-
-                      {/* Components (like cities) */}
-                      <div className="mb-5">
-                        <div className="text-xs text-gray-500 uppercase font-bold mb-2 space-text">Component Cities:</div>
-                        <div className="flex flex-wrap gap-2">
-                          {planet.components.map((comp, i) => (
-                            <span 
-                              key={i} 
-                              className="px-2 py-1 planet-card rounded text-[10px] font-bold uppercase copper-text"
-                            >
-                              {comp}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Trace connector */}
-                      <div className="trace-connector my-5" />
-
-                      {/* Price */}
-                      <div className="mb-5 flex items-center justify-between p-4 planet-card rounded-xl border border-yellow-500/30">
-                        <span className="text-xs text-gray-400 uppercase font-bold tracking-wider space-text">Landing Cost</span>
-                        <div>
-                          <span className="text-4xl font-bold text-yellow-400">£{planet.price}</span>
-                          <span className="text-gray-500 text-sm ml-2">GBP</span>
-                        </div>
-                      </div>
-                      
-                      {/* Add to Cart Button */}
-                      <motion.button 
-                        onClick={(e) => handleAddToCart(planet, e)}
-                        className="w-full py-4 space-button rounded-xl text-white text-base font-bold transition-all flex items-center justify-center gap-3 uppercase tracking-wider"
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                      >
-                        <span className="relative z-10 flex items-center gap-2">
-                          {addedItemId === planet.id ? (
-                            <>
-                              <CheckCircle2 className="w-5 h-5" />
-                              DOCKED IN CARGO
-                            </>
-                          ) : (
-                            <>
-                              <ShoppingCart className="w-5 h-5" />
-                              DOCK TO CART
-                            </>
-                          )}
-                        </span>
-                      </motion.button>
                     </div>
+
+                    {/* Device Image */}
+                    <div className="h-64 relative p-6 flex items-center justify-center mb-6 rounded-xl border border-gray-800">
+                      <motion.div
+                        className="relative w-full h-full"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Image
+                          src={device.image}
+                          alt={device.name}
+                          fill
+                          className="object-contain"
+                          style={{ filter: 'drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3))' }}
+                        />
+                      </motion.div>
+
+                      {/* Connection Points */}
+                      <div className="connection-point" style={{ top: '50%', left: '-8px', transform: 'translateY(-50%)' }} />
+                      <div className="connection-point" style={{ top: '50%', right: '-8px', transform: 'translateY(-50%)' }} />
+                    </div>
+
+                    {/* Port Visualization */}
+                    <div className="flex items-center justify-center gap-4 mb-6 p-4 rounded-xl" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
+                      <div className="text-center">
+                        <div className="hdmi-port mb-6 mx-auto" />
+                        <div className="port-label">{device.inputPort}</div>
+                      </div>
+                      <div className="flex-1 relative">
+                        <div className="trace-connector" />
+                        <motion.div
+                          className="connection-particle"
+                          animate={{
+                            x: ['0%', '100%'],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "linear"
+                          }}
+                        />
+                      </div>
+                      <div className="text-center">
+                        <div className="usb-port mb-6 mx-auto" />
+                        <div className="port-label">{device.outputPort}</div>
+                      </div>
+                    </div>
+
+                    {/* Device Info */}
+                    <h3 className="text-2xl font-bold text-white group-hover:text-gradient transition-all mb-3 uppercase">
+                      {device.shortName}
+                    </h3>
+                    
+                    {/* Specs Grid */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      {Object.entries(device.specs).map(([key, value], i) => (
+                        <div key={i} className="glass-panel p-3 rounded-lg border border-gray-700/50">
+                          <div className="text-[9px] text-gray-500 mb-1 uppercase tracking-wider font-mono">{key}</div>
+                          <div className="text-sm font-bold text-cyan-400">{value}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Features */}
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {device.features.map((feature, i) => (
+                        <span 
+                          key={i} 
+                          className="px-3 py-1.5 glass-panel rounded-lg text-[10px] font-bold uppercase text-gray-300 border border-gray-700/50"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Price */}
+                    <div className="mb-4 flex items-center justify-between p-4 glass-panel rounded-xl border border-purple-500/30">
+                      <span className="text-xs text-gray-400 uppercase font-bold tracking-wider">MODULE PRICE</span>
+                      <div>
+                        <span className="text-3xl font-bold text-gradient">£{device.price}</span>
+                        <span className="text-gray-500 text-sm ml-2">GBP</span>
+                      </div>
+                    </div>
+                    
+                    {/* Add to Cart */}
+                    <motion.button 
+                      onClick={(e) => handleAddToCart(device, e)}
+                      className="w-full btn-primary py-4 text-base font-bold transition-all flex items-center justify-center gap-3 uppercase tracking-wider"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {addedItemId === device.id ? (
+                        <>
+                          <CheckCircle2 className="w-5 h-5" />
+                          ADDED TO CHAIN
+                        </>
+                      ) : (
+                        <>
+                          <ShoppingCart className="w-5 h-5" />
+                          ADD MODULE
+                        </>
+                      )}
+                    </motion.button>
                   </motion.div>
                 </Link>
               </motion.div>
@@ -461,16 +382,47 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.5 }}
           >
             <Link 
               href="/products"
-              className="inline-flex items-center gap-3 px-10 py-5 space-button rounded-xl text-lg font-bold uppercase"
+              className="inline-flex items-center gap-3 px-10 py-5 btn-primary text-lg font-bold uppercase"
             >
-              <span className="pcb-text">EXPLORE ALL PLANETS</span>
-              <Rocket className="w-6 h-6 text-green-400" />
+              <span className="text-gradient">VIEW ALL MODULES</span>
+              <ArrowRight className="w-6 h-6" />
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* COMPATIBILITY SHOWCASE */}
+      <section className="py-24 relative border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 uppercase">
+              <span className="text-gradient">UNIVERSAL COMPATIBILITY</span>
+            </h2>
+            <p className="text-gray-400 text-lg">Connect to any software, platform, or workflow</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {["OBS Studio", "vMix", "Zoom", "Microsoft Teams", "Wirecast", "XSplit", "Skype", "Discord"].map((app, i) => (
+              <motion.div
+                key={i}
+                className="port-module p-6 text-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mx-auto mb-3">
+                  <CheckCircle2 className="w-6 h-6 text-cyan-400" />
+                </div>
+                <div className="text-sm font-semibold text-gray-300">{app}</div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

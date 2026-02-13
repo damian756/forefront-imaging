@@ -11,7 +11,6 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import SpaceBackground from '@/components/SpaceBackground';
 import { useCart } from '@/contexts/CartContext';
 import { getUSBCaptureProducts } from '@/lib/products';
 
@@ -83,11 +82,10 @@ function CatalogPage() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col min-h-screen text-white selection:bg-cyan-500/30" style={{ background: '#000000' }}>
+      <div className="flex flex-col min-h-screen text-white selection:bg-cyan-500/30" style={{ background: 'linear-gradient(135deg, #0f0f14 0%, #14141e 100%)' }}>
         
-        {/* Space Background */}
-        <SpaceBackground />
-        <div className="fixed inset-0 pcb-grid opacity-10 pointer-events-none z-0" />
+        {/* Grid Background */}
+        <div className="fixed inset-0 builder-canvas opacity-30 pointer-events-none z-0" />
         
         {/* Hero Header */}
         <div className="pt-32 pb-12 border-b border-green-500/20 relative overflow-hidden">

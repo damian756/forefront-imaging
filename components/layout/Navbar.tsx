@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Phone, ChevronDown, Menu, X, ShoppingCart, Mail, Satellite } from "lucide-react";
+import { Phone, ChevronDown, Menu, X, ShoppingCart, Mail, Plug } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/contexts/CartContext";
 
@@ -35,63 +35,62 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Space Top Bar */}
-      <div className="fixed top-0 w-full z-50 planet-card border-b border-green-500/30 py-2.5 text-xs">
+      {/* Top Bar */}
+      <div className="fixed top-0 w-full z-50 glass-panel border-b border-gray-700/50 py-2.5 text-xs">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 text-gray-400 hover:text-green-400 transition-colors">
-              <Phone className="w-3 h-3 pcb-text" />
+            <div className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors">
+              <Phone className="w-3 h-3 text-cyan-400" />
               <span className="font-semibold">01704 635785</span>
             </div>
-            <div className="hidden md:flex items-center gap-2 text-gray-400 hover:text-green-400 transition-colors">
-              <Mail className="w-3 h-3 pcb-text" />
+            <div className="hidden md:flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors">
+              <Mail className="w-3 h-3 text-cyan-400" />
               <span className="font-semibold">hello@churchtownmedia.co.uk</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <div className="led-star" />
-            <span className="font-bold uppercase tracking-wider text-green-400 space-text">SYSTEM ONLINE</span>
+            <div className="status-indicator connected" />
+            <span className="font-bold uppercase tracking-wider text-green-400">SYSTEM READY</span>
           </div>
         </div>
       </div>
       
-      {/* Main Navbar - PCB Space */}
+      {/* Main Navbar */}
       <nav 
         className={`fixed top-[40px] w-full z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'planet-card backdrop-blur-2xl border-b border-green-500/50 py-3' 
-            : 'planet-card border-b border-green-500/30 py-4'
+            ? 'glass-panel backdrop-blur-2xl border-b border-gray-700 py-3 glow-cyan' 
+            : 'glass-panel border-b border-gray-800 py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          {/* Logo - Space PCB */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <motion.div 
-              className="p-2.5 rounded-xl planet-surface planet-glow relative"
+              className="p-2.5 rounded-xl port-module"
               style={{ width: '50px', height: '50px' }}
-              whileHover={{ scale: 1.1, rotate: 360 }}
-              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="copper-traces" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Satellite className="w-6 h-6 pcb-text relative z-10" />
+              <div className="w-full h-full flex items-center justify-center">
+                <Plug className="w-6 h-6 text-cyan-400" />
               </div>
             </motion.div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-white tracking-tight group-hover:pcb-text transition-all uppercase space-text">
+              <span className="text-2xl font-bold text-white tracking-tight group-hover:text-gradient transition-all uppercase">
                 StreamTek
               </span>
-              <span className="text-[10px] pcb-text uppercase tracking-widest font-semibold -mt-1 space-text">
-                PCB SOLAR SYSTEM
+              <span className="text-[10px] text-cyan-400 uppercase tracking-widest font-semibold -mt-1">
+                MODULAR CAPTURE
               </span>
             </div>
           </Link>
 
-        {/* Desktop Menu - Space PCB */}
+        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8">
-          <Link href="/" className="text-gray-300 hover:pcb-text font-semibold text-sm transition-all relative group uppercase space-text">
+          <Link href="/" className="text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all relative group uppercase">
             Home
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 shadow-[0_0_5px_rgba(0,255,136,0.8)]" />
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300" />
           </Link>
 
           {/* Products Dropdown */}
@@ -100,17 +99,17 @@ export default function Navbar() {
             onMouseEnter={() => setProductsOpen(true)}
             onMouseLeave={() => setProductsOpen(false)}
           >
-            <button className="text-gray-300 hover:pcb-text font-semibold text-sm transition-all flex items-center gap-1 relative group uppercase space-text">
+            <button className="text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all flex items-center gap-1 relative group uppercase">
               Products 
               <motion.div animate={{ rotate: productsOpen ? 180 : 0 }}>
                 <ChevronDown className="w-4 h-4" />
               </motion.div>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 shadow-[0_0_5px_rgba(0,255,136,0.8)]" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300" />
             </button>
             <AnimatePresence>
               {productsOpen && (
                 <motion.div
-                  className="absolute top-full left-0 mt-2 w-64 planet-card circuit-border rounded-xl shadow-2xl overflow-hidden"
+                  className="absolute top-full left-0 mt-2 w-64 port-module shadow-2xl overflow-hidden"
                   initial={{ opacity: 0, y: -10, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -120,13 +119,13 @@ export default function Navbar() {
                     <Link
                       key={cat.name}
                       href={cat.href}
-                      className={`block px-4 py-3 text-sm hover:bg-green-500/20 transition-all relative group uppercase space-text ${
+                      className={`block px-4 py-3 text-sm hover:bg-cyan-500/20 transition-all relative group uppercase ${
                         cat.featured 
-                          ? 'pcb-text border-t border-green-500/50 font-bold' 
+                          ? 'text-cyan-400 border-t border-gray-700 font-bold' 
                           : 'text-gray-300 hover:text-white font-semibold'
                       }`}
                     >
-                      <span className="relative z-10">{cat.name}</span>
+                      {cat.name}
                     </Link>
                   ))}
                 </motion.div>
@@ -134,9 +133,9 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <Link href="/how-it-works" className="text-gray-300 hover:pcb-text font-semibold text-sm transition-all relative group uppercase space-text">
+          <Link href="/how-it-works" className="text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all relative group uppercase">
             How It Works
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 shadow-[0_0_5px_rgba(0,255,136,0.8)]" />
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300" />
           </Link>
 
           {/* Resources Dropdown */}
@@ -145,17 +144,17 @@ export default function Navbar() {
             onMouseEnter={() => setResourcesOpen(true)}
             onMouseLeave={() => setResourcesOpen(false)}
           >
-            <button className="text-gray-300 hover:pcb-text font-semibold text-sm transition-all flex items-center gap-1 relative group uppercase space-text">
+            <button className="text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all flex items-center gap-1 relative group uppercase">
               Resources 
               <motion.div animate={{ rotate: resourcesOpen ? 180 : 0 }}>
                 <ChevronDown className="w-4 h-4" />
               </motion.div>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300 shadow-[0_0_5px_rgba(0,255,136,0.8)]" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300" />
             </button>
             <AnimatePresence>
               {resourcesOpen && (
                 <motion.div
-                  className="absolute top-full right-0 mt-2 w-52 planet-card circuit-border rounded-xl shadow-2xl overflow-hidden"
+                  className="absolute top-full right-0 mt-2 w-52 port-module shadow-2xl overflow-hidden"
                   initial={{ opacity: 0, y: -10, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -165,9 +164,9 @@ export default function Navbar() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-green-500/20 transition-all relative group font-semibold uppercase space-text"
+                      className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-cyan-500/20 transition-all font-semibold uppercase"
                     >
-                      <span className="relative z-10">{item.name}</span>
+                      {item.name}
                     </Link>
                   ))}
                 </motion.div>
@@ -177,15 +176,15 @@ export default function Navbar() {
 
           <Link 
             href="/cart" 
-            className="relative text-gray-300 hover:text-green-400 transition-all group"
+            className="relative text-gray-300 hover:text-cyan-400 transition-all group"
           >
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <ShoppingCart className="w-6 h-6" />
             </motion.div>
             {totalItems > 0 && (
               <motion.span 
-                className="absolute -top-2 -right-2 text-black text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center space-text"
-                style={{ background: '#00ff88', boxShadow: '0 0 15px #00ff88' }}
+                className="absolute -top-2 -right-2 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center"
+                style={{ background: 'linear-gradient(135deg, #00d4ff, #9d4edd)', boxShadow: '0 0 15px rgba(0, 212, 255, 0.5)' }}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
@@ -197,10 +196,10 @@ export default function Navbar() {
 
           <Link 
             href="/contact" 
-            className="flex items-center gap-2 text-white px-6 py-3 rounded-xl font-bold text-sm hover:scale-105 transition-all shadow-lg space-button relative overflow-hidden uppercase space-text"
+            className="btn-primary px-6 py-3 text-sm uppercase flex items-center gap-2"
           >
-            <Phone className="w-4 h-4 relative z-10" />
-            <span className="relative z-10">Contact</span>
+            <Phone className="w-4 h-4" />
+            Contact
           </Link>
         </div>
 
@@ -214,27 +213,27 @@ export default function Navbar() {
       </div>
       </nav>
 
-      {/* Mobile Menu - Space PCB */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="lg:hidden planet-card border-t border-green-500/50"
+            className="lg:hidden glass-panel border-t border-gray-700"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
             <div className="px-4 py-6 space-y-4">
-              <Link href="/" className="block text-gray-300 hover:pcb-text font-semibold text-sm transition-all uppercase space-text">Home</Link>
-              <Link href="/products" className="block text-gray-300 hover:pcb-text font-semibold text-sm transition-all uppercase space-text">Products</Link>
-              <Link href="/how-it-works" className="block text-gray-300 hover:pcb-text font-semibold text-sm transition-all uppercase space-text">How It Works</Link>
-              <Link href="/support" className="block text-gray-300 hover:pcb-text font-semibold text-sm transition-all uppercase space-text">Support</Link>
-              <Link href="/cart" className="flex items-center gap-2 text-gray-300 hover:pcb-text font-semibold text-sm transition-all uppercase space-text">
+              <Link href="/" className="block text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">Home</Link>
+              <Link href="/products" className="block text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">Products</Link>
+              <Link href="/how-it-works" className="block text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">How It Works</Link>
+              <Link href="/support" className="block text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">Support</Link>
+              <Link href="/cart" className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 font-semibold text-sm transition-all uppercase">
                 <ShoppingCart className="w-5 h-5" />
                 Cart {totalItems > 0 && `(${totalItems})`}
               </Link>
-              <Link href="/contact" className="block text-white text-center py-4 rounded-xl font-bold uppercase mt-4 space-button relative overflow-hidden">
-                <span className="relative z-10">CONTACT US</span>
+              <Link href="/contact" className="block text-white text-center py-4 rounded-xl font-bold uppercase mt-4 btn-primary">
+                CONTACT US
               </Link>
             </div>
           </motion.div>
