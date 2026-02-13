@@ -3,7 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Downloads - Forefront Imaging",
+  title: "Downloads - StreamTek",
   description: "Download drivers, firmware, software utilities, and documentation for Magewell products.",
 };
 

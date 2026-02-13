@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Terms & Conditions - Forefront Imaging",
+  title: "Terms & Conditions - StreamTek",
   description: "Terms and conditions for using our website and services.",
 };
 
@@ -35,9 +35,9 @@ export default function TermsPage() {
               </h2>
               <div className="text-slate-300 leading-relaxed space-y-4">
                 <p>
-                  These Terms and Conditions (&quot;Terms&quot;) govern your use of the Forefront Imaging 
-                  website and services provided by Electronic Modular Solutions Ltd. (trading as 
-                  Forefront Imaging) (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
+                  These Terms and Conditions (&quot;Terms&quot;) govern your use of the StreamTek 
+                  website and services provided by Churchtown Media Ltd. (trading as 
+                  StreamTek) (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
                 </p>
                 <p>
                   By accessing or using our website, you agree to be bound by these Terms. If you 
@@ -54,7 +54,7 @@ export default function TermsPage() {
               </h2>
               <div className="text-slate-300 leading-relaxed space-y-4">
                 <p>
-                  Forefront Imaging is a B2B distributor. Our services are intended exclusively for:
+                  StreamTek is a professional USB video capture equipment supplier. Our services are available to:
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>Authorized resellers and value-added resellers (VARs)</li>
@@ -282,7 +282,7 @@ export default function TermsPage() {
                 </p>
                 <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 mt-4">
                   <p className="font-semibold text-white mb-2">Electronic Modular Solutions Ltd.</p>
-                  <p>Trading as Forefront Imaging</p>
+                  <p>Trading as StreamTek</p>
                   <p>Leicester, United Kingdom</p>
                   <p className="mt-3">Phone: <a href="tel:+441162775730" className="text-blue-400 hover:text-blue-300">+44 (0)116 277 5730</a></p>
                   <p>Email: <Link href="/contact" className="text-blue-400 hover:text-blue-300">Contact Form</Link></p>

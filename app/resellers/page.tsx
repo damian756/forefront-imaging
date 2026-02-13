@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Reseller Program - Forefront Imaging",
+  title: "Reseller Program - StreamTek",
   description: "Join our network of authorized Magewell resellers. Competitive pricing, dedicated support, and comprehensive training.",
 };
 

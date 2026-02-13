@@ -39,7 +39,7 @@ export default function Footer() {
             <div>
               <h3 className="text-3xl font-bold text-white mb-3">Stay Updated</h3>
               <p className="text-slate-400">
-                Get the latest product updates, exclusive deals, and helpful tutorials for content creators.
+                Get the latest StreamTek product updates, exclusive deals, and helpful tutorials for content creators.
               </p>
             </div>
             <form onSubmit={handleSubscribe} className="flex gap-3">
@@ -85,7 +85,7 @@ export default function Footer() {
                 <ShieldCheck className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold text-white">
-                ForeFront<span className="text-blue-500">Imaging</span>
+                Stream<span className="text-blue-500">Tek</span>
               </span>
             </Link>
             <p className="max-w-md mb-6 leading-relaxed text-slate-400">
@@ -188,7 +188,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
             <div>
               <p>© {currentYear} Churchtown Media Ltd. Company No. 16960442. All rights reserved.</p>
-              <p className="text-xs mt-1">Trading as Forefront Imaging</p>
+              <p className="text-xs mt-1">Trading as StreamTek</p>
             </div>
             <div className="flex items-center gap-6">
               <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>

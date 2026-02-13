@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Knowledge Base - Forefront Imaging",
+  title: "Knowledge Base - StreamTek",
   description: "Comprehensive guides, troubleshooting tips, and technical articles for Magewell products.",
 };
 

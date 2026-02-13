@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Video Tutorials - Forefront Imaging",
+  title: "Video Tutorials - StreamTek",
   description: "Step-by-step video guides for installing, configuring, and optimizing Magewell products.",
 };
 

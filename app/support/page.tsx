@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Support - Forefront Imaging",
+  title: "Support - StreamTek",
   description: "Technical support, resources, and documentation for Magewell products.",
 };
 
@@ -180,7 +180,7 @@ export default function SupportPage() {
                 <AlertCircle className="w-12 h-12 text-blue-400 mb-6" />
                 <h2 className="text-3xl font-bold mb-4">Warranty & Returns</h2>
                 <p className="text-slate-400 mb-6 leading-relaxed">
-                  All Magewell products sold through Forefront Imaging include full manufacturer 
+                  All Magewell products sold through StreamTek include full manufacturer 
                   warranty coverage. We handle all RMA processing and warranty claims directly.
                 </p>
                 <ul className="space-y-3">

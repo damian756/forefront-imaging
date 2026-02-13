@@ -3,8 +3,8 @@ import "./globals.css";
 import { CartProvider } from "@/contexts/CartContext";
 
 export const metadata: Metadata = {
-  title: "Forefront Imaging | Magewell UK Distributor",
-  description: "High-performance Magewell video capture for medical and broadcast.",
+  title: "StreamTek | Magewell Official Distributor UK",
+  description: "Professional USB video capture devices by Magewell. Free UK delivery, 3-year warranty, next-day shipping. Perfect for streaming, recording, and content creation.",
   robots: {
     index: false,
     follow: false,

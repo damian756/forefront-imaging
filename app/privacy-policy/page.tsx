@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Privacy Policy - Forefront Imaging",
+  title: "Privacy Policy - StreamTek",
   description: "Our privacy policy and data protection practices.",
 };
 
@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
               </h2>
               <div className="text-slate-300 leading-relaxed space-y-4">
                 <p>
-                  Electronic Modular Solutions Ltd. (trading as Forefront Imaging) (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) 
+                  Churchtown Media Ltd. (trading as StreamTek) (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) 
                   is committed to protecting your privacy. This Privacy Policy explains how we collect, use, 
                   disclose, and safeguard your information when you visit our website or use our services.
                 </p>
@@ -237,7 +237,7 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 mt-4">
                   <p className="font-semibold text-white mb-2">Electronic Modular Solutions Ltd.</p>
-                  <p>Trading as Forefront Imaging</p>
+                  <p>Trading as StreamTek</p>
                   <p>Leicester, United Kingdom</p>
                   <p className="mt-3">Phone: <a href="tel:+441162775730" className="text-blue-400 hover:text-blue-300">+44 (0)116 277 5730</a></p>
                   <p>Email: <Link href="/contact" className="text-blue-400 hover:text-blue-300">Contact Form</Link></p>

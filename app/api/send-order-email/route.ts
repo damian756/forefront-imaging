@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
           <div class="container">
             <div class="header">
               <h1 style="margin: 0;">✓ Order Confirmed</h1>
-              <p style="margin: 10px 0 0 0; opacity: 0.9;">Forefront Imaging</p>
+              <p style="margin: 10px 0 0 0; opacity: 0.9;">StreamTek</p>
             </div>
             
             <div class="content">
@@ -112,7 +112,7 @@ export async function POST(req: NextRequest) {
             </div>
 
             <div class="footer">
-              <p><strong>Forefront Imaging</strong></p>
+              <p><strong>StreamTek</strong></p>
               <p>Churchtown Media Ltd (Company No. 16960442)<br>
               Cambridge Avenue, Southport, PR9 9SA, UK</p>
               <p>📞 07545 934360 | 📧 hello@churchtownmedia.co.uk</p>
@@ -124,9 +124,9 @@ export async function POST(req: NextRequest) {
 
     // Send email to business owner
     const { data, error } = await resend.emails.send({
-      from: 'Forefront Imaging <orders@forefrontimaging.com>',
+      from: 'StreamTek <orders@streamtek.co.uk>',
       to: ['damian.roche84@gmail.com'],
-      subject: `🛒 New Order #${orderNumber} - ${customer.fullName}`,
+      subject: `🛒 New StreamTek Order #${orderNumber} - ${customer.fullName}`,
       html: emailHtml,
       replyTo: customer.email,
     });

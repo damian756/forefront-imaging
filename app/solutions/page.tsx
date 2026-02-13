@@ -4,8 +4,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Use Cases - Forefront Imaging",
-  description: "Discover how USB Capture devices work for streaming, content creation, video calls, and professional video production.",
+  title: "Use Cases - StreamTek",
+  description: "Discover how StreamTek USB Capture devices work for streaming, content creation, video calls, and professional video production.",
 };
 
 export default function SolutionsPage() {

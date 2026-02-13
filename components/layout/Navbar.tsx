@@ -48,8 +48,8 @@ export default function Navbar() {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-extrabold text-white tracking-tight uppercase">
-              ForeFront
+            <span className="text-xl font-extrabold text-white tracking-tight">
+              StreamTek
             </span>
             <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest -mt-1">
               USB Video Capture
