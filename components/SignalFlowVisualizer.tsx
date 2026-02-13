@@ -29,7 +29,7 @@ export default function SignalFlowVisualizer() {
   const [signalStrength, setSignalStrength] = useState({ input: 0, processing: 0, output: 0 });
   const [bandwidth, setBandwidth] = useState(0);
   const particlesRef = useRef<Particle[]>([]);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
 
   const stages: SignalStage[] = [
     {
