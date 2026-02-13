@@ -78,7 +78,7 @@ export default function QualityComparison() {
     <section className="py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 opacity-10" style={{ 
-        background: 'radial-gradient(ellipse at 50% 50%, rgba(192, 132, 252, 0.3), transparent 70%)'
+        background: 'radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.3), transparent 70%)'
       }} />
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -91,7 +91,7 @@ export default function QualityComparison() {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-lg studio-border">
-            <Monitor className="w-4 h-4 text-fiber-pink" />
+            <Monitor className="w-4 h-4 text-fiber-sky" />
             <span className="text-xs text-cool-gray uppercase tracking-widest font-semibold">Quality Comparison</span>
           </div>
           <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-tight">
@@ -115,8 +115,8 @@ export default function QualityComparison() {
               onClick={() => setSelectedScenario(scenario.id)}
               className={`glass-panel px-6 py-3 rounded-lg studio-border transition-all ${
                 selectedScenario === scenario.id 
-                  ? 'bg-fiber-purple/20 border-fiber-purple' 
-                  : 'hover:bg-fiber-purple/10'
+                  ? 'bg-fiber-blue/20 border-fiber-blue' 
+                  : 'hover:bg-fiber-blue/10'
               }`}
             >
               <div className="text-sm font-bold text-soft-white mb-1">{scenario.label}</div>
@@ -169,24 +169,24 @@ export default function QualityComparison() {
 
             {/* Professional Side (Right) - Revealed by slider */}
             <motion.div 
-              className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-950 to-indigo-950"
+              className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-950 to-indigo-950"
               style={{
                 clipPath: `polygon(${sliderPosition}% 0, 100% 0, 100% 100%, ${sliderPosition}% 100%)`
               }}
             >
               <div className="text-center">
-                <CheckCircle2 className="w-16 h-16 text-fiber-violet mx-auto mb-4" />
+                <CheckCircle2 className="w-16 h-16 text-fiber-cyan mx-auto mb-4" />
                 <div className="text-2xl font-bold text-soft-white mb-2">Professional Hardware</div>
-                <div className="text-sm text-fiber-violet mb-4">Uncompressed • Zero Loss • Sub-ms Latency</div>
+                <div className="text-sm text-fiber-cyan mb-4">Uncompressed • Zero Loss • Sub-ms Latency</div>
                 
                 {/* High Quality Visual Effect */}
                 <div className="relative w-64 h-64 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fiber-violet to-fiber-purple rounded-lg opacity-30" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-fiber-cyan to-fiber-blue rounded-lg opacity-30" />
                   <div className="absolute inset-0 grid grid-cols-8 gap-[2px]">
                     {Array.from({ length: 64 }).map((_, i) => (
                       <motion.div 
                         key={i} 
-                        className="bg-fiber-violet rounded-sm"
+                        className="bg-fiber-cyan rounded-sm"
                         animate={{
                           opacity: [0.6, 1, 0.6],
                         }}
@@ -205,12 +205,12 @@ export default function QualityComparison() {
 
             {/* Slider Handle */}
             <motion.div
-              className="absolute top-0 bottom-0 w-1 bg-fiber-violet shadow-[0_0_20px_rgba(167,139,250,0.8)] cursor-ew-resize"
+              className="absolute top-0 bottom-0 w-1 bg-fiber-cyan shadow-[0_0_20px_rgba(96,165,250,0.8)] cursor-ew-resize"
               style={{ left: `${sliderPosition}%` }}
               animate={{
                 boxShadow: isDragging 
-                  ? '0 0 30px rgba(167, 139, 250, 1)' 
-                  : '0 0 20px rgba(167, 139, 250, 0.8)'
+                  ? '0 0 30px rgba(96, 165, 250, 1)' 
+                  : '0 0 20px rgba(96, 165, 250, 0.8)'
               }}
             >
               {/* Handle Circle */}
@@ -221,10 +221,10 @@ export default function QualityComparison() {
                     scale: isDragging ? 1.2 : 1,
                   }}
                   style={{
-                    boxShadow: '0 0 20px rgba(167, 139, 250, 0.6)'
+                    boxShadow: '0 0 20px rgba(96, 165, 250, 0.6)'
                   }}
                 >
-                  <Maximize2 className="w-5 h-5 text-fiber-violet rotate-90" />
+                  <Maximize2 className="w-5 h-5 text-fiber-cyan rotate-90" />
                 </motion.div>
               </div>
             </motion.div>
@@ -234,7 +234,7 @@ export default function QualityComparison() {
               <div className="text-xs text-cool-gray uppercase tracking-wider font-semibold">Consumer</div>
             </div>
             <div className="absolute top-4 right-4 glass-panel px-3 py-2 rounded-lg studio-border">
-              <div className="text-xs text-fiber-violet uppercase tracking-wider font-semibold">Professional</div>
+              <div className="text-xs text-fiber-cyan uppercase tracking-wider font-semibold">Professional</div>
             </div>
           </div>
 
@@ -265,22 +265,22 @@ export default function QualityComparison() {
 
             {/* Professional Metrics */}
             <div className="glass-panel p-6 rounded-lg studio-border">
-              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-fiber-violet/30">
-                <CheckCircle2 className="w-5 h-5 text-fiber-violet" />
+              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-fiber-cyan/30">
+                <CheckCircle2 className="w-5 h-5 text-fiber-cyan" />
                 <h3 className="text-lg font-bold text-soft-white uppercase tracking-tight">Professional Grade</h3>
               </div>
               <div className="space-y-3">
                 {qualityMetrics.professional.map((metric, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center justify-between p-3 bg-fiber-purple/10 rounded border border-fiber-violet/30"
+                    className="flex items-center justify-between p-3 bg-fiber-blue/10 rounded border border-fiber-cyan/30"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                   >
                     <span className="text-xs text-cool-gray uppercase tracking-wider font-semibold">{metric.label}</span>
-                    <span className="text-sm font-mono text-fiber-violet font-bold">{metric.value}</span>
+                    <span className="text-sm font-mono text-fiber-cyan font-bold">{metric.value}</span>
                   </motion.div>
                 ))}
               </div>
@@ -294,7 +294,7 @@ export default function QualityComparison() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Info className="w-5 h-5 text-fiber-violet flex-shrink-0 mt-0.5" />
+            <Info className="w-5 h-5 text-fiber-cyan flex-shrink-0 mt-0.5" />
             <div>
               <div className="text-sm font-bold text-soft-white mb-1">Why Professional Hardware Matters</div>
               <div className="text-xs text-cool-gray leading-relaxed">
@@ -317,7 +317,7 @@ export default function QualityComparison() {
           {Object.entries(scenarios.find(s => s.id === selectedScenario)?.specs || {}).map(([key, value]) => (
             <div key={key} className="text-center glass-panel p-4 rounded-lg studio-border">
               <div className="text-xs text-cool-gray uppercase tracking-wider mb-2 font-semibold">{key}</div>
-              <div className="text-lg font-bold text-fiber-pink font-mono">{value}</div>
+              <div className="text-lg font-bold text-fiber-sky font-mono">{value}</div>
             </div>
           ))}
         </motion.div>

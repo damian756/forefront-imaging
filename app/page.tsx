@@ -87,7 +87,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen text-white selection:bg-fiber-purple/20 overflow-hidden" style={{ background: 'var(--fiber-gradient)' }}>
+    <div className="flex flex-col min-h-screen text-white selection:bg-fiber-blue/20 overflow-hidden" style={{ background: 'var(--fiber-gradient)' }}>
       
       {/* Fiber Grid Background */}
       <div className="fixed inset-0 builder-canvas opacity-30 pointer-events-none" />
@@ -97,9 +97,9 @@ export default function Home() {
       {/* FIBER OPTIC HERO SECTION */}
       <section className="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
         
-        {/* Purple Glow */}
+        {/* Blue Glow */}
         <div className="absolute inset-0 opacity-30" style={{ 
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.3), transparent 60%)'
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.3), transparent 60%)'
         }} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-20">
@@ -116,7 +116,7 @@ export default function Home() {
               whileHover={{ scale: 1.03 }}
             >
               <div className="status-indicator connected" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-fiber-violet">Professional Grade Equipment</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-fiber-cyan">Professional Grade Equipment</span>
             </motion.div>
 
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-[0.95] tracking-tight">
@@ -137,7 +137,7 @@ export default function Home() {
             >
               Professional USB video capture devices engineered for broadcast studios, 
               content creators, and video production professionals. 
-              <span className="text-fiber-violet font-medium"> Uncompromising quality</span> in every signal.
+              <span className="text-fiber-cyan font-medium"> Uncompromising quality</span> in every signal.
             </motion.p>
 
             <motion.div 
@@ -200,7 +200,7 @@ export default function Home() {
                   <div 
                     className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 metal-surface studio-border"
                   >
-                    <item.icon className="w-7 h-7 text-fiber-violet" />
+                    <item.icon className="w-7 h-7 text-fiber-cyan" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2 uppercase tracking-tight text-soft-white">{item.title}</h3>
                   <p className="text-cool-gray text-sm leading-relaxed">{item.desc}</p>
@@ -220,7 +220,7 @@ export default function Home() {
       {/* FIBER EQUIPMENT CATALOG */}
       <section id="products" className="py-28 relative">
         <div className="absolute inset-0 opacity-10" style={{ 
-          background: 'radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.2), transparent)'
+          background: 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.2), transparent)'
         }} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -231,7 +231,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-lg studio-border">
-              <Plug className="w-4 h-4 text-fiber-violet" />
+              <Plug className="w-4 h-4 text-fiber-cyan" />
               <span className="text-xs text-cool-gray uppercase tracking-widest font-semibold">Professional Equipment</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-tight">
@@ -286,7 +286,7 @@ export default function Home() {
                           fill
                           className="object-contain"
                           style={{ 
-                            filter: 'drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.3))'
+                            filter: 'drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(59, 130, 246, 0.3))'
                           }}
                         />
                       </motion.div>
@@ -332,7 +332,7 @@ export default function Home() {
                       {Object.entries(device.specs).map(([key, value], i) => (
                         <div key={i} className="glass-panel p-3 rounded-lg studio-border">
                           <div className="text-[9px] text-cool-gray mb-1 uppercase tracking-wider font-semibold">{key}</div>
-                          <div className="text-sm font-semibold text-fiber-violet">{value}</div>
+                          <div className="text-sm font-semibold text-fiber-cyan">{value}</div>
                         </div>
                       ))}
                     </div>
@@ -424,7 +424,7 @@ export default function Home() {
                 whileHover={{ y: -3 }}
               >
                 <div className="w-12 h-12 rounded-lg metal-surface studio-border flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle2 className="w-6 h-6 text-fiber-violet" />
+                  <CheckCircle2 className="w-6 h-6 text-fiber-cyan" />
                 </div>
                 <div className="text-sm font-semibold text-soft-white">{app}</div>
               </motion.div>

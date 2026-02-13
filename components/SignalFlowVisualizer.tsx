@@ -38,7 +38,7 @@ export default function SignalFlowVisualizer() {
       subtitle: '4K60 Signal',
       icon: Radio,
       position: { x: 10, y: 50 },
-      color: '#a78bfa'
+      color: '#60a5fa'
     },
     {
       id: 'processing',
@@ -46,7 +46,7 @@ export default function SignalFlowVisualizer() {
       subtitle: 'Zero Latency',
       icon: Cpu,
       position: { x: 50, y: 50 },
-      color: '#c084fc'
+      color: '#38bdf8'
     },
     {
       id: 'output',
@@ -54,7 +54,7 @@ export default function SignalFlowVisualizer() {
       subtitle: '10 Gbps',
       icon: Zap,
       position: { x: 90, y: 50 },
-      color: '#8b5cf6'
+      color: '#3b82f6'
     }
   ];
 
@@ -110,7 +110,7 @@ export default function SignalFlowVisualizer() {
       ctx.clearRect(0, 0, rect.width, rect.height);
 
       // Draw main fiber optic line
-      ctx.strokeStyle = 'rgba(139, 92, 246, 0.3)';
+      ctx.strokeStyle = 'rgba(59, 130, 246, 0.3)';
       ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(rect.width * 0.05, rect.height * 0.5);
@@ -118,7 +118,7 @@ export default function SignalFlowVisualizer() {
       ctx.stroke();
 
       // Draw glowing underlayer
-      ctx.strokeStyle = 'rgba(167, 139, 250, 0.15)';
+      ctx.strokeStyle = 'rgba(96, 165, 250, 0.15)';
       ctx.lineWidth = 12;
       ctx.beginPath();
       ctx.moveTo(rect.width * 0.05, rect.height * 0.5);
@@ -175,7 +175,7 @@ export default function SignalFlowVisualizer() {
     <section className="py-32 relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 opacity-20" style={{ 
-        background: 'radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.4), transparent 70%)'
+        background: 'radial-gradient(ellipse at 50% 50%, rgba(59, 130, 246, 0.4), transparent 70%)'
       }} />
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -188,7 +188,7 @@ export default function SignalFlowVisualizer() {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-lg studio-border">
-            <Activity className="w-4 h-4 text-fiber-violet" />
+            <Activity className="w-4 h-4 text-fiber-cyan" />
             <span className="text-xs text-cool-gray uppercase tracking-widest font-semibold">Signal Pipeline</span>
           </div>
           <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-tight">
@@ -218,8 +218,8 @@ export default function SignalFlowVisualizer() {
                 </span>
               </div>
               <div className="flex items-center gap-2 glass-panel px-3 py-1 rounded">
-                <BarChart3 className="w-3 h-3 text-fiber-violet" />
-                <span className="text-xs text-fiber-violet font-mono font-semibold">
+                <BarChart3 className="w-3 h-3 text-fiber-cyan" />
+                <span className="text-xs text-fiber-cyan font-mono font-semibold">
                   {bandwidth.toFixed(1)} Gbps
                 </span>
               </div>
@@ -388,11 +388,11 @@ export default function SignalFlowVisualizer() {
                 >
                   {hoveredStage === 'input' && (
                     <>
-                      <h4 className="text-sm font-bold text-fiber-violet uppercase tracking-tight mb-2">HDMI Input Stage</h4>
+                      <h4 className="text-sm font-bold text-fiber-cyan uppercase tracking-tight mb-2">HDMI Input Stage</h4>
                       <p className="text-xs text-cool-gray leading-relaxed mb-3">
                         Accepts uncompressed 4K video signals at 60fps. HDCP compliant with automatic EDID management.
                       </p>
-                      <div className="flex gap-2 text-[10px] text-fiber-violet font-mono">
+                      <div className="flex gap-2 text-[10px] text-fiber-cyan font-mono">
                         <span className="glass-panel px-2 py-1 rounded">4K60</span>
                         <span className="glass-panel px-2 py-1 rounded">HDR10</span>
                         <span className="glass-panel px-2 py-1 rounded">10-bit</span>
@@ -401,11 +401,11 @@ export default function SignalFlowVisualizer() {
                   )}
                   {hoveredStage === 'processing' && (
                     <>
-                      <h4 className="text-sm font-bold text-fiber-pink uppercase tracking-tight mb-2">Hardware Decode</h4>
+                      <h4 className="text-sm font-bold text-fiber-sky uppercase tracking-tight mb-2">Hardware Decode</h4>
                       <p className="text-xs text-cool-gray leading-relaxed mb-3">
                         Dedicated ASIC processes video in real-time with zero CPU overhead. Hardware scaling and color space conversion.
                       </p>
-                      <div className="flex gap-2 text-[10px] text-fiber-pink font-mono">
+                      <div className="flex gap-2 text-[10px] text-fiber-sky font-mono">
                         <span className="glass-panel px-2 py-1 rounded">&lt;1ms</span>
                         <span className="glass-panel px-2 py-1 rounded">0% CPU</span>
                       </div>
@@ -413,11 +413,11 @@ export default function SignalFlowVisualizer() {
                   )}
                   {hoveredStage === 'output' && (
                     <>
-                      <h4 className="text-sm font-bold text-fiber-purple uppercase tracking-tight mb-2">USB 3.0 Output</h4>
+                      <h4 className="text-sm font-bold text-fiber-blue uppercase tracking-tight mb-2">USB 3.0 Output</h4>
                       <p className="text-xs text-cool-gray leading-relaxed mb-3">
                         SuperSpeed USB 3.0 delivers up to 10 Gbps bandwidth. Driver-free operation on Windows, Mac, and Linux.
                       </p>
-                      <div className="flex gap-2 text-[10px] text-fiber-purple font-mono">
+                      <div className="flex gap-2 text-[10px] text-fiber-blue font-mono">
                         <span className="glass-panel px-2 py-1 rounded">10 Gbps</span>
                         <span className="glass-panel px-2 py-1 rounded">UVC</span>
                       </div>
@@ -445,7 +445,7 @@ export default function SignalFlowVisualizer() {
           ].map((spec, index) => (
             <div key={index} className="text-center glass-panel p-4 rounded-lg studio-border">
               <div className="text-xs text-cool-gray uppercase tracking-wider mb-2 font-semibold">{spec.label}</div>
-              <div className="text-lg font-bold text-fiber-violet font-mono">{spec.value}</div>
+              <div className="text-lg font-bold text-fiber-cyan font-mono">{spec.value}</div>
             </div>
           ))}
         </motion.div>
