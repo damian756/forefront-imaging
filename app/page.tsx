@@ -111,7 +111,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <BadgeCheck className="w-4 h-4" /> Authorized UK Partner
+                <BadgeCheck className="w-4 h-4" /> Magewell Official Distributor
               </motion.div>
 
               <motion.h1 
@@ -120,9 +120,9 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                Official Magewell <br />
+                Capture Any Video. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                  Distribution.
+                  Instantly.
                 </span>
               </motion.h1>
 
@@ -132,9 +132,9 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                Main UK, Germany & France distributor serving value-added resellers, 
-                sub-distributors, and systems integrators. Stock holdings across multiple 
-                warehouses with full manufacturer warranty support.
+                Professional USB video capture devices that work with any HDMI or SDI source. 
+                No drivers needed. Perfect for streaming, recording, and content creation. 
+                In stock with free UK delivery and 3-year warranty.
               </motion.p>
 
               <motion.div 
@@ -148,19 +148,19 @@ export default function Home() {
                   className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold rounded-sm transition-all text-center shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    View Product Range
+                    Shop USB Capture
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
                 <Link 
-                  href="/contact" 
+                  href="/how-it-works" 
                   className="px-8 py-4 border-2 border-slate-600 hover:border-blue-500 text-slate-300 hover:text-white font-bold rounded-sm transition-all text-center hover:bg-blue-500/10"
                 >
-                  Become a Reseller
+                  How It Works
                 </Link>
               </motion.div>
 
-              {/* Stats Counter - New */}
+              {/* Trust Badges - Consumer Focused */}
               <motion.div 
                 className="grid grid-cols-3 gap-6 max-w-xl mx-auto md:mx-0"
                 initial={{ opacity: 0, y: 20 }}
@@ -168,16 +168,16 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.9 }}
               >
                 <div className="text-center md:text-left">
-                  <div className="text-3xl font-bold text-white mb-1">76+</div>
-                  <div className="text-xs text-slate-500 uppercase tracking-wider">Products</div>
+                  <div className="text-3xl font-bold text-white mb-1">Free</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-wider">UK Shipping</div>
                 </div>
                 <div className="text-center md:text-left">
-                  <div className="text-3xl font-bold text-white mb-1">24/7</div>
-                  <div className="text-xs text-slate-500 uppercase tracking-wider">Support</div>
+                  <div className="text-3xl font-bold text-white mb-1">3-Yr</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-wider">Warranty</div>
                 </div>
                 <div className="text-center md:text-left">
-                  <div className="text-3xl font-bold text-white mb-1">UK</div>
-                  <div className="text-xs text-slate-500 uppercase tracking-wider">Stock</div>
+                  <div className="text-3xl font-bold text-white mb-1">Next</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-wider">Day Delivery</div>
                 </div>
               </motion.div>
             </motion.div>

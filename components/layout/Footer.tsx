@@ -39,7 +39,7 @@ export default function Footer() {
             <div>
               <h3 className="text-3xl font-bold text-white mb-3">Stay Updated</h3>
               <p className="text-slate-400">
-                Get the latest product updates, stock alerts, and exclusive distributor offers.
+                Get the latest product updates, exclusive deals, and helpful tutorials for content creators.
               </p>
             </div>
             <form onSubmit={handleSubscribe} className="flex gap-3">
@@ -89,24 +89,24 @@ export default function Footer() {
               </span>
             </Link>
             <p className="max-w-md mb-6 leading-relaxed text-slate-400">
-              Main distributor for Magewell products in UK, Germany & France. 
-              Serving value-added resellers, sub-distributors, systems integrators, 
-              and solution providers with professional video capture and streaming solutions.
+              Magewell Official Distributor in the UK. Professional USB video capture devices 
+              for content creators, streamers, educators, and video professionals. 
+              Fast delivery, expert support, and authentic products backed by full warranty.
             </p>
             
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-3 mb-6">
               <div className="flex items-center gap-2 bg-blue-600/10 text-blue-400 text-xs font-bold px-3 py-2 rounded-lg border border-blue-500/20">
                 <ShieldCheck className="w-4 h-4" />
-                Main Distributor
+                3-Year Warranty
               </div>
               <div className="flex items-center gap-2 bg-green-600/10 text-green-400 text-xs font-bold px-3 py-2 rounded-lg border border-green-500/20">
                 <Package className="w-4 h-4" />
-                UK/DE/FR Stock
+                Free UK Shipping
               </div>
               <div className="flex items-center gap-2 bg-purple-600/10 text-purple-400 text-xs font-bold px-3 py-2 rounded-lg border border-purple-500/20">
                 <Truck className="w-4 h-4" />
-                Reseller Program
+                Next Day Delivery
               </div>
             </div>
 
@@ -130,10 +130,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Products</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/products?category=USB+Capture" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />USB Capture</Link></li>
-              <li><Link href="/products?category=PCIe+Capture" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />PCIe Capture</Link></li>
-              <li><Link href="/products?category=Encoders" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Encoders</Link></li>
-              <li><Link href="/products?category=NDI" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Converters</Link></li>
+              <li><Link href="/products" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />All USB Capture</Link></li>
+              <li><Link href="/products" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />HDMI Capture</Link></li>
+              <li><Link href="/products" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />SDI Capture</Link></li>
+              <li><Link href="/products" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Multi-Input</Link></li>
             </ul>
           </div>
 
@@ -142,9 +142,9 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-wider">Company</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />About Us</Link></li>
+              <li><Link href="/how-it-works" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />How It Works</Link></li>
               <li><Link href="/contact" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Contact</Link></li>
               <li><Link href="/support" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Support</Link></li>
-              <li><Link href="/resellers" className="hover:text-blue-400 transition-colors flex items-center gap-2 group"><span className="w-1 h-1 rounded-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />Become a Reseller</Link></li>
             </ul>
           </div>
 
@@ -156,7 +156,7 @@ export default function Footer() {
                 <div className="flex items-start gap-3">
                   <Phone className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <div className="text-white font-medium">Reseller Enquiries</div>
+                    <div className="text-white font-medium">Customer Service</div>
                     <a href="tel:+441162775730" className="hover:text-blue-400 transition-colors">+44 (0)116 277 5730</a>
                   </div>
                 </div>

@@ -941,3 +941,13 @@ export function getProductBySlug(slug: string) {
 export function getProductById(id: string) {
   return products.find(p => p.id === id);
 }
+
+// Filter for active product categories (currently only USB Capture for consumer site)
+export function getActiveProducts() {
+  return products.filter(p => p.category === 'USB Capture');
+}
+
+// Get all USB Capture products specifically
+export function getUSBCaptureProducts() {
+  return products.filter(p => p.category === 'USB Capture');
+}

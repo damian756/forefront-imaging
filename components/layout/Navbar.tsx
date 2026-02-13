@@ -20,11 +20,10 @@ export default function Navbar() {
   }
 
   const productCategories = [
-    { name: "USB Capture", href: "/products?category=USB+Capture" },
-    { name: "PCIe Capture", href: "/products?category=PCIe+Capture" },
-    { name: "Encoders", href: "/products?category=Encoders" },
-    { name: "NDI Converters", href: "/products?category=NDI" },
-    { name: "View All Products", href: "/products", featured: true }
+    { name: "View All USB Capture", href: "/products", featured: true },
+    { name: "HDMI Capture", href: "/products?category=USB+Capture" },
+    { name: "SDI Capture", href: "/products?category=USB+Capture" },
+    { name: "Multi-Input Capture", href: "/products?category=USB+Capture" }
   ];
 
   const resources = [
@@ -53,7 +52,7 @@ export default function Navbar() {
               ForeFront
             </span>
             <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest -mt-1">
-              Magewell Distributor
+              USB Video Capture
             </span>
           </div>
         </Link>
@@ -100,8 +99,8 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <Link href="/solutions" className="text-slate-300 hover:text-white font-medium transition-colors">
-            Solutions
+          <Link href="/how-it-works" className="text-slate-300 hover:text-white font-medium transition-colors">
+            How It Works
           </Link>
 
           {/* Resources Dropdown */}
@@ -135,10 +134,6 @@ export default function Navbar() {
               )}
             </AnimatePresence>
           </div>
-
-          <Link href="/resellers" className="text-slate-300 hover:text-white font-medium transition-colors">
-            Resellers
-          </Link>
 
           <Link 
             href="/cart" 
@@ -183,9 +178,8 @@ export default function Navbar() {
             <div className="px-4 py-6 space-y-4">
               <Link href="/" className="block text-slate-300 hover:text-white font-medium">Home</Link>
               <Link href="/products" className="block text-slate-300 hover:text-white font-medium">Products</Link>
-              <Link href="/solutions" className="block text-slate-300 hover:text-white font-medium">Solutions</Link>
+              <Link href="/how-it-works" className="block text-slate-300 hover:text-white font-medium">How It Works</Link>
               <Link href="/support" className="block text-slate-300 hover:text-white font-medium">Support</Link>
-              <Link href="/resellers" className="block text-slate-300 hover:text-white font-medium">Resellers</Link>
               <Link href="/cart" className="flex items-center gap-2 text-slate-300 hover:text-white font-medium">
                 <ShoppingCart className="w-5 h-5" />
                 Cart {totalItems > 0 && `(${totalItems})`}

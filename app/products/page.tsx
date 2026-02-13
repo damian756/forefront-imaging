@@ -15,7 +15,10 @@ import Footer from '@/components/layout/Footer';
 import { useCart } from '@/contexts/CartContext';
 
 // IMPORT YOUR EXISTING DATA
-import { products } from '@/lib/products'; 
+import { getUSBCaptureProducts } from '@/lib/products';
+
+// Only show USB Capture products for consumer site
+const products = getUSBCaptureProducts(); 
 
 // Wrapper component with Suspense boundary
 export default function ProductsPage() {

@@ -68,16 +68,26 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                     <span className="text-slate-400 text-sm ml-2">GBP</span>
                   </div>
               </div>
-              <div className="flex gap-4">
+              <div className="space-y-4">
                   <button 
                     onClick={handleAddToCart}
-                    className="flex-1 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold uppercase text-center rounded-sm transition-colors flex items-center justify-center gap-2"
+                    className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold uppercase text-center rounded-sm transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-500/30"
                   >
                     <ShoppingCart className="w-5 h-5" />
                     {added ? 'Added to Cart!' : 'Add to Cart'}
                   </button>
-                  <Link href="/contact" className="flex-1 py-4 bg-white hover:bg-slate-200 text-slate-950 font-bold uppercase text-center rounded-sm transition-colors flex items-center justify-center">
-                    Volume Pricing
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div className="flex items-center gap-2 text-green-400">
+                      <CheckCircle className="w-4 h-4" />
+                      <span>Free UK Shipping</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-blue-400">
+                      <ShieldCheck className="w-4 h-4" />
+                      <span>3-Year Warranty</span>
+                    </div>
+                  </div>
+                  <Link href="/contact" className="block py-3 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white font-semibold text-center rounded-sm transition-colors text-sm">
+                    Questions? Contact Us
                   </Link>
               </div>
           </div>

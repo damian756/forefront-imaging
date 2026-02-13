@@ -12,7 +12,7 @@ export default function ContactPage() {
     email: '',
     company: '',
     phone: '',
-    enquiryType: 'reseller',
+    enquiryType: 'product',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +28,7 @@ export default function ContactPage() {
         email: '',
         company: '',
         phone: '',
-        enquiryType: 'reseller',
+        enquiryType: 'product',
         message: ''
       });
     }, 3000);
@@ -52,7 +52,7 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Ready to partner with us or have questions? We&apos;re here to help resellers and integrators succeed.
+              Have questions about our USB Capture devices? Our expert team is here to help you find the perfect solution.
             </p>
           </div>
 
@@ -237,10 +237,10 @@ export default function ContactPage() {
                         required
                         className="w-full bg-slate-800 border border-slate-700 rounded-lg py-3 px-4 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
                       >
-                        <option value="reseller">Become a Reseller</option>
+                        <option value="product">Product Question</option>
                         <option value="support">Technical Support</option>
-                        <option value="sales">Sales Enquiry</option>
-                        <option value="stock">Stock Availability</option>
+                        <option value="sales">Pre-Sales Enquiry</option>
+                        <option value="order">Order Status</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
@@ -276,19 +276,18 @@ export default function ContactPage() {
             </motion.div>
           </div>
 
-          {/* Reseller CTA */}
+          {/* Browse Products CTA */}
           <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-3xl p-12 text-center">
-            <Building2 className="w-16 h-16 text-blue-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-4">Interested in Becoming a Reseller?</h2>
+            <h2 className="text-3xl font-bold mb-4">Ready to Start Capturing?</h2>
             <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-              Join our growing network of value-added resellers across UK, Germany, and France. 
-              Access competitive pricing, dedicated support, and comprehensive product training.
+              Explore our range of professional USB Capture devices. All products come with free UK shipping, 
+              next-day delivery, and a 3-year manufacturer warranty.
             </p>
             <a 
-              href="/resellers"
+              href="/products"
               className="inline-block px-8 py-4 bg-white text-slate-950 font-bold rounded-lg hover:bg-blue-50 transition-all shadow-lg"
             >
-              Learn About Our Reseller Program
+              Browse USB Capture Devices
             </a>
           </div>
         </div>
