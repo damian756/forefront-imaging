@@ -157,7 +157,7 @@ export default function Footer() {
                   <Phone className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="text-white font-medium">Customer Service</div>
-                    <a href="tel:+447545934360" className="hover:text-blue-400 transition-colors">07545 934360</a>
+                    <a href="tel:+441704635785" className="hover:text-blue-400 transition-colors">01704 635785</a>
                   </div>
                 </div>
               </li>
