@@ -44,26 +44,45 @@ export default function CheckoutPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Generate order number
-    const orderNumber = `FI-${Date.now()}`;
-    
-    // Store order data in localStorage for confirmation page
-    const orderData = {
-      orderNumber,
-      customer: formData,
-      items,
-      totalPrice,
-      orderDate: new Date().toISOString(),
-    };
-    
-    localStorage.setItem('lastOrder', JSON.stringify(orderData));
-    
-    // Simulate order processing
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Clear cart and redirect to confirmation
-    clearCart();
-    router.push(`/order-confirmation?order=${orderNumber}`);
+    try {
+      // Generate order number
+      const orderNumber = `FI-${Date.now()}`;
+      
+      // Prepare order data
+      const orderData = {
+        orderNumber,
+        customer: formData,
+        items,
+        totalPrice,
+        orderDate: new Date().toISOString(),
+      };
+      
+      // Store order data in localStorage for confirmation page
+      localStorage.setItem('lastOrder', JSON.stringify(orderData));
+      
+      // Send order confirmation email
+      try {
+        await fetch('/api/send-order-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(orderData),
+        });
+        // Email sent successfully, but we don't block the user experience
+      } catch (emailError) {
+        console.error('Failed to send email notification:', emailError);
+        // Continue anyway - order is still recorded locally
+      }
+      
+      // Clear cart and redirect to confirmation
+      clearCart();
+      router.push(`/order-confirmation?order=${orderNumber}`);
+    } catch (error) {
+      console.error('Order submission error:', error);
+      setIsSubmitting(false);
+      alert('There was an error submitting your order. Please try again.');
+    }
   };
 
   return (
