@@ -85,19 +85,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen text-white selection:bg-bronze/20 overflow-hidden" style={{ background: 'var(--metal-gradient)' }}>
+    <div className="flex flex-col min-h-screen text-white selection:bg-fiber-purple/20 overflow-hidden" style={{ background: 'var(--fiber-gradient)' }}>
       
-      {/* Subtle Texture Background */}
+      {/* Fiber Grid Background */}
       <div className="fixed inset-0 builder-canvas opacity-30 pointer-events-none" />
       
       <Navbar />
 
-      {/* PREMIUM HERO SECTION */}
+      {/* FIBER OPTIC HERO SECTION */}
       <section className="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
         
-        {/* Dramatic Lighting */}
-        <div className="absolute inset-0 opacity-20" style={{ 
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(160, 130, 109, 0.2), transparent 60%)'
+        {/* Purple Glow */}
+        <div className="absolute inset-0 opacity-30" style={{ 
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.3), transparent 60%)'
         }} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-20">
@@ -114,28 +114,28 @@ export default function Home() {
               whileHover={{ scale: 1.03 }}
             >
               <div className="status-indicator connected" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-bronze">Professional Grade Equipment</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-fiber-violet">Professional Grade Equipment</span>
             </motion.div>
 
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-[0.95] tracking-tight">
-              <span className="block text-warm-gray text-2xl md:text-3xl mb-6 font-medium tracking-wide">Premium</span>
+              <span className="block text-cool-white text-2xl md:text-3xl mb-6 font-medium tracking-wide">Premium</span>
               <span className="block text-gradient text-7xl md:text-[9rem]">
                 CAPTURE
               </span>
-              <span className="block text-warm-gray text-3xl md:text-5xl mt-6 font-medium tracking-wide">
+              <span className="block text-cool-white text-3xl md:text-5xl mt-6 font-medium tracking-wide">
                 Hardware
               </span>
             </h1>
 
             <motion.p 
-              className="text-lg md:text-xl text-warm-gray mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-xl text-cool-gray mb-12 max-w-3xl mx-auto leading-relaxed font-light"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               Professional USB video capture devices engineered for broadcast studios, 
               content creators, and video production professionals. 
-              <span className="text-bronze font-medium"> Uncompromising quality</span> in every signal.
+              <span className="text-fiber-violet font-medium"> Uncompromising quality</span> in every signal.
             </motion.p>
 
             <motion.div 
@@ -198,10 +198,10 @@ export default function Home() {
                   <div 
                     className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 metal-surface studio-border"
                   >
-                    <item.icon className="w-7 h-7 text-bronze" />
+                    <item.icon className="w-7 h-7 text-fiber-violet" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2 uppercase tracking-tight text-soft-white">{item.title}</h3>
-                  <p className="text-warm-gray text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-cool-gray text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -209,10 +209,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PREMIUM EQUIPMENT CATALOG */}
+      {/* FIBER EQUIPMENT CATALOG */}
       <section id="products" className="py-28 relative">
         <div className="absolute inset-0 opacity-10" style={{ 
-          background: 'radial-gradient(circle at 50% 50%, rgba(160, 130, 109, 0.15), transparent)'
+          background: 'radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.2), transparent)'
         }} />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -223,13 +223,13 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-lg studio-border">
-              <Plug className="w-4 h-4 text-bronze" />
-              <span className="text-xs text-warm-gray uppercase tracking-widest font-semibold">Professional Equipment</span>
+              <Plug className="w-4 h-4 text-fiber-violet" />
+              <span className="text-xs text-cool-gray uppercase tracking-widest font-semibold">Professional Equipment</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-tight">
               <span className="text-gradient">Capture Hardware</span>
             </h2>
-            <p className="text-warm-gray text-lg max-w-2xl mx-auto font-light">
+            <p className="text-cool-gray text-lg max-w-2xl mx-auto font-light">
               Studio-grade USB video capture devices. Engineered for professionals who demand excellence.
             </p>
           </motion.div>
@@ -265,7 +265,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Product Image with Dramatic Lighting */}
+                    {/* Product Image with Fiber Glow */}
                     <div className="h-72 relative p-8 flex items-center justify-center mb-6 rounded-lg metal-surface studio-border">
                       <motion.div
                         className="relative w-full h-full"
@@ -278,7 +278,7 @@ export default function Home() {
                           fill
                           className="object-contain"
                           style={{ 
-                            filter: 'drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 30px rgba(160, 130, 109, 0.2))'
+                            filter: 'drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(139, 92, 246, 0.3))'
                           }}
                         />
                       </motion.div>
@@ -323,8 +323,8 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-3 mb-5">
                       {Object.entries(device.specs).map(([key, value], i) => (
                         <div key={i} className="glass-panel p-3 rounded-lg studio-border">
-                          <div className="text-[9px] text-warm-gray mb-1 uppercase tracking-wider font-semibold">{key}</div>
-                          <div className="text-sm font-semibold text-bronze">{value}</div>
+                          <div className="text-[9px] text-cool-gray mb-1 uppercase tracking-wider font-semibold">{key}</div>
+                          <div className="text-sm font-semibold text-fiber-violet">{value}</div>
                         </div>
                       ))}
                     </div>
@@ -334,7 +334,7 @@ export default function Home() {
                       {device.features.map((feature, i) => (
                         <span 
                           key={i} 
-                          className="px-3 py-1.5 glass-panel rounded-md text-[10px] font-semibold uppercase text-warm-gray studio-border"
+                          className="px-3 py-1.5 glass-panel rounded-md text-[10px] font-semibold uppercase text-cool-white studio-border"
                         >
                           {feature}
                         </span>
@@ -343,10 +343,10 @@ export default function Home() {
 
                     {/* Price */}
                     <div className="mb-5 flex items-center justify-between p-5 glass-panel rounded-lg studio-border">
-                      <span className="text-xs text-warm-gray uppercase font-semibold tracking-wider">Price</span>
+                      <span className="text-xs text-cool-gray uppercase font-semibold tracking-wider">Price</span>
                       <div>
                         <span className="text-3xl font-bold text-gradient">£{device.price}</span>
-                        <span className="text-warm-gray text-sm ml-2">GBP</span>
+                        <span className="text-cool-gray text-sm ml-2">GBP</span>
                       </div>
                     </div>
                     
@@ -401,7 +401,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-bold mb-4 uppercase tracking-tight">
               <span className="text-gradient">Universal Compatibility</span>
             </h2>
-            <p className="text-warm-gray text-lg font-light">Seamlessly integrate with industry-standard software</p>
+            <p className="text-cool-gray text-lg font-light">Seamlessly integrate with industry-standard software</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
@@ -416,7 +416,7 @@ export default function Home() {
                 whileHover={{ y: -3 }}
               >
                 <div className="w-12 h-12 rounded-lg metal-surface studio-border flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle2 className="w-6 h-6 text-bronze" />
+                  <CheckCircle2 className="w-6 h-6 text-fiber-violet" />
                 </div>
                 <div className="text-sm font-semibold text-soft-white">{app}</div>
               </motion.div>

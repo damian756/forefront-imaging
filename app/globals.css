@@ -2,44 +2,46 @@
 @import "tailwindcss";
 
 /* =====================================================
-   PREMIUM STUDIO HARDWARE - DESIGN SYSTEM
+   PURPLE FIBER OPTIC - DESIGN SYSTEM
    ===================================================== */
 :root {
   --foreground-rgb: 248, 250, 252;
-  --background-start-rgb: 24, 24, 27;
-  --background-end-rgb: 39, 39, 42;
+  --background-start-rgb: 15, 10, 25;
+  --background-end-rgb: 20, 15, 30;
   
-  /* Premium Studio Palette */
-  --graphite: #18181b;
-  --warm-charcoal: #27272a;
-  --deep-charcoal: #1c1c1f;
-  --bronze: #a0826d;
-  --copper: #b8936e;
+  /* Fiber Optic Palette */
+  --deep-void: #0f0a19;
+  --dark-purple: #1a1225;
+  --mid-purple: #2d1b4e;
+  --fiber-purple: #8b5cf6;
+  --fiber-violet: #a78bfa;
+  --fiber-pink: #c084fc;
   --soft-white: #f8fafc;
-  --warm-white: #fafaf9;
-  --deep-burgundy: #991b1b;
-  --muted-burgundy: #b91c1c;
+  --cool-white: #e0e7ff;
+  --neon-purple: #9333ea;
+  --deep-magenta: #a21caf;
   
   /* Technical Accents */
-  --studio-gold: #c9a772;
-  --brushed-steel: #71717a;
+  --laser-purple: #c084fc;
   --dark-steel: #52525b;
-  --warm-gray: #a8a29e;
+  --light-steel: #71717a;
+  --cool-gray: #cbd5e1;
   
   /* Connection & Status */
-  --signal-active: #a0826d;
+  --signal-active: #a78bfa;
   --signal-standby: #52525b;
-  --premium-glow: rgba(160, 130, 109, 0.3);
+  --fiber-glow: rgba(139, 92, 246, 0.4);
+  --fiber-glow-bright: rgba(167, 139, 250, 0.6);
   
   /* Surface Materials */
-  --metal-gradient: linear-gradient(135deg, #27272a 0%, #18181b 100%);
-  --glass-surface: rgba(39, 39, 42, 0.6);
-  --leather-dark: #1c1917;
+  --fiber-gradient: linear-gradient(135deg, #1a1225 0%, #0f0a19 100%);
+  --glass-surface: rgba(26, 18, 37, 0.7);
+  --optic-dark: #140d1f;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--metal-gradient);
+  background: var(--fiber-gradient);
   margin: 0;
   padding: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -60,22 +62,22 @@ code, pre, .font-mono {
 }
 
 /* =====================================================
-   STUDIO CANVAS & TEXTURES
+   FIBER OPTIC CANVAS & EFFECTS
    ===================================================== */
 
-/* Studio Canvas - Subtle Grid */
+/* Fiber Grid - Glowing Network */
 .builder-canvas {
-  background: var(--graphite);
+  background: var(--deep-void);
   background-image: 
-    linear-gradient(rgba(160, 130, 109, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(160, 130, 109, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(139, 92, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.08) 1px, transparent 1px);
   background-size: 60px 60px;
   position: relative;
 }
 
-/* Brushed Metal Texture */
+/* Fiber Optic Glow Surface */
 .brushed-metal {
-  background: linear-gradient(135deg, #27272a 0%, #18181b 50%, #27272a 100%);
+  background: linear-gradient(135deg, var(--dark-purple) 0%, var(--deep-void) 50%, var(--dark-purple) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -88,32 +90,33 @@ code, pre, .font-mono {
     90deg,
     transparent,
     transparent 2px,
-    rgba(255, 255, 255, 0.02) 2px,
-    rgba(255, 255, 255, 0.02) 4px
+    rgba(139, 92, 246, 0.05) 2px,
+    rgba(139, 92, 246, 0.05) 4px
   );
   pointer-events: none;
 }
 
-/* Leather Texture */
+/* Optic Texture */
 .leather-texture {
-  background: var(--leather-dark);
+  background: var(--optic-dark);
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.015) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(167, 139, 250, 0.06) 0%, transparent 50%);
 }
 
 /* =====================================================
    PREMIUM HARDWARE MODULES
    ===================================================== */
 
-/* Studio Equipment Module */
+/* Fiber Optic Module */
 .port-module {
-  background: linear-gradient(145deg, var(--warm-charcoal), var(--deep-charcoal));
-  border: 1px solid rgba(160, 130, 109, 0.2);
+  background: linear-gradient(145deg, var(--dark-purple), var(--deep-void));
+  border: 1px solid rgba(139, 92, 246, 0.25);
   border-radius: 12px;
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 8px 32px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(167, 139, 250, 0.1),
     inset 0 -1px 0 rgba(0, 0, 0, 0.5);
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -125,7 +128,7 @@ code, pre, .font-mono {
   inset: 0;
   border-radius: 12px;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(160, 130, 109, 0.3), transparent 50%, rgba(160, 130, 109, 0.1));
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), transparent 50%, rgba(167, 139, 250, 0.2));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -136,23 +139,25 @@ code, pre, .font-mono {
 .port-module:hover {
   transform: translateY(-2px);
   box-shadow: 
-    0 16px 48px rgba(0, 0, 0, 0.7),
-    0 0 0 1px rgba(160, 130, 109, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  border-color: rgba(160, 130, 109, 0.4);
+    0 16px 48px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(139, 92, 246, 0.4),
+    0 0 0 1px rgba(139, 92, 246, 0.5),
+    inset 0 1px 0 rgba(167, 139, 250, 0.15);
+  border-color: rgba(139, 92, 246, 0.5);
 }
 
-/* Studio HDMI Port */
+/* Fiber HDMI Port */
 .hdmi-port {
   width: 60px;
   height: 20px;
-  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
-  border: 1.5px solid var(--bronze);
+  background: linear-gradient(180deg, #1a1225, #0f0a19);
+  border: 1.5px solid var(--fiber-purple);
   border-radius: 3px;
   position: relative;
   box-shadow: 
     0 2px 8px rgba(0, 0, 0, 0.6),
-    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    0 0 10px rgba(139, 92, 246, 0.3),
+    inset 0 1px 2px rgba(167, 139, 250, 0.15),
     inset 0 -1px 2px rgba(0, 0, 0, 0.8);
 }
 
@@ -164,8 +169,8 @@ code, pre, .font-mono {
     90deg,
     transparent,
     transparent 2px,
-    rgba(160, 130, 109, 0.2) 2px,
-    rgba(160, 130, 109, 0.2) 3px
+    rgba(139, 92, 246, 0.3) 2px,
+    rgba(139, 92, 246, 0.3) 3px
   );
 }
 
@@ -176,23 +181,25 @@ code, pre, .font-mono {
   left: 50%;
   transform: translateX(-50%);
   font-size: 8px;
-  color: var(--bronze);
+  color: var(--fiber-purple);
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
 }
 
-/* Studio USB Port */
+/* Fiber USB Port */
 .usb-port {
   width: 50px;
   height: 14px;
-  background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
-  border: 1.5px solid var(--bronze);
+  background: linear-gradient(180deg, #2d1b4e, #1a1225);
+  border: 1.5px solid var(--fiber-violet);
   border-radius: 4px;
   position: relative;
   box-shadow: 
     0 2px 8px rgba(0, 0, 0, 0.6),
-    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    0 0 10px rgba(167, 139, 250, 0.3),
+    inset 0 1px 2px rgba(167, 139, 250, 0.15),
     inset 0 -1px 2px rgba(0, 0, 0, 0.8);
 }
 
@@ -201,9 +208,9 @@ code, pre, .font-mono {
   position: absolute;
   inset: 2px;
   background: linear-gradient(90deg, 
-    rgba(160, 130, 109, 0.15) 0%,
+    rgba(139, 92, 246, 0.2) 0%,
     transparent 50%,
-    rgba(160, 130, 109, 0.15) 100%
+    rgba(139, 92, 246, 0.2) 100%
   );
 }
 
@@ -214,48 +221,53 @@ code, pre, .font-mono {
   left: 50%;
   transform: translateX(-50%);
   font-size: 8px;
-  color: var(--bronze);
+  color: var(--fiber-violet);
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(167, 139, 250, 0.5);
 }
 
-/* Studio Connection Points */
+/* Fiber Connection Points */
 .connection-point {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--brushed-steel), var(--dark-steel));
-  border: 2px solid rgba(160, 130, 109, 0.4);
+  background: radial-gradient(circle, var(--light-steel), var(--dark-steel));
+  border: 2px solid rgba(139, 92, 246, 0.5);
   position: absolute;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
     0 2px 4px rgba(0, 0, 0, 0.4),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    0 0 8px rgba(139, 92, 246, 0.2),
+    inset 0 1px 1px rgba(167, 139, 250, 0.2);
 }
 
 .connection-point:hover {
-  background: radial-gradient(circle, var(--bronze), var(--copper));
-  border-color: var(--bronze);
-  box-shadow: 0 0 12px var(--premium-glow), 0 2px 8px rgba(0, 0, 0, 0.6);
+  background: radial-gradient(circle, var(--fiber-violet), var(--fiber-purple));
+  border-color: var(--fiber-violet);
+  box-shadow: 
+    0 0 16px var(--fiber-glow-bright), 
+    0 2px 8px rgba(0, 0, 0, 0.6),
+    0 0 24px rgba(139, 92, 246, 0.4);
   transform: scale(1.2);
 }
 
 .connection-point.connected {
-  background: radial-gradient(circle, var(--bronze), var(--copper));
-  border-color: var(--bronze);
-  box-shadow: 0 0 8px var(--premium-glow);
-  animation: pulse-studio 3s ease-in-out infinite;
+  background: radial-gradient(circle, var(--fiber-violet), var(--fiber-purple));
+  border-color: var(--fiber-violet);
+  box-shadow: 0 0 12px var(--fiber-glow-bright);
+  animation: pulse-fiber 3s ease-in-out infinite;
 }
 
-@keyframes pulse-studio {
+@keyframes pulse-fiber {
   0%, 100% { 
-    box-shadow: 0 0 8px var(--premium-glow);
+    box-shadow: 0 0 12px var(--fiber-glow-bright);
     opacity: 1;
   }
   50% { 
-    box-shadow: 0 0 16px var(--premium-glow), 0 0 24px var(--premium-glow);
+    box-shadow: 0 0 20px var(--fiber-glow-bright), 0 0 32px var(--fiber-glow);
     opacity: 0.9;
   }
 }
@@ -266,24 +278,25 @@ code, pre, .font-mono {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  color: var(--bronze);
+  color: var(--fiber-violet);
   font-family: 'Inter', sans-serif;
+  text-shadow: 0 0 8px rgba(167, 139, 250, 0.5);
 }
 
 /* =====================================================
    STUDIO SIGNAL FLOW & CONNECTIONS
    ===================================================== */
 
-/* Signal Path - Premium Cable */
+/* Signal Path - Fiber Cable */
 .cable-path {
-  stroke: var(--bronze);
+  stroke: var(--fiber-purple);
   stroke-width: 2.5;
   fill: none;
-  filter: drop-shadow(0 0 6px var(--premium-glow));
-  animation: signal-flow-studio 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px var(--fiber-glow));
+  animation: signal-flow-fiber 3s ease-in-out infinite;
 }
 
-@keyframes signal-flow-studio {
+@keyframes signal-flow-fiber {
   0%, 100% { 
     stroke-width: 2.5;
     opacity: 0.9;
@@ -296,15 +309,15 @@ code, pre, .font-mono {
 
 /* Data Flow Animation */
 .data-flow {
-  stroke: var(--bronze);
+  stroke: var(--fiber-violet);
   stroke-width: 2;
   fill: none;
   stroke-dasharray: 8 4;
-  animation: flow-studio 2s linear infinite;
-  filter: drop-shadow(0 0 3px var(--premium-glow));
+  animation: flow-fiber 2s linear infinite;
+  filter: drop-shadow(0 0 4px var(--fiber-glow));
 }
 
-@keyframes flow-studio {
+@keyframes flow-fiber {
   0% { stroke-dashoffset: 0; }
   100% { stroke-dashoffset: 24; }
 }
@@ -314,13 +327,13 @@ code, pre, .font-mono {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--bronze);
-  box-shadow: 0 0 8px var(--premium-glow);
+  background: var(--fiber-violet);
+  box-shadow: 0 0 10px var(--fiber-glow-bright);
   position: absolute;
-  animation: particle-studio 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: particle-fiber 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-@keyframes particle-studio {
+@keyframes particle-fiber {
   0% { transform: translateX(0); opacity: 0; }
   15% { opacity: 1; }
   85% { opacity: 1; }
@@ -332,29 +345,31 @@ code, pre, .font-mono {
   height: 2px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(160, 130, 109, 0.3) 20%, 
-    rgba(160, 130, 109, 0.3) 80%, 
+    rgba(139, 92, 246, 0.4) 20%, 
+    rgba(139, 92, 246, 0.4) 80%, 
     transparent 100%
   );
   position: relative;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
 }
 
 /* =====================================================
    PREMIUM DEVICE CARDS
    ===================================================== */
 
-/* Device Module - Studio Hardware */
+/* Device Module - Fiber Hardware */
 .device-module {
-  background: linear-gradient(145deg, var(--warm-charcoal), var(--deep-charcoal));
-  border: 1px solid rgba(160, 130, 109, 0.15);
+  background: linear-gradient(145deg, var(--dark-purple), var(--deep-void));
+  border: 1px solid rgba(139, 92, 246, 0.2);
   border-radius: 16px;
   padding: 28px;
   position: relative;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(167, 139, 250, 0.08);
 }
 
 .device-module::before {
@@ -366,11 +381,13 @@ code, pre, .font-mono {
   height: 2px;
   background: linear-gradient(90deg, 
     transparent 0%,
-    var(--bronze) 30%,
-    var(--bronze) 70%,
+    var(--fiber-purple) 30%,
+    var(--fiber-violet) 50%,
+    var(--fiber-purple) 70%,
     transparent 100%
   );
-  opacity: 0.6;
+  opacity: 0.8;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
 }
 
 .device-module::after {
@@ -382,19 +399,20 @@ code, pre, .font-mono {
     90deg,
     transparent,
     transparent 3px,
-    rgba(255, 255, 255, 0.01) 3px,
-    rgba(255, 255, 255, 0.01) 6px
+    rgba(139, 92, 246, 0.02) 3px,
+    rgba(139, 92, 246, 0.02) 6px
   );
   pointer-events: none;
 }
 
 .device-module:hover {
-  border-color: rgba(160, 130, 109, 0.4);
+  border-color: rgba(139, 92, 246, 0.5);
   transform: translateY(-4px);
   box-shadow: 
-    0 16px 48px rgba(0, 0, 0, 0.7),
-    0 0 0 1px rgba(160, 130, 109, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 16px 48px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(139, 92, 246, 0.3),
+    0 0 0 1px rgba(139, 92, 246, 0.4),
+    inset 0 1px 0 rgba(167, 139, 250, 0.12);
 }
 
 /* Refined Card Effect */
@@ -411,7 +429,7 @@ code, pre, .font-mono {
    STUDIO STATUS & INDICATORS
    ===================================================== */
 
-/* Compatibility Badge - Studio Style */
+/* Compatibility Badge - Fiber Style */
 .compat-badge {
   display: inline-flex;
   align-items: center;
@@ -427,24 +445,25 @@ code, pre, .font-mono {
 }
 
 .compat-badge.compatible {
-  background: rgba(160, 130, 109, 0.15);
-  border-color: rgba(160, 130, 109, 0.4);
-  color: var(--bronze);
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+  color: var(--fiber-violet);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
 }
 
 .compat-badge.incompatible {
-  background: rgba(153, 27, 27, 0.15);
-  border-color: rgba(153, 27, 27, 0.4);
-  color: var(--deep-burgundy);
+  background: rgba(162, 28, 175, 0.2);
+  border-color: rgba(162, 28, 175, 0.5);
+  color: var(--deep-magenta);
 }
 
 .compat-badge.warning {
-  background: rgba(201, 167, 114, 0.15);
-  border-color: rgba(201, 167, 114, 0.4);
-  color: var(--studio-gold);
+  background: rgba(192, 132, 252, 0.2);
+  border-color: rgba(192, 132, 252, 0.5);
+  color: var(--fiber-pink);
 }
 
-/* Signal Strength Indicator - Studio */
+/* Signal Strength Indicator - Fiber */
 .signal-strength {
   display: flex;
   gap: 2.5px;
@@ -459,8 +478,8 @@ code, pre, .font-mono {
 }
 
 .signal-bar.active {
-  background: var(--bronze);
-  box-shadow: 0 0 6px var(--premium-glow);
+  background: var(--fiber-violet);
+  box-shadow: 0 0 8px var(--fiber-glow);
 }
 
 .signal-bar:nth-child(1) { height: 8px; }
@@ -473,24 +492,24 @@ code, pre, .font-mono {
    STUDIO PANELS & CONTROLS
    ===================================================== */
 
-/* Side Panel - Studio Equipment */
+/* Side Panel - Fiber Equipment */
 .side-panel {
-  background: linear-gradient(180deg, var(--warm-charcoal), var(--deep-charcoal));
-  border-right: 1px solid rgba(160, 130, 109, 0.2);
-  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, var(--dark-purple), var(--deep-void));
+  border-right: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5), 0 0 40px rgba(139, 92, 246, 0.1);
 }
 
 /* Toolbar - Control Surface */
 .toolbar {
-  background: rgba(39, 39, 42, 0.95);
-  border-bottom: 1px solid rgba(160, 130, 109, 0.15);
+  background: rgba(26, 18, 37, 0.95);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
   backdrop-filter: blur(20px) saturate(120%);
 }
 
 /* Component Library Item */
 .library-item {
-  background: linear-gradient(145deg, var(--warm-charcoal), var(--deep-charcoal));
-  border: 1px solid rgba(160, 130, 109, 0.2);
+  background: linear-gradient(145deg, var(--dark-purple), var(--deep-void));
+  border: 1px solid rgba(139, 92, 246, 0.25);
   border-radius: 10px;
   padding: 18px;
   cursor: grab;
@@ -498,9 +517,9 @@ code, pre, .font-mono {
 }
 
 .library-item:hover {
-  border-color: rgba(160, 130, 109, 0.5);
+  border-color: rgba(139, 92, 246, 0.6);
   transform: translateX(4px);
-  box-shadow: 0 4px 16px var(--premium-glow);
+  box-shadow: 0 4px 16px var(--fiber-glow);
 }
 
 .library-item:active {
@@ -512,10 +531,10 @@ code, pre, .font-mono {
    PREMIUM CONTROLS & INTERACTIONS
    ===================================================== */
 
-/* Primary Button - Studio CTA */
+/* Primary Button - Fiber CTA */
 .btn-primary {
-  background: linear-gradient(135deg, var(--deep-burgundy), var(--muted-burgundy));
-  border: 1px solid rgba(153, 27, 27, 0.4);
+  background: linear-gradient(135deg, var(--neon-purple), var(--deep-magenta));
+  border: 1px solid rgba(147, 51, 234, 0.5);
   color: var(--soft-white);
   padding: 13px 28px;
   border-radius: 8px;
@@ -526,8 +545,9 @@ code, pre, .font-mono {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
-    0 4px 16px rgba(153, 27, 27, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 4px 16px rgba(147, 51, 234, 0.4),
+    0 0 20px rgba(139, 92, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -536,7 +556,7 @@ code, pre, .font-mono {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   transform: translateX(-100%);
   transition: transform 0.6s ease;
 }
@@ -544,9 +564,10 @@ code, pre, .font-mono {
 .btn-primary:hover {
   transform: translateY(-1px);
   box-shadow: 
-    0 6px 24px rgba(153, 27, 27, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  border-color: rgba(153, 27, 27, 0.6);
+    0 6px 24px rgba(147, 51, 234, 0.5),
+    0 0 30px rgba(139, 92, 246, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(147, 51, 234, 0.7);
 }
 
 .btn-primary:hover::before {
@@ -557,11 +578,11 @@ code, pre, .font-mono {
   transform: translateY(0);
 }
 
-/* Secondary Button - Studio Outline */
+/* Secondary Button - Fiber Outline */
 .btn-secondary {
   background: transparent;
-  border: 1px solid rgba(160, 130, 109, 0.4);
-  color: var(--bronze);
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  color: var(--fiber-violet);
   padding: 13px 28px;
   border-radius: 8px;
   font-weight: 600;
@@ -573,10 +594,10 @@ code, pre, .font-mono {
 }
 
 .btn-secondary:hover {
-  background: rgba(160, 130, 109, 0.1);
-  border-color: rgba(160, 130, 109, 0.6);
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.7);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px var(--premium-glow);
+  box-shadow: 0 4px 16px var(--fiber-glow);
 }
 
 /* Icon Button - Control Knob */
@@ -584,23 +605,24 @@ code, pre, .font-mono {
   width: 42px;
   height: 42px;
   border-radius: 8px;
-  background: linear-gradient(145deg, var(--warm-charcoal), var(--deep-charcoal));
-  border: 1px solid rgba(160, 130, 109, 0.2);
+  background: linear-gradient(145deg, var(--dark-purple), var(--deep-void));
+  border: 1px solid rgba(139, 92, 246, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(167, 139, 250, 0.1);
 }
 
 .btn-icon:hover {
-  background: linear-gradient(145deg, var(--bronze), var(--copper));
-  border-color: var(--bronze);
+  background: linear-gradient(145deg, var(--fiber-purple), var(--neon-purple));
+  border-color: var(--fiber-violet);
   transform: scale(1.08);
-  box-shadow: 0 4px 12px var(--premium-glow);
+  box-shadow: 0 4px 12px var(--fiber-glow), 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
 .btn-icon:active {
@@ -611,20 +633,20 @@ code, pre, .font-mono {
    STUDIO STATUS & FEEDBACK
    ===================================================== */
 
-/* Status Indicator - Studio LED */
+/* Status Indicator - Fiber LED */
 .status-indicator {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  animation: status-studio 3s ease-in-out infinite;
-  box-shadow: 0 0 0 2px rgba(160, 130, 109, 0.2);
+  animation: status-fiber 3s ease-in-out infinite;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
 }
 
 .status-indicator.connected {
-  background: var(--bronze);
+  background: var(--fiber-violet);
   box-shadow: 
-    0 0 8px var(--premium-glow),
-    0 0 0 2px rgba(160, 130, 109, 0.3);
+    0 0 12px var(--fiber-glow-bright),
+    0 0 0 2px rgba(139, 92, 246, 0.4);
 }
 
 .status-indicator.disconnected {
@@ -633,30 +655,31 @@ code, pre, .font-mono {
 }
 
 .status-indicator.error {
-  background: var(--deep-burgundy);
+  background: var(--deep-magenta);
   box-shadow: 
-    0 0 8px rgba(153, 27, 27, 0.4),
-    0 0 0 2px rgba(153, 27, 27, 0.2);
+    0 0 10px rgba(162, 28, 175, 0.5),
+    0 0 0 2px rgba(162, 28, 175, 0.3);
 }
 
-@keyframes status-studio {
+@keyframes status-fiber {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
 }
 
-/* Toast Notification - Studio Alert */
+/* Toast Notification - Fiber Alert */
 .toast {
-  background: linear-gradient(135deg, var(--warm-charcoal), var(--deep-charcoal));
-  border: 1px solid rgba(160, 130, 109, 0.3);
+  background: linear-gradient(135deg, var(--dark-purple), var(--deep-void));
+  border: 1px solid rgba(139, 92, 246, 0.4);
   border-radius: 10px;
   padding: 18px 22px;
   box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  animation: slide-in-studio 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    0 12px 40px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(139, 92, 246, 0.3),
+    inset 0 1px 0 rgba(167, 139, 250, 0.1);
+  animation: slide-in-fiber 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes slide-in-studio {
+@keyframes slide-in-fiber {
   from {
     transform: translateY(100%);
     opacity: 0;
@@ -671,25 +694,25 @@ code, pre, .font-mono {
    PREMIUM UTILITY CLASSES
    ===================================================== */
 
-/* Glass Effect - Studio Surface */
+/* Glass Effect - Fiber Surface */
 .glass-panel {
-  background: rgba(39, 39, 42, 0.7);
+  background: rgba(26, 18, 37, 0.7);
   backdrop-filter: blur(24px) saturate(120%);
-  border: 1px solid rgba(160, 130, 109, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.15);
 }
 
-/* Premium Glow Effects */
+/* Fiber Glow Effects */
 .glow-bronze {
-  box-shadow: 0 0 24px var(--premium-glow);
+  box-shadow: 0 0 24px var(--fiber-glow);
 }
 
 .glow-burgundy {
-  box-shadow: 0 0 24px rgba(153, 27, 27, 0.4);
+  box-shadow: 0 0 24px rgba(162, 28, 175, 0.5);
 }
 
-/* Text Gradient - Studio Highlight */
+/* Text Gradient - Fiber Highlight */
 .text-gradient {
-  background: linear-gradient(135deg, var(--bronze), var(--studio-gold), var(--copper));
+  background: linear-gradient(135deg, var(--fiber-purple), var(--fiber-violet), var(--fiber-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -697,10 +720,10 @@ code, pre, .font-mono {
 
 /* Fade In Animation */
 .fade-in {
-  animation: fade-in-studio 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fade-in-fiber 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes fade-in-studio {
+@keyframes fade-in-fiber {
   from { 
     opacity: 0; 
     transform: translateY(16px); 
@@ -711,7 +734,7 @@ code, pre, .font-mono {
   }
 }
 
-/* Shimmer Effect - Premium Highlight */
+/* Shimmer Effect - Fiber Highlight */
 .shimmer {
   position: relative;
   overflow: hidden;
@@ -727,27 +750,27 @@ code, pre, .font-mono {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(160, 130, 109, 0.15) 50%,
+    rgba(139, 92, 246, 0.2) 50%,
     transparent 100%
   );
-  animation: shimmer-studio 3s infinite;
+  animation: shimmer-fiber 3s infinite;
 }
 
-@keyframes shimmer-studio {
+@keyframes shimmer-fiber {
   0% { left: -100%; }
   100% { left: 200%; }
 }
 
-/* Premium Material Effects */
+/* Fiber Material Effects */
 .metal-surface {
-  background: linear-gradient(135deg, var(--warm-charcoal) 0%, var(--graphite) 50%, var(--warm-charcoal) 100%);
+  background: linear-gradient(135deg, var(--dark-purple) 0%, var(--deep-void) 50%, var(--dark-purple) 100%);
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(167, 139, 250, 0.1),
     inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .studio-border {
-  border: 1px solid rgba(160, 130, 109, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.25);
 }
 
 .studio-divider {
@@ -755,7 +778,7 @@ code, pre, .font-mono {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(160, 130, 109, 0.3) 50%,
+    rgba(139, 92, 246, 0.4) 50%,
     transparent 100%
   );
 }
