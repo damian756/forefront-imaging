@@ -11,7 +11,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import HolographicBackground from '@/components/HolographicBackground';
+import SpaceBackground from '@/components/SpaceBackground';
 import { useCart } from '@/contexts/CartContext';
 import { getUSBCaptureProducts } from '@/lib/products';
 
@@ -85,9 +85,9 @@ function CatalogPage() {
       <Navbar />
       <div className="flex flex-col min-h-screen text-white selection:bg-cyan-500/30" style={{ background: '#000000' }}>
         
-        {/* Holographic Background */}
-        <HolographicBackground />
-        <div className="fixed inset-0 tech-grid-fine opacity-20 pointer-events-none z-0" />
+        {/* Space Background */}
+        <SpaceBackground />
+        <div className="fixed inset-0 pcb-grid opacity-10 pointer-events-none z-0" />
         
         {/* Hero Header */}
         <div className="pt-32 pb-12 border-b border-green-500/20 relative overflow-hidden">

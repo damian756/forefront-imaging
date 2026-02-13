@@ -6,7 +6,7 @@ import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Radio, Zap, Shield, Truck
 import { useCart } from '@/contexts/CartContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import HolographicBackground from '@/components/HolographicBackground';
+import SpaceBackground from '@/components/SpaceBackground';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CartPage() {
@@ -17,7 +17,7 @@ export default function CartPage() {
       <>
         <Navbar />
         <div className="min-h-screen text-white pt-32 pb-20" style={{ background: '#000000' }}>
-          <HolographicBackground />
+          <SpaceBackground />
           
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="text-center py-20">
@@ -73,7 +73,7 @@ export default function CartPage() {
     <>
       <Navbar />
       <div className="min-h-screen text-white pt-32 pb-20" style={{ background: '#000000' }}>
-        <HolographicBackground />
+        <SpaceBackground />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           {/* Header */}
