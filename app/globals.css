@@ -1,344 +1,391 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&family=Audiowide&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 /* =====================================================
-   LIVE STREAM HUD PALETTE
+   FIBER OPTIC SIGNAL PALETTE
    ===================================================== */
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 14, 14, 16;
+  --background-end-rgb: 5, 5, 16;
   
-  /* Streaming Backgrounds */
-  --stream-black: #0e0e10;
-  --stream-dark: #18181b;
-  --stream-gray: #1f1f23;
+  /* Fiber Core Colors */
+  --fiber-blue: #0080ff;
+  --fiber-magenta: #ff00aa;
+  --fiber-cyan: #00ffff;
+  --fiber-purple: #8800ff;
+  --fiber-green: #00ff88;
   
-  /* Platform Colors */
-  --twitch-purple: #9146ff;
-  --youtube-red: #ff0000;
-  --discord-blue: #5865f2;
-  --stream-green: #00f593;
+  /* Optic Backgrounds */
+  --optic-black: #050510;
+  --optic-dark: #0a0a18;
+  --optic-gray: #151520;
   
-  /* Live Indicators */
-  --live-red: #ff3838;
-  --recording-red: #ff1744;
-  --online-green: #00f593;
-  --offline-gray: #53535f;
+  /* Signal Indicators */
+  --signal-strong: #00ff88;
+  --signal-medium: #00ffff;
+  --signal-weak: #ff00aa;
   
-  /* Stream Health */
-  --bitrate-blue: #0099ff;
-  --fps-green: #00ff7f;
-  --latency-yellow: #ffb800;
-  --quality-cyan: #00e5ff;
+  /* Light Speed */
+  --speed-white: #ffffff;
+  --speed-blue: #4da6ff;
+  --speed-cyan: #00e5ff;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--stream-black);
+  background: var(--optic-black);
   margin: 0;
   padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-x: hidden;
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: 'Audiowide', 'Exo 2', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 code, pre, .font-mono {
-  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-family: 'Orbitron', 'Courier New', monospace;
 }
 
 /* =====================================================
-   UTILITY CLASSES - STREAMING HUD EFFECTS
+   UTILITY CLASSES - FIBER OPTIC EFFECTS
    ===================================================== */
 
-/* Stream Glass Effect */
-.stream-glass {
-  background: rgba(24, 24, 27, 0.85);
-  backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(145, 70, 255, 0.15);
+/* Fiber Glass Effect */
+.fiber-glass {
+  background: rgba(10, 10, 24, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 128, 255, 0.2);
 }
 
-/* Live Indicator */
-.live-indicator {
-  background: var(--live-red);
-  box-shadow: 0 0 20px rgba(255, 56, 56, 0.6);
-  animation: live-pulse 1.5s ease-in-out infinite;
+/* Light Streak */
+.light-streak {
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(0, 128, 255, 0.8) 30%,
+    rgba(0, 255, 255, 1) 50%,
+    rgba(255, 0, 170, 0.8) 70%,
+    transparent 100%
+  );
+  animation: light-travel 3s linear infinite;
 }
 
-@keyframes live-pulse {
-  0%, 100% { 
-    opacity: 1; 
-    box-shadow: 0 0 20px rgba(255, 56, 56, 0.6);
-  }
-  50% { 
-    opacity: 0.7; 
-    box-shadow: 0 0 40px rgba(255, 56, 56, 0.8);
-  }
+@keyframes light-travel {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
 }
 
-/* Stream Glow */
-.stream-glow {
-  box-shadow: 0 0 20px rgba(145, 70, 255, 0.3),
-              0 0 40px rgba(0, 245, 147, 0.2);
+/* Fiber Glow */
+.fiber-glow {
+  box-shadow: 
+    0 0 20px rgba(0, 128, 255, 0.4),
+    0 0 40px rgba(0, 255, 255, 0.3),
+    0 0 60px rgba(255, 0, 170, 0.2);
   transition: box-shadow 0.3s ease;
 }
 
-.stream-glow:hover {
-  box-shadow: 0 0 30px rgba(145, 70, 255, 0.5),
-              0 0 60px rgba(0, 245, 147, 0.3);
+.fiber-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(0, 128, 255, 0.6),
+    0 0 60px rgba(0, 255, 255, 0.5),
+    0 0 90px rgba(255, 0, 170, 0.4);
 }
 
-/* Alert Animation */
-.alert-slide {
-  animation: alert-slide-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes alert-slide-in {
-  from {
-    transform: translateX(-100%) scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
-}
-
-/* Donation Pop */
-.donation-pop {
-  animation: donation-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes donation-pop {
-  0% {
-    transform: scale(0) rotate(-10deg);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.2) rotate(5deg);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-}
-
-/* Stream Metrics Bar */
-.metric-bar {
-  background: linear-gradient(90deg, var(--bitrate-blue), var(--fps-green));
-  box-shadow: 0 0 10px rgba(0, 153, 255, 0.5);
-  animation: metric-fill 1s ease-out forwards;
-}
-
-@keyframes metric-fill {
-  from { width: 0%; }
-}
-
-/* Twitch Gradient */
-.twitch-gradient {
-  background: linear-gradient(135deg, #9146ff, #772ce8);
-  box-shadow: 0 4px 20px rgba(145, 70, 255, 0.4);
-}
-
-/* YouTube Gradient */
-.youtube-gradient {
-  background: linear-gradient(135deg, #ff0000, #cc0000);
-  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
-}
-
-/* Stream Status Text */
-.stream-text {
-  background: linear-gradient(135deg, var(--twitch-purple), var(--stream-green));
+/* Prismatic Text */
+.prismatic-text {
+  background: linear-gradient(90deg, 
+    var(--fiber-blue) 0%,
+    var(--fiber-cyan) 25%,
+    var(--fiber-green) 50%,
+    var(--fiber-magenta) 75%,
+    var(--fiber-purple) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: prismatic-shift 5s linear infinite;
 }
 
-/* Chat Bubble */
-.chat-bubble {
-  background: rgba(31, 31, 35, 0.95);
-  border-left: 3px solid var(--twitch-purple);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  animation: chat-appear 0.3s ease-out;
+@keyframes prismatic-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-@keyframes chat-appear {
-  from {
-    transform: translateY(10px);
-    opacity: 0;
+/* Pulse Wave */
+.pulse-wave {
+  animation: pulse-wave 2s ease-in-out infinite;
+}
+
+@keyframes pulse-wave {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: scale(1);
   }
-  to {
-    transform: translateY(0);
+  50% { 
     opacity: 1;
+    transform: scale(1.05);
   }
 }
 
-/* Viewer Count */
-.viewer-count {
-  background: linear-gradient(90deg, rgba(145, 70, 255, 0.2), rgba(0, 245, 147, 0.2));
-  border: 1px solid rgba(145, 70, 255, 0.3);
-  animation: viewer-update 0.5s ease-out;
-}
-
-@keyframes viewer-update {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-/* Recording Indicator */
-.recording-dot {
-  background: var(--recording-red);
-  box-shadow: 0 0 15px var(--recording-red);
-  animation: recording-blink 1s ease-in-out infinite;
-}
-
-@keyframes recording-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-/* Stream Quality Bars */
-.quality-bar {
-  background: linear-gradient(180deg, var(--online-green), rgba(0, 245, 147, 0.3));
-  box-shadow: 0 0 10px rgba(0, 245, 147, 0.3);
-}
-
-/* Overlay Border */
-.overlay-border {
-  border: 2px solid transparent;
-  background: linear-gradient(var(--stream-dark), var(--stream-dark)) padding-box,
-              linear-gradient(135deg, var(--twitch-purple), var(--stream-green)) border-box;
-}
-
-/* Notification Badge */
-.notification-badge {
-  background: linear-gradient(135deg, #ff3838, #ff5555);
-  box-shadow: 0 0 15px rgba(255, 56, 56, 0.6);
-  animation: badge-bounce 0.5s ease-out;
-}
-
-@keyframes badge-bounce {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-/* Stream Fade In */
-.stream-fade-in {
-  animation: stream-fade-in 0.8s ease-out;
-}
-
-@keyframes stream-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Scanlines Effect (for monitors) */
-.scanlines {
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.03) 0px,
-    transparent 1px,
-    transparent 2px,
-    rgba(255, 255, 255, 0.03) 3px
+/* Light Beam */
+.light-beam {
+  background: linear-gradient(180deg, 
+    rgba(0, 128, 255, 0) 0%,
+    rgba(0, 128, 255, 0.3) 50%,
+    rgba(0, 255, 255, 0.6) 100%
   );
-  pointer-events: none;
+  animation: beam-scan 3s ease-in-out infinite;
 }
 
-/* Bitrate Meter */
-.bitrate-meter {
-  background: linear-gradient(90deg, var(--bitrate-blue) 0%, var(--quality-cyan) 100%);
-  box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
+@keyframes beam-scan {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
 }
 
-/* FPS Counter */
-.fps-counter {
-  color: var(--fps-green);
-  text-shadow: 0 0 10px rgba(0, 255, 127, 0.6);
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 700;
+/* Refraction Border */
+.refraction-border {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--optic-dark), var(--optic-dark)) padding-box,
+              linear-gradient(135deg, 
+                var(--fiber-blue) 0%,
+                var(--fiber-cyan) 25%,
+                var(--fiber-magenta) 50%,
+                var(--fiber-purple) 75%,
+                var(--fiber-blue) 100%
+              ) border-box;
+  animation: refraction-rotate 8s linear infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes refraction-rotate {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Signal Pulse */
+.signal-pulse {
+  animation: signal-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes signal-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 1),
+                0 0 50px rgba(0, 128, 255, 0.8);
+  }
+}
+
+/* Data Transfer Animation */
+.data-transfer {
+  animation: data-transfer 2s ease-in-out infinite;
+}
+
+@keyframes data-transfer {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50px) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(100px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Bandwidth Bar */
+.bandwidth-bar {
+  background: linear-gradient(90deg, 
+    var(--fiber-blue) 0%,
+    var(--fiber-cyan) 50%,
+    var(--fiber-green) 100%
+  );
+  box-shadow: 0 0 15px rgba(0, 128, 255, 0.6);
+  animation: bandwidth-flow 2s linear infinite;
+}
+
+@keyframes bandwidth-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 /* Latency Indicator */
-.latency-indicator {
-  color: var(--latency-yellow);
-  text-shadow: 0 0 10px rgba(255, 184, 0, 0.6);
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 700;
+.latency-low {
+  color: var(--fiber-green);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
 }
 
-/* Platform Badge - Twitch */
-.badge-twitch {
-  background: var(--twitch-purple);
-  box-shadow: 0 0 15px rgba(145, 70, 255, 0.5);
+.latency-medium {
+  color: var(--fiber-cyan);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
 }
 
-/* Platform Badge - YouTube */
-.badge-youtube {
-  background: var(--youtube-red);
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+.latency-high {
+  color: var(--fiber-magenta);
+  text-shadow: 0 0 10px rgba(255, 0, 170, 0.8);
 }
 
-/* Subscriber Alert */
-.sub-alert {
-  background: linear-gradient(135deg, #9146ff, #00f593);
-  animation: sub-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+/* Core Gradient */
+.fiber-core {
+  background: radial-gradient(circle, 
+    rgba(0, 255, 255, 0.3) 0%,
+    rgba(0, 128, 255, 0.2) 30%,
+    rgba(136, 0, 255, 0.1) 60%,
+    transparent 100%
+  );
 }
 
-@keyframes sub-bounce {
-  0% { transform: scale(0) rotate(-20deg); }
-  50% { transform: scale(1.3) rotate(10deg); }
-  100% { transform: scale(1) rotate(0deg); }
+/* Light Particle */
+.light-particle {
+  animation: light-particle 3s ease-in-out infinite;
 }
 
-/* Follow Heart */
-.follow-heart {
-  animation: follow-float 1s ease-out forwards;
-}
-
-@keyframes follow-float {
+@keyframes light-particle {
   0% {
-    transform: translateY(0) scale(0);
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-100px) scale(1.5);
+    transform: translate(100vw, -50px) scale(0.5);
     opacity: 0;
   }
 }
 
-/* Stream Health Good */
-.health-good {
-  color: var(--online-green);
-  text-shadow: 0 0 10px rgba(0, 245, 147, 0.6);
+/* Speed Badge */
+.speed-badge {
+  background: linear-gradient(135deg, 
+    rgba(0, 128, 255, 0.9),
+    rgba(0, 255, 255, 0.9)
+  );
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Stream Health Warning */
-.health-warning {
-  color: var(--latency-yellow);
-  text-shadow: 0 0 10px rgba(255, 184, 0, 0.6);
+/* Glass Frosted */
+.glass-frosted {
+  background: rgba(15, 15, 30, 0.6);
+  backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Stream Health Critical */
-.health-critical {
-  color: var(--live-red);
-  text-shadow: 0 0 10px rgba(255, 56, 56, 0.6);
-  animation: critical-blink 0.5s ease-in-out infinite;
+/* Transmission Line */
+.transmission-line {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 255, 255, 0.1) 45%,
+    rgba(0, 255, 255, 0.8) 50%,
+    rgba(0, 255, 255, 0.1) 55%,
+    transparent 100%
+  );
+  animation: transmission-flow 2s linear infinite;
 }
 
-@keyframes critical-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+@keyframes transmission-flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* Fiber Fade In */
+.fiber-fade-in {
+  animation: fiber-fade-in 1s ease-out;
+}
+
+@keyframes fiber-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Connection Node */
+.connection-node {
+  background: radial-gradient(circle,
+    rgba(0, 255, 255, 1) 0%,
+    rgba(0, 128, 255, 0.8) 30%,
+    rgba(136, 0, 255, 0.4) 60%,
+    transparent 100%
+  );
+  animation: node-pulse 2s ease-in-out infinite;
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* Uncompressed Badge */
+.uncompressed-badge {
+  background: linear-gradient(135deg, #00ff88, #00ffff);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+  animation: quality-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes quality-shimmer {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+/* Spectrum Lines */
+.spectrum-lines {
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 128, 255, 0.1) 10px,
+      rgba(0, 128, 255, 0.1) 11px
+    );
+}
+
+/* Photonic Effect */
+.photonic {
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(0, 255, 255, 0.4),
+    0 0 30px rgba(0, 128, 255, 0.3);
+  animation: photonic-glow 2s ease-in-out infinite;
+}
+
+@keyframes photonic-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(0, 255, 255, 0.4),
+      0 0 30px rgba(0, 128, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(0, 255, 255, 0.7),
+      0 0 60px rgba(0, 128, 255, 0.6);
+  }
 }
