@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Send, Shield, Package, Truck, Facebook, Twitter, Linkedin, Youtube, Zap, Radio, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Shield, Package, Truck, Facebook, Twitter, Linkedin, Youtube, Zap, Radio, CheckCircle2, Plug } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
