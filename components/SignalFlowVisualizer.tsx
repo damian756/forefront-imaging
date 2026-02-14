@@ -231,8 +231,8 @@ export default function SignalFlowVisualizer() {
               </button>
             </div>
 
-            {/* Canvas with Particle System - centered in gap so flowing bar sits in middle */}
-            <div className="relative flex items-center justify-center min-h-[340px] mb-10">
+            {/* Canvas with Particle System - bar raised to sit halfway up the gap above */}
+            <div className="relative pt-2 mb-10">
               <div className="relative w-full" style={{ height: '300px' }}>
               <canvas
                 ref={canvasRef}
