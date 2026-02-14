@@ -55,7 +55,7 @@ function OrderConfirmationContent() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-32 pb-20">
+        <div className="min-h-screen text-white pt-20 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
           <div className="max-w-3xl mx-auto px-4 text-center py-20">
             <h1 className="text-4xl font-bold mb-4">Order Not Found</h1>
             <p className="text-slate-400 mb-8">We couldn&apos;t find this order. Please contact us if you need assistance.</p>
@@ -72,7 +72,7 @@ function OrderConfirmationContent() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-32 pb-20">
+      <div className="min-h-screen text-white pt-20 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
         <div className="max-w-4xl mx-auto px-4">
           {/* Success Header */}
           <motion.div 
@@ -300,7 +300,7 @@ export default function OrderConfirmationPage() {
     <Suspense fallback={
       <>
         <Navbar />
-        <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-32 pb-20">
+        <div className="min-h-screen text-white pt-20 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
           <div className="max-w-3xl mx-auto px-4 text-center py-20">
             <div className="text-white text-xl">Loading order details...</div>
           </div>

@@ -15,7 +15,7 @@ export default function CartPage() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen text-white pt-32 pb-20" style={{ background: 'linear-gradient(135deg, #0f0f14 0%, #14141e 100%)' }}>
+        <div className="min-h-screen text-white pt-20 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
           <div className="fixed inset-0 builder-canvas opacity-40 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -71,7 +71,7 @@ export default function CartPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen text-white pt-32 pb-20" style={{ background: 'linear-gradient(135deg, #0f0f14 0%, #14141e 100%)' }}>
+      <div className="min-h-screen text-white pt-20 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
         <div className="fixed inset-0 builder-canvas opacity-40 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -190,7 +190,7 @@ export default function CartPage() {
             {/* Order Summary */}
             <div className="lg:col-span-1">
               <motion.div 
-                className="fiber-glass refraction-border rounded-2xl p-8 sticky top-32 relative overflow-hidden"
+                className="fiber-glass refraction-border rounded-2xl p-8 sticky top-20 relative overflow-hidden"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}

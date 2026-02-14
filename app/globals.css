@@ -39,6 +39,14 @@
   --optic-dark: #0d1321;
   /* Header & Footer bar (subscribe area) - same blue */
   --graphite: #1a2847;
+
+  /* Legacy purple vars → mapped to blue for consistency */
+  --fiber-violet: #60a5fa;
+  --fiber-purple: #1e40af;
+  --dark-purple: #0f1629;
+  --neon-purple: #2563eb;
+  --deep-magenta: #dc2626;
+  --fiber-pink: #f59e0b;
 }
 
 body {
@@ -152,7 +160,7 @@ code, pre, .font-mono {
 .hdmi-port {
   width: 60px;
   height: 20px;
-  background: linear-gradient(180deg, #1a1225, #0f0a19);
+  background: linear-gradient(180deg, var(--dark-blue), var(--deep-void));
   border: 1.5px solid var(--fiber-purple);
   border-radius: 3px;
   position: relative;
@@ -194,7 +202,7 @@ code, pre, .font-mono {
 .usb-port {
   width: 50px;
   height: 14px;
-  background: linear-gradient(180deg, #2d1b4e, #1a1225);
+  background: linear-gradient(180deg, var(--mid-blue), var(--dark-blue));
   border: 1.5px solid var(--fiber-violet);
   border-radius: 4px;
   position: relative;
@@ -454,14 +462,14 @@ code, pre, .font-mono {
 }
 
 .compat-badge.incompatible {
-  background: rgba(162, 28, 175, 0.2);
-  border-color: rgba(162, 28, 175, 0.5);
+  background: rgba(220, 38, 38, 0.2);
+  border-color: rgba(220, 38, 38, 0.5);
   color: var(--deep-magenta);
 }
 
 .compat-badge.warning {
-  background: rgba(192, 132, 252, 0.2);
-  border-color: rgba(192, 132, 252, 0.5);
+  background: rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.5);
   color: var(--fiber-pink);
 }
 
@@ -503,7 +511,7 @@ code, pre, .font-mono {
 
 /* Toolbar - Control Surface */
 .toolbar {
-  background: rgba(26, 18, 37, 0.95);
+  background: rgba(15, 22, 41, 0.95);
   border-bottom: 1px solid rgba(59, 130, 246, 0.2);
   backdrop-filter: blur(20px) saturate(120%);
 }
@@ -659,8 +667,8 @@ code, pre, .font-mono {
 .status-indicator.error {
   background: var(--deep-magenta);
   box-shadow: 
-    0 0 10px rgba(162, 28, 175, 0.5),
-    0 0 0 2px rgba(162, 28, 175, 0.3);
+    0 0 10px rgba(220, 38, 38, 0.5),
+    0 0 0 2px rgba(220, 38, 38, 0.3);
 }
 
 @keyframes status-fiber {
@@ -698,7 +706,7 @@ code, pre, .font-mono {
 
 /* Glass Effect - Fiber Surface */
 .glass-panel {
-  background: rgba(26, 18, 37, 0.7);
+  background: rgba(15, 22, 41, 0.75);
   backdrop-filter: blur(24px) saturate(120%);
   border: 1px solid rgba(59, 130, 246, 0.15);
 }
@@ -709,7 +717,7 @@ code, pre, .font-mono {
 }
 
 .glow-burgundy {
-  box-shadow: 0 0 24px rgba(162, 28, 175, 0.5);
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.5);
 }
 
 /* Text Gradient - Fiber Highlight */

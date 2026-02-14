@@ -95,7 +95,7 @@ export default function Home() {
       <Navbar />
 
       {/* FIBER OPTIC HERO SECTION */}
-      <section className="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden">
         
         {/* Blue Glow */}
         <div className="absolute inset-0 opacity-30" style={{ 

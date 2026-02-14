@@ -37,7 +37,7 @@ export default function SignalFlowVisualizer() {
       title: 'HDMI INPUT',
       subtitle: '4K60 Signal',
       icon: Radio,
-      position: { x: 10, y: 50 },
+      position: { x: 10, y: 35 },
       color: '#60a5fa'
     },
     {
@@ -45,7 +45,7 @@ export default function SignalFlowVisualizer() {
       title: 'HARDWARE DECODE',
       subtitle: 'Zero Latency',
       icon: Cpu,
-      position: { x: 50, y: 50 },
+      position: { x: 50, y: 35 },
       color: '#38bdf8'
     },
     {
@@ -53,7 +53,7 @@ export default function SignalFlowVisualizer() {
       title: 'USB 3.0 OUTPUT',
       subtitle: '10 Gbps',
       icon: Zap,
-      position: { x: 90, y: 50 },
+      position: { x: 90, y: 35 },
       color: '#3b82f6'
     }
   ];
@@ -63,11 +63,11 @@ export default function SignalFlowVisualizer() {
     const particleCount = 80;
     particlesRef.current = Array.from({ length: particleCount }, () => ({
       x: Math.random() * 100,
-      y: 45 + Math.random() * 10,
+      y: 30 + Math.random() * 10,
       speed: 0.3 + Math.random() * 0.5,
       size: 2 + Math.random() * 3,
       opacity: 0.3 + Math.random() * 0.7,
-      hue: 260 + Math.random() * 40
+      hue: 210 + Math.random() * 20
     }));
   }, []);
 
@@ -113,16 +113,16 @@ export default function SignalFlowVisualizer() {
       ctx.strokeStyle = 'rgba(59, 130, 246, 0.3)';
       ctx.lineWidth = 3;
       ctx.beginPath();
-      ctx.moveTo(rect.width * 0.05, rect.height * 0.5);
-      ctx.lineTo(rect.width * 0.95, rect.height * 0.5);
+      ctx.moveTo(rect.width * 0.05, rect.height * 0.35);
+      ctx.lineTo(rect.width * 0.95, rect.height * 0.35);
       ctx.stroke();
 
       // Draw glowing underlayer
       ctx.strokeStyle = 'rgba(96, 165, 250, 0.15)';
       ctx.lineWidth = 12;
       ctx.beginPath();
-      ctx.moveTo(rect.width * 0.05, rect.height * 0.5);
-      ctx.lineTo(rect.width * 0.95, rect.height * 0.5);
+      ctx.moveTo(rect.width * 0.05, rect.height * 0.35);
+      ctx.lineTo(rect.width * 0.95, rect.height * 0.35);
       ctx.stroke();
 
       if (!isPaused) {
@@ -133,7 +133,7 @@ export default function SignalFlowVisualizer() {
           // Reset particle when it reaches the end
           if (particle.x > 100) {
             particle.x = 5;
-            particle.y = 45 + Math.random() * 10;
+            particle.y = 30 + Math.random() * 10;
           }
 
           const px = (particle.x / 100) * rect.width;
@@ -210,7 +210,7 @@ export default function SignalFlowVisualizer() {
           <div className="port-module p-8 md:p-12 brushed-metal relative">
             
             {/* Status Bar */}
-            <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-fiber-violet/20">
+            <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-fiber-blue/20">
               <div className="flex items-center gap-2">
                 <div className={`status-indicator ${isPaused ? 'disconnected' : 'connected'}`} />
                 <span className="text-xs text-cool-gray uppercase tracking-wider font-semibold">
@@ -225,7 +225,7 @@ export default function SignalFlowVisualizer() {
               </div>
               <button
                 onClick={() => setIsPaused(!isPaused)}
-                className="ml-auto px-4 py-1 text-xs glass-panel rounded hover:bg-fiber-violet/10 transition-colors studio-border uppercase tracking-wider font-semibold"
+                className="ml-auto px-4 py-1 text-xs glass-panel rounded hover:bg-fiber-blue/10 transition-colors studio-border uppercase tracking-wider font-semibold"
               >
                 {isPaused ? 'Resume' : 'Pause'}
               </button>
@@ -313,9 +313,9 @@ export default function SignalFlowVisualizer() {
             {/* Signal Strength Meters */}
             <div className="grid md:grid-cols-3 gap-4">
               {[
-                { label: 'Input Signal', value: signalStrength.input, color: '#a78bfa', icon: Radio },
-                { label: 'Processing', value: signalStrength.processing, color: '#c084fc', icon: Cpu },
-                { label: 'Output Signal', value: signalStrength.output, color: '#8b5cf6', icon: Zap }
+                { label: 'Input Signal', value: signalStrength.input, color: '#60a5fa', icon: Radio },
+                { label: 'Processing', value: signalStrength.processing, color: '#38bdf8', icon: Cpu },
+                { label: 'Output Signal', value: signalStrength.output, color: '#3b82f6', icon: Zap }
               ].map((meter, index) => (
                 <motion.div
                   key={meter.label}
@@ -333,7 +333,7 @@ export default function SignalFlowVisualizer() {
                   </div>
                   
                   {/* Signal Bar */}
-                  <div className="h-2 bg-dark-purple rounded-full overflow-hidden mb-2">
+                  <div className="h-2 bg-dark-blue rounded-full overflow-hidden mb-2">
                     <motion.div
                       className="h-full rounded-full"
                       style={{

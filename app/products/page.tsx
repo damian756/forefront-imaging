@@ -82,13 +82,13 @@ function CatalogPage() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col min-h-screen text-white selection:bg-cyan-500/30" style={{ background: 'linear-gradient(135deg, #0f0f14 0%, #14141e 100%)' }}>
+      <div className="flex flex-col min-h-screen text-white selection:bg-cyan-500/30" style={{ background: 'var(--fiber-gradient)' }}>
         
         {/* Grid Background */}
         <div className="fixed inset-0 builder-canvas opacity-30 pointer-events-none z-0" />
         
         {/* Hero Header */}
-        <div className="pt-32 pb-12 border-b border-green-500/20 relative overflow-hidden">
+        <div className="pt-20 pb-12 border-b border-fiber-blue/20 relative overflow-hidden">
           <div className="absolute inset-0 tech-grid opacity-30" />
           
           <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -116,7 +116,7 @@ function CatalogPage() {
           {/* Sidebar Filters */}
           <aside className="w-full md:w-72 flex-shrink-0">
             <motion.div 
-              className="sticky top-32 space-y-6"
+              className="sticky top-20 space-y-6"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -180,7 +180,7 @@ function CatalogPage() {
                         className={`flex items-center gap-3 cursor-pointer p-3 rounded transition-all w-full text-left uppercase ${
                           selectedCategory === cat 
                             ? 'trace-border tech-glow text-white' 
-                            : 'pcb-substrate text-gray-400 hover:text-white border border-green-500/20'
+                            : 'pcb-substrate text-gray-400 hover:text-white border border-fiber-blue/20'
                         }`}
                       >
                         <div className={`w-4 h-4 border-2 rounded flex items-center justify-center flex-shrink-0 ${
@@ -219,7 +219,7 @@ function CatalogPage() {
           {/* Product Grid */}
           <main className="flex-1">
             <motion.div 
-              className="flex justify-between items-center mb-8 pb-4 border-b border-green-500/20"
+              className="flex justify-between items-center mb-8 pb-4 border-b border-fiber-blue/20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -239,7 +239,7 @@ function CatalogPage() {
                   className={`p-3 rounded border transition-all ${
                     viewMode === 'grid' 
                       ? 'trace-border tech-glow text-white' 
-                      : 'border-green-500/20 text-gray-400 hover:text-white pcb-substrate'
+                      : 'border-fiber-blue/20 text-gray-400 hover:text-white pcb-substrate'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -251,7 +251,7 @@ function CatalogPage() {
                   className={`p-3 rounded border transition-all ${
                     viewMode === 'list' 
                       ? 'trace-border tech-glow text-white' 
-                      : 'border-green-500/20 text-gray-400 hover:text-white pcb-substrate'
+                      : 'border-fiber-blue/20 text-gray-400 hover:text-white pcb-substrate'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -320,7 +320,7 @@ function CatalogPage() {
                             <div className="absolute bottom-3 right-3 via-point z-20" />
 
                             {/* Product Image */}
-                            <div className={`relative p-6 flex items-center justify-center border-green-500/20 ${
+                            <div className={`relative p-6 flex items-center justify-center border-fiber-blue/20 ${
                               viewMode === 'grid' ? 'h-64 border-b' : 'h-48 w-48 flex-shrink-0 border-r'
                             }`} style={{ background: 'linear-gradient(135deg, #0a1612 0%, #0d1f1a 100%)' }}>
                               
@@ -377,11 +377,11 @@ function CatalogPage() {
                                 {viewMode === 'grid' && (
                                   <>
                                     <div className="flex gap-2 mb-4">
-                                      <div className="pcb-substrate px-3 py-1.5 rounded border border-green-500/20 flex items-center gap-2">
+                                      <div className="pcb-substrate px-3 py-1.5 rounded border border-fiber-blue/20 flex items-center gap-2">
                                         <Zap className="w-3 h-3 schematic-text" />
                                         <span className="text-xs text-green-300 font-bold">10 Gbps</span>
                                       </div>
-                                      <div className="pcb-substrate px-3 py-1.5 rounded border border-green-500/20 flex items-center gap-2">
+                                      <div className="pcb-substrate px-3 py-1.5 rounded border border-fiber-blue/20 flex items-center gap-2">
                                         <Activity className="w-3 h-3 schematic-text" />
                                         <span className="text-xs text-green-300 font-bold">{'< 1ms'}</span>
                                       </div>
@@ -410,10 +410,10 @@ function CatalogPage() {
                               {viewMode === 'list' && (
                                 <div className="ml-6 flex items-center gap-6">
                                   <div className="flex gap-2">
-                                    <div className="pcb-substrate p-2 rounded border border-green-500/20">
+                                    <div className="pcb-substrate p-2 rounded border border-fiber-blue/20">
                                       <Zap className="w-4 h-4 schematic-text" />
                                     </div>
-                                    <div className="pcb-substrate p-2 rounded border border-green-500/20">
+                                    <div className="pcb-substrate p-2 rounded border border-fiber-blue/20">
                                       <Activity className="w-4 h-4 schematic-text" />
                                     </div>
                                   </div>

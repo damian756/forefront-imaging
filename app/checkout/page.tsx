@@ -88,7 +88,7 @@ export default function CheckoutPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-32 pb-20">
+      <div className="min-h-screen text-white pt-20 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
         <div className="max-w-7xl mx-auto px-4">
           {/* Header */}
           <div className="mb-12">
@@ -274,7 +274,7 @@ export default function CheckoutPage() {
 
               {/* Order Summary Sidebar */}
               <div className="lg:col-span-1">
-                <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-8 sticky top-32">
+                <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-8 sticky top-20">
                   <h2 className="text-2xl font-bold mb-6">Order Summary</h2>
                   
                   {/* Items List */}

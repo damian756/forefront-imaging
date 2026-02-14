@@ -162,7 +162,7 @@ export default function TutorialsPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-32 pb-20">
+      <main className="min-h-screen text-white pt-20 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
         <div className="max-w-7xl mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-20">
