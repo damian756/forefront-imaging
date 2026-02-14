@@ -63,7 +63,7 @@ export default function SignalFlowVisualizer() {
     const particleCount = 80;
     particlesRef.current = Array.from({ length: particleCount }, () => ({
       x: Math.random() * 100,
-      y: 30 + Math.random() * 10,
+      y: 20 + Math.random() * 10,
       speed: 0.3 + Math.random() * 0.5,
       size: 2 + Math.random() * 3,
       opacity: 0.3 + Math.random() * 0.7,
@@ -113,16 +113,16 @@ export default function SignalFlowVisualizer() {
       ctx.strokeStyle = 'rgba(59, 130, 246, 0.3)';
       ctx.lineWidth = 3;
       ctx.beginPath();
-      ctx.moveTo(rect.width * 0.05, rect.height * 0.35);
-      ctx.lineTo(rect.width * 0.95, rect.height * 0.35);
+      ctx.moveTo(rect.width * 0.05, rect.height * 0.25);
+      ctx.lineTo(rect.width * 0.95, rect.height * 0.25);
       ctx.stroke();
 
       // Draw glowing underlayer
       ctx.strokeStyle = 'rgba(96, 165, 250, 0.15)';
       ctx.lineWidth = 12;
       ctx.beginPath();
-      ctx.moveTo(rect.width * 0.05, rect.height * 0.35);
-      ctx.lineTo(rect.width * 0.95, rect.height * 0.35);
+      ctx.moveTo(rect.width * 0.05, rect.height * 0.25);
+      ctx.lineTo(rect.width * 0.95, rect.height * 0.25);
       ctx.stroke();
 
       if (!isPaused) {
@@ -133,7 +133,7 @@ export default function SignalFlowVisualizer() {
           // Reset particle when it reaches the end
           if (particle.x > 100) {
             particle.x = 5;
-            particle.y = 30 + Math.random() * 10;
+            particle.y = 20 + Math.random() * 10;
           }
 
           const px = (particle.x / 100) * rect.width;
