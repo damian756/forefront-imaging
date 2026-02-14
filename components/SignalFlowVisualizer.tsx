@@ -37,7 +37,7 @@ export default function SignalFlowVisualizer() {
       title: 'HDMI INPUT',
       subtitle: '4K60 Signal',
       icon: Radio,
-      position: { x: 10, y: 35 },
+      position: { x: 10, y: 50 },
       color: '#60a5fa'
     },
     {
@@ -45,7 +45,7 @@ export default function SignalFlowVisualizer() {
       title: 'HARDWARE DECODE',
       subtitle: 'Zero Latency',
       icon: Cpu,
-      position: { x: 50, y: 35 },
+      position: { x: 50, y: 50 },
       color: '#38bdf8'
     },
     {
@@ -53,7 +53,7 @@ export default function SignalFlowVisualizer() {
       title: 'USB 3.0 OUTPUT',
       subtitle: '10 Gbps',
       icon: Zap,
-      position: { x: 90, y: 35 },
+      position: { x: 90, y: 50 },
       color: '#3b82f6'
     }
   ];
