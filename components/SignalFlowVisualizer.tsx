@@ -64,7 +64,7 @@ export default function SignalFlowVisualizer() {
     particlesRef.current = Array.from({ length: particleCount }, () => ({
       x: Math.random() * 100,
       y: 20 + Math.random() * 10,
-      speed: 0.3 + Math.random() * 0.5,
+      speed: 0.21 + Math.random() * 0.35,
       size: 2 + Math.random() * 3,
       opacity: 0.3 + Math.random() * 0.7,
       hue: 210 + Math.random() * 20
