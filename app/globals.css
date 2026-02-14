@@ -37,6 +37,8 @@
   --fiber-gradient: linear-gradient(135deg, #0f1629 0%, #0a0f19 100%);
   --glass-surface: rgba(15, 22, 41, 0.7);
   --optic-dark: #0d1321;
+  /* Header & Footer bar (subscribe area) - same blue */
+  --graphite: #1a2847;
 }
 
 body {

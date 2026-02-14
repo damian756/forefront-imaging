@@ -210,7 +210,7 @@ export default function SignalFlowVisualizer() {
           <div className="port-module p-8 md:p-12 brushed-metal relative">
             
             {/* Status Bar */}
-            <div className="flex flex-wrap gap-4 mb-8 pb-6 border-b border-fiber-violet/20">
+            <div className="flex flex-wrap gap-4 mb-6 pb-6 border-b border-fiber-violet/20">
               <div className="flex items-center gap-2">
                 <div className={`status-indicator ${isPaused ? 'disconnected' : 'connected'}`} />
                 <span className="text-xs text-cool-gray uppercase tracking-wider font-semibold">
@@ -231,8 +231,9 @@ export default function SignalFlowVisualizer() {
               </button>
             </div>
 
-            {/* Canvas with Particle System */}
-            <div className="relative mb-12" style={{ height: '300px' }}>
+            {/* Canvas with Particle System - centered in gap so flowing bar sits in middle */}
+            <div className="relative flex items-center justify-center min-h-[340px] mb-10">
+              <div className="relative w-full" style={{ height: '300px' }}>
               <canvas
                 ref={canvasRef}
                 className="absolute inset-0 w-full h-full"
@@ -306,6 +307,7 @@ export default function SignalFlowVisualizer() {
                   </motion.div>
                 </motion.div>
               ))}
+              </div>
             </div>
 
             {/* Signal Strength Meters */}

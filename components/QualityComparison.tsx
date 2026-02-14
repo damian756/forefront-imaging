@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Monitor, Maximize2, Info, CheckCircle2, XCircle } from 'lucide-react';
 
@@ -9,6 +9,7 @@ export default function QualityComparison() {
   const [isDragging, setIsDragging] = useState(false);
   const [selectedScenario, setSelectedScenario] = useState('gaming');
   const containerRef = useRef<HTMLDivElement>(null);
+  const isDraggingRef = useRef(false);
 
   const scenarios = [
     {
@@ -48,30 +49,55 @@ export default function QualityComparison() {
     ]
   };
 
-  const handleMouseDown = () => {
+  const updatePosition = useCallback((clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPosition(percentage);
+  }, []);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    isDraggingRef.current = true;
     setIsDragging(true);
+    updatePosition(e.clientX);
   };
 
-  const handleMouseUp = () => {
+  // Document-level listeners so drag continues when pointer leaves the container
+  useEffect(() => {
+    if (!isDragging) return;
+    const onMove = (e: MouseEvent) => updatePosition(e.clientX);
+    const onUp = () => {
+      isDraggingRef.current = false;
+      setIsDragging(false);
+    };
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+    document.body.style.userSelect = 'none';
+    document.body.style.cursor = 'ew-resize';
+    return () => {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+      document.body.style.userSelect = '';
+      document.body.style.cursor = '';
+    };
+  }, [isDragging, updatePosition]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    isDraggingRef.current = true;
+    setIsDragging(true);
+    if (e.touches[0]) updatePosition(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (isDraggingRef.current && e.cancelable) e.preventDefault();
+    if (e.touches[0]) updatePosition(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    isDraggingRef.current = false;
     setIsDragging(false);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (isDragging && containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-      setSliderPosition(percentage);
-    }
-  };
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (containerRef.current && e.touches[0]) {
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = e.touches[0].clientX - rect.left;
-      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-      setSliderPosition(percentage);
-    }
   };
 
   return (
@@ -132,17 +158,14 @@ export default function QualityComparison() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
         >
-          {/* Split Screen Preview */}
+          {/* Split Screen Preview - select-none prevents text selection while dragging */}
           <div 
             ref={containerRef}
-            className="relative h-96 md:h-[500px] rounded-lg overflow-hidden cursor-ew-resize mb-8 metal-surface studio-border"
+            className="relative h-96 md:h-[500px] rounded-lg overflow-hidden cursor-ew-resize mb-8 metal-surface studio-border select-none"
             onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseUp}
-            onTouchStart={() => setIsDragging(true)}
-            onTouchEnd={() => setIsDragging(false)}
+            onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             {/* Consumer Side (Left/Full) */}
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
@@ -208,14 +231,14 @@ export default function QualityComparison() {
               className="absolute top-0 bottom-0 w-1 bg-fiber-cyan shadow-[0_0_20px_rgba(96,165,250,0.8)] cursor-ew-resize"
               style={{ left: `${sliderPosition}%` }}
               animate={{
-                boxShadow: isDragging 
-                  ? '0 0 30px rgba(96, 165, 250, 1)' 
+                boxShadow: isDragging
+                  ? '0 0 30px rgba(96, 165, 250, 1)'
                   : '0 0 20px rgba(96, 165, 250, 0.8)'
               }}
             >
               {/* Handle Circle */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <motion.div 
+                <motion.div
                   className="w-12 h-12 rounded-full metal-surface studio-border flex items-center justify-center"
                   animate={{
                     scale: isDragging ? 1.2 : 1,

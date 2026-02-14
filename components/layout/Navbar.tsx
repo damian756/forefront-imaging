@@ -36,16 +36,16 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar - Studio Status */}
-      <div className="fixed top-0 w-full z-50 glass-panel studio-border border-b py-2.5 text-xs">
+      <div className="fixed top-0 w-full z-50 studio-border border-b py-2.5 text-xs backdrop-blur-md" style={{ background: 'var(--graphite)' }}>
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 text-warm-gray hover:text-bronze transition-colors">
+            <div className="flex items-center gap-2 text-warm-gray">
               <Phone className="w-3 h-3 text-bronze" />
-              <span className="font-semibold">01704 635785</span>
+              <span className="font-semibold">Coming soon</span>
             </div>
-            <div className="hidden md:flex items-center gap-2 text-warm-gray hover:text-bronze transition-colors">
+            <div className="hidden md:flex items-center gap-2 text-warm-gray">
               <Mail className="w-3 h-3 text-bronze" />
-              <span className="font-semibold">hello@churchtownmedia.co.uk</span>
+              <span className="font-semibold">Coming soon</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -57,11 +57,12 @@ export default function Navbar() {
       
       {/* Main Navbar - Premium Control Surface */}
       <nav 
-        className={`fixed top-[40px] w-full z-50 transition-all duration-500 ${
+        className={`fixed top-[40px] w-full z-50 transition-all duration-500 backdrop-blur-md studio-border border-b ${
           isScrolled 
-            ? 'glass-panel backdrop-blur-2xl studio-border border-b py-3 glow-bronze' 
-            : 'glass-panel studio-border border-b py-4'
+            ? 'py-3 glow-bronze' 
+            : 'py-4'
         }`}
+        style={{ background: 'var(--graphite)' }}
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           {/* Logo - Studio Brand */}
