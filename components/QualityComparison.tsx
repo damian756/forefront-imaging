@@ -174,7 +174,7 @@ export default function QualityComparison() {
                 src="/images/quality-comparison.png"
                 alt="Consumer quality comparison"
                 fill
-                className="object-cover"
+                className="object-contain"
                 style={{ 
                   filter: 'blur(8px) brightness(0.7) saturate(0.6)',
                 }}
@@ -201,7 +201,7 @@ export default function QualityComparison() {
                 src="/images/quality-comparison.png"
                 alt="Professional quality comparison"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
               {/* Overlay with label */}
