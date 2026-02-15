@@ -17,19 +17,19 @@ export default function QualityComparison() {
       id: 'gaming',
       label: '4K Gaming',
       description: 'Fast-paced action with high frame rates',
-      specs: { fps: 60, res: '3840×2160', latency: '<1ms' }
+      specs: { fps: 60, res: '3840x2160', latency: '<1ms' }
     },
     {
       id: 'broadcast',
       label: 'Live Broadcast',
       description: 'Professional multi-camera production',
-      specs: { fps: 60, res: '1920×1080', latency: '<1ms' }
+      specs: { fps: 60, res: '1920x1080', latency: '<1ms' }
     },
     {
       id: 'medical',
       label: 'Medical Imaging',
       description: 'Surgical video with color accuracy',
-      specs: { fps: 60, res: '3840×2160', latency: '<1ms' }
+      specs: { fps: 60, res: '3840x2160', latency: '<1ms' }
     }
   ];
 
