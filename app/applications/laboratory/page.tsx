@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Microscope, Flask, Video, CheckCircle2, ArrowRight, Activity } from "lucide-react";
+import { Microscope, FlaskConical, Video, CheckCircle2, ArrowRight, Activity } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function LaboratoryPage() {
   const useCases = [
     { title: "Microscope Image Capture", description: "Capture from optical microscopes, electron microscopes, and digital imaging systems. High-resolution capture preserves fine detail for analysis.", icon: Microscope },
-    { title: "Quality Control & Inspection", description: "Document manufacturing defects, quality assurance processes, and inspection results. Create visual records for compliance and analysis.", icon: Flask },
+    { title: "Quality Control & Inspection", description: "Document manufacturing defects, quality assurance processes, and inspection results. Create visual records for compliance and analysis.", icon: FlaskConical },
     { title: "Research Documentation", description: "Record experiments, lab procedures, and research findings. Share discoveries with colleagues and create training materials.", icon: Video },
     { title: "Legacy Equipment Integration", description: "Connect older microscopes and lab equipment with VGA or DVI outputs. Extend the life of valuable scientific instruments.", icon: Activity }
   ];
@@ -58,7 +58,7 @@ export default function LaboratoryPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Link href="#products" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-400 hover:to-blue-500 text-white font-bold rounded-xl shadow-lg transition-all">
-                    <Flask className="w-5 h-5" />
+                    <FlaskConical className="w-5 h-5" />
                     View Lab Solutions
                   </Link>
                   <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-bold rounded-xl transition-all">

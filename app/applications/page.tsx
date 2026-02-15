@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Video, Briefcase, GraduationCap, Stethoscope, Church, Broadcast, Gamepad2, Monitor, Microscope, Camera, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Video, Briefcase, GraduationCap, Stethoscope, Church, Radio, Gamepad2, Monitor, Microscope, Camera, ArrowRight, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
@@ -75,13 +75,13 @@ export default function ApplicationsPage() {
       features: ["Multi-Camera Production", "Facebook/YouTube Live", "Volunteer-Friendly"]
     },
     {
-      icon: Broadcast,
-      title: "Broadcast / Studio",
+      icon: Radio,
+      title: "Radio / Studio",
       slug: "broadcast",
       description: "Professional broadcast production, live TV, OB vans, and multi-camera studio workflows with SDI and HDMI inputs.",
       image: "/images/applications/broadcast-studio.png",
       color: "from-red-600 to-rose-600",
-      features: ["4K60 Capture", "SDI Support", "Broadcast Quality"]
+      features: ["4K60 Capture", "SDI Support", "Radio Quality"]
     },
     {
       icon: Gamepad2,

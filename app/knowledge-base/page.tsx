@@ -1,11 +1,31 @@
 import Link from "next/link";
-import { BookOpen, Search, TrendingUp, Wrench, Shield, Zap, HelpCircle, CheckCircle2 } from "lucide-react";
+import { BookOpen, Search, TrendingUp, Wrench, Shield, Zap, HelpCircle, CheckCircle2, ArrowRight } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import guides from "@/lib/guides-data";
 
-export const metadata = {
-  title: "Knowledge Base - StreamTek",
-  description: "Comprehensive guides, troubleshooting tips, and technical articles for Magewell products.",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Knowledge Base - Magewell Capture Card Guides & Troubleshooting | StreamTek",
+  description: "Comprehensive guides, troubleshooting tips, and technical articles for Magewell USB capture devices. Installation help, problem-solving, and optimization guides.",
+  keywords: "Magewell guides, capture card troubleshooting, USB capture help, installation guides, OBS setup, capture card problems, video capture solutions",
+  openGraph: {
+    title: "Knowledge Base - Magewell Guides & Support | StreamTek",
+    description: "Comprehensive guides and troubleshooting for Magewell capture devices.",
+    url: "https://www.streamtek.co.uk/knowledge-base",
+    siteName: "StreamTek",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Knowledge Base - Magewell Guides & Support | StreamTek",
+    description: "Comprehensive guides and troubleshooting for Magewell capture devices.",
+  },
+  alternates: {
+    canonical: "https://www.streamtek.co.uk/knowledge-base",
+  },
 };
 
 export default function KnowledgeBasePage() {
@@ -14,28 +34,28 @@ export default function KnowledgeBasePage() {
       icon: Zap,
       title: "Getting Started",
       description: "Installation guides, quick start tutorials, and first-time setup instructions.",
-      articleCount: 12,
+      articleCount: guides.filter(g => g.category === "Getting Started").length,
       color: "blue"
     },
     {
       icon: Wrench,
       title: "Troubleshooting",
       description: "Common issues, error messages, and step-by-step solutions.",
-      articleCount: 24,
+      articleCount: guides.filter(g => g.category === "Troubleshooting").length,
       color: "orange"
     },
     {
       icon: TrendingUp,
       title: "Advanced Features",
       description: "In-depth guides for advanced configuration and optimization.",
-      articleCount: 18,
+      articleCount: guides.filter(g => g.category === "Advanced Features").length,
       color: "purple"
     },
     {
       icon: Shield,
       title: "Warranty & Returns",
       description: "RMA procedures, warranty coverage, and support policies.",
-      articleCount: 8,
+      articleCount: guides.filter(g => g.category === "Warranty & Returns").length,
       color: "green"
     }
   ];
@@ -44,32 +64,38 @@ export default function KnowledgeBasePage() {
     {
       title: "How to Install USB Capture Drivers on Windows 11",
       category: "Getting Started",
-      icon: Zap
+      icon: Zap,
+      slug: "install-drivers-windows-11"
     },
     {
       title: "Resolving 'No Signal' Issues with HDMI Capture",
       category: "Troubleshooting",
-      icon: Wrench
+      icon: Wrench,
+      slug: "fix-no-signal-hdmi"
     },
     {
       title: "Optimizing Capture Quality for 4K60 Workflows",
       category: "Advanced Features",
-      icon: TrendingUp
+      icon: TrendingUp,
+      slug: "optimize-4k60-capture"
     },
     {
-      title: "Understanding Magewell Product Warranty Coverage",
-      category: "Warranty & Returns",
-      icon: Shield
-    },
-    {
-      title: "Configuring Multi-Camera Capture Systems",
-      category: "Advanced Features",
-      icon: TrendingUp
-    },
-    {
-      title: "USB Capture vs Pro Capture: Which is Right for You?",
+      title: "Setting Up OBS Studio with Magewell Capture",
       category: "Getting Started",
-      icon: Zap
+      icon: Zap,
+      slug: "setup-obs-studio"
+    },
+    {
+      title: "Fixing Audio Sync Issues in Video Capture",
+      category: "Troubleshooting",
+      icon: Wrench,
+      slug: "fix-audio-sync"
+    },
+    {
+      title: "USB Bandwidth Issues and Solutions",
+      category: "Troubleshooting",
+      icon: Wrench,
+      slug: "usb-bandwidth-issues"
     }
   ];
 
@@ -177,9 +203,10 @@ export default function KnowledgeBasePage() {
               {popularArticles.map((article) => {
                 const Icon = article.icon;
                 return (
-                  <div
+                  <Link
+                    href={`/knowledge-base/${article.slug}`}
                     key={article.title}
-                    className="p-6 hover:bg-slate-800/50 transition-all cursor-pointer group"
+                    className="p-6 hover:bg-slate-800/50 transition-all cursor-pointer group block"
                   >
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
@@ -197,7 +224,7 @@ export default function KnowledgeBasePage() {
                         →
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
             </div>
@@ -222,6 +249,54 @@ export default function KnowledgeBasePage() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* All Guides by Category */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold mb-4 text-center">All Knowledge Base Guides</h2>
+            <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
+              {guides.length} comprehensive guides covering everything from first-time setup to advanced production workflows.
+            </p>
+
+            {["Getting Started", "Troubleshooting", "Advanced Features", "Warranty & Returns"].map((catName) => {
+              const catGuides = guides.filter(g => g.category === catName);
+              const catConfig: Record<string, { badgeColor: string; borderColor: string; hoverColor: string }> = {
+                "Getting Started": { badgeColor: "bg-blue-600/20 text-blue-400 border-blue-500/30", borderColor: "border-blue-500/20", hoverColor: "hover:border-blue-500/40" },
+                "Troubleshooting": { badgeColor: "bg-orange-600/20 text-orange-400 border-orange-500/30", borderColor: "border-orange-500/20", hoverColor: "hover:border-orange-500/40" },
+                "Advanced Features": { badgeColor: "bg-purple-600/20 text-purple-400 border-purple-500/30", borderColor: "border-purple-500/20", hoverColor: "hover:border-purple-500/40" },
+                "Warranty & Returns": { badgeColor: "bg-green-600/20 text-green-400 border-green-500/30", borderColor: "border-green-500/20", hoverColor: "hover:border-green-500/40" },
+              };
+              const cfg = catConfig[catName];
+              return (
+                <div key={catName} className="mb-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className={`inline-flex items-center gap-2 px-3 py-1 ${cfg.badgeColor} border rounded-lg text-xs font-semibold uppercase tracking-wide`}>
+                      {catName}
+                    </span>
+                    <span className="text-slate-500 text-sm">{catGuides.length} guides</span>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {catGuides.map((guide) => (
+                      <Link
+                        key={guide.slug}
+                        href={`/knowledge-base/${guide.slug}`}
+                        className={`group bg-slate-900/50 border border-slate-800 rounded-xl p-5 ${cfg.hoverColor} transition-all`}
+                      >
+                        <h3 className="font-bold mb-2 group-hover:text-blue-400 transition-colors text-sm leading-snug">
+                          {guide.title}
+                        </h3>
+                        <p className="text-slate-400 text-xs leading-relaxed line-clamp-2">
+                          {guide.description}
+                        </p>
+                        <span className="inline-flex items-center gap-1 text-xs text-slate-500 mt-3 group-hover:text-blue-400 transition-colors">
+                          Read guide <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           {/* Help CTA */}

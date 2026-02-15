@@ -1,41 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Broadcast as BroadcastIcon, Video, Radio, TrendingUp, CheckCircle2, ArrowRight, Tv, Film } from "lucide-react";
+import { Radio as RadioIcon, Video, Radio, TrendingUp, CheckCircle2, ArrowRight, Tv, Film } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "USB Capture for Broadcast & Studios | Professional Production Equipment | StreamTek",
-  description: "Professional 4K/SDI capture for broadcast studios, TV production, OB vans, and multi-camera workflows. Broadcast-grade quality for demanding productions.",
+  title: "USB Capture for Radio & Studios | Professional Production Equipment | StreamTek",
+  description: "Professional 4K/SDI capture for broadcast studios, TV production, OB vans, and multi-camera workflows. Radio-grade quality for demanding productions.",
   keywords: "broadcast capture card, professional video production, SDI capture, 4K broadcast, TV studio equipment, OB van capture, multi-camera production, broadcast quality",
   openGraph: {
-    title: "USB Capture for Broadcast & Studios | StreamTek",
+    title: "USB Capture for Radio & Studios | StreamTek",
     description: "Professional broadcast production and TV studio video capture solutions.",
     url: "https://www.streamtek.co.uk/applications/broadcast",
     siteName: "StreamTek",
     locale: "en_GB",
     type: "article",
-    images: [{ url: "https://www.streamtek.co.uk/images/applications/broadcast-studio.png", width: 1200, height: 630, alt: "Broadcast Studio Production" }]
+    images: [{ url: "https://www.streamtek.co.uk/images/applications/broadcast-studio.png", width: 1200, height: 630, alt: "Radio Studio Production" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "USB Capture for Broadcast & Studios | StreamTek",
+    title: "USB Capture for Radio & Studios | StreamTek",
     description: "Professional broadcast and TV studio capture solutions.",
   },
   alternates: { canonical: "https://www.streamtek.co.uk/applications/broadcast" },
 };
 
-export default function BroadcastPage() {
+export default function RadioPage() {
   const useCases = [
     { title: "Live TV Production & Streaming", description: "Professional broadcast workflows for live TV, news production, and streaming platforms. SDI and HDMI inputs with broadcast-grade color accuracy and timing.", icon: Tv },
     { title: "Multi-Camera Studio Recording", description: "Capture multiple ISO feeds for post-production flexibility. Record individual camera sources while simultaneously creating a live mix.", icon: Film },
-    { title: "OB Van & Remote Production", description: "Portable, rugged capture solutions for outside broadcast vans and remote production units. Reliable performance in demanding field conditions.", icon: BroadcastIcon },
+    { title: "OB Van & Remote Production", description: "Portable, rugged capture solutions for outside broadcast vans and remote production units. Reliable performance in demanding field conditions.", icon: RadioIcon },
     { title: "Sports & Live Events", description: "High-frame-rate 4K60 capture for sports broadcasting, esports tournaments, and live event production. Zero-latency monitoring for real-time switching.", icon: Radio }
   ];
 
   const features = [
-    { title: "Broadcast-Quality Output", description: "10-bit 4:2:2 color sampling and HDR support. Maintains broadcast standards throughout the capture pipeline.", icon: TrendingUp },
+    { title: "Radio-Quality Output", description: "10-bit 4:2:2 color sampling and HDR support. Maintains broadcast standards throughout the capture pipeline.", icon: TrendingUp },
     { title: "SDI & HDMI Pro Support", description: "3G-SDI, 6G-SDI, and 12G-SDI inputs alongside HDMI 2.0. Professional locking connectors prevent accidental disconnection.", icon: Video },
     { title: "Hardware Timing & Genlock", description: "Frame-accurate capture with genlock support for multi-camera synchronization. Essential for professional multi-cam productions.", icon: CheckCircle2 },
     { title: "Low-Latency Monitoring", description: "Hardware loop-through and processing ensure minimal delay. Critical for live switching and on-air monitoring.", icon: Radio }
@@ -43,13 +43,13 @@ export default function BroadcastPage() {
 
   const recommendedProducts = [
     { name: "USB Capture HDMI 4K Pro", slug: "magewell-usb-capture-hdmi-4k-pro", price: 799, description: "Professional 4K60 HDMI capture with HDR and 10-bit color support.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/HDMI-4K-Pro.png" },
-    { name: "USB Capture SDI 4K Pro", slug: "magewell-usb-capture-sdi-4k-pro", price: 899, description: "Broadcast-grade 12G-SDI capture for professional production environments.", image: "/images/products/usb-capture-sdi-4k-pro.png" }
+    { name: "USB Capture SDI 4K Pro", slug: "magewell-usb-capture-sdi-4k-pro", price: 899, description: "Radio-grade 12G-SDI capture for professional production environments.", image: "/images/products/usb-capture-sdi-4k-pro.png" }
   ];
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "USB Capture for Broadcast & Studios",
+    "headline": "USB Capture for Radio & Studios",
     "description": "Professional video capture for broadcast studios, TV production, and multi-camera workflows.",
     "image": "https://www.streamtek.co.uk/images/applications/broadcast-studio.png",
     "author": { "@type": "Organization", "name": "StreamTek" },
@@ -67,11 +67,11 @@ export default function BroadcastPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-600/20 border border-red-500/30 rounded-lg mb-6">
-                  <BroadcastIcon className="w-4 h-4 text-red-400" />
-                  <span className="text-sm font-semibold text-red-300 uppercase tracking-wide">Broadcast / Studio</span>
+                  <RadioIcon className="w-4 h-4 text-red-400" />
+                  <span className="text-sm font-semibold text-red-300 uppercase tracking-wide">Radio / Studio</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-                  Broadcast-Grade <span className="text-gradient">Production Capture</span>
+                  Radio-Grade <span className="text-gradient">Production Capture</span>
                 </h1>
                 <p className="text-xl text-slate-300 mb-8 leading-relaxed">
                   Professional 4K/SDI capture for broadcast studios, live TV production, OB vans, and multi-camera workflows. 
@@ -80,10 +80,10 @@ export default function BroadcastPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Link href="#products" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-400 hover:to-rose-500 text-white font-bold rounded-xl shadow-lg transition-all">
                     <Tv className="w-5 h-5" />
-                    View Broadcast Solutions
+                    View Radio Solutions
                   </Link>
                   <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-bold rounded-xl transition-all">
-                    Request Broadcast Quote
+                    Request Radio Quote
                   </Link>
                 </div>
                 <div className="flex items-center gap-6 text-sm text-slate-400">
@@ -93,7 +93,7 @@ export default function BroadcastPage() {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src="/images/applications/broadcast-studio.png" alt="Broadcast Studio Production" fill className="object-cover" />
+                <Image src="/images/applications/broadcast-studio.png" alt="Radio Studio Production" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function BroadcastPage() {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Broadcast-Specific Features</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Radio-Specific Features</h2>
               <p className="text-slate-400 text-lg max-w-2xl mx-auto">Professional specifications for demanding broadcast environments.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -148,7 +148,7 @@ export default function BroadcastPage() {
         <section id="products" className="py-20 bg-slate-900/30">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Recommended for Broadcast</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Recommended for Radio</h2>
               <p className="text-slate-400 text-lg">Professional-grade capture for broadcast studios and production facilities.</p>
             </div>
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -184,7 +184,7 @@ export default function BroadcastPage() {
                 Our broadcast specialists can assist with workflow integration, multi-device setups, and technical specifications.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="px-10 py-4 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-400 hover:to-rose-500 text-white font-bold rounded-xl shadow-lg transition-all">Contact Broadcast Team</Link>
+                <Link href="/contact" className="px-10 py-4 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-400 hover:to-rose-500 text-white font-bold rounded-xl shadow-lg transition-all">Contact Radio Team</Link>
                 <Link href="/knowledge-base" className="px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-bold rounded-xl transition-all">Browse Pro Guides</Link>
               </div>
             </div>
