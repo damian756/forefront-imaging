@@ -67,8 +67,9 @@ export const products: Product[] = [
       { value: "46g", label: "Pocket-sized metal body" }
     ],
     specs: {
-      "Video Input": "HDMI 1.4a (up to 2048×1080 @ 60fps 4:4:4)",
-      "Max Capture Resolution": "2048×2160 @ 120fps",
+      "Video Input": "HDMI 1.4a — up to 1080p60 (4:4:4 8/10/12-bit)",
+      "Max Input Resolution": "2048×2160 pixels",
+      "Max Capture Resolution": "1920×1080 @ 60fps (up to 2048×2160 @ 120fps internally)",
       "Colour Formats": "RGB/YUV 4:4:4 (8/10/12-bit), YUY2 4:2:2",
       "Audio Input": "8-channel 24-bit HDMI embedded @ 192kHz",
       "Audio Output": "2-channel IEC60958 via USB",
@@ -394,9 +395,10 @@ export const products: Product[] = [
       { value: "Audio", label: "3.5mm mic-in & line-out" }
     ],
     specs: {
-      "Video Input": "HDMI 1.4a (up to 2048×1080 @ 60fps 4:4:4)",
+      "Video Input": "HDMI 1.4a — up to 1080p60 (4:4:4 8/10/12-bit)",
       "HDMI Loop-Through": "Yes — zero-latency passthrough",
-      "Max Capture Resolution": "2048×2160 @ 120fps",
+      "Max Input Resolution": "2048×2160 pixels",
+      "Max Capture Resolution": "1920×1080 @ 60fps (up to 2048×2160 @ 120fps internally)",
       "Colour Formats": "RGB/YUV 4:4:4 (8/10/12-bit), YUY2 4:2:2",
       "Audio Input": "8-channel HDMI embedded @ 192kHz + 3.5mm line-in",
       "Audio Output": "3.5mm line-out + USB audio",

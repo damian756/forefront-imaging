@@ -105,7 +105,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   {/* Add to Cart Button */}
                   <motion.button
                     onClick={handleAddToCart}
-                    className="w-full py-4 refraction-border text-white font-bold uppercase text-center rounded-xl transition-all flex items-center justify-center gap-2 fiber-glow relative overflow-hidden font-mono mb-4"
+                    className={`w-full py-4 text-white font-bold uppercase text-center rounded-xl transition-all flex items-center justify-center gap-2 relative overflow-hidden font-mono mb-4 text-base tracking-wide shadow-lg ${added ? 'bg-green-500 shadow-green-500/30' : 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-cyan-500/30 hover:shadow-cyan-500/50'}`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -370,7 +370,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 </div>
                 <button
                   onClick={handleAddToCart}
-                  className="flex-1 py-3 refraction-border text-white font-bold uppercase text-sm rounded-lg fiber-glow flex items-center justify-center gap-2 font-mono"
+                  className={`flex-1 py-3 text-white font-bold uppercase text-sm rounded-lg flex items-center justify-center gap-2 font-mono shadow-lg ${added ? 'bg-green-500 shadow-green-500/30' : 'bg-gradient-to-r from-cyan-500 to-blue-600 shadow-cyan-500/30'}`}
                 >
                   <ShoppingCart className="w-4 h-4" />
                   {added ? 'ADDED!' : 'ADD TO CART'}
