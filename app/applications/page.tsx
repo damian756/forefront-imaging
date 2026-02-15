@@ -34,7 +34,7 @@ export default function ApplicationsPage() {
       title: "Content Creator / Streamer",
       slug: "content-creator",
       description: "Professional-grade HDMI capture for YouTubers, Twitch streamers, and content producers. Capture cameras, consoles, and gameplay with zero latency.",
-      image: "/images/applications/content-creator.png",
+      image: "/images/applications/av-integration.png",
       color: "from-purple-600 to-pink-600",
       features: ["Multi-Camera Workflows", "Zero-Lag Passthrough", "OBS/Streamlabs Ready"]
     },
@@ -61,7 +61,7 @@ export default function ApplicationsPage() {
       title: "Medical / Healthcare",
       slug: "medical",
       description: "Surgical recording, telemedicine, medical imaging capture, and training documentation for hospitals and clinics.",
-      image: "/images/applications/medical-healthcare.png",
+      image: "/images/applications/education-classroom.png",
       color: "from-cyan-600 to-teal-600",
       features: ["Surgical Recording", "Telemedicine", "Medical Imaging"]
     },
@@ -70,7 +70,7 @@ export default function ApplicationsPage() {
       title: "Church / Worship",
       slug: "church",
       description: "Live streaming church services, worship events, and conferences to YouTube, Facebook, and streaming platforms.",
-      image: "/images/applications/church-worship-1.png",
+      image: "/images/applications/medical-healthcare.png",
       color: "from-amber-600 to-orange-600",
       features: ["Multi-Camera Production", "Facebook/YouTube Live", "Volunteer-Friendly"]
     },

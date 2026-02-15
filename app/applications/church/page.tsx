@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "StreamTek",
     locale: "en_GB",
     type: "article",
-    images: [{ url: "https://www.streamtek.co.uk/images/applications/church-worship-1.png", width: 1200, height: 630, alt: "Church Worship Live Streaming" }]
+    images: [{ url: "https://www.streamtek.co.uk/images/applications/medical-healthcare.png", width: 1200, height: 630, alt: "Church Worship Live Streaming" }]
   },
   twitter: {
     card: "summary_large_image",
@@ -51,7 +51,7 @@ export default function ChurchPage() {
     "@type": "Article",
     "headline": "USB Capture for Churches & Worship",
     "description": "Professional live streaming solutions for churches, worship services, and ministry events.",
-    "image": "https://www.streamtek.co.uk/images/applications/church-worship-1.png",
+    "image": "https://www.streamtek.co.uk/images/applications/medical-healthcare.png",
     "author": { "@type": "Organization", "name": "StreamTek" },
     "publisher": { "@type": "Organization", "name": "StreamTek", "logo": { "@type": "ImageObject", "url": "https://www.streamtek.co.uk/logo.png" } },
     "datePublished": "2026-02-15"
@@ -93,7 +93,7 @@ export default function ChurchPage() {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src="/images/applications/church-worship-1.png" alt="Church Worship Live Streaming" fill className="object-cover" />
+                <Image src="/images/applications/medical-healthcare.png" alt="Church Worship Live Streaming" fill className="object-cover" />
               </div>
             </div>
           </div>

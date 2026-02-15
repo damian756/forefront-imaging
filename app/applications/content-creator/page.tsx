@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://www.streamtek.co.uk/images/applications/content-creator.png",
+        url: "https://www.streamtek.co.uk/images/applications/av-integration.png",
         width: 1200,
         height: 630,
         alt: "Content Creator Streaming Setup with Magewell USB Capture"
@@ -128,7 +128,7 @@ export default function ContentCreatorPage() {
     "@type": "Article",
     "headline": "USB Capture for Content Creators & Streamers",
     "description": "Professional HDMI and SDI capture devices for YouTubers, Twitch streamers, and content creators.",
-    "image": "https://www.streamtek.co.uk/images/applications/content-creator.png",
+    "image": "https://www.streamtek.co.uk/images/applications/av-integration.png",
     "author": {
       "@type": "Organization",
       "name": "StreamTek"
@@ -206,7 +206,7 @@ export default function ContentCreatorPage() {
 
               <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/applications/content-creator.png"
+                  src="/images/applications/av-integration.png"
                   alt="Content Creator Streaming Setup"
                   fill
                   className="object-cover"
