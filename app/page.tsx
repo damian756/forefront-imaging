@@ -54,15 +54,25 @@ export default function Home() {
       
       <Navbar />
 
-      {/* FIBER OPTIC HERO SECTION */}
-      <section className="relative pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden">
+      {/* VIDEO HERO SECTION */}
+      <section className="relative pt-0 pb-0 overflow-hidden min-h-[80vh] flex items-center">
         
-        {/* Blue Glow */}
-        <div className="absolute inset-0 opacity-30" style={{ 
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.3), transparent 60%)'
-        }} />
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/videos/hero-industries.jpg"
+        >
+          <source src="/videos/hero-industries.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
         
-        <div className="max-w-7xl mx-auto px-4 relative z-20">
+        <div className="max-w-7xl mx-auto px-4 relative z-20 py-32 md:py-40">
           
           {/* Hero Content */}
           <motion.div 
@@ -79,54 +89,49 @@ export default function Home() {
               <span className="text-xs font-semibold uppercase tracking-widest text-fiber-cyan">Professional Grade Equipment</span>
             </motion.div>
 
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-[0.95] tracking-tight">
-              <span className="block text-cool-white text-2xl md:text-3xl mb-6 font-medium tracking-wide">Premium</span>
-              <span className="block text-gradient text-7xl md:text-[9rem]">
-                CAPTURE
-              </span>
-              <span className="block text-cool-white text-3xl md:text-5xl mt-6 font-medium tracking-wide">
-                Hardware
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight text-center">
+              <span className="block text-white text-xl md:text-2xl mb-4 font-medium tracking-wide">One Device</span>
+              <span className="block text-gradient text-6xl md:text-8xl">
+                EVERY INDUSTRY
               </span>
             </h1>
 
             <motion.p 
-              className="text-lg md:text-xl text-cool-gray mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-2xl text-white mb-12 max-w-4xl mx-auto leading-relaxed font-light text-center drop-shadow-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Professional USB video capture devices engineered for broadcast studios, 
-              content creators, and video production professionals. 
-              <span className="text-fiber-cyan font-medium"> Uncompromising quality</span> in every signal.
+              Professional USB video capture for <span className="text-cyan-400 font-semibold">streamers</span>, <span className="text-cyan-400 font-semibold">broadcasters</span>, <span className="text-cyan-400 font-semibold">educators</span>, and <span className="text-cyan-400 font-semibold">healthcare</span>. 
+              <span className="block mt-2 text-cyan-300 font-medium">Plug & Play. Zero Drivers. Universal.</span>
             </motion.p>
 
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <Link 
-                href="#products" 
-                className="btn-primary text-sm px-10 py-4"
+                href="/products" 
+                className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-base rounded-xl shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all uppercase tracking-wide"
               >
-                <span className="flex items-center justify-center gap-2">
-                  <Play className="w-4 h-4" />
-                  EXPLORE EQUIPMENT
-                </span>
+                <ShoppingCart className="w-5 h-5" />
+                SHOP NOW
               </Link>
               <Link 
                 href="/how-it-works" 
-                className="btn-secondary text-sm px-10 py-4"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-bold text-base rounded-xl transition-all uppercase tracking-wide"
               >
                 HOW IT WORKS
+                <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
           </motion.div>
 
           {/* Feature Highlights */}
           <motion.div 
-            className="mb-24"
+            className="mb-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
@@ -135,35 +140,35 @@ export default function Home() {
               {[
                 {
                   icon: Cpu,
-                  title: "Professional Grade",
-                  desc: "Broadcast-quality signal processing",
+                  title: "10+ Industries",
+                  desc: "From streaming to surgery, one device does it all",
                 },
                 {
                   icon: Zap,
                   title: "Zero Latency",
-                  desc: "Real-time capture, no compression",
+                  desc: "Real-time capture, hardware-accelerated",
                 },
                 {
                   icon: HardDrive,
-                  title: "Universal Compatibility",
-                  desc: "Works with all major platforms",
+                  title: "Driver-Free",
+                  desc: "Plug & Play on Windows, Mac, and Linux",
                 }
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  className="port-module p-8 relative brushed-metal"
-                  whileHover={{ y: -3 }}
+                  className="backdrop-blur-md bg-white/10 border border-white/20 p-8 rounded-2xl relative shadow-2xl"
+                  whileHover={{ y: -5, backgroundColor: 'rgba(255,255,255,0.15)' }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9 + i * 0.1 }}
                 >
                   <div 
-                    className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 metal-surface studio-border"
+                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 bg-gradient-to-br from-cyan-500 to-blue-600 shadow-lg"
                   >
-                    <item.icon className="w-7 h-7 text-fiber-cyan" />
+                    <item.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 uppercase tracking-tight text-soft-white">{item.title}</h3>
-                  <p className="text-cool-gray text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-bold mb-2 uppercase tracking-tight text-white drop-shadow-md">{item.title}</h3>
+                  <p className="text-gray-100 text-sm leading-relaxed drop-shadow">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
