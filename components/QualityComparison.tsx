@@ -174,18 +174,18 @@ export default function QualityComparison() {
                 src="/images/quality-comparison.png"
                 alt="Consumer quality comparison"
                 fill
-                className="object-contain"
+                className="object-cover"
                 style={{ 
                   filter: 'blur(8px) brightness(0.7) saturate(0.6)',
                 }}
                 priority
               />
-              {/* Overlay with label */}
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none">
-                <div className="text-center px-6 py-5 rounded-2xl bg-black/60 backdrop-blur-sm border border-white/10">
-                  <XCircle className="w-12 h-12 text-red-500 mx-auto mb-3 opacity-80 drop-shadow-lg" />
-                  <div className="text-xl md:text-2xl font-bold text-white mb-2" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>Consumer Hardware</div>
-                  <div className="text-xs md:text-sm text-red-200" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}>Compressed • Dropped Frames • High Latency</div>
+              {/* Overlay with label - positioned at bottom */}
+              <div className="absolute inset-0 bg-black/20 flex items-end justify-center pb-6 pointer-events-none">
+                <div className="text-center px-5 py-3 rounded-xl bg-black/60 backdrop-blur-sm border border-white/10">
+                  <XCircle className="w-8 h-8 text-red-500 mx-auto mb-2 opacity-80 drop-shadow-lg" />
+                  <div className="text-lg md:text-xl font-bold text-white mb-1" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>Consumer Hardware</div>
+                  <div className="text-xs text-red-200" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}>Compressed • Dropped Frames • High Latency</div>
                 </div>
               </div>
             </div>
@@ -201,15 +201,15 @@ export default function QualityComparison() {
                 src="/images/quality-comparison.png"
                 alt="Professional quality comparison"
                 fill
-                className="object-contain"
+                className="object-cover"
                 priority
               />
-              {/* Overlay with label */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="text-center px-6 py-5 rounded-2xl bg-black/60 backdrop-blur-sm border border-white/10">
-                  <CheckCircle2 className="w-12 h-12 text-fiber-cyan mx-auto mb-3 drop-shadow-lg" />
-                  <div className="text-xl md:text-2xl font-bold text-white mb-2" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>Professional Hardware</div>
-                  <div className="text-xs md:text-sm text-cyan-200" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}>Uncompressed • Zero Loss • Sub-ms Latency</div>
+              {/* Overlay with label - positioned at bottom */}
+              <div className="absolute inset-0 flex items-end justify-center pb-6 pointer-events-none">
+                <div className="text-center px-5 py-3 rounded-xl bg-black/60 backdrop-blur-sm border border-white/10">
+                  <CheckCircle2 className="w-8 h-8 text-fiber-cyan mx-auto mb-2 drop-shadow-lg" />
+                  <div className="text-lg md:text-xl font-bold text-white mb-1" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>Professional Hardware</div>
+                  <div className="text-xs text-cyan-200" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}>Uncompressed • Zero Loss • Sub-ms Latency</div>
                 </div>
               </div>
             </motion.div>
