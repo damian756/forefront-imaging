@@ -9,7 +9,6 @@ export default function Navbar() {
   const { totalItems } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
   useEffect(() => {
@@ -17,13 +16,6 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  const productCategories = [
-    { name: "View All Products", href: "/products", featured: true },
-    { name: "HDMI Capture", href: "/products?category=USB+Capture" },
-    { name: "SDI Capture", href: "/products?category=USB+Capture" },
-    { name: "Multi-Input Capture", href: "/products?category=USB+Capture" }
-  ];
 
   const resources = [
     { name: "Support", href: "/support" },
@@ -62,45 +54,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-1">
             <NavLink href="/">Home</NavLink>
 
-            {/* Products Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
-            >
-              <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-cool-gray hover:text-soft-white hover:bg-fiber-blue/10 transition-all">
-                Products
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${productsOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {productsOpen && (
-                  <motion.div
-                    className="absolute top-full left-0 mt-1 w-56 rounded-lg border border-fiber-blue/25 shadow-xl shadow-black/40 overflow-hidden"
-                    style={{ background: 'rgba(15, 22, 41, 0.97)', backdropFilter: 'blur(20px)' }}
-                    initial={{ opacity: 0, y: -4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -4 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <div className="py-1">
-                      {productCategories.map((cat) => (
-                        <Link
-                          key={cat.name}
-                          href={cat.href}
-                          className={`block px-4 py-2.5 text-sm transition-colors ${
-                            cat.featured
-                              ? 'text-fiber-cyan font-semibold hover:bg-fiber-blue/15'
-                              : 'text-cool-gray hover:text-soft-white hover:bg-fiber-blue/10'
-                          }`}
-                        >
-                          {cat.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            <NavLink href="/products">Products</NavLink>
 
             <NavLink href="/how-it-works">How It Works</NavLink>
 
