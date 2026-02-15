@@ -19,17 +19,17 @@ export default function Home() {
     id: 279,
     slug: "magewell-usb-capture-hdmi-gen-2",
     name: "USB Capture HDMI Gen 2",
-    inputPort: "HDMI 1.4",
+    inputPort: "HDMI 1.4a",
     outputPort: "USB 3.0",
     specs: {
       resolution: "1080p60",
-      bandwidth: "10 Gbps",
+      processing: "FPGA Onboard",
       latency: "< 1ms",
-      compatibility: "Universal"
+      weight: "46g"
     },
-    features: ["Hardware Scaling", "Loop-Through", "Driver-Free", "Plug & Play", "Cross-Platform"],
+    features: ["Hardware Scaling", "Zero CPU Usage", "Driver-Free", "Plug & Play", "Cross-Platform"],
     image: "/images/products/hdmi-gen2.png",
-    price: 100,
+    price: 289,
     compatibility: ["OBS", "vMix", "Zoom", "Teams", "Skype"]
   };
 
@@ -247,7 +247,7 @@ export default function Home() {
                 <div className="text-[10px] text-fiber-cyan font-semibold uppercase tracking-widest mb-2">Magewell</div>
                 <h3 className="text-3xl md:text-4xl font-bold text-soft-white mb-4">{flagship.name}</h3>
                 <p className="text-cool-gray text-sm leading-relaxed mb-8 max-w-md">
-                  Capture HDMI video at up to 1080p60 with hardware scaling, loop-through output, and driver-free operation. The industry standard for professional capture.
+                  Simply plug into any USB 3.0 port, connect your HDMI source, and it instantly appears as a webcam. No drivers, no setup — the dedicated FPGA chip handles all processing onboard at zero CPU usage.
                 </p>
 
                 {/* Specs */}
