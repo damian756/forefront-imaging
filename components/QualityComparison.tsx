@@ -182,10 +182,10 @@ export default function QualityComparison() {
               />
               {/* Overlay with label */}
               <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none">
-                <div className="text-center">
+                <div className="text-center px-6 py-5 rounded-2xl bg-black/60 backdrop-blur-sm border border-white/10">
                   <XCircle className="w-12 h-12 text-red-500 mx-auto mb-3 opacity-80 drop-shadow-lg" />
-                  <div className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">Consumer Hardware</div>
-                  <div className="text-xs md:text-sm text-red-200 drop-shadow-md">Compressed • Dropped Frames • High Latency</div>
+                  <div className="text-xl md:text-2xl font-bold text-white mb-2" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>Consumer Hardware</div>
+                  <div className="text-xs md:text-sm text-red-200" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}>Compressed • Dropped Frames • High Latency</div>
                 </div>
               </div>
             </div>
@@ -206,10 +206,10 @@ export default function QualityComparison() {
               />
               {/* Overlay with label */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="text-center">
+                <div className="text-center px-6 py-5 rounded-2xl bg-black/60 backdrop-blur-sm border border-white/10">
                   <CheckCircle2 className="w-12 h-12 text-fiber-cyan mx-auto mb-3 drop-shadow-lg" />
-                  <div className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">Professional Hardware</div>
-                  <div className="text-xs md:text-sm text-cyan-200 drop-shadow-md">Uncompressed • Zero Loss • Sub-ms Latency</div>
+                  <div className="text-xl md:text-2xl font-bold text-white mb-2" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>Professional Hardware</div>
+                  <div className="text-xs md:text-sm text-cyan-200" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}>Uncompressed • Zero Loss • Sub-ms Latency</div>
                 </div>
               </div>
             </motion.div>
