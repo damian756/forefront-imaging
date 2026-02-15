@@ -3,7 +3,7 @@
 import React, { useState, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Package, ShoppingCart, Zap, Activity } from 'lucide-react';
+import { Package, ShoppingCart, Zap, Activity, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -158,9 +158,16 @@ function CatalogPage() {
                         </div>
 
                         <div className="mb-4">
-                          <span className="text-3xl font-bold text-gradient">£{product.price}</span>
-                          <span className="text-cool-gray/60 text-sm ml-2">GBP</span>
+                          {product.price > 0 ? (
+                            <>
+                              <span className="text-3xl font-bold text-gradient">£{product.price}</span>
+                              <span className="text-cool-gray/60 text-sm ml-2">GBP</span>
+                            </>
+                          ) : (
+                            <span className="text-3xl font-bold text-gradient">FREE</span>
+                          )}
                         </div>
+                        {product.price > 0 ? (
                         <motion.button
                           onClick={(e) => handleAddToCart(product, e)}
                           className="w-full btn-primary py-3 text-sm font-semibold flex items-center justify-center gap-2"
@@ -170,6 +177,15 @@ function CatalogPage() {
                           <ShoppingCart className="w-4 h-4" />
                           {addedItemId === product.id ? 'Added!' : 'Add to Cart'}
                         </motion.button>
+                        ) : (
+                        <Link
+                          href="/downloads"
+                          className="w-full btn-primary py-3 text-sm font-semibold flex items-center justify-center gap-2"
+                        >
+                          <Download className="w-4 h-4" />
+                          Free Download
+                        </Link>
+                        )}
                       </div>
                     </motion.div>
                   </Link>

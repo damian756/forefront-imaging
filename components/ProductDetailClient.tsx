@@ -97,23 +97,40 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   <div className="mb-5">
                     <span className="text-gray-400 text-xs uppercase font-bold block mb-1 font-mono">Price</span>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-bold text-green-400 font-mono">£{product.price}</span>
-                      <span className="text-gray-400 text-sm font-mono">GBP</span>
+                      {product.price > 0 ? (
+                        <>
+                          <span className="text-4xl font-bold text-green-400 font-mono">£{product.price}</span>
+                          <span className="text-gray-400 text-sm font-mono">GBP</span>
+                        </>
+                      ) : (
+                        <span className="text-4xl font-bold text-cyan-400 font-mono">FREE</span>
+                      )}
                     </div>
                   </div>
 
-                  {/* Add to Cart Button */}
-                  <motion.button
-                    onClick={handleAddToCart}
-                    className={`w-full py-4 text-white font-bold uppercase text-center rounded-xl transition-all flex items-center justify-center gap-2 relative overflow-hidden font-mono mb-4 text-base tracking-wide shadow-lg ${added ? 'bg-green-500 shadow-green-500/30' : 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-cyan-500/30 hover:shadow-cyan-500/50'}`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <ShoppingCart className="w-5 h-5" />
-                    {added ? 'ADDED!' : 'ADD TO CART'}
-                  </motion.button>
+                  {/* Add to Cart / Download Button */}
+                  {product.price > 0 ? (
+                    <motion.button
+                      onClick={handleAddToCart}
+                      className={`w-full py-4 text-white font-bold uppercase text-center rounded-xl transition-all flex items-center justify-center gap-2 relative overflow-hidden font-mono mb-4 text-base tracking-wide shadow-lg ${added ? 'bg-green-500 shadow-green-500/30' : 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-cyan-500/30 hover:shadow-cyan-500/50'}`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <ShoppingCart className="w-5 h-5" />
+                      {added ? 'ADDED!' : 'ADD TO CART'}
+                    </motion.button>
+                  ) : (
+                    <Link
+                      href="/downloads"
+                      className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold uppercase text-center rounded-xl transition-all flex items-center justify-center gap-2 font-mono mb-4 text-base tracking-wide shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50"
+                    >
+                      <Download className="w-5 h-5" />
+                      FREE DOWNLOAD
+                    </Link>
+                  )}
 
                   {/* Trust Badges */}
+                  {product.price > 0 && (
                   <div className="grid grid-cols-2 gap-2 text-xs mb-4">
                     <div className="flex items-center gap-2 p-2 glass-frosted rounded-lg border border-green-500/20">
                       <CheckCircle2 className="w-3 h-3 text-green-400 flex-shrink-0" />
@@ -132,6 +149,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                       <span className="text-purple-300 font-semibold font-mono">Next Day</span>
                     </div>
                   </div>
+                  )}
 
                   {/* Contact Link */}
                   <Link href="/contact" className="block py-3 glass-frosted border border-cyan-500/30 hover:border-cyan-500 text-cyan-300 hover:text-white font-semibold text-center rounded-lg transition-all text-xs font-mono uppercase">
@@ -354,7 +372,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
           FLOATING CTA BAR (Mobile)
           ──────────────────────────────────────────── */}
       <AnimatePresence>
-        {showFloatingCta && (
+        {showFloatingCta && product.price > 0 && (
           <motion.div
             className="fixed bottom-0 left-0 right-0 z-50 lg:hidden"
             initial={{ y: 100, opacity: 0 }}
