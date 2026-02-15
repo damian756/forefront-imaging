@@ -20,11 +20,20 @@ export const metadata: Metadata = {
     siteName: "StreamTek",
     title: "StreamTek | Official Magewell Distributor UK",
     description: "Professional USB video capture devices by Magewell. Free UK delivery, 3-year warranty, next-day shipping.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "StreamTek - Official Magewell Distributor UK",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "StreamTek | Official Magewell Distributor UK",
     description: "Professional USB video capture devices by Magewell. Free UK delivery, 3-year warranty, next-day shipping.",
+    images: ["/twitter-image"],
   },
   icons: {
     icon: "/icon",
