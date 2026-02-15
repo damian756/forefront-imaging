@@ -48,9 +48,9 @@ export default function Navbar() {
             <NavLink href="/products">Products</NavLink>
 
             <NavLink href="/how-it-works">How It Works</NavLink>
-            <NavLink href="/support">Support</NavLink>
-            <NavLink href="/downloads">Downloads</NavLink>
             <NavLink href="/knowledge-base">Guides</NavLink>
+            <NavLink href="/downloads">Downloads</NavLink>
+            <NavLink href="/support">Support</NavLink>
 
             {/* Cart */}
             <Link href="/cart" className="relative px-3 py-2 text-cool-gray hover:text-fiber-cyan transition-colors">
@@ -100,9 +100,9 @@ export default function Navbar() {
               <MobileLink href="/" onClick={() => setMobileMenuOpen(false)}>Home</MobileLink>
               <MobileLink href="/products" onClick={() => setMobileMenuOpen(false)}>Products</MobileLink>
               <MobileLink href="/how-it-works" onClick={() => setMobileMenuOpen(false)}>How It Works</MobileLink>
-              <MobileLink href="/support" onClick={() => setMobileMenuOpen(false)}>Support</MobileLink>
-              <MobileLink href="/downloads" onClick={() => setMobileMenuOpen(false)}>Downloads</MobileLink>
               <MobileLink href="/knowledge-base" onClick={() => setMobileMenuOpen(false)}>Guides</MobileLink>
+              <MobileLink href="/downloads" onClick={() => setMobileMenuOpen(false)}>Downloads</MobileLink>
+              <MobileLink href="/support" onClick={() => setMobileMenuOpen(false)}>Support</MobileLink>
               <MobileLink href="/cart" onClick={() => setMobileMenuOpen(false)}>
                 Cart {totalItems > 0 && `(${totalItems})`}
               </MobileLink>
