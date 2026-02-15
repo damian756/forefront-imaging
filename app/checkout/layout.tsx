@@ -3,7 +3,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Checkout",
   description: "Complete your StreamTek order. Secure checkout with free UK shipping on all orders.",
-  robots: { index: false, follow: false },
 };
 
 export default function CheckoutLayout({ children }: { children: React.ReactNode }) {
