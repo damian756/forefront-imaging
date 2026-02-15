@@ -863,7 +863,7 @@ export const products: Product[] = [
     category: "USB Capture",
     price: 519,
     stock: "In Stock",
-    imageUrl: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/USB_Capture_SDI_4K_Pro.jpg",
+    imageUrl: "/images/products/usb-capture-sdi-4k-pro.png",
     metaTitle: "Magewell USB Capture SDI 4K Pro | 12G-SDI 4K60 Capture | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture SDI 4K Pro — 12G-SDI 4K60 capture in a USB dongle. The most advanced SDI capture device available. Free UK delivery & 3-year warranty.",
     shortDescription: "The pinnacle of USB SDI capture. 12G-SDI support enables true 4K 60fps capture from the latest professional broadcast cameras. Fully backward compatible with all SDI standards.",
