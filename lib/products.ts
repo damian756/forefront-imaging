@@ -42,7 +42,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture HDMI Gen 2 | Buy UK | Free Delivery | StreamTek",
     metaDescription: "Buy the Magewell USB Capture HDMI Gen 2 from an official UK distributor. Plug-and-play 1080p60 HDMI to USB 3.0 capture. Zero CPU usage, driver-free. Free UK delivery & 3-year warranty.",
     shortDescription: "The gold-standard HDMI capture dongle. Plug-and-play 1080p60 video into any computer via USB 3.0 — no drivers, no setup, just connect and go. Perfect for streaming, Zoom calls, and content creation.",
-    description: "<h2>The Easiest Way to Capture HDMI Video</h2><p>The <strong>Magewell USB Capture HDMI Gen 2</strong> is the easiest way to get professional-quality HDMI video into your computer. Simply plug it into any USB 3.0 port, connect your HDMI source, and it instantly appears as a webcam in your streaming, recording, or conferencing software. <strong>No drivers. No setup. It just works.</strong></p><h2>Why Choose the USB Capture HDMI Gen 2?</h2><p>Most cheap capture dongles use software-based processing, which means your computer's CPU has to work overtime to decode and convert the video. The result? Dropped frames, audio sync issues, and a laptop that sounds like a jet engine.</p><p>The USB Capture HDMI Gen 2 is different. Inside its compact aluminium shell is a dedicated <strong>FPGA processing chip</strong> that handles scaling, deinterlacing, colour space conversion, and frame-rate conversion entirely onboard. Your computer simply receives a perfectly-processed video stream — leaving your CPU free to run OBS, Zoom, or whatever else you need.</p><h2>Built for Reliability</h2><p>Trusted by hospitals, universities, broadcasters, and thousands of streamers worldwide, this device is engineered for continuous operation. The solid metal housing dissipates heat passively — no fans, no noise, no moving parts to fail. As an official UK Magewell distributor, every unit from StreamTek comes with a <strong>3-year warranty</strong>, free UK shipping, and dedicated technical support.</p>",
+    description: `
+      <h2>The Easiest Way to Capture HDMI Video</h2>
+      <p>The <strong>Magewell USB Capture HDMI Gen 2</strong> is the easiest way to get professional-quality HDMI video into your computer. Simply plug it into any USB 3.0 port, connect your HDMI source, and it instantly appears as a webcam in your streaming, recording, or conferencing software. <strong>No drivers. No setup. It just works.</strong></p>
+      
+      <h2>Why Choose the USB Capture HDMI Gen 2?</h2>
+      <p>Most cheap capture dongles use software-based processing, which means your computer's CPU has to work overtime to decode and convert the video. The result? Dropped frames, audio sync issues, and a laptop that sounds like a jet engine.</p>
+      <p>The USB Capture HDMI Gen 2 is different. Inside its compact aluminium shell is a dedicated <strong>FPGA processing chip</strong> that handles scaling, deinterlacing, colour space conversion, and frame-rate conversion entirely onboard. Your computer simply receives a perfectly-processed video stream — leaving your CPU free to run OBS, Zoom, or whatever else you need.</p>
+      
+      <h2>Built for Reliability</h2>
+      <p>Trusted by hospitals, universities, broadcasters, and thousands of streamers worldwide, this device is engineered for continuous operation. The solid metal housing dissipates heat passively — no fans, no noise, no moving parts to fail. As an official UK Magewell distributor, every unit from StreamTek comes with a <strong>3-year warranty</strong>, free UK shipping, and dedicated technical support.</p>
+    `,
     features: [
       "True plug-and-play — no drivers to install on any operating system",
       "FPGA-based onboard processing — zero CPU usage on your computer",
@@ -120,7 +130,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture AIO | All-In-One Capture | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture AIO — accepts HDMI, SDI, DVI, VGA & Component in one device. Replace 5 dongles with 1. Official UK distributor, free delivery & 3-year warranty.",
     shortDescription: "The Swiss Army knife of capture devices. One unit that accepts HDMI, SDI, DVI, VGA, and Component inputs — replace your entire dongle collection with a single, reliable device.",
-    description: "<h2>Every Input. One Device.</h2><p>The <strong>Magewell USB Capture AIO</strong> (All-In-One) is the most versatile capture device on the market. It accepts <strong>HDMI, 3G-SDI, DVI, VGA, Component, Composite, and S-Video</strong> signals in a single rugged unit — eliminating the need to carry multiple dongles for different source types.</p><h2>Why Choose the USB Capture AIO?</h2><p>Whether you need to capture a legacy VGA laptop, a professional SDI camera, a modern HDMI game console, or an old composite CCTV feed, the AIO handles it all. It automatically detects the connected signal type and configures itself accordingly — no manual switching required.</p><p>Like all Magewell USB Capture devices, the AIO features a dedicated FPGA chip that processes video entirely onboard. Your computer's CPU stays free for encoding, streaming, or running your conferencing software. The built-in active cooling fan ensures rock-solid stability during extended capture sessions.</p><h2>Built for Reliability</h2><p>The AIO's robust metal housing and active thermal management make it ideal for permanent installations and demanding field work alike. Every unit from StreamTek comes with a <strong>3-year warranty</strong>, free UK shipping, and expert technical support.</p>",
+    description: `
+      <h2>Every Input. One Device.</h2>
+      <p>The <strong>Magewell USB Capture AIO</strong> (All-In-One) is the most versatile capture device on the market. It accepts <strong>HDMI, 3G-SDI, DVI, VGA, Component, Composite, and S-Video</strong> signals in a single rugged unit — eliminating the need to carry multiple dongles for different source types.</p>
+      
+      <h2>Why Choose the USB Capture AIO?</h2>
+      <p>Whether you need to capture a legacy VGA laptop, a professional SDI camera, a modern HDMI game console, or an old composite CCTV feed, the AIO handles it all. It automatically detects the connected signal type and configures itself accordingly — no manual switching required.</p>
+      <p>Like all Magewell USB Capture devices, the AIO features a dedicated FPGA chip that processes video entirely onboard. Your computer's CPU stays free for encoding, streaming, or running your conferencing software. The built-in active cooling fan ensures rock-solid stability during extended capture sessions.</p>
+      
+      <h2>Built for Reliability</h2>
+      <p>The AIO's robust metal housing and active thermal management make it ideal for permanent installations and demanding field work alike. Every unit from StreamTek comes with a <strong>3-year warranty</strong>, free UK shipping, and expert technical support.</p>
+    `,
     features: [
       "7 input types in one device — HDMI, SDI, DVI, VGA, Component, Composite, S-Video",
       "Automatic signal detection — no manual input switching",
@@ -196,7 +216,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture SDI Gen 2 | 3G-SDI to USB | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture SDI Gen 2. Compact 3G-SDI to USB 3.0 capture with loop-through output. Supports cable runs up to 150m. Official UK distributor, free delivery.",
     shortDescription: "Professional 3G-SDI capture in a pocket-sized dongle. Captures broadcast-grade SDI video with a dedicated loop-through output for local monitoring. Built for live events and field production.",
-    description: "<h2>Broadcast-Grade SDI Capture Made Simple</h2><p>The <strong>Magewell USB Capture SDI Gen 2</strong> brings professional broadcast video into the IT world. It captures SD, HD, and 3G-SDI signals with embedded audio and delivers them to your computer as a standard webcam source — no drivers needed.</p><h2>Why Choose the USB Capture SDI Gen 2?</h2><p>SDI is the backbone of professional broadcast for good reason: locking BNC connectors that won't accidentally pull out, electrical isolation that eliminates ground loops, and long cable runs that HDMI simply can't match.</p><p>This dongle features a dedicated <strong>SDI loop-through port</strong>, allowing you to monitor your camera feed on a local display while capturing simultaneously. Built-in cable equalisation handles SDI runs up to <strong>150 metres</strong> for 3G-SDI — so even long cable pulls from stage to control room work flawlessly.</p><h2>Built for the Field</h2><p>Enclosed in a robust metal housing, the SDI Gen 2 is built to withstand the rigours of live event production and touring broadcast. USB bus-powered with no external adapter needed, it's the most portable way to get SDI into your laptop. Every unit from StreamTek ships with a <strong>3-year warranty</strong> and free UK delivery.</p>",
+    description: `
+      <h2>Broadcast-Grade SDI Capture Made Simple</h2>
+      <p>The <strong>Magewell USB Capture SDI Gen 2</strong> brings professional broadcast video into the IT world. It captures SD, HD, and 3G-SDI signals with embedded audio and delivers them to your computer as a standard webcam source — no drivers needed.</p>
+      
+      <h2>Why Choose the USB Capture SDI Gen 2?</h2>
+      <p>SDI is the backbone of professional broadcast for good reason: locking BNC connectors that won't accidentally pull out, electrical isolation that eliminates ground loops, and long cable runs that HDMI simply can't match.</p>
+      <p>This dongle features a dedicated <strong>SDI loop-through port</strong>, allowing you to monitor your camera feed on a local display while capturing simultaneously. Built-in cable equalisation handles SDI runs up to <strong>150 metres</strong> for 3G-SDI — so even long cable pulls from stage to control room work flawlessly.</p>
+      
+      <h2>Built for the Field</h2>
+      <p>Enclosed in a robust metal housing, the SDI Gen 2 is built to withstand the rigours of live event production and touring broadcast. USB bus-powered with no external adapter needed, it's the most portable way to get SDI into your laptop. Every unit from StreamTek ships with a <strong>3-year warranty</strong> and free UK delivery.</p>
+    `,
     features: [
       "3G-SDI input with active loop-through output",
       "Cable equalisation for runs up to 150m (3G-SDI)",
@@ -272,7 +302,17 @@ export const products: Product[] = [
     metaTitle: "USB Capture Utility V3 | Magewell Configuration Software | StreamTek",
     metaDescription: "Download the USB Capture Utility V3 — essential companion software for Magewell USB Capture devices. Manage EDID, update firmware, adjust colour settings, and diagnose signals.",
     shortDescription: "The essential companion software for your Magewell USB Capture device. Fine-tune video settings, manage custom EDIDs, update firmware, and diagnose signal issues from one simple interface.",
-    description: "<h2>Unlock the Full Potential of Your Magewell Device</h2><p>The <strong>USB Capture Utility V3</strong> is the companion software that gives you granular control over your Magewell USB capture device. While Magewell hardware works perfectly out of the box, power users and AV professionals often need to fine-tune settings that standard drivers don't expose.</p><h2>What Can You Do With It?</h2><p>From custom EDID management and colour space adjustment to image rotation, cropping, and real-time signal diagnostics — this utility puts you in full control. It's also the official tool for <strong>firmware updates</strong>, ensuring your device always runs the latest software with the newest features and compatibility improvements.</p><p>The clean, intuitive interface makes it easy to check input signal status, adjust brightness and contrast, configure audio routing, and export diagnostic information for troubleshooting.</p><h2>Cross-Platform Support</h2><p>The USB Capture Utility V3 runs on <strong>Windows, macOS, and Linux</strong>, ensuring you can manage your Magewell devices regardless of your preferred operating system.</p>",
+    description: `
+      <h2>Unlock the Full Potential of Your Magewell Device</h2>
+      <p>The <strong>USB Capture Utility V3</strong> is the companion software that gives you granular control over your Magewell USB capture device. While Magewell hardware works perfectly out of the box, power users and AV professionals often need to fine-tune settings that standard drivers don't expose.</p>
+      
+      <h2>What Can You Do With It?</h2>
+      <p>From custom EDID management and colour space adjustment to image rotation, cropping, and real-time signal diagnostics — this utility puts you in full control. It's also the official tool for <strong>firmware updates</strong>, ensuring your device always runs the latest software with the newest features and compatibility improvements.</p>
+      <p>The clean, intuitive interface makes it easy to check input signal status, adjust brightness and contrast, configure audio routing, and export diagnostic information for troubleshooting.</p>
+      
+      <h2>Cross-Platform Support</h2>
+      <p>The USB Capture Utility V3 runs on <strong>Windows, macOS, and Linux</strong>, ensuring you can manage your Magewell devices regardless of your preferred operating system.</p>
+    `,
     features: [
       "Custom EDID management — control what your source device sees",
       "Firmware update tool — keep your device current",
@@ -337,7 +377,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture HDMI Plus | Loop-Through & Audio | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture HDMI Plus. 1080p60 HDMI capture with zero-latency loop-through and 3.5mm audio I/O. Ideal for streaming & gaming. Free UK delivery.",
     shortDescription: "Everything the HDMI Gen 2 offers, plus a zero-latency HDMI loop-through output and 3.5mm audio jacks. See your content on a local display while capturing, and connect a headset directly.",
-    description: "<h2>Capture, Monitor, and Listen — All From One Device</h2><p>The <strong>Magewell USB Capture HDMI Plus</strong> takes the proven Gen 2 dongle and adds the two features streamers and presenters ask for most: an <strong>HDMI loop-through output</strong> for zero-latency local monitoring, and <strong>3.5mm audio jacks</strong> for connecting a headset or external microphone.</p><h2>Why Choose the HDMI Plus?</h2><p>If you're a gamer streaming on Twitch, the loop-through lets you play on your TV with zero delay while OBS captures every frame. If you're a presenter, you can see your slides on the room's projector while your webinar software captures the feed. No signal splitters, no extra cables — the Plus handles it all internally.</p><p>The dedicated audio I/O lets you embed commentary or monitoring audio directly through the device, removing the need for separate USB audio interfaces in simple setups. The built-in FPGA chip processes everything onboard, keeping your CPU free for encoding.</p><h2>Built for Daily Use</h2><p>The same robust metal construction, USB bus-powered simplicity, and driver-free operation you expect from Magewell. Backed by StreamTek's <strong>3-year warranty</strong> and free UK shipping.</p>",
+    description: `
+      <h2>Capture, Monitor, and Listen — All From One Device</h2>
+      <p>The <strong>Magewell USB Capture HDMI Plus</strong> takes the proven Gen 2 dongle and adds the two features streamers and presenters ask for most: an <strong>HDMI loop-through output</strong> for zero-latency local monitoring, and <strong>3.5mm audio jacks</strong> for connecting a headset or external microphone.</p>
+      
+      <h2>Why Choose the HDMI Plus?</h2>
+      <p>If you're a gamer streaming on Twitch, the loop-through lets you play on your TV with zero delay while OBS captures every frame. If you're a presenter, you can see your slides on the room's projector while your webinar software captures the feed. No signal splitters, no extra cables — the Plus handles it all internally.</p>
+      <p>The dedicated audio I/O lets you embed commentary or monitoring audio directly through the device, removing the need for separate USB audio interfaces in simple setups. The built-in FPGA chip processes everything onboard, keeping your CPU free for encoding.</p>
+      
+      <h2>Built for Daily Use</h2>
+      <p>The same robust metal construction, USB bus-powered simplicity, and driver-free operation you expect from Magewell. Backed by StreamTek's <strong>3-year warranty</strong> and free UK shipping.</p>
+    `,
     features: [
       "HDMI loop-through — zero-latency passthrough to a local display",
       "3.5mm line-in and line-out audio jacks",
@@ -411,7 +461,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture DVI Plus | DVI/VGA/HDMI Capture | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture DVI Plus. Captures DVI, VGA, HDMI & Component via one DVI-I connector with loop-through. Ideal for medical & legacy systems. Free UK delivery.",
     shortDescription: "Specialised capture for DVI and legacy video sources. The DVI-I connector accepts digital DVI, analog VGA, HDMI, and Component signals via adapters — one device for old and new equipment.",
-    description: "<h2>Capture Legacy and Modern Video Sources</h2><p>The <strong>Magewell USB Capture DVI Plus</strong> is a specialised capture device designed for environments where you need to ingest video from DVI, VGA, and other legacy sources. Its DVI-I connector accepts <strong>digital DVI-D, analog VGA, HDMI (via adapter), and Component</strong> signals — making it the go-to device for capturing equipment that predates the HDMI era.</p><h2>Why Choose the DVI Plus?</h2><p>Many medical imaging systems, industrial control consoles, radar displays, and older IT workstations still output DVI or VGA. The DVI Plus lets you capture these feeds in full quality without replacing the source equipment. The integrated <strong>loop-through output</strong> means the original display stays connected — critical for safety-sensitive applications like medical imaging where the primary monitor must remain active.</p><p>The dedicated FPGA chip processes video entirely onboard, handling analog-to-digital conversion for VGA sources, scaling, deinterlacing, and colour space conversion without touching your CPU.</p><h2>Medical and Industrial Grade</h2><p>Built with the same metal construction and passive cooling as the rest of the USB Capture range, the DVI Plus is designed for continuous operation in demanding environments. StreamTek provides a <strong>3-year warranty</strong> and expert support for all Magewell devices.</p>",
+    description: `
+      <h2>Capture Legacy and Modern Video Sources</h2>
+      <p>The <strong>Magewell USB Capture DVI Plus</strong> is a specialised capture device designed for environments where you need to ingest video from DVI, VGA, and other legacy sources. Its DVI-I connector accepts <strong>digital DVI-D, analog VGA, HDMI (via adapter), and Component</strong> signals — making it the go-to device for capturing equipment that predates the HDMI era.</p>
+      
+      <h2>Why Choose the DVI Plus?</h2>
+      <p>Many medical imaging systems, industrial control consoles, radar displays, and older IT workstations still output DVI or VGA. The DVI Plus lets you capture these feeds in full quality without replacing the source equipment. The integrated <strong>loop-through output</strong> means the original display stays connected — critical for safety-sensitive applications like medical imaging where the primary monitor must remain active.</p>
+      <p>The dedicated FPGA chip processes video entirely onboard, handling analog-to-digital conversion for VGA sources, scaling, deinterlacing, and colour space conversion without touching your CPU.</p>
+      
+      <h2>Medical and Industrial Grade</h2>
+      <p>Built with the same metal construction and passive cooling as the rest of the USB Capture range, the DVI Plus is designed for continuous operation in demanding environments. StreamTek provides a <strong>3-year warranty</strong> and expert support for all Magewell devices.</p>
+    `,
     features: [
       "DVI-I input — accepts DVI-D, VGA, HDMI, and Component via adapters",
       "DVI loop-through — keep your original display connected",
@@ -488,7 +548,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture SDI Plus | SDI Loop-Through & Audio | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture SDI Plus. 3G-SDI to USB 3.0 capture with active loop-through and line-level audio input. Built for broadcast. Free UK delivery & 3-year warranty.",
     shortDescription: "Advanced 3G-SDI capture with active loop-through and a line-level audio input. Embed external audio from a mixing desk directly into your capture stream — built for professional broadcast.",
-    description: "<h2>SDI Capture With External Audio Embedding</h2><p>The <strong>Magewell USB Capture SDI Plus</strong> takes the proven SDI Gen 2 and adds the features broadcast professionals need most: an <strong>active SDI loop-through</strong> for monitoring and a <strong>3.5mm line-level audio input</strong> for embedding external audio sources into the capture stream.</p><h2>Why Choose the SDI Plus?</h2><p>In live event production, you often need to combine video from an SDI camera with audio from a separate mixing desk. The SDI Plus solves this by letting you embed line-level audio directly into the captured stream — no external embedder or separate audio interface required.</p><p>The active loop-through lets you daisy-chain to a monitor, recorder, or downstream device while capturing simultaneously. Built-in cable equalisation handles SDI runs up to <strong>150 metres</strong> for 3G-SDI, and the FPGA chip processes everything onboard so your CPU stays free for encoding.</p><h2>Built for Broadcast</h2><p>Enclosed in a rugged metal housing with professional BNC connectors, the SDI Plus is built for the demanding world of live broadcast and touring production. Every unit from StreamTek ships with a <strong>3-year warranty</strong> and free UK delivery.</p>",
+    description: `
+      <h2>SDI Capture With External Audio Embedding</h2>
+      <p>The <strong>Magewell USB Capture SDI Plus</strong> takes the proven SDI Gen 2 and adds the features broadcast professionals need most: an <strong>active SDI loop-through</strong> for monitoring and a <strong>3.5mm line-level audio input</strong> for embedding external audio sources into the capture stream.</p>
+      
+      <h2>Why Choose the SDI Plus?</h2>
+      <p>In live event production, you often need to combine video from an SDI camera with audio from a separate mixing desk. The SDI Plus solves this by letting you embed line-level audio directly into the captured stream — no external embedder or separate audio interface required.</p>
+      <p>The active loop-through lets you daisy-chain to a monitor, recorder, or downstream device while capturing simultaneously. Built-in cable equalisation handles SDI runs up to <strong>150 metres</strong> for 3G-SDI, and the FPGA chip processes everything onboard so your CPU stays free for encoding.</p>
+      
+      <h2>Built for Broadcast</h2>
+      <p>Enclosed in a rugged metal housing with professional BNC connectors, the SDI Plus is built for the demanding world of live broadcast and touring production. Every unit from StreamTek ships with a <strong>3-year warranty</strong> and free UK delivery.</p>
+    `,
     features: [
       "3G-SDI input with active loop-through output",
       "3.5mm line-level audio input for external audio embedding",
@@ -562,7 +632,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture HDMI 4K Plus | 4K60 HDMI Capture | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture HDMI 4K Plus. Capture 4K 60fps HDMI via USB 3.0 with zero-latency loop-through and headphone/mic jacks. Free UK delivery & 3-year warranty.",
     shortDescription: "4K Ultra HD HDMI capture at a full 60 frames per second. HDMI 2.0 input with zero-latency loop-through and integrated headphone and microphone jacks for complete production monitoring.",
-    description: "<h2>4K Capture Without Compromise</h2><p>The <strong>Magewell USB Capture HDMI 4K Plus</strong> captures Ultra HD video at a full <strong>4K 60fps</strong> through a single USB 3.0 cable. Its HDMI 2.0 input handles the latest 4K sources — from gaming consoles and cinema cameras to medical imaging systems and design workstations — with perfect fidelity.</p><h2>Why Choose the HDMI 4K Plus?</h2><p>Where standard capture dongles cap at 1080p, this device delivers the full richness of 4K content. The <strong>HDMI loop-through</strong> passes your 4K signal to a local display with zero latency, so you can game, present, or monitor while capturing simultaneously.</p><p>The integrated <strong>3.5mm microphone input and headphone output</strong> let you add commentary and monitor your capture audio directly from the device. The powerful FPGA processing engine handles up to 640 megapixels per second of throughput — scaling, colour conversion, and deinterlacing all happen onboard without touching your CPU.</p><h2>Built for 4K Workflows</h2><p>Whether you're capturing 4K gameplay for your channel, recording surgical procedures in Ultra HD, or archiving design work, the HDMI 4K Plus delivers broadcast-quality results in a portable USB form factor. Backed by StreamTek's <strong>3-year warranty</strong> and free UK shipping.</p>",
+    description: `
+      <h2>4K Capture Without Compromise</h2>
+      <p>The <strong>Magewell USB Capture HDMI 4K Plus</strong> captures Ultra HD video at a full <strong>4K 60fps</strong> through a single USB 3.0 cable. Its HDMI 2.0 input handles the latest 4K sources — from gaming consoles and cinema cameras to medical imaging systems and design workstations — with perfect fidelity.</p>
+      
+      <h2>Why Choose the HDMI 4K Plus?</h2>
+      <p>Where standard capture dongles cap at 1080p, this device delivers the full richness of 4K content. The <strong>HDMI loop-through</strong> passes your 4K signal to a local display with zero latency, so you can game, present, or monitor while capturing simultaneously.</p>
+      <p>The integrated <strong>3.5mm microphone input and headphone output</strong> let you add commentary and monitor your capture audio directly from the device. The powerful FPGA processing engine handles up to 640 megapixels per second of throughput — scaling, colour conversion, and deinterlacing all happen onboard without touching your CPU.</p>
+      
+      <h2>Built for 4K Workflows</h2>
+      <p>Whether you're capturing 4K gameplay for your channel, recording surgical procedures in Ultra HD, or archiving design work, the HDMI 4K Plus delivers broadcast-quality results in a portable USB form factor. Backed by StreamTek's <strong>3-year warranty</strong> and free UK shipping.</p>
+    `,
     features: [
       "4K60 capture — HDMI 2.0 input up to 4096×2160 at 60fps",
       "HDMI loop-through — zero-latency 4K passthrough to a local display",
@@ -637,7 +717,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture SDI 4K Plus | 6G-SDI 4K Capture | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture SDI 4K Plus. 6G-SDI 4K capture via USB 3.0 with SDI loop-through and audio input. Backward compatible with 3G/HD/SD-SDI. Free UK delivery.",
     shortDescription: "6G-SDI 4K capture in a single USB dongle. Ingests 4K video at 30fps from professional SDI cameras, with loop-through for monitoring. Backward compatible with all SDI standards.",
-    description: "<h2>4K SDI Capture via USB</h2><p>The <strong>Magewell USB Capture SDI 4K Plus</strong> bridges the gap between 4K broadcast infrastructure and computer-based production. It captures <strong>6G-SDI signals at up to 4K 30fps</strong> with full embedded audio, and is fully backward compatible with 3G-SDI, HD-SDI, and SD-SDI sources.</p><h2>Why Choose the SDI 4K Plus?</h2><p>As broadcasters and production houses upgrade to 4K cameras, you need a capture device that can keep up. This dongle ingests 6G-SDI signals carrying 4K content and delivers them to your computer as a standard webcam feed — no drivers, no complex setup.</p><p>The <strong>SDI loop-through</strong> lets you pass the signal to a downstream monitor or recorder while capturing. The <strong>3.5mm audio input</strong> lets you embed external audio from a mixing desk. Built-in cable equalisation supports 6G-SDI runs up to <strong>75 metres</strong>, with longer distances at lower data rates.</p><h2>Future-Proof Your Kit</h2><p>Because it's backward compatible with every SDI standard from SD through to 6G, this one device works with your entire camera inventory — both current 4K models and older HD gear. StreamTek provides a <strong>3-year warranty</strong> and free UK delivery on every unit.</p>",
+    description: `
+      <h2>4K SDI Capture via USB</h2>
+      <p>The <strong>Magewell USB Capture SDI 4K Plus</strong> bridges the gap between 4K broadcast infrastructure and computer-based production. It captures <strong>6G-SDI signals at up to 4K 30fps</strong> with full embedded audio, and is fully backward compatible with 3G-SDI, HD-SDI, and SD-SDI sources.</p>
+      
+      <h2>Why Choose the SDI 4K Plus?</h2>
+      <p>As broadcasters and production houses upgrade to 4K cameras, you need a capture device that can keep up. This dongle ingests 6G-SDI signals carrying 4K content and delivers them to your computer as a standard webcam feed — no drivers, no complex setup.</p>
+      <p>The <strong>SDI loop-through</strong> lets you pass the signal to a downstream monitor or recorder while capturing. The <strong>3.5mm audio input</strong> lets you embed external audio from a mixing desk. Built-in cable equalisation supports 6G-SDI runs up to <strong>75 metres</strong>, with longer distances at lower data rates.</p>
+      
+      <h2>Future-Proof Your Kit</h2>
+      <p>Because it's backward compatible with every SDI standard from SD through to 6G, this one device works with your entire camera inventory — both current 4K models and older HD gear. StreamTek provides a <strong>3-year warranty</strong> and free UK delivery on every unit.</p>
+    `,
     features: [
       "6G-SDI input — captures up to 4K at 30fps (4:2:2 10-bit)",
       "Backward compatible with 3G-SDI, HD-SDI, and SD-SDI",
@@ -710,7 +800,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture HDMI 4K Pro | Premium 4K60 HDMI | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture HDMI 4K Pro — the most advanced HDMI capture dongle available. 4K60 HDMI 2.0, enhanced FPGA, loop-through & audio I/O. Free UK delivery.",
     shortDescription: "The most advanced HDMI capture dongle in Magewell's lineup. Engineered for the most demanding 4K workflows with enhanced FPGA processing, HDMI 2.0 input, loop-through, and integrated audio I/O.",
-    description: "<h2>The Pinnacle of USB HDMI Capture</h2><p>The <strong>Magewell USB Capture HDMI 4K Pro</strong> represents the latest generation of Magewell's acclaimed USB capture technology. Built for professionals who demand the absolute highest fidelity, it captures <strong>4K 60fps HDMI 2.0</strong> video with an enhanced FPGA processing engine and delivers it to your computer as a standard webcam source.</p><h2>Why Choose the HDMI 4K Pro?</h2><p>Building on years of refinement across the USB Capture range, the 4K Pro delivers Magewell's most advanced feature set in a portable dongle. The enhanced FPGA offers superior video processing with improved colour accuracy, better noise handling, and higher throughput for the most demanding capture scenarios.</p><p>The <strong>HDMI loop-through</strong> passes your full 4K60 signal to a local display with zero latency. Integrated <strong>audio I/O</strong> lets you embed microphone audio and monitor through headphones directly from the device. Custom EDID management gives you complete control over the source signal.</p><h2>Premium Build, Premium Support</h2><p>Magewell's newest USB Capture devices represent the cutting edge of what's possible in a bus-powered USB form factor. Every unit from StreamTek comes with a <strong>3-year warranty</strong>, free UK delivery, and priority technical support.</p>",
+    description: `
+      <h2>The Pinnacle of USB HDMI Capture</h2>
+      <p>The <strong>Magewell USB Capture HDMI 4K Pro</strong> represents the latest generation of Magewell's acclaimed USB capture technology. Built for professionals who demand the absolute highest fidelity, it captures <strong>4K 60fps HDMI 2.0</strong> video with an enhanced FPGA processing engine and delivers it to your computer as a standard webcam source.</p>
+      
+      <h2>Why Choose the HDMI 4K Pro?</h2>
+      <p>Building on years of refinement across the USB Capture range, the 4K Pro delivers Magewell's most advanced feature set in a portable dongle. The enhanced FPGA offers superior video processing with improved colour accuracy, better noise handling, and higher throughput for the most demanding capture scenarios.</p>
+      <p>The <strong>HDMI loop-through</strong> passes your full 4K60 signal to a local display with zero latency. Integrated <strong>audio I/O</strong> lets you embed microphone audio and monitor through headphones directly from the device. Custom EDID management gives you complete control over the source signal.</p>
+      
+      <h2>Premium Build, Premium Support</h2>
+      <p>Magewell's newest USB Capture devices represent the cutting edge of what's possible in a bus-powered USB form factor. Every unit from StreamTek comes with a <strong>3-year warranty</strong>, free UK delivery, and priority technical support.</p>
+    `,
     features: [
       "4K60 capture — enhanced HDMI 2.0 input up to 4096×2160 at 60fps",
       "Latest-generation enhanced FPGA processing engine",
@@ -785,7 +885,17 @@ export const products: Product[] = [
     metaTitle: "Magewell USB Capture SDI 4K Pro | 12G-SDI 4K60 Capture | Buy UK | StreamTek",
     metaDescription: "Buy the Magewell USB Capture SDI 4K Pro — 12G-SDI 4K60 capture in a USB dongle. The most advanced SDI capture device available. Free UK delivery & 3-year warranty.",
     shortDescription: "The pinnacle of USB SDI capture. 12G-SDI support enables true 4K 60fps capture from the latest professional broadcast cameras. Fully backward compatible with all SDI standards.",
-    description: "<h2>True 4K60 SDI Capture — The Best Available</h2><p>The <strong>Magewell USB Capture SDI 4K Pro</strong> is the most advanced USB SDI capture device on the market. With <strong>12G-SDI support</strong>, it captures 4K video at a full 60 frames per second from the latest generation of broadcast cameras — all through a single USB 3.0 cable.</p><h2>Why Choose the SDI 4K Pro?</h2><p>12G-SDI is the latest broadcast standard, carrying 4K60 content on a single BNC cable. Where older 6G-SDI devices cap at 4K30, the SDI 4K Pro delivers the full frame rate that modern broadcast workflows demand. It's fully backward compatible with 6G, 3G, HD, and SD-SDI, so it works with your entire camera inventory.</p><p>The enhanced FPGA processing engine delivers superior video quality with improved colour accuracy and higher throughput. The <strong>SDI loop-through</strong> keeps your monitoring chain connected, and the <strong>audio I/O</strong> lets you embed external audio and monitor through headphones.</p><h2>Broadcast-Grade, Pocket-Sized</h2><p>All the power of 12G-SDI 4K60 capture in a portable, USB bus-powered dongle. No PCIe cards, no desktop workstation required. Every unit from StreamTek ships with a <strong>3-year warranty</strong> and free UK delivery.</p>",
+    description: `
+      <h2>True 4K60 SDI Capture — The Best Available</h2>
+      <p>The <strong>Magewell USB Capture SDI 4K Pro</strong> is the most advanced USB SDI capture device on the market. With <strong>12G-SDI support</strong>, it captures 4K video at a full 60 frames per second from the latest generation of broadcast cameras — all through a single USB 3.0 cable.</p>
+      
+      <h2>Why Choose the SDI 4K Pro?</h2>
+      <p>12G-SDI is the latest broadcast standard, carrying 4K60 content on a single BNC cable. Where older 6G-SDI devices cap at 4K30, the SDI 4K Pro delivers the full frame rate that modern broadcast workflows demand. It's fully backward compatible with 6G, 3G, HD, and SD-SDI, so it works with your entire camera inventory.</p>
+      <p>The enhanced FPGA processing engine delivers superior video quality with improved colour accuracy and higher throughput. The <strong>SDI loop-through</strong> keeps your monitoring chain connected, and the <strong>audio I/O</strong> lets you embed external audio and monitor through headphones.</p>
+      
+      <h2>Broadcast-Grade, Pocket-Sized</h2>
+      <p>All the power of 12G-SDI 4K60 capture in a portable, USB bus-powered dongle. No PCIe cards, no desktop workstation required. Every unit from StreamTek ships with a <strong>3-year warranty</strong> and free UK delivery.</p>
+    `,
     features: [
       "12G-SDI input — true 4K capture at 60fps",
       "Backward compatible with 6G/3G/HD/SD-SDI",
