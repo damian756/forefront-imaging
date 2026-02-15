@@ -142,7 +142,7 @@ export default function DownloadsPage() {
           version: "Current", 
           size: "Various", 
           date: "2025",
-          url: "https://www.magewell.com/products",
+          url: "https://www.magewell.com/capture/usb-capture",
           description: "Technical specifications, supported formats, compatibility tables, and performance data for all Magewell capture devices."
         }
       ],
