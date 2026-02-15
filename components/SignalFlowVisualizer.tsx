@@ -172,7 +172,7 @@ export default function SignalFlowVisualizer() {
   }, [isPaused]);
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 opacity-20" style={{ 
         background: 'radial-gradient(ellipse at 50% 50%, rgba(59, 130, 246, 0.4), transparent 70%)'

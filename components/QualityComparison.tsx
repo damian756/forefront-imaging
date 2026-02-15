@@ -102,7 +102,7 @@ export default function QualityComparison() {
   };
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 opacity-10" style={{ 
         background: 'radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.3), transparent 70%)'

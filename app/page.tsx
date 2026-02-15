@@ -76,7 +76,7 @@ export default function Home() {
           
           {/* Hero Content */}
           <motion.div 
-            className="text-center mb-20"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -188,7 +188,7 @@ export default function Home() {
       </div>
 
       {/* FLAGSHIP PRODUCT SHOWCASE */}
-      <section id="products" className="py-28 relative">
+      <section id="products" className="py-16 relative">
         <div className="absolute inset-0 opacity-10" style={{ 
           background: 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.2), transparent)'
         }} />
@@ -339,7 +339,7 @@ export default function Home() {
       </section>
 
       {/* COMPATIBILITY SHOWCASE */}
-      <section className="py-28 relative studio-border border-t">
+      <section className="py-16 relative studio-border border-t">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-4 uppercase tracking-tight">
