@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useCallback, useEffect } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Monitor, Maximize2, Info, CheckCircle2, XCircle } from 'lucide-react';
 
@@ -161,67 +162,54 @@ export default function QualityComparison() {
           {/* Split Screen Preview - select-none prevents text selection while dragging */}
           <div 
             ref={containerRef}
-            className="relative h-96 md:h-[500px] rounded-lg overflow-hidden cursor-ew-resize mb-8 metal-surface studio-border select-none"
+            className="relative h-96 md:h-[500px] rounded-lg overflow-hidden cursor-ew-resize mb-8 metal-surface studio-border select-none bg-black"
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Consumer Side (Left/Full) */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
-              <div className="text-center">
-                <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4 opacity-50" />
-                <div className="text-2xl font-bold text-zinc-400 mb-2">Consumer Hardware</div>
-                <div className="text-sm text-zinc-500 mb-4">Compressed • Dropped Frames • High Latency</div>
-                
-                {/* Pixelated/Degraded Visual Effect */}
-                <div className="grid grid-cols-8 gap-1 w-64 h-64 mx-auto opacity-40">
-                  {Array.from({ length: 64 }).map((_, i) => (
-                    <div 
-                      key={i} 
-                      className="bg-zinc-600 rounded-sm"
-                      style={{
-                        opacity: Math.random() * 0.5 + 0.3,
-                        filter: 'blur(2px)'
-                      }}
-                    />
-                  ))}
+            {/* Consumer Side (Left/Full) - Blurred Image */}
+            <div className="absolute inset-0">
+              <Image
+                src="/images/quality-comparison.png"
+                alt="Consumer quality comparison"
+                fill
+                className="object-cover"
+                style={{ 
+                  filter: 'blur(8px) brightness(0.7) saturate(0.6)',
+                }}
+                priority
+              />
+              {/* Overlay with label */}
+              <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none">
+                <div className="text-center">
+                  <XCircle className="w-12 h-12 text-red-500 mx-auto mb-3 opacity-80 drop-shadow-lg" />
+                  <div className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">Consumer Hardware</div>
+                  <div className="text-xs md:text-sm text-red-200 drop-shadow-md">Compressed • Dropped Frames • High Latency</div>
                 </div>
               </div>
             </div>
 
-            {/* Professional Side (Right) - Revealed by slider */}
+            {/* Professional Side (Right) - Crisp Image - Revealed by slider */}
             <motion.div 
-              className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-950 to-indigo-950"
+              className="absolute inset-0"
               style={{
                 clipPath: `polygon(${sliderPosition}% 0, 100% 0, 100% 100%, ${sliderPosition}% 100%)`
               }}
             >
-              <div className="text-center">
-                <CheckCircle2 className="w-16 h-16 text-fiber-cyan mx-auto mb-4" />
-                <div className="text-2xl font-bold text-soft-white mb-2">Professional Hardware</div>
-                <div className="text-sm text-fiber-cyan mb-4">Uncompressed • Zero Loss • Sub-ms Latency</div>
-                
-                {/* High Quality Visual Effect */}
-                <div className="relative w-64 h-64 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fiber-cyan to-fiber-blue rounded-lg opacity-30" />
-                  <div className="absolute inset-0 grid grid-cols-8 gap-[2px]">
-                    {Array.from({ length: 64 }).map((_, i) => (
-                      <motion.div 
-                        key={i} 
-                        className="bg-fiber-cyan rounded-sm"
-                        animate={{
-                          opacity: [0.6, 1, 0.6],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          delay: i * 0.02,
-                          ease: "easeInOut"
-                        }}
-                      />
-                    ))}
-                  </div>
+              <Image
+                src="/images/quality-comparison.png"
+                alt="Professional quality comparison"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Overlay with label */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="text-center">
+                  <CheckCircle2 className="w-12 h-12 text-fiber-cyan mx-auto mb-3 drop-shadow-lg" />
+                  <div className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">Professional Hardware</div>
+                  <div className="text-xs md:text-sm text-cyan-200 drop-shadow-md">Uncompressed • Zero Loss • Sub-ms Latency</div>
                 </div>
               </div>
             </motion.div>
