@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { Mail, MapPin, Phone, Send, Shield, Package, Truck, Facebook, Twitter, Linkedin, Youtube, Zap, Radio, CheckCircle2, Plug } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Shield, Package, Truck, Zap, Radio, CheckCircle2, Plug } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -105,17 +105,7 @@ export default function Footer() {
                 </div>
               ))}
             </div>
-            <div className="flex gap-2">
-              {[Facebook, Twitter, Linkedin, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-lg border border-fiber-blue/25 bg-dark-blue/40 text-cool-gray hover:text-fiber-cyan hover:border-fiber-cyan/40 flex items-center justify-center transition-all"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
+            
           </div>
 
           {/* Products */}
