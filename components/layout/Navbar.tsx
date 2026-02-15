@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Phone, ChevronDown, Menu, X, ShoppingCart, Plug } from "lucide-react";
+import { Phone, Menu, X, ShoppingCart, Plug } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/contexts/CartContext";
 
@@ -9,20 +9,11 @@ export default function Navbar() {
   const { totalItems } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
-
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  const resources = [
-    { name: "Support", href: "/support" },
-    { name: "Downloads", href: "/downloads" },
-    { name: "Knowledge Base", href: "/knowledge-base" },
-    { name: "Video Tutorials", href: "/tutorials" }
-  ];
 
   return (
     <>
@@ -57,42 +48,9 @@ export default function Navbar() {
             <NavLink href="/products">Products</NavLink>
 
             <NavLink href="/how-it-works">How It Works</NavLink>
-
-            {/* Resources Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setResourcesOpen(true)}
-              onMouseLeave={() => setResourcesOpen(false)}
-            >
-              <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-cool-gray hover:text-soft-white hover:bg-fiber-blue/10 transition-all">
-                Resources
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {resourcesOpen && (
-                  <motion.div
-                    className="absolute top-full right-0 mt-1 w-48 rounded-lg border border-fiber-blue/25 shadow-xl shadow-black/40 overflow-hidden"
-                    style={{ background: 'rgba(15, 22, 41, 0.97)', backdropFilter: 'blur(20px)' }}
-                    initial={{ opacity: 0, y: -4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -4 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <div className="py-1">
-                      {resources.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="block px-4 py-2.5 text-sm text-cool-gray hover:text-soft-white hover:bg-fiber-blue/10 transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            <NavLink href="/support">Support</NavLink>
+            <NavLink href="/downloads">Downloads</NavLink>
+            <NavLink href="/knowledge-base">Guides</NavLink>
 
             {/* Cart */}
             <Link href="/cart" className="relative px-3 py-2 text-cool-gray hover:text-fiber-cyan transition-colors">
@@ -143,6 +101,8 @@ export default function Navbar() {
               <MobileLink href="/products" onClick={() => setMobileMenuOpen(false)}>Products</MobileLink>
               <MobileLink href="/how-it-works" onClick={() => setMobileMenuOpen(false)}>How It Works</MobileLink>
               <MobileLink href="/support" onClick={() => setMobileMenuOpen(false)}>Support</MobileLink>
+              <MobileLink href="/downloads" onClick={() => setMobileMenuOpen(false)}>Downloads</MobileLink>
+              <MobileLink href="/knowledge-base" onClick={() => setMobileMenuOpen(false)}>Guides</MobileLink>
               <MobileLink href="/cart" onClick={() => setMobileMenuOpen(false)}>
                 Cart {totalItems > 0 && `(${totalItems})`}
               </MobileLink>
