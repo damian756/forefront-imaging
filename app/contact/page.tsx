@@ -88,8 +88,8 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-lg font-bold mb-2">Email</h3>
                 <p className="text-slate-400 text-sm mb-3">We respond within 24 hours</p>
-                <a href="mailto:hello@churchtownmedia.co.uk" className="text-green-400 hover:text-green-300 font-semibold text-lg break-all">
-                  hello@churchtownmedia.co.uk
+                <a href="mailto:sales@streamtek.co.uk" className="text-green-400 hover:text-green-300 font-semibold text-lg break-all">
+                  sales@streamtek.co.uk
                 </a>
               </motion.div>
 

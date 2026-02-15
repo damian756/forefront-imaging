@@ -149,8 +149,8 @@ export default function SupportPage() {
               <div>
                 <Headphones className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                 <h3 className="text-lg font-bold mb-2">Phone Support</h3>
-                <a href="tel:+441162775730" className="text-blue-400 hover:text-blue-300 font-semibold text-lg">
-                  +44 (0)116 277 5730
+                <a href="tel:01704635785" className="text-blue-400 hover:text-blue-300 font-semibold text-lg">
+                  01704 635785
                 </a>
                 <p className="text-slate-400 text-sm mt-2">Mon-Fri, 9AM-5PM GMT</p>
               </div>

@@ -285,7 +285,7 @@ export default function TermsPage() {
                   <p className="font-semibold text-white mb-2">Electronic Modular Solutions Ltd.</p>
                   <p>Trading as StreamTek</p>
                   <p>Leicester, United Kingdom</p>
-                  <p className="mt-3">Phone: <a href="tel:+441162775730" className="text-blue-400 hover:text-blue-300">+44 (0)116 277 5730</a></p>
+                  <p className="mt-3">Phone: <a href="tel:01704635785" className="text-blue-400 hover:text-blue-300">01704 635785</a></p>
                   <p>Email: <Link href="/contact" className="text-blue-400 hover:text-blue-300">Contact Form</Link></p>
                 </div>
               </div>

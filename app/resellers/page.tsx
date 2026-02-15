@@ -205,10 +205,10 @@ export default function ResellersPage() {
                 Contact Partner Team
               </Link>
               <a 
-                href="tel:+441162775730"
+                href="tel:01704635785"
                 className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg border border-white/20 transition-all"
               >
-                Call +44 (0)116 277 5730
+                Call 01704 635785
               </a>
             </div>
           </div>
