@@ -33,6 +33,7 @@ export default function KnowledgeBasePage() {
     {
       icon: Zap,
       title: "Getting Started",
+      slug: "getting-started",
       description: "Installation guides, quick start tutorials, and first-time setup instructions.",
       articleCount: guides.filter(g => g.category === "Getting Started").length,
       color: "blue"
@@ -40,6 +41,7 @@ export default function KnowledgeBasePage() {
     {
       icon: Wrench,
       title: "Troubleshooting",
+      slug: "troubleshooting",
       description: "Common issues, error messages, and step-by-step solutions.",
       articleCount: guides.filter(g => g.category === "Troubleshooting").length,
       color: "orange"
@@ -47,6 +49,7 @@ export default function KnowledgeBasePage() {
     {
       icon: TrendingUp,
       title: "Advanced Features",
+      slug: "advanced-features",
       description: "In-depth guides for advanced configuration and optimization.",
       articleCount: guides.filter(g => g.category === "Advanced Features").length,
       color: "purple"
@@ -54,6 +57,7 @@ export default function KnowledgeBasePage() {
     {
       icon: Shield,
       title: "Warranty & Returns",
+      slug: "warranty-returns",
       description: "RMA procedures, warranty coverage, and support policies.",
       articleCount: guides.filter(g => g.category === "Warranty & Returns").length,
       color: "green"
@@ -174,9 +178,10 @@ export default function KnowledgeBasePage() {
                 const colors = colorClasses[category.color as keyof typeof colorClasses];
                 
                 return (
-                  <div
+                  <a
                     key={category.title}
-                    className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-all group cursor-pointer"
+                    href={`#${category.slug}`}
+                    className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-all group cursor-pointer block"
                   >
                     <div className={`w-12 h-12 rounded-lg ${colors.icon} border flex items-center justify-center mb-4`}>
                       <Icon className="w-6 h-6" />
@@ -190,7 +195,7 @@ export default function KnowledgeBasePage() {
                     <div className={`inline-block px-3 py-1 ${colors.badge} rounded-full text-xs font-bold`}>
                       {category.articleCount} articles
                     </div>
-                  </div>
+                  </a>
                 );
               })}
             </div>
@@ -260,6 +265,12 @@ export default function KnowledgeBasePage() {
 
             {["Getting Started", "Troubleshooting", "Advanced Features", "Warranty & Returns"].map((catName) => {
               const catGuides = guides.filter(g => g.category === catName);
+              const catSlugs: Record<string, string> = {
+                "Getting Started": "getting-started",
+                "Troubleshooting": "troubleshooting",
+                "Advanced Features": "advanced-features",
+                "Warranty & Returns": "warranty-returns",
+              };
               const catConfig: Record<string, { badgeColor: string; borderColor: string; hoverColor: string }> = {
                 "Getting Started": { badgeColor: "bg-blue-600/20 text-blue-400 border-blue-500/30", borderColor: "border-blue-500/20", hoverColor: "hover:border-blue-500/40" },
                 "Troubleshooting": { badgeColor: "bg-orange-600/20 text-orange-400 border-orange-500/30", borderColor: "border-orange-500/20", hoverColor: "hover:border-orange-500/40" },
@@ -268,7 +279,7 @@ export default function KnowledgeBasePage() {
               };
               const cfg = catConfig[catName];
               return (
-                <div key={catName} className="mb-12">
+                <div key={catName} id={catSlugs[catName]} className="mb-12 scroll-mt-28">
                   <div className="flex items-center gap-3 mb-6">
                     <span className={`inline-flex items-center gap-2 px-3 py-1 ${cfg.badgeColor} border rounded-lg text-xs font-semibold uppercase tracking-wide`}>
                       {catName}
