@@ -61,7 +61,7 @@ export default function ApplicationsPage() {
       title: "Medical / Healthcare",
       slug: "medical",
       description: "Surgical recording, telemedicine, medical imaging capture, and training documentation for hospitals and clinics.",
-      image: "/images/applications/medical-healthcare.png",
+      image: "/images/applications/medical-new.png",
       color: "from-cyan-600 to-teal-600",
       features: ["Surgical Recording", "Telemedicine", "Medical Imaging"]
     },
@@ -70,7 +70,7 @@ export default function ApplicationsPage() {
       title: "Church / Worship",
       slug: "church",
       description: "Live streaming church services, worship events, and conferences to YouTube, Facebook, and streaming platforms.",
-      image: "/images/applications/church-worship-1.png",
+      image: "/images/applications/medical-healthcare.png",
       color: "from-amber-600 to-orange-600",
       features: ["Multi-Camera Production", "Facebook/YouTube Live", "Volunteer-Friendly"]
     },
@@ -88,7 +88,7 @@ export default function ApplicationsPage() {
       title: "Gaming / Console",
       slug: "gaming",
       description: "High-performance gameplay capture for PS5, Xbox Series X, Nintendo Switch, and PC gaming with 4K60 HDR support.",
-      image: "/images/applications/gaming-streamer-1.png",
+      image: "/images/applications/gaming-new.png",
       color: "from-violet-600 to-purple-600",
       features: ["4K60 HDR", "Zero Input Lag", "Console Compatible"]
     },

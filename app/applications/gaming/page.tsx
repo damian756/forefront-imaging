@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "StreamTek",
     locale: "en_GB",
     type: "article",
-    images: [{ url: "https://www.streamtek.co.uk/images/applications/gaming-streamer-1.png", width: 1200, height: 630, alt: "Gaming Capture Setup" }]
+    images: [{ url: "https://www.streamtek.co.uk/images/applications/gaming-new.png", width: 1200, height: 630, alt: "Gaming Capture Setup" }]
   },
   twitter: { card: "summary_large_image", title: "USB Capture for Gaming & Consoles | StreamTek", description: "Professional 4K60 HDR gameplay capture with zero lag." },
   alternates: { canonical: "https://www.streamtek.co.uk/applications/gaming" },
@@ -42,7 +42,7 @@ export default function GamingPage() {
     { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "Premium 4K60 HDR capture for next-gen consoles and high-end PC gaming.", image: "/images/products/hdmi-4k-plus.png" }
   ];
 
-  const structuredData = { "@context": "https://schema.org", "@type": "Article", "headline": "USB Capture for Gaming & Consoles", "description": "Professional gameplay capture for PS5, Xbox, Switch, and PC gaming.", "image": "https://www.streamtek.co.uk/images/applications/gaming-streamer-1.png", "author": { "@type": "Organization", "name": "StreamTek" }, "publisher": { "@type": "Organization", "name": "StreamTek", "logo": { "@type": "ImageObject", "url": "https://www.streamtek.co.uk/logo.png" } }, "datePublished": "2026-02-15" };
+  const structuredData = { "@context": "https://schema.org", "@type": "Article", "headline": "USB Capture for Gaming & Consoles", "description": "Professional gameplay capture for PS5, Xbox, Switch, and PC gaming.", "image": "https://www.streamtek.co.uk/images/applications/gaming-new.png", "author": { "@type": "Organization", "name": "StreamTek" }, "publisher": { "@type": "Organization", "name": "StreamTek", "logo": { "@type": "ImageObject", "url": "https://www.streamtek.co.uk/logo.png" } }, "datePublished": "2026-02-15" };
 
   return (
     <>
@@ -80,7 +80,7 @@ export default function GamingPage() {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src="/images/applications/gaming-streamer-1.png" alt="Gaming Capture Setup" fill className="object-cover" />
+                <Image src="/images/applications/gaming-new.png" alt="Gaming Capture Setup" fill className="object-cover" />
               </div>
             </div>
           </div>
