@@ -38,8 +38,8 @@ export default function GamingPage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Perfect for 1080p60 gaming capture with zero-lag passthrough.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png" },
-    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "Premium 4K60 HDR capture for next-gen consoles and high-end PC gaming.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/HDMI-4K-Plus.png" }
+    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Perfect for 1080p60 gaming capture with zero-lag passthrough.", image: "/images/products/hdmi-gen2.png" },
+    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "Premium 4K60 HDR capture for next-gen consoles and high-end PC gaming.", image: "/images/products/hdmi-4k-plus.png" }
   ];
 
   const structuredData = { "@context": "https://schema.org", "@type": "Article", "headline": "USB Capture for Gaming & Consoles", "description": "Professional gameplay capture for PS5, Xbox, Switch, and PC gaming.", "image": "https://www.streamtek.co.uk/images/applications/gaming-streamer-1.png", "author": { "@type": "Organization", "name": "StreamTek" }, "publisher": { "@type": "Organization", "name": "StreamTek", "logo": { "@type": "ImageObject", "url": "https://www.streamtek.co.uk/logo.png" } }, "datePublished": "2026-02-15" };

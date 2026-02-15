@@ -42,7 +42,7 @@ export default function MedicalPage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "High-resolution 4K60 capture for surgical suites and medical imaging.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/HDMI-4K-Plus.png" },
+    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "High-resolution 4K60 capture for surgical suites and medical imaging.", image: "/images/products/hdmi-4k-plus.png" },
     { name: "USB Capture SDI 4K Pro", slug: "magewell-usb-capture-sdi-4k-pro", price: 899, description: "Professional SDI capture for broadcast-grade medical equipment integration.", image: "/images/products/usb-capture-sdi-4k-pro.png" }
   ];
 

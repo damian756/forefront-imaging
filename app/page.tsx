@@ -28,7 +28,7 @@ export default function Home() {
       compatibility: "Universal"
     },
     features: ["Hardware Scaling", "Loop-Through", "Driver-Free", "Plug & Play", "Cross-Platform"],
-    image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png",
+    image: "/images/products/hdmi-gen2.png",
     price: 100,
     compatibility: ["OBS", "vMix", "Zoom", "Teams", "Skype"]
   };

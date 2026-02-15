@@ -30,8 +30,8 @@ export default function PhotographyPage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Perfect for standard studio setups with 1080p camera tethering.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png" },
-    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "Premium 4K capture for high-end studios with advanced mirrorless cameras.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/HDMI-4K-Plus.png" }
+    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Perfect for standard studio setups with 1080p camera tethering.", image: "/images/products/hdmi-gen2.png" },
+    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "Premium 4K capture for high-end studios with advanced mirrorless cameras.", image: "/images/products/hdmi-4k-plus.png" }
   ];
 
   const structuredData = { "@context": "https://schema.org", "@type": "Article", "headline": "USB Capture for Photography Studios", "description": "Professional camera tethering and client preview for photography studios.", "image": "https://www.streamtek.co.uk/images/applications/photography-studio.png", "author": { "@type": "Organization", "name": "StreamTek" }, "publisher": { "@type": "Organization", "name": "StreamTek", "logo": { "@type": "ImageObject", "url": "https://www.streamtek.co.uk/logo.png" } }, "datePublished": "2026-02-15" };

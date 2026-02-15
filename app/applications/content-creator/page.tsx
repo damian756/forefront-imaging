@@ -88,14 +88,14 @@ export default function ContentCreatorPage() {
       slug: "magewell-usb-capture-hdmi-gen-2",
       price: 289,
       description: "Perfect for single-camera streamers. 1080p60 capture with loop-through and OBS compatibility.",
-      image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png"
+      image: "/images/products/hdmi-gen2.png"
     },
     {
       name: "USB Capture HDMI 4K Plus",
       slug: "magewell-usb-capture-hdmi-4k-plus",
       price: 549,
       description: "Professional 4K60 HDR capture for high-end content creators and multi-camera setups.",
-      image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/HDMI-4K-Plus.png"
+      image: "/images/products/hdmi-4k-plus.png"
     }
   ];
 

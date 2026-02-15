@@ -42,8 +42,8 @@ export default function ChurchPage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Perfect for small to mid-sized churches starting their streaming journey.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png" },
-    { name: "USB Capture SDI Plus", slug: "magewell-usb-capture-sdi-plus", price: 549, description: "For churches with professional cameras and long cable runs in larger sanctuaries.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/SDI-Plus.png" }
+    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Perfect for small to mid-sized churches starting their streaming journey.", image: "/images/products/hdmi-gen2.png" },
+    { name: "USB Capture SDI Plus", slug: "magewell-usb-capture-sdi-plus", price: 549, description: "For churches with professional cameras and long cable runs in larger sanctuaries.", image: "/images/products/sdi-plus.png" }
   ];
 
   const structuredData = {

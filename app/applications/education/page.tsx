@@ -42,8 +42,8 @@ export default function EducationPage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Ideal for standard classrooms and lecture halls. Reliable 1080p60 capture.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png" },
-    { name: "USB Capture AIO", slug: "magewell-usb-capture-aio", price: 489, description: "All-In-One device supporting HDMI, VGA, DVI, and legacy inputs for older equipment.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/USB_Capture_AIO_1.png" }
+    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Ideal for standard classrooms and lecture halls. Reliable 1080p60 capture.", image: "/images/products/hdmi-gen2.png" },
+    { name: "USB Capture AIO", slug: "magewell-usb-capture-aio", price: 489, description: "All-In-One device supporting HDMI, VGA, DVI, and legacy inputs for older equipment.", image: "/images/products/usb-capture-aio.png" }
   ];
 
   const structuredData = {

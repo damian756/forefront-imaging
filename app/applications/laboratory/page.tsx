@@ -30,8 +30,8 @@ export default function LaboratoryPage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture AIO", slug: "magewell-usb-capture-aio", price: 489, description: "All-In-One device supporting VGA, DVI, HDMI for diverse lab equipment.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/USB_Capture_AIO_1.png" },
-    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "High-resolution 4K capture for advanced microscopy and imaging systems.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/HDMI-4K-Plus.png" }
+    { name: "USB Capture AIO", slug: "magewell-usb-capture-aio", price: 489, description: "All-In-One device supporting VGA, DVI, HDMI for diverse lab equipment.", image: "/images/products/usb-capture-aio.png" },
+    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "High-resolution 4K capture for advanced microscopy and imaging systems.", image: "/images/products/hdmi-4k-plus.png" }
   ];
 
   const structuredData = { "@context": "https://schema.org", "@type": "Article", "headline": "USB Capture for Laboratory & Scientific", "description": "Professional video capture for microscopes, research, and scientific imaging.", "image": "https://www.streamtek.co.uk/images/applications/laboratory-scientific.png", "author": { "@type": "Organization", "name": "StreamTek" }, "publisher": { "@type": "Organization", "name": "StreamTek", "logo": { "@type": "ImageObject", "url": "https://www.streamtek.co.uk/logo.png" } }, "datePublished": "2026-02-15" };

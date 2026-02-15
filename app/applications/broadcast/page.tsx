@@ -42,7 +42,7 @@ export default function RadioPage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture HDMI 4K Pro", slug: "magewell-usb-capture-hdmi-4k-pro", price: 799, description: "Professional 4K60 HDMI capture with HDR and 10-bit color support.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/HDMI-4K-Pro.png" },
+    { name: "USB Capture HDMI 4K Pro", slug: "magewell-usb-capture-hdmi-4k-pro", price: 799, description: "Professional 4K60 HDMI capture with HDR and 10-bit color support.", image: "/images/products/hdmi-4k-pro.png" },
     { name: "USB Capture SDI 4K Pro", slug: "magewell-usb-capture-sdi-4k-pro", price: 899, description: "Radio-grade 12G-SDI capture for professional production environments.", image: "/images/products/usb-capture-sdi-4k-pro.png" }
   ];
 

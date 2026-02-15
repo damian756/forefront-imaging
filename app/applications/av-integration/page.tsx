@@ -30,8 +30,8 @@ export default function AVIntegrationPage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture AIO", slug: "magewell-usb-capture-aio", price: 489, description: "All-In-One device supporting every major video format. Perfect for integrators.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/USB_Capture_AIO_1.png" },
-    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Cost-effective HDMI capture for standard conference room installations.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png" }
+    { name: "USB Capture AIO", slug: "magewell-usb-capture-aio", price: 489, description: "All-In-One device supporting every major video format. Perfect for integrators.", image: "/images/products/usb-capture-aio.png" },
+    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Cost-effective HDMI capture for standard conference room installations.", image: "/images/products/hdmi-gen2.png" }
   ];
 
   const structuredData = { "@context": "https://schema.org", "@type": "Article", "headline": "USB Capture for AV Integrators", "description": "Versatile capture solutions for system integrators and AV professionals.", "image": "https://www.streamtek.co.uk/images/applications/av-integration.png", "author": { "@type": "Organization", "name": "StreamTek" }, "publisher": { "@type": "Organization", "name": "StreamTek", "logo": { "@type": "ImageObject", "url": "https://www.streamtek.co.uk/logo.png" } }, "datePublished": "2026-02-15" };

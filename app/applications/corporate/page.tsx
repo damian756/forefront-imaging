@@ -42,8 +42,8 @@ export default function CorporatePage() {
   ];
 
   const recommendedProducts = [
-    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Perfect for standard meeting rooms and training spaces. Reliable 1080p60 capture.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png" },
-    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "Executive boardrooms and high-end installations. 4K60 HDR capture for premium quality.", image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/HDMI-4K-Plus.png" }
+    { name: "USB Capture HDMI Gen 2", slug: "magewell-usb-capture-hdmi-gen-2", price: 289, description: "Perfect for standard meeting rooms and training spaces. Reliable 1080p60 capture.", image: "/images/products/hdmi-gen2.png" },
+    { name: "USB Capture HDMI 4K Plus", slug: "magewell-usb-capture-hdmi-4k-plus", price: 549, description: "Executive boardrooms and high-end installations. 4K60 HDR capture for premium quality.", image: "/images/products/hdmi-4k-plus.png" }
   ];
 
   const setupSteps = [
