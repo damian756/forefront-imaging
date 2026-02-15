@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Send, Shield, Package, Truck, Facebook, Twitter, Linkedin, Youtube, Zap, Radio, CheckCircle2, Plug } from "lucide-react";
+import { Mail, MapPin, Send, Shield, Package, Truck, Facebook, Twitter, Linkedin, Youtube, Zap, Radio, CheckCircle2, Plug } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -157,16 +157,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <Phone className="w-4 h-4 text-fiber-cyan mt-0.5 flex-shrink-0" />
-                <span className="text-cool-gray/90">Coming soon</span>
-              </li>
-              <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 text-fiber-cyan mt-0.5 flex-shrink-0" />
-                <span className="text-cool-gray/90">Coming soon</span>
+                <a href="mailto:support@streamtek.co.uk" className="text-cool-gray/90 hover:text-fiber-cyan transition-colors">support@streamtek.co.uk</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-fiber-cyan mt-0.5 flex-shrink-0" />
-                <span className="text-cool-gray/90">Coming soon</span>
+                <span className="text-cool-gray/90">United Kingdom</span>
               </li>
             </ul>
           </div>

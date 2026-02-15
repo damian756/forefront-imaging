@@ -4,8 +4,25 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Support - StreamTek",
-  description: "Technical support, resources, and documentation for Magewell products.",
+  title: "Support",
+  description: "Technical support, resources, and documentation for Magewell USB capture devices. Free UK-based support with 3-year warranty.",
+  keywords: "Magewell support, technical help, USB capture support, StreamTek help",
+  openGraph: {
+    title: "Support | StreamTek",
+    description: "Technical support, resources, and documentation for Magewell products.",
+    url: "https://www.streamtek.co.uk/support",
+    siteName: "StreamTek",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary" as const,
+    title: "Support | StreamTek",
+    description: "Technical support, resources, and documentation for Magewell products.",
+  },
+  alternates: {
+    canonical: "https://www.streamtek.co.uk/support",
+  },
 };
 
 export default function SupportPage() {

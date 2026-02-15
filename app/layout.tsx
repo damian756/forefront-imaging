@@ -3,11 +3,42 @@ import "./globals.css";
 import { CartProvider } from "@/contexts/CartContext";
 
 export const metadata: Metadata = {
-  title: "StreamTek | Magewell Official Distributor UK",
-  description: "Professional USB video capture devices by Magewell. Free UK delivery, 3-year warranty, next-day shipping. Perfect for streaming, recording, and content creation.",
+  metadataBase: new URL("https://www.streamtek.co.uk"),
+  title: {
+    default: "StreamTek | Official Magewell Distributor UK",
+    template: "%s | StreamTek",
+  },
+  description: "Official UK Magewell distributor. Professional USB video capture devices with free delivery, 3-year warranty, and next-day shipping. Perfect for streaming, recording, and content creation.",
+  keywords: "Magewell, USB capture, video capture, HDMI capture, SDI capture, streaming hardware, UK distributor, StreamTek",
+  authors: [{ name: "StreamTek", url: "https://www.streamtek.co.uk" }],
+  creator: "StreamTek",
+  publisher: "StreamTek",
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "https://www.streamtek.co.uk",
+    siteName: "StreamTek",
+    title: "StreamTek | Official Magewell Distributor UK",
+    description: "Professional USB video capture devices by Magewell. Free UK delivery, 3-year warranty, next-day shipping.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "StreamTek | Official Magewell Distributor UK",
+    description: "Professional USB video capture devices by Magewell. Free UK delivery, 3-year warranty, next-day shipping.",
+  },
+  alternates: {
+    canonical: "https://www.streamtek.co.uk",
+  },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

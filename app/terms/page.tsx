@@ -4,8 +4,9 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Terms & Conditions - StreamTek",
-  description: "Terms and conditions for using our website and services.",
+  title: "Terms & Conditions",
+  description: "Terms and conditions for using the StreamTek website and purchasing Magewell products.",
+  alternates: { canonical: "https://www.streamtek.co.uk/terms" },
 };
 
 export default function TermsPage() {

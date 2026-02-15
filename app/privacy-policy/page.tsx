@@ -4,8 +4,9 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Privacy Policy - StreamTek",
-  description: "Our privacy policy and data protection practices.",
+  title: "Privacy Policy",
+  description: "StreamTek privacy policy and data protection practices. How we handle your personal data.",
+  alternates: { canonical: "https://www.streamtek.co.uk/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {
