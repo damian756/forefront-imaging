@@ -55,7 +55,7 @@ export default function Home() {
       <Navbar />
 
       {/* VIDEO HERO SECTION */}
-      <section className="relative pt-0 pb-0 overflow-hidden min-h-[80vh] flex items-center">
+      <section className="relative pt-0 pb-0 overflow-hidden min-h-[75vh] flex items-center">
         
         {/* Background Video */}
         <video 
@@ -72,7 +72,7 @@ export default function Home() {
         {/* Dark Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
         
-        <div className="max-w-7xl mx-auto px-4 relative z-20 py-32 md:py-40">
+        <div className="max-w-7xl mx-auto px-4 relative z-20 py-24 md:py-28">
           
           {/* Hero Content */}
           <motion.div 
@@ -177,12 +177,14 @@ export default function Home() {
       </section>
 
       {/* SIGNAL FLOW VISUALIZER - Desktop only */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block mt-0">
         <SignalFlowVisualizer />
       </div>
 
       {/* QUALITY COMPARISON */}
-      <QualityComparison />
+      <div className="mt-0">
+        <QualityComparison />
+      </div>
 
       {/* FLAGSHIP PRODUCT SHOWCASE */}
       <section id="products" className="py-28 relative">
