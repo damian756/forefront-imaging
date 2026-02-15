@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Plug, Play, ShoppingCart, CheckCircle2, Zap, ArrowRight, Cpu, HardDrive, Monitor } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Plug, Play, ShoppingCart, CheckCircle2, Zap, ArrowRight, Cpu, HardDrive } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SignalFlowVisualizer from '@/components/SignalFlowVisualizer';
@@ -13,78 +13,38 @@ import { useCart } from '@/contexts/CartContext';
 
 export default function Home() {
   const { addItem } = useCart();
-  const [addedItemId, setAddedItemId] = useState<number | null>(null);
-  const [selectedDevice, setSelectedDevice] = useState<number | null>(null);
+  const [addedToCart, setAddedToCart] = useState(false);
 
-  const handleAddToCart = (product: typeof devices[0], e: React.MouseEvent) => {
-    e.preventDefault();
-    addItem({
-      id: product.id.toString(),
-      name: product.name,
-      price: product.price,
-      imageUrl: product.image,
-      slug: product.slug,
-    });
-    setAddedItemId(product.id);
-    setTimeout(() => setAddedItemId(null), 2000);
+  const flagship = {
+    id: 279,
+    slug: "magewell-usb-capture-hdmi-gen-2",
+    name: "USB Capture HDMI Gen 2",
+    inputPort: "HDMI 1.4",
+    outputPort: "USB 3.0",
+    specs: {
+      resolution: "1080p60",
+      bandwidth: "10 Gbps",
+      latency: "< 1ms",
+      compatibility: "Universal"
+    },
+    features: ["Hardware Scaling", "Loop-Through", "Driver-Free", "Plug & Play", "Cross-Platform"],
+    image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png",
+    price: 100,
+    compatibility: ["OBS", "vMix", "Zoom", "Teams", "Skype"]
   };
 
-  const devices = [
-    {
-      id: 279,
-      slug: "magewell-usb-capture-hdmi-gen-2",
-      name: "USB Capture HDMI Gen 2",
-      shortName: "HDMI Gen 2",
-      inputPort: "HDMI 1.4",
-      outputPort: "USB 3.0",
-      specs: {
-        resolution: "1080p60",
-        bandwidth: "10 Gbps",
-        latency: "< 1ms",
-        compatibility: "Universal"
-      },
-      features: ["Hardware Scaling", "Loop-Through", "Driver-Free"],
-      image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/hdmi-usb.61gen2.png",
-      price: 100,
-      compatibility: ["OBS", "vMix", "Zoom", "Teams", "Skype"]
-    },
-    {
-      id: 280,
-      slug: "magewell-usb-capture-aio",
-      name: "USB Capture AIO",
-      shortName: "AIO Multi",
-      inputPort: "HDMI/SDI/DVI",
-      outputPort: "USB 3.0",
-      specs: {
-        resolution: "1080p60",
-        bandwidth: "10 Gbps",
-        latency: "< 1ms",
-        compatibility: "Multi-Input"
-      },
-      features: ["Triple Input", "Auto-Switch", "Universal Driver"],
-      image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/usb-capture-aio-1.png",
-      price: 100,
-      compatibility: ["OBS", "vMix", "Wirecast", "XSplit"]
-    },
-    {
-      id: 281,
-      slug: "magewell-usb-capture-sdi-gen-2",
-      name: "USB Capture SDI Gen 2",
-      shortName: "SDI Gen 2",
-      inputPort: "3G-SDI",
-      outputPort: "USB 3.0",
-      specs: {
-        resolution: "1080p60",
-        bandwidth: "3 Gbps",
-        latency: "< 1ms",
-        compatibility: "Broadcast"
-      },
-      features: ["Professional SDI", "Loop-Through", "Embedded Audio"],
-      image: "https://darkturquoise-pigeon-678798.hostingersite.com/wp-content/uploads/2026/01/sdi-usb.606.png",
-      price: 100,
-      compatibility: ["vMix", "Wirecast", "OBS", "Premiere Pro"]
-    }
-  ];
+  const handleAddFlagship = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addItem({
+      id: flagship.id.toString(),
+      name: flagship.name,
+      price: flagship.price,
+      imageUrl: flagship.image,
+      slug: flagship.slug,
+    });
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 2000);
+  };
 
   return (
     <div className="flex flex-col min-h-screen text-white selection:bg-fiber-blue/20 overflow-hidden" style={{ background: 'var(--fiber-gradient)' }}>
@@ -211,13 +171,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SIGNAL FLOW VISUALIZER */}
-      <SignalFlowVisualizer />
+      {/* SIGNAL FLOW VISUALIZER - Desktop only */}
+      <div className="hidden lg:block">
+        <SignalFlowVisualizer />
+      </div>
 
       {/* QUALITY COMPARISON */}
       <QualityComparison />
 
-      {/* FIBER EQUIPMENT CATALOG */}
+      {/* FLAGSHIP PRODUCT SHOWCASE */}
       <section id="products" className="py-28 relative">
         <div className="absolute inset-0 opacity-10" style={{ 
           background: 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.2), transparent)'
@@ -225,178 +187,144 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div 
-            className="text-center mb-20"
+            className="text-center mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 glass-panel rounded-lg studio-border">
               <Plug className="w-4 h-4 text-fiber-cyan" />
-              <span className="text-xs text-cool-gray uppercase tracking-widest font-semibold">Professional Equipment</span>
+              <span className="text-xs text-cool-gray uppercase tracking-widest font-semibold">Flagship Product</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-tight">
-              <span className="text-gradient">Capture Hardware</span>
+              <span className="text-gradient">USB Capture HDMI Gen 2</span>
             </h2>
             <p className="text-cool-gray text-lg max-w-2xl mx-auto font-light">
-              Studio-grade USB video capture devices. Engineered for professionals who demand excellence.
+              Our most popular capture device. Professional HDMI to USB conversion with zero latency and universal compatibility.
             </p>
           </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {devices.map((device, index) => (
-              <motion.div
-                key={device.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="fade-in"
-              >
-                <Link 
-                  href={`/products/${device.slug}`}
-                  className="group block h-full"
+          {/* Flagship Hero Layout */}
+          <motion.div
+            className="glass-panel rounded-2xl studio-border overflow-hidden"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="grid md:grid-cols-2 gap-0">
+              {/* Product Image */}
+              <div className="relative p-8 md:p-12 flex items-center justify-center min-h-[360px] md:min-h-[480px]" style={{ background: 'linear-gradient(135deg, var(--deep-void), var(--dark-blue))' }}>
+                <div className="absolute top-5 left-5 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-fiber-cyan/10 border border-fiber-cyan/30">
+                  <div className="w-2 h-2 rounded-full bg-fiber-cyan animate-pulse" />
+                  <span className="text-[10px] text-fiber-cyan font-semibold uppercase">In Stock</span>
+                </div>
+                <motion.div
+                  className="relative w-full h-full max-w-sm mx-auto"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  <motion.div
-                    className="h-full device-module isometric-card"
-                    whileHover={{ scale: 1.01 }}
-                  >
-                    {/* Status Badge */}
-                    <div className="flex justify-between items-start mb-6">
-                      <div className="compat-badge compatible">
-                        <div className="status-indicator connected" />
-                        IN STOCK
-                      </div>
-                      <div className="signal-strength">
-                        {[1,2,3,4,5].map((bar) => (
-                          <div key={bar} className="signal-bar active" />
-                        ))}
-                      </div>
-                    </div>
+                  <Image
+                    src={flagship.image}
+                    alt={flagship.name}
+                    fill
+                    className="object-contain"
+                    style={{ filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.25))' }}
+                  />
+                </motion.div>
+              </div>
 
-                    {/* Product Image with Fiber Glow */}
-                    <div className="h-72 relative p-8 flex items-center justify-center mb-6 rounded-lg metal-surface studio-border">
-                      <motion.div
-                        className="relative w-full h-full"
-                        whileHover={{ scale: 1.08 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                        <Image
-                          src={device.image}
-                          alt={device.name}
-                          fill
-                          className="object-contain"
-                          style={{ 
-                            filter: 'drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(59, 130, 246, 0.3))'
-                          }}
-                        />
-                      </motion.div>
+              {/* Product Details */}
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className="text-[10px] text-fiber-cyan font-semibold uppercase tracking-widest mb-2">Magewell</div>
+                <h3 className="text-3xl md:text-4xl font-bold text-soft-white mb-4">{flagship.name}</h3>
+                <p className="text-cool-gray text-sm leading-relaxed mb-8 max-w-md">
+                  Capture HDMI video at up to 1080p60 with hardware scaling, loop-through output, and driver-free operation. The industry standard for professional capture.
+                </p>
 
-                      {/* Connection Points */}
-                      <div className="connection-point" style={{ top: '50%', left: '-7px', transform: 'translateY(-50%)' }} />
-                      <div className="connection-point" style={{ top: '50%', right: '-7px', transform: 'translateY(-50%)' }} />
+                {/* Specs */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {Object.entries(flagship.specs).map(([key, value], i) => (
+                    <div key={i} className="bg-dark-blue/60 border border-fiber-blue/25 rounded-lg p-3">
+                      <div className="text-[9px] text-cool-gray/70 uppercase tracking-wider font-semibold mb-1">{key}</div>
+                      <div className="text-sm font-bold text-fiber-cyan">{value}</div>
                     </div>
+                  ))}
+                </div>
 
-                    {/* Port Visualization */}
-                    <div className="flex items-center justify-center gap-4 mb-6 p-4 rounded-lg leather-texture studio-border">
-                      <div className="text-center">
-                        <div className="hdmi-port mb-6 mx-auto" />
-                        <div className="port-label">{device.inputPort}</div>
-                      </div>
-                      <div className="flex-1 relative">
-                        <div className="trace-connector" />
-                        <motion.div
-                          className="connection-particle"
-                          animate={{
-                            x: ['0%', '100%'],
-                          }}
-                          transition={{
-                            duration: 2.5,
-                            repeat: Infinity,
-                            ease: "linear"
-                          }}
-                        />
-                      </div>
-                      <div className="text-center">
-                        <div className="usb-port mb-6 mx-auto" />
-                        <div className="port-label">{device.outputPort}</div>
-                      </div>
-                    </div>
+                {/* Features */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {flagship.features.map((feature, i) => (
+                    <span key={i} className="px-3 py-1.5 bg-fiber-blue/10 border border-fiber-blue/25 rounded-lg text-[10px] font-semibold uppercase text-cool-gray">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
 
-                    {/* Device Info */}
-                    <h3 className="text-2xl font-semibold text-soft-white group-hover:text-gradient transition-all mb-4 uppercase tracking-tight">
-                      {device.shortName}
-                    </h3>
-                    
-                    {/* Specs Grid */}
-                    <div className="grid grid-cols-2 gap-3 mb-5">
-                      {Object.entries(device.specs).map(([key, value], i) => (
-                        <div key={i} className="glass-panel p-3 rounded-lg studio-border">
-                          <div className="text-[9px] text-cool-gray mb-1 uppercase tracking-wider font-semibold">{key}</div>
-                          <div className="text-sm font-semibold text-fiber-cyan">{value}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Features */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {device.features.map((feature, i) => (
-                        <span 
-                          key={i} 
-                          className="px-3 py-1.5 glass-panel rounded-md text-[10px] font-semibold uppercase text-cool-white studio-border"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Price */}
-                    <div className="mb-5 flex items-center justify-between p-5 glass-panel rounded-lg studio-border">
-                      <span className="text-xs text-cool-gray uppercase font-semibold tracking-wider">Price</span>
-                      <div>
-                        <span className="text-3xl font-bold text-gradient">£{device.price}</span>
-                        <span className="text-cool-gray text-sm ml-2">GBP</span>
-                      </div>
-                    </div>
-                    
-                    {/* Add to Cart */}
-                    <motion.button 
-                      onClick={(e) => handleAddToCart(device, e)}
-                      className="w-full btn-primary py-4 text-sm font-semibold transition-all flex items-center justify-center gap-3 uppercase tracking-wide"
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.99 }}
+                {/* Price and Actions */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div>
+                    <span className="text-4xl font-bold text-gradient">£{flagship.price}</span>
+                    <span className="text-cool-gray/60 text-sm ml-2">GBP</span>
+                  </div>
+                  <div className="flex gap-3 w-full sm:w-auto">
+                    <motion.button
+                      onClick={handleAddFlagship}
+                      className="btn-primary px-6 py-3 text-sm font-semibold flex items-center gap-2"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      {addedItemId === device.id ? (
+                      {addedToCart ? (
                         <>
-                          <CheckCircle2 className="w-5 h-5" />
-                          ADDED TO CART
+                          <CheckCircle2 className="w-4 h-4" />
+                          Added!
                         </>
                       ) : (
                         <>
-                          <ShoppingCart className="w-5 h-5" />
-                          ADD TO CART
+                          <ShoppingCart className="w-4 h-4" />
+                          Add to Cart
                         </>
                       )}
                     </motion.button>
-                  </motion.div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                    <Link
+                      href={`/products/${flagship.slug}`}
+                      className="btn-secondary px-6 py-3 text-sm font-semibold"
+                    >
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Compatibility */}
+                <div className="mt-8 pt-6 border-t border-fiber-blue/20">
+                  <div className="text-[10px] text-cool-gray/60 uppercase tracking-wider font-semibold mb-3">Works with</div>
+                  <div className="flex flex-wrap gap-2">
+                    {flagship.compatibility.map((app, i) => (
+                      <span key={i} className="flex items-center gap-1.5 text-xs text-cool-gray bg-dark-blue/40 border border-fiber-blue/15 rounded-md px-2.5 py-1">
+                        <CheckCircle2 className="w-3 h-3 text-fiber-cyan" />
+                        {app}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* View All CTA */}
           <motion.div 
-            className="text-center mt-20"
+            className="text-center mt-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.3 }}
           >
             <Link 
               href="/products"
-              className="inline-flex items-center gap-3 px-12 py-5 btn-primary text-base font-semibold uppercase"
+              className="inline-flex items-center gap-3 px-10 py-4 btn-secondary text-sm font-semibold uppercase"
             >
-              <span>VIEW ALL EQUIPMENT</span>
-              <ArrowRight className="w-5 h-5" />
+              <span>View All Products</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
