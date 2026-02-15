@@ -46,6 +46,8 @@ export default function Navbar() {
             <NavLink href="/">Home</NavLink>
 
             <NavLink href="/products">Products</NavLink>
+            
+            <NavLink href="/applications">Applications</NavLink>
 
             <NavLink href="/how-it-works">How It Works</NavLink>
             <NavLink href="/knowledge-base">Guides</NavLink>
@@ -99,6 +101,7 @@ export default function Navbar() {
             <div className="px-4 py-5 space-y-1">
               <MobileLink href="/" onClick={() => setMobileMenuOpen(false)}>Home</MobileLink>
               <MobileLink href="/products" onClick={() => setMobileMenuOpen(false)}>Products</MobileLink>
+              <MobileLink href="/applications" onClick={() => setMobileMenuOpen(false)}>Applications</MobileLink>
               <MobileLink href="/how-it-works" onClick={() => setMobileMenuOpen(false)}>How It Works</MobileLink>
               <MobileLink href="/knowledge-base" onClick={() => setMobileMenuOpen(false)}>Guides</MobileLink>
               <MobileLink href="/downloads" onClick={() => setMobileMenuOpen(false)}>Downloads</MobileLink>

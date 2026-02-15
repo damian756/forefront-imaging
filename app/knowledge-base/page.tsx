@@ -239,12 +239,6 @@ export default function KnowledgeBasePage() {
               >
                 Contact Support
               </Link>
-              <Link
-                href="/tutorials"
-                className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg border border-white/20 transition-all"
-              >
-                Watch Video Tutorials
-              </Link>
             </div>
           </div>
         </div>

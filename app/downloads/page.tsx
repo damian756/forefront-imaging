@@ -191,11 +191,11 @@ export default function DownloadsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <Navbar />
-      <main className="min-h-screen text-white pt-20 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
+      <main className="min-h-screen text-white pt-32 pb-20" style={{ background: 'var(--fiber-gradient)' }}>
         <div className="max-w-7xl mx-auto px-4">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+          <div className="text-center mb-20">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
               Magewell Drivers & Software Downloads
             </h1>
             <p className="text-lg md:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
